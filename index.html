@@ -134,6 +134,9 @@ h1 .dot{color:#ff3d7f}
     <div class="topbar">
       <div><span class="kicker">Entrenamiento por intervalos</span><h1>Beat<span class="dot">.</span></h1></div>
       <div class="iconrow">
+        <button class="iconbtn" id="togglefs" aria-label="Pantalla completa" title="Pantalla completa">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#ff3d7f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M16 3h3a2 2 0 0 1 2 2v3"/><path d="M8 21H5a2 2 0 0 1-2-2v-3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
+        </button>
         <button class="iconbtn" id="opencfg" aria-label="Ajustes">
           <svg viewBox="0 0 24 24" fill="none" stroke="#ff3d7f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
         </button>
@@ -464,6 +467,40 @@ const SCREENS=['main','config','run','done','stats'];
 function swap(id){SCREENS.forEach(s=>{document.getElementById(s).style.display=(s===id)?'flex':'none'})}
 
 const modal=document.getElementById('modal');
+const fsBtn=document.getElementById('togglefs');
+const fsIcons={
+  enter:'<svg viewBox="0 0 24 24" fill="none" stroke="#ff3d7f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M16 3h3a2 2 0 0 1 2 2v3"/><path d="M8 21H5a2 2 0 0 1-2-2v-3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>',
+  exit:'<svg viewBox="0 0 24 24" fill="none" stroke="#ff3d7f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8H5V5"/><path d="M16 8h3V5"/><path d="M8 16H5v3"/><path d="M16 16h3v3"/></svg>'
+};
+function hasFS(){return !!(document.documentElement.requestFullscreen||document.documentElement.webkitRequestFullscreen)}
+function isFS(){return !!(document.fullscreenElement||document.webkitFullscreenElement)}
+function syncFSBtn(){
+  if(!fsBtn)return;
+  if(!hasFS()){fsBtn.style.display='none';return}
+  const on=isFS(),label=on?'Salir de pantalla completa':'Pantalla completa';
+  fsBtn.innerHTML=on?fsIcons.exit:fsIcons.enter;
+  fsBtn.setAttribute('aria-label',label);
+  fsBtn.setAttribute('title',label);
+}
+async function toggleFS(){
+  try{
+    if(isFS()){
+      if(document.exitFullscreen)await document.exitFullscreen();
+      else if(document.webkitExitFullscreen)document.webkitExitFullscreen();
+    }else{
+      const el=document.documentElement;
+      if(el.requestFullscreen)await el.requestFullscreen();
+      else if(el.webkitRequestFullscreen)el.webkitRequestFullscreen();
+    }
+  }catch(e){}
+  syncFSBtn();
+}
+syncFSBtn();
+if(fsBtn){
+  fsBtn.onclick=toggleFS;
+  document.addEventListener('fullscreenchange',syncFSBtn);
+  document.addEventListener('webkitfullscreenchange',syncFSBtn);
+}
 document.getElementById('infobtn').onclick=()=>{if(!curInfo||!info[curInfo])return;const d=info[curInfo];document.getElementById('mtitle').textContent=curInfo;const ol=document.getElementById('msteps');ol.innerHTML='';d.steps.forEach(st=>{const li=document.createElement('li');li.textContent=st;ol.appendChild(li)});document.getElementById('merror').textContent=d.err;paused=true;document.getElementById('pause').textContent='▶ SEGUIR';modal.classList.add('show')};
 document.getElementById('mclose').onclick=()=>modal.classList.remove('show');
 modal.onclick=(e)=>{if(e.target===modal)modal.classList.remove('show')};
