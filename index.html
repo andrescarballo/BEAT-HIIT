@@ -14,9 +14,26 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Spline+Sans+Mono:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600&display=swap');
 *{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+}
 html,body{background:#0d0e0c;height:100%}
 body{font-family:'Spline Sans Mono',monospace;color:#f2efe3;display:flex;flex-direction:column;min-height:100vh;overflow-x:hidden}
-.wrap{max-width:640px;margin:0 auto;width:100%;padding:18px;flex:1;display:flex;flex-direction:column}
+.wrap{
+  max-width:640px;
+  margin:0 auto;
+  width:100%;
+  padding-top:calc(18px + var(--safe-top));
+  padding-right:calc(18px + var(--safe-right));
+  padding-bottom:calc(18px + var(--safe-bottom));
+  padding-left:calc(18px + var(--safe-left));
+  flex:1;
+  display:flex;
+  flex-direction:column
+}
 .topbar{display:flex;justify-content:space-between;align-items:flex-start}
 .kicker{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#ff3d7f;font-weight:600}
 h1{font-family:'Archivo Black',sans-serif;font-size:clamp(40px,11vw,64px);line-height:.9;letter-spacing:-.01em;margin:4px 0 2px;text-transform:none}
@@ -114,7 +131,7 @@ h1 .dot{color:#ff3d7f}
 .empty-msg{text-align:center;color:#8a8a72;font-size:13px;padding:40px 20px;line-height:1.6}
 .clearbtn{background:none;border:none;color:#8a8a72;font-family:'Spline Sans Mono';font-size:11px;text-decoration:underline;cursor:pointer;display:block;margin:10px auto 0}
 
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.78);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:20px;z-index:60}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.78);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:calc(20px + var(--safe-top)) calc(20px + var(--safe-right)) calc(20px + var(--safe-bottom)) calc(20px + var(--safe-left));z-index:60}
 .modal.show{display:flex}
 .sheet{background:#16180f;border:1.5px solid #2a2c1f;border-radius:20px;padding:22px;max-width:440px;width:100%;max-height:84vh;overflow-y:auto}
 .sheet h3{font-family:'Fraunces',serif;font-size:24px;font-weight:600;margin-bottom:14px;color:#ff3d7f}
