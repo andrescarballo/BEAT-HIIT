@@ -309,6 +309,10 @@ function logSession(e){const a=loadLog();a.push(e);saveLog(a)}
 /* ---- sound engine (reusable AudioContext) ---- */
 let actx=null;
 function initAudio(){if(!actx){try{actx=new(window.AudioContext||window.webkitAudioContext)()}catch(e){}}if(actx&&actx.state==='suspended')actx.resume()}
+/* unlock audio on first touch for iOS (AudioContext must be created/resumed in a user gesture) */
+function _unlockAudio(){initAudio();document.removeEventListener('touchstart',_unlockAudio,true);document.removeEventListener('mousedown',_unlockAudio,true)}
+document.addEventListener('touchstart',_unlockAudio,true);
+document.addEventListener('mousedown',_unlockAudio,true);
 function blip(freq,dur,when,type,vol){
   if(!actx)return;
   const t=actx.currentTime+(when||0);
@@ -540,6 +544,7 @@ function togglePause(){
   }else{
     pausedTotalMs+=Date.now()-pauseStart;phaseEnd=Date.now()+remMsAtPause;
     if(pl.dataset.prev!==undefined)pl.textContent=pl.dataset.prev;
+    initAudio(); // iOS: resume AudioContext after returning from background
   }
   document.getElementById('pause').innerHTML=paused?'<svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><polygon points="5 3 19 12 5 21"/></svg>SEGUIR':'<svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>PAUSA';
   document.getElementById('count').style.opacity=paused?'.35':'1';
