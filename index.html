@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#0d0e0c">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon-192.png">
@@ -14,61 +14,41 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Spline+Sans+Mono:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600&display=swap');
 *{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --safe-top: env(safe-area-inset-top, 0px);
-  --safe-right: env(safe-area-inset-right, 0px);
-  --safe-bottom: env(safe-area-inset-bottom, 0px);
-  --safe-left: env(safe-area-inset-left, 0px);
-}
 html,body{background:#0d0e0c;height:100%}
 body{font-family:'Spline Sans Mono',monospace;color:#f2efe3;display:flex;flex-direction:column;min-height:100vh;overflow-x:hidden}
-.wrap{
-  max-width:640px;
-  margin:0 auto;
-  width:100%;
-  padding-top:calc(18px + var(--safe-top));
-  padding-right:calc(18px + var(--safe-right));
-  padding-bottom:calc(18px + var(--safe-bottom));
-  padding-left:calc(18px + var(--safe-left));
-  flex:1;
-  display:flex;
-  flex-direction:column
-}
+.wrap{max-width:640px;margin:0 auto;width:100%;padding:18px;flex:1;display:flex;flex-direction:column}
 .topbar{display:flex;justify-content:space-between;align-items:flex-start}
 .kicker{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#ff3d7f;font-weight:600}
-h1{font-family:'Archivo Black',sans-serif;font-size:clamp(40px,11vw,64px);line-height:.9;letter-spacing:-.01em;margin:4px 0 2px;text-transform:none}
+h1{font-family:'Archivo Black',sans-serif;font-size:clamp(40px,11vw,64px);line-height:.9;letter-spacing:-.01em;margin:4px 0 2px}
 h1 .dot{color:#ff3d7f}
 .iconrow{display:flex;gap:8px;margin-top:6px}
-.iconbtn{border:1.5px solid #2a2c1f;background:transparent;padding:9px;border-radius:11px;cursor:pointer;display:grid;place-items:center;transition:.15s;touch-action:manipulation}
+.iconbtn{border:1.5px solid #2a2c1f;background:transparent;padding:9px;border-radius:11px;cursor:pointer;display:grid;place-items:center;transition:.15s}
 .iconbtn:active{transform:scale(.92)}
 .iconbtn:hover{border-color:#ff3d7f}
 .iconbtn svg{width:22px;height:22px;display:block}
-
-/* main screen */
 #main{display:flex;flex-direction:column;flex:1}
 .mainmid{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px}
-.summary{text-align:center;color:#8a8a72;font-size:14px;line-height:1.7}
+.summary{text-align:center;color:#8a8a72;font-size:14px;line-height:1.7;padding:0 6px}
 .summary b{color:#f2efe3}
 .summary .pill{display:inline-block;color:#ff3d7f;border:1px solid #2a2c1f;border-radius:99px;padding:3px 11px;margin:2px 2px;font-size:12px}
-.bigstart{width:min(60vw,210px);aspect-ratio:1;border-radius:50%;background:linear-gradient(135deg,#ff2e7e,#ff7e33);border:none;cursor:pointer;transition:.15s;touch-action:manipulation;
-  box-shadow:0 0 0 1.5px #ff3d7f, 0 0 70px rgba(255,61,127,.3);display:grid;place-items:center}
+.restnote{color:#ff7e33;font-size:12px;text-align:center;margin-top:6px;line-height:1.5}
+.bigstart{width:min(60vw,210px);aspect-ratio:1;border-radius:50%;background:linear-gradient(135deg,#ff2e7e,#ff7e33);border:none;cursor:pointer;transition:.15s;box-shadow:0 0 0 1.5px #ff3d7f, 0 0 70px rgba(255,61,127,.3);display:grid;place-items:center}
 .bigstart:active{transform:scale(.95)}
 .bigstart svg{width:44%;height:44%;margin-left:7%;display:block}
-
-/* config screen */
-#config{display:none;flex-direction:column;flex:1}
-.card{background:#16180f;border:1.5px solid #2a2c1f;border-radius:16px;padding:16px;margin-bottom:12px;cursor:pointer;transition:.15s;position:relative}
+#config,#packs{display:none;flex-direction:column;flex:1}
+.card{background:#16180f;border:1.5px solid #2a2c1f;border-radius:16px;padding:16px;margin-bottom:12px;cursor:pointer;transition:.15s}
 .card.sel{border-color:#ff3d7f;background:#231019}
-.card h3{font-family:'Fraunces',serif;font-size:20px;font-weight:600;margin-bottom:3px}
-.card p{color:#8a8a72;font-size:12px}
-.row{display:flex;gap:10px;margin-bottom:12px}
-.row .card{flex:1;text-align:center;margin-bottom:0}
-.row .card .big{font-family:'Archivo Black';font-size:24px;display:block}
-.row .card .lbl{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#8a8a72}
 .label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#ff3d7f;margin:16px 0 8px;font-weight:600}
 .seg{display:flex;gap:6px;margin-bottom:8px}
 .segb{flex:1;border:1.5px solid #2a2c1f;background:transparent;color:#8a8a72;font-family:'Spline Sans Mono';font-weight:600;font-size:13px;padding:11px;border-radius:11px;cursor:pointer;transition:.15s}
 .segb.on{background:#ff3d7f;color:#0d0e0c;border-color:#ff3d7f}
+.clist{display:flex;flex-direction:column;gap:8px;margin-bottom:8px}
+.citem{background:#16180f;border:1.5px solid #2a2c1f;border-radius:12px;padding:12px 14px;cursor:pointer;transition:.15s}
+.citem.on{border-color:#ff3d7f;background:#231019}
+.citem h5{font-size:14px;font-weight:600;margin-bottom:2px}
+.citem p{font-size:11px;color:#8a8a72;line-height:1.4}
+.citem .tagrow{margin-top:5px}
+.citem .mini{display:inline-block;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:#ff3d7f;border:1px solid #2a2c1f;border-radius:99px;padding:2px 8px;margin-right:4px}
 .hint{font-size:11px;color:#8a8a72;margin-bottom:10px;line-height:1.45}
 .hint b{color:#ff3d7f}
 .toggle{display:flex;align-items:center;justify-content:space-between;background:#16180f;border:1.5px solid #2a2c1f;border-radius:14px;padding:14px 16px;margin-bottom:8px;cursor:pointer}
@@ -82,9 +62,13 @@ h1 .dot{color:#ff3d7f}
 .meta{text-align:center;color:#8a8a72;font-size:12px;margin:8px 0 4px;line-height:1.6}
 .back{width:100%;background:linear-gradient(135deg,#ff2e7e,#ff7e33);color:#0d0e0c;border:none;font-family:'Spline Sans Mono';font-weight:700;font-size:15px;padding:16px;border-radius:14px;cursor:pointer;margin-top:14px}
 .back.ghost{background:transparent;border:1.5px solid #2a2c1f;color:#f2efe3;font-weight:600;font-size:14px;padding:15px}
-.sndtoggle{display:flex;align-items:center;gap:8px}
-
-/* run */
+.prow{display:flex;justify-content:space-between;align-items:center;background:#16180f;border:1.5px solid #2a2c1f;border-radius:14px;padding:14px 16px;margin-bottom:8px;gap:10px}
+.prow.active{border-color:#ff3d7f}
+.prow .pinfo h4{font-size:14px;font-weight:600}
+.prow .pinfo p{font-size:11px;color:#8a8a72;margin-top:2px}
+.prow .pbtns{display:flex;gap:6px;flex-shrink:0}
+.pb{border:1.5px solid #2a2c1f;background:transparent;color:#f2efe3;font-family:'Spline Sans Mono';font-weight:600;font-size:11px;padding:8px 10px;border-radius:9px;cursor:pointer}
+.pb.use{background:#ff3d7f;color:#0d0e0c;border-color:#ff3d7f}
 #run{display:none;flex:1;flex-direction:column;text-align:center}
 .phase{font-size:13px;letter-spacing:.3em;text-transform:uppercase;font-weight:700;margin-top:8px}
 .exrow{display:flex;align-items:center;justify-content:center;gap:10px;margin:auto 0 6px}
@@ -92,27 +76,26 @@ h1 .dot{color:#ff3d7f}
 .infobtn{width:30px;height:30px;border-radius:50%;border:1.5px solid #8a8a72;background:transparent;color:#8a8a72;font-family:'Fraunces',serif;font-style:italic;font-size:17px;cursor:pointer;flex-shrink:0;line-height:1}
 .ring{position:relative;width:min(72vw,290px);aspect-ratio:1;margin:0 auto}
 .ring svg{transform:rotate(-90deg);width:100%;height:100%}
-.ring .count{position:absolute;inset:0;display:grid;place-items:center;font-family:'Archivo Black';font-size:clamp(56px,18vw,92px)}
+.ring .count{position:absolute;inset:0;display:grid;place-items:center;font-family:'Archivo Black';font-size:clamp(56px,18vw,92px);padding:14%}
+.ring .count.reps{font-family:'Spline Sans Mono';font-weight:700;font-size:clamp(17px,4.6vw,24px);line-height:1.3}
 .next{color:#8a8a72;font-size:13px;margin:14px 0 4px}
 .next b{color:#f2efe3}
 .prog{color:#8a8a72;font-size:11px;letter-spacing:.1em;margin-bottom:10px}
 .controls{display:flex;gap:10px;margin-top:auto;padding-top:14px}
-.ctl{flex:1;border:1.5px solid #2a2c1f;background:transparent;color:#f2efe3;font-family:'Spline Sans Mono';font-weight:600;font-size:14px;padding:15px;border-radius:14px;cursor:pointer;display:grid;place-items:center;touch-action:manipulation}
+.ctl{flex:1;border:1.5px solid #2a2c1f;background:transparent;color:#f2efe3;font-family:'Spline Sans Mono';font-weight:600;font-size:14px;padding:15px;border-radius:14px;cursor:pointer}
 .ctl:active{transform:scale(.97)}
-.ctl.main{background:#ff3d7f;color:#0d0e0c;border-color:#ff3d7f;flex:2;display:flex;align-items:center;justify-content:center;gap:8px}
+.ctl.main{background:#ff3d7f;color:#0d0e0c;border-color:#ff3d7f;flex:2}
 .ctl.quit{flex:.7}
 #done{display:none;text-align:center;flex:1;flex-direction:column;justify-content:center}
 #done .big{font-family:'Archivo Black';font-size:48px;color:#ff3d7f}
 #done .donestats{color:#f2efe3;font-size:15px;margin:14px 0 4px;line-height:1.7}
 #done .donestats b{color:#ff3d7f}
 #done p{color:#8a8a72;margin:8px 0 24px;font-size:13px}
-
-/* stats */
 #stats{display:none;flex:1;flex-direction:column}
 .statgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:8px}
 .stat{background:#16180f;border:1.5px solid #2a2c1f;border-radius:16px;padding:16px}
 .stat .num{font-family:'Archivo Black';font-size:30px;line-height:1}
-.stat .num.lime{color:#ff3d7f}.stat .num.orange{color:#ff5c2b}
+.stat .num.pink{color:#ff3d7f}.stat .num.orange{color:#ff7e33}
 .stat .cap{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#8a8a72;margin-top:5px}
 .chartbox{background:#16180f;border:1.5px solid #2a2c1f;border-radius:16px;padding:16px;margin-bottom:8px}
 .chartbox h4{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#ff3d7f;margin-bottom:14px}
@@ -129,14 +112,15 @@ h1 .dot{color:#ff3d7f}
 .hrow .hsub{font-size:11px;color:#8a8a72;margin-top:2px}
 .hrow .hdur{font-family:'Archivo Black';font-size:16px;color:#ff3d7f;white-space:nowrap}
 .empty-msg{text-align:center;color:#8a8a72;font-size:13px;padding:40px 20px;line-height:1.6}
-.clearbtn{background:none;border:none;color:#8a8a72;font-family:'Spline Sans Mono';font-size:11px;text-decoration:underline;cursor:pointer;display:block;margin:10px auto 0}
-
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.78);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:calc(20px + var(--safe-top)) calc(20px + var(--safe-right)) calc(20px + var(--safe-bottom)) calc(20px + var(--safe-left));z-index:60}
+.dataline{display:flex;gap:8px;margin-top:12px}
+.dataline .back{margin-top:0}
+.clearbtn{background:none;border:none;color:#8a8a72;font-family:'Spline Sans Mono';font-size:11px;text-decoration:underline;cursor:pointer;display:block;margin:12px auto 0}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.78);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:20px;z-index:60}
 .modal.show{display:flex}
 .sheet{background:#16180f;border:1.5px solid #2a2c1f;border-radius:20px;padding:22px;max-width:440px;width:100%;max-height:84vh;overflow-y:auto}
 .sheet h3{font-family:'Fraunces',serif;font-size:24px;font-weight:600;margin-bottom:14px;color:#ff3d7f}
 .sheet .blk{margin-bottom:14px}
-.sheet .blk .h{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#ff5c2b;font-weight:600;margin-bottom:5px}
+.sheet .blk .h{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#ff7e33;font-weight:600;margin-bottom:5px}
 .sheet .blk p{font-size:14px;line-height:1.5}
 .sheet ol{margin:0 0 0 18px;padding:0}
 .sheet ol li{font-size:14px;line-height:1.55;margin-bottom:5px}
@@ -146,54 +130,50 @@ h1 .dot{color:#ff3d7f}
 <body>
 <div class="wrap">
 
-  <!-- MAIN -->
   <div id="main">
     <div class="topbar">
       <div><span class="kicker">Entrenamiento por intervalos</span><h1>Beat<span class="dot">.</span></h1></div>
       <div class="iconrow">
-        <button class="iconbtn" id="togglefs" aria-label="Pantalla completa" title="Pantalla completa">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#ff3d7f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M16 3h3a2 2 0 0 1 2 2v3"/><path d="M8 21H5a2 2 0 0 1-2-2v-3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
-        </button>
-        <button class="iconbtn" id="opencfg" aria-label="Ajustes">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#ff3d7f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-        </button>
-        <button class="iconbtn" id="openstats" aria-label="Estadísticas">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#ff3d7f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
-        </button>
+        <button class="iconbtn" id="openpacks" aria-label="Packs"><svg viewBox="0 0 24 24" fill="none" stroke="#ff3d7f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></button>
+        <button class="iconbtn" id="opencfg" aria-label="Ajustes"><svg viewBox="0 0 24 24" fill="none" stroke="#ff3d7f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button>
+        <button class="iconbtn" id="openstats" aria-label="Estadisticas"><svg viewBox="0 0 24 24" fill="none" stroke="#ff3d7f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></button>
       </div>
     </div>
     <div class="mainmid">
       <div class="summary" id="summary"></div>
-      <button class="bigstart" id="go" aria-label="Empezar">
-        <svg viewBox="0 0 24 24" fill="#0d0e0c"><path d="M8 5v14l11-7z"/></svg>
-      </button>
+      <div class="restnote" id="restnote" style="display:none"></div>
+      <button class="bigstart" id="go" aria-label="Empezar"><svg viewBox="0 0 24 24" fill="#0d0e0c"><path d="M8 5v14l11-7z"/></svg></button>
     </div>
   </div>
 
-  <!-- CONFIG -->
   <div id="config">
     <div class="topbar"><div><span class="kicker">Ajustes</span><h1 style="font-size:clamp(32px,9vw,52px)">Config</h1></div></div>
-    <div class="label">Día</div>
-    <div class="seg" id="daymode">
-      <button class="segb" data-m="auto">Automático</button>
-      <button class="segb" data-m="manual">Manual</button>
+    <div class="label">Entrenamiento</div>
+    <div class="seg" id="wkmode">
+      <button class="segb" data-m="auto">Automatico</button>
+      <button class="segb" data-m="manual">Elegir</button>
     </div>
-    <p class="hint" id="dayhint"></p>
-    <div id="days"></div>
-    <div class="label">Intensidad</div>
-    <div class="row" id="intens"></div>
+    <p class="hint" id="wkhint"></p>
+    <div class="clist" id="wklist"></div>
     <div class="label">Opciones</div>
-    <div class="toggle" id="warmup"><div class="tinfo"><h4>Calentamiento guiado</h4><p>5 movimientos para entrar en calor</p></div><div class="sw"></div></div>
-    <div class="toggle" id="lowimp"><div class="tinfo"><h4>Bajo impacto</h4><p>Sin saltos — cuida rodillas y tobillos</p></div><div class="sw"></div></div>
-    <div class="toggle" id="pullups"><div class="tinfo"><h4>Bloque de dominadas al inicio</h4><p>5 min de fuerza antes del circuito</p></div><div class="sw"></div></div>
-    <div class="toggle" id="stretch"><div class="tinfo"><h4>Estiramientos al final</h4><p>Vuelta a la calma guiada</p></div><div class="sw"></div></div>
-    <div class="toggle" id="sound"><div class="tinfo"><h4>Sonidos</h4><p>Avisos de cambio y cuenta atrás</p></div><div class="sw"></div></div>
-    <div class="toggle" id="vibtg"><div class="tinfo"><h4>Vibración</h4><p>Aviso al vibrar en cada cambio</p></div><div class="sw"></div></div>
+    <div class="toggle" id="warmup"><div class="tinfo"><h4>Calentamiento</h4><p>Incluir la parte de calentamiento</p></div><div class="sw"></div></div>
+    <div class="toggle" id="stretch"><div class="tinfo"><h4>Estiramientos</h4><p>Incluir la vuelta a la calma</p></div><div class="sw"></div></div>
+    <div class="toggle" id="lowimp"><div class="tinfo"><h4>Bajo impacto</h4><p>Sin saltos: cuida rodillas y tobillos</p></div><div class="sw"></div></div>
+    <div class="toggle" id="sound"><div class="tinfo"><h4>Sonidos</h4><p>Avisos de cambio y cuenta atras</p></div><div class="sw"></div></div>
+    <div class="toggle" id="vibtg"><div class="tinfo"><h4>Vibracion</h4><p>Aviso al vibrar en cada cambio</p></div><div class="sw"></div></div>
     <div class="meta" id="meta"></div>
-    <button class="back" id="cfgdone">← Hecho</button>
+    <button class="back" id="cfgdone">Hecho</button>
   </div>
 
-  <!-- RUN -->
+  <div id="packs">
+    <div class="topbar"><div><span class="kicker">Contenido</span><h1 style="font-size:clamp(32px,9vw,52px)">Packs</h1></div></div>
+    <p class="hint" style="margin-top:8px">Un pack es un programa completo en un JSON: ejercicios, entrenamientos y rotacion. Importa uno y queda guardado sin conexion. Tus estadisticas no dependen del pack.</p>
+    <div id="packlist"></div>
+    <button class="back ghost" id="importpack">+ Importar pack (.json)</button>
+    <input type="file" id="packfile" accept="application/json,.json" style="display:none">
+    <button class="back" id="packsdone">Hecho</button>
+  </div>
+
   <div id="run">
     <div class="phase" id="phase"></div>
     <div class="exrow"><div class="exname" id="exname"></div><button class="infobtn" id="infobtn">i</button></div>
@@ -204,35 +184,38 @@ h1 .dot{color:#ff3d7f}
     <div class="next" id="next"></div>
     <div class="prog" id="prog"></div>
     <div class="controls">
-      <button class="ctl quit" id="quit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="20" height="20"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
-      <button class="ctl" id="prev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" y1="19" x2="5" y2="5"/></svg></button>
-      <button class="ctl main" id="pause"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>PAUSA</button>
-      <button class="ctl" id="skip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg></button>
+      <button class="ctl quit" id="quit">X</button>
+      <button class="ctl" id="prev">&#8634;</button>
+      <button class="ctl main" id="pause">&#9208; PAUSA</button>
+      <button class="ctl" id="skip">&#9197;</button>
     </div>
   </div>
 
-  <!-- DONE -->
   <div id="done">
-    <div class="big">¡HECHO! 💪</div>
+    <div class="big">HECHO!</div>
     <div class="donestats" id="donestats"></div>
     <p id="donetxt"></p>
-    <button class="back" id="again">↺ Volver al inicio</button>
+    <button class="back" id="again">Volver al inicio</button>
   </div>
 
-  <!-- STATS -->
   <div id="stats">
     <div class="topbar"><div><span class="kicker">Tu progreso</span><h1 style="font-size:clamp(32px,9vw,52px)">Stats</h1></div></div>
     <div style="height:10px"></div>
     <div class="statgrid">
-      <div class="stat"><div class="num lime" id="s-total">0</div><div class="cap">Entrenamientos</div></div>
-      <div class="stat"><div class="num orange" id="s-streak">0</div><div class="cap">Racha (días)</div></div>
+      <div class="stat"><div class="num pink" id="s-total">0</div><div class="cap">Entrenamientos</div></div>
+      <div class="stat"><div class="num orange" id="s-streak">0</div><div class="cap">Racha (dias)</div></div>
       <div class="stat"><div class="num" id="s-week">0</div><div class="cap">Esta semana</div></div>
       <div class="stat"><div class="num" id="s-time">0m</div><div class="cap">Tiempo total</div></div>
     </div>
-    <div class="chartbox"><h4>Minutos · últimos 7 días</h4><div class="bars" id="bars"></div></div>
+    <div class="chartbox"><h4>Minutos - ultimos 7 dias</h4><div class="bars" id="bars"></div></div>
     <div class="histtitle">Historial</div>
     <div class="hist" id="hist"></div>
-    <button class="back ghost" id="backbtn">← Volver</button>
+    <div class="dataline">
+      <button class="back ghost" id="exportbtn">Exportar copia</button>
+      <button class="back ghost" id="importbtn">Restaurar</button>
+    </div>
+    <input type="file" id="importfile" accept="application/json,.json" style="display:none">
+    <button class="back ghost" id="backbtn" style="margin-top:8px">Volver</button>
     <button class="clearbtn" id="clearbtn">Borrar todo el historial</button>
   </div>
 
@@ -241,317 +224,389 @@ h1 .dot{color:#ff3d7f}
 <div class="modal" id="modal">
   <div class="sheet">
     <h3 id="mtitle"></h3>
-    <div class="blk"><div class="h">Cómo se hace</div><ol id="msteps"></ol></div>
-    <div class="blk"><div class="h">Error típico</div><p id="merror"></p></div>
+    <div class="blk"><div class="h">Como se hace</div><ol id="msteps"></ol></div>
+    <div class="blk"><div class="h">Error tipico</div><p id="merror"></p></div>
     <button class="close" id="mclose">Entendido</button>
   </div>
 </div>
 
 <script>
-const info={
- "Dominadas":{steps:["Agarre algo más ancho que los hombros, palmas al frente.","Parte de brazos estirados, hombros activos.","Tira llevando los codos hacia abajo, pecho a la barra.","Baja controlado hasta estirar del todo."],err:"Dar tirones con las piernas. Si no salen, usa negativas o banda."},
- "Sentadillas":{steps:["Pies al ancho de cadera, puntas algo hacia fuera.","Baja como sentándote en una silla.","Hasta muslos paralelos, sin redondear la espalda.","Empuja con los talones para subir."],err:"Que las rodillas se hundan hacia dentro."},
- "Zancadas":{steps:["Da un paso largo al frente.","Baja la rodilla de atrás, tronco recto.","La rodilla delantera no pasa mucho la punta del pie.","Vuelve y cambia de pierna."],err:"Tronco inclinado y pasos demasiado cortos."},
- "Zancadas con salto":{steps:["Posición de zancada.","Salta cambiando de pierna en el aire.","Aterriza suave amortiguando.","Encadena con control."],err:"Aterrizar rígido. Si pesas o molestan rodillas, usa zancada normal."},
- "Peso muerto rumano":{steps:["De pie con mancuernas frente a los muslos.","Lleva la cadera ATRÁS bajando las pesas pegadas a las piernas.","Espalda recta, ligera flexión de rodilla.","Vuelve apretando glúteo."],err:"Redondear la espalda."},
- "Puente de glúteo":{steps:["Boca arriba, rodillas dobladas, pies en el suelo.","Empuja con los talones subiendo la cadera.","Aprieta fuerte el glúteo arriba.","Baja controlado."],err:"Arquear la lumbar en vez de apretar el glúteo."},
- "Plancha":{steps:["Antebrazos y puntas de los pies en el suelo.","Cuerpo en línea recta de cabeza a talones.","Aprieta abdomen y glúteo.","Respira, no aguantes el aire."],err:"Subir el culo o dejar caer la cadera."},
- "Plancha lateral":{steps:["De lado, apoyado en un antebrazo.","Sube la cadera, cuerpo en línea.","Aprieta el abdomen lateral.","Aguanta y cambia."],err:"Dejar caer la cadera."},
- "Crunch / russian twist":{steps:["Sentado, rodillas dobladas, algo inclinado atrás.","Junta las manos y gira el tronco a un lado.","Vuelve al centro y gira al otro.","Controla, sin tirones."],err:"Mover solo los brazos en vez de rotar el tronco."},
- "Flexiones":{steps:["Manos algo más anchas que los hombros.","Cuerpo recto, abdomen apretado.","Baja hasta casi tocar con el pecho.","Empuja sin arquear la espalda."],err:"Dejar caer la cadera. Si cuesta, apoya rodillas."},
- "Remo con mancuerna":{steps:["Una mano y rodilla en una silla, espalda plana.","Mancuerna colgando, brazo estirado.","Tira del codo atrás hacia la cadera.","Baja controlado. Cambia."],err:"Girar el tronco en vez de tirar con la espalda."},
- "Remo con banda":{steps:["Banda anclada al frente o bajo los pies.","Tira llevando los codos atrás.","Junta los omóplatos.","Vuelve controlado."],err:"Encoger los hombros hacia las orejas."},
- "Press de hombros":{steps:["Mancuernas a la altura de los hombros.","Empuja arriba casi estirando.","No arquees la espalda.","Baja controlado."],err:"Arquear la lumbar para empujar más."},
- "Curl de bíceps":{steps:["Mancuernas a los lados, palmas al frente.","Sube doblando solo el codo.","Codos pegados, sin balanceo.","Baja despacio."],err:"Balancear el cuerpo para subir."},
- "Fondos de tríceps":{steps:["Manos en el borde de una silla.","Baja doblando los codos atrás.","Codos cerca del cuerpo.","Empuja para subir."],err:"Abrir los codos hacia los lados."},
- "Superman":{steps:["Boca abajo, brazos extendidos al frente.","Levanta a la vez brazos, pecho y piernas.","Aprieta espalda baja y glúteo.","Baja controlado."],err:"Tirar del cuello. Mira al suelo."},
- "Thrusters":{steps:["Mancuernas en los hombros, haz una sentadilla.","Al subir, empújalas arriba con el impulso.","Movimiento fluido sentadilla+press.","Baja a los hombros y repite."],err:"Separar la sentadilla del press."},
- "Burpees":{steps:["De pie, baja las manos al suelo.","Pies atrás a plancha.","Pies adelante.","Salta arriba con los brazos estirados."],err:"Dejar caer la cadera en plancha."},
- "Burpees sin salto":{steps:["De pie, manos al suelo.","Pies atrás a plancha (o paso a paso).","Pies adelante.","Te incorporas SIN saltar."],err:"Ir con prisa y perder la línea del cuerpo."},
- "Swing con mancuerna":{steps:["Pies anchos, una mancuerna con las dos manos.","Lleva la cadera atrás, balancea entre las piernas.","Empuja la cadera al frente para subir la pesa al pecho.","El impulso viene de la cadera."],err:"Hacer sentadilla y subir con los brazos. El motor es la cadera."},
- "Mountain climbers":{steps:["Plancha alta, manos bajo los hombros.","Lleva una rodilla al pecho.","Cambia de pierna con ritmo.","Cadera baja y estable."],err:"Subir el culo. Bajo impacto: más lento, sin saltar."},
- "Marcha en el sitio":{steps:["De pie, rodillas arriba alternando.","Acompaña con los brazos.","Ritmo vivo pero controlado.","Respira con regularidad."],err:"Ir tan suave que no sube el pulso."},
- "Movilidad de hombros":{steps:["De pie, brazos estirados.","Círculos grandes hacia atrás.","A mitad, cambia hacia delante.","Suelta el cuello."],err:"Hacerlos pequeños y rápidos."},
- "Movilidad de cadera":{steps:["Manos en la cadera.","Círculos grandes con la cadera.","Cambia de sentido.","Luego balancea una pierna y cambia."],err:"Mover solo la cintura."},
- "Jumping jacks suaves":{steps:["Abre y cierra piernas y brazos a la vez.","Ritmo cómodo para entrar en calor.","Respira con el movimiento.","Si molesta saltar, step lateral."],err:"Empezar a tope."},
- "Sentadillas sin peso":{steps:["Pies al ancho de cadera.","Baja sin prisa.","Profundidad cómoda.","Sube con control."],err:"Buscar máxima profundidad en frío."},
- "Rotaciones de tronco":{steps:["Pies fijos, brazos relajados.","Gira el tronco a un lado dejando seguir los brazos.","Vuelve y gira al otro.","Ritmo suelto."],err:"Forzar el giro."},
- "Estiramiento de cuádriceps":{steps:["De pie, sujétate si hace falta.","Lleva un talón al glúteo.","Rodillas juntas, nota el muslo.","Aguanta y cambia."],err:"Arquear la espalda."},
- "Estiramiento de femoral":{steps:["Una pierna adelantada, talón en el suelo.","Cadera atrás, espalda recta.","Inclínate desde la cadera.","Nota detrás del muslo. Cambia."],err:"Redondear la espalda para 'llegar'."},
- "Estiramiento de pecho y hombros":{steps:["Entrelaza las manos tras la espalda.","Estira los brazos y abre el pecho.","Sube un poco las manos.","Respira y mantén."],err:"Encoger los hombros."},
- "Estiramiento de espalda (gato)":{steps:["A cuatro patas, manos bajo hombros.","Redondea la espalda mirando al ombligo.","Luego húndela mirando al frente.","Alterna lento con la respiración."],err:"Ir rápido."},
- "Estiramiento de glúteo":{steps:["Boca arriba, cruza un tobillo sobre la rodilla contraria.","Lleva la pierna al pecho.","Nota el glúteo.","Aguanta y cambia."],err:"Tirar con tirones."},
- "Respiración final":{steps:["De pie o tumbado, ojos cerrados.","Inhala por la nariz contando 4.","Exhala por la boca contando 6.","Repite y baja pulsaciones."],err:"Respirar solo con el pecho."},
-};
-const warmupEx=["Movilidad de hombros","Movilidad de cadera","Jumping jacks suaves","Sentadillas sin peso","Rotaciones de tronco"];
-const stretchEx=["Estiramiento de cuádriceps","Estiramiento de femoral","Estiramiento de pecho y hombros","Estiramiento de espalda (gato)","Estiramiento de glúteo","Respiración final"];
-const baseCircuits={
-  1:{name:"Tren inferior + core",ex:["Sentadillas","Zancadas","Peso muerto rumano","Puente de glúteo","Plancha","Crunch / russian twist"]},
-  2:{name:"Tren superior",ex:["Flexiones","Remo con mancuerna","Press de hombros","Curl de bíceps","Fondos de tríceps","Superman"]},
-  3:{name:"Full body + cardio",ex:["Thrusters","Burpees","Swing con mancuerna","Mountain climbers","Zancadas con salto","Plancha lateral"]},
-};
-const lowImpactMap={"Burpees":"Burpees sin salto","Zancadas con salto":"Zancadas","Mountain climbers":"Marcha en el sitio"};
-const levels={
-  suave:{w:30,r:20,rounds:2,lbl:"Suave",d:"30s trabajo · 20s descanso · 2 rondas"},
-  medio:{w:40,r:15,rounds:3,lbl:"Medio",d:"40s trabajo · 15s descanso · 3 rondas"},
-  fuerte:{w:45,r:10,rounds:3,lbl:"Fuerte",d:"45s trabajo · 10s descanso · 3 rondas"},
-};
+const DEFAULT_PACK = {"schema": 2, "pack": {"id": "beat-basico", "name": "Beat básico", "description": "Rutina de casa: peso corporal, mancuernas, banda y barra. 20 entrenamientos.", "author": "Andrés", "version": 2, "lang": "es"}, "plan": {"rotation": ["inferior-clasico", "superior-clasico", "fullbody-clasico"], "rest_after_days": 6}, "exercises": {"dominadas": {"name": "Dominadas", "steps": ["Agarre algo mas ancho que los hombros, palmas al frente.", "Parte de brazos estirados, hombros activos.", "Tira llevando los codos hacia abajo, pecho a la barra.", "Baja controlado hasta estirar del todo."], "cue": "Dar tirones con las piernas. Si no salen, usa negativas o banda.", "muscles": ["espalda", "biceps"], "equipment": ["barra"], "impact": "low", "canonical": "pullup"}, "sentadillas": {"name": "Sentadillas", "steps": ["Pies al ancho de cadera, puntas algo hacia fuera.", "Baja como sentandote en una silla.", "Hasta muslos paralelos, sin redondear la espalda.", "Empuja con los talones para subir."], "cue": "Que las rodillas se hundan hacia dentro.", "muscles": ["cuadriceps", "gluteo"], "equipment": ["ninguno"], "impact": "low", "canonical": "squat.bodyweight"}, "sentadilla-con-salto": {"name": "Sentadilla con salto", "steps": ["Baja a sentadilla.", "Sube explotando en un salto.", "Aterriza suave amortiguando.", "Encadena con control."], "cue": "Aterrizar rigido. Bajo impacto: sentadilla normal.", "muscles": ["cuadriceps", "gluteo"], "equipment": ["ninguno"], "impact": "high", "low": "sentadillas"}, "sentadilla-bulgara": {"name": "Sentadilla bulgara", "steps": ["Un pie atras apoyado en una silla o banco.", "Baja la rodilla de atras hacia el suelo.", "Peso en la pierna delantera.", "Sube y repite; cambia."], "cue": "Cargar el peso en la pierna de atras.", "muscles": ["cuadriceps", "gluteo"], "equipment": ["silla"], "impact": "low"}, "zancadas": {"name": "Zancadas", "steps": ["Da un paso largo al frente.", "Baja la rodilla de atras, tronco recto.", "La rodilla delantera no pasa mucho la punta del pie.", "Vuelve y cambia de pierna."], "cue": "Tronco inclinado y pasos demasiado cortos.", "muscles": ["cuadriceps", "gluteo"], "equipment": ["ninguno"], "impact": "low", "canonical": "lunge"}, "zancadas-con-salto": {"name": "Zancadas con salto", "steps": ["Posicion de zancada.", "Salta cambiando de pierna en el aire.", "Aterriza suave amortiguando.", "Encadena con control."], "cue": "Aterrizar rigido. Si molestan rodillas, usa zancada normal.", "muscles": ["cuadriceps", "gluteo"], "equipment": ["ninguno"], "impact": "high", "low": "zancadas"}, "zancada-lateral": {"name": "Zancada lateral", "steps": ["Da un paso amplio a un lado.", "Flexiona esa pierna, la otra estirada.", "Empuja para volver al centro.", "Alterna lados."], "cue": "Rodilla hacia dentro; mantenla sobre el pie.", "muscles": ["cuadriceps", "gluteo", "aductor"], "equipment": ["ninguno"], "impact": "low"}, "peso-muerto-rumano": {"name": "Peso muerto rumano", "steps": ["De pie con mancuernas frente a los muslos.", "Lleva la cadera ATRAS bajando las pesas pegadas a las piernas.", "Espalda recta, ligera flexion de rodilla.", "Vuelve apretando gluteo."], "cue": "Redondear la espalda.", "muscles": ["femoral", "gluteo", "espalda"], "equipment": ["mancuernas"], "impact": "low", "canonical": "deadlift.romanian.dumbbell"}, "buenos-dias-con-mancuerna": {"name": "Buenos dias con mancuerna", "steps": ["Mancuerna sobre los hombros o el pecho.", "Lleva la cadera atras inclinando el tronco.", "Espalda recta, rodillas algo flexionadas.", "Vuelve apretando gluteo."], "cue": "Redondear la espalda.", "muscles": ["femoral", "gluteo", "espalda"], "equipment": ["mancuernas"], "impact": "low"}, "puente-de-gluteo": {"name": "Puente de gluteo", "steps": ["Boca arriba, rodillas dobladas, pies en el suelo.", "Empuja con los talones subiendo la cadera.", "Aprieta fuerte el gluteo arriba.", "Baja controlado."], "cue": "Arquear la lumbar en vez de apretar el gluteo.", "muscles": ["gluteo", "femoral"], "equipment": ["ninguno"], "impact": "low"}, "puente-a-una-pierna": {"name": "Puente a una pierna", "steps": ["Boca arriba, una pierna estirada.", "Empuja con el talon apoyado subiendo la cadera.", "Aprieta el gluteo arriba.", "Baja controlado; cambia."], "cue": "Dejar caer la cadera del lado libre.", "muscles": ["gluteo", "femoral"], "equipment": ["ninguno"], "impact": "low"}, "hip-thrust": {"name": "Hip thrust", "steps": ["Espalda alta apoyada en un sofa o banco, pies en el suelo.", "Mancuerna sobre la cadera.", "Empuja la cadera arriba apretando gluteo.", "Baja controlado."], "cue": "Arquear la lumbar en vez de apretar gluteo.", "muscles": ["gluteo", "femoral"], "equipment": ["mancuernas", "silla"], "impact": "low", "canonical": "hipthrust"}, "patada-de-gluteo": {"name": "Patada de gluteo", "steps": ["A cuatro patas.", "Lleva un talon hacia el techo con la rodilla doblada.", "Aprieta el gluteo arriba.", "Baja sin tocar y repite; cambia."], "cue": "Arquear la lumbar; sube solo donde el gluteo trabaje.", "muscles": ["gluteo"], "equipment": ["ninguno"], "impact": "low"}, "elevacion-de-gemelos": {"name": "Elevacion de gemelos", "steps": ["De pie, puntas de los pies en el suelo.", "Sube sobre las puntas lo mas alto posible.", "Aprieta el gemelo arriba.", "Baja despacio."], "cue": "Rebotar rapido sin controlar.", "muscles": ["gemelo"], "equipment": ["ninguno"], "impact": "low"}, "plancha": {"name": "Plancha", "steps": ["Antebrazos y puntas de los pies en el suelo.", "Cuerpo en linea recta de cabeza a talones.", "Aprieta abdomen y gluteo.", "Respira, no aguantes el aire."], "cue": "Subir el culo o dejar caer la cadera.", "muscles": ["core"], "equipment": ["ninguno"], "impact": "low", "canonical": "plank"}, "plancha-lateral": {"name": "Plancha lateral", "steps": ["De lado, apoyado en un antebrazo.", "Sube la cadera, cuerpo en linea.", "Aprieta el abdomen lateral.", "Aguanta y cambia."], "cue": "Dejar caer la cadera.", "muscles": ["core"], "equipment": ["ninguno"], "impact": "low"}, "plancha-con-toque-de-hombro": {"name": "Plancha con toque de hombro", "steps": ["Plancha alta, manos bajo los hombros.", "Toca un hombro con la mano contraria.", "Cadera quieta, sin balanceo.", "Alterna."], "cue": "Mover la cadera de lado a lado.", "muscles": ["core", "hombro"], "equipment": ["ninguno"], "impact": "low"}, "crunch-russian-twist": {"name": "Crunch / russian twist", "steps": ["Sentado, rodillas dobladas, algo inclinado atras.", "Junta las manos y gira el tronco a un lado.", "Vuelve al centro y gira al otro.", "Controla, sin tirones."], "cue": "Mover solo los brazos en vez de rotar el tronco.", "muscles": ["core"], "equipment": ["ninguno"], "impact": "low"}, "bicicleta-abdominal": {"name": "Bicicleta abdominal", "steps": ["Boca arriba, manos en la nuca.", "Lleva codo a rodilla contraria pedaleando.", "Alterna lado a lado.", "No tires del cuello."], "cue": "Tirar de la cabeza con las manos.", "muscles": ["core"], "equipment": ["ninguno"], "impact": "low"}, "elevacion-de-piernas": {"name": "Elevacion de piernas", "steps": ["Boca arriba, piernas estiradas.", "Subelas hasta la vertical.", "Baja despacio sin tocar el suelo.", "Lumbar pegada al suelo."], "cue": "Despegar la lumbar; flexiona rodillas si hace falta.", "muscles": ["core"], "equipment": ["ninguno"], "impact": "low"}, "hollow-hold": {"name": "Hollow hold", "steps": ["Boca arriba, brazos estirados tras la cabeza.", "Levanta hombros y piernas del suelo.", "Lumbar pegada al suelo, cuerpo en banana.", "Aguanta respirando."], "cue": "Despegar la lumbar del suelo.", "muscles": ["core"], "equipment": ["ninguno"], "impact": "low"}, "dead-bug": {"name": "Dead bug", "steps": ["Boca arriba, brazos al techo, rodillas a 90.", "Baja brazo y pierna contrarios a la vez.", "Lumbar pegada al suelo.", "Vuelve y alterna."], "cue": "Despegar la lumbar; ve mas corto si pasa.", "muscles": ["core"], "equipment": ["ninguno"], "impact": "low"}, "bird-dog": {"name": "Bird-dog", "steps": ["A cuatro patas.", "Estira brazo y pierna contrarios a la vez.", "Cuerpo estable, sin rotar la cadera.", "Vuelve y alterna."], "cue": "Arquear la espalda o rotar la cadera.", "muscles": ["core", "espalda"], "equipment": ["ninguno"], "impact": "low"}, "flexiones": {"name": "Flexiones", "steps": ["Manos algo mas anchas que los hombros.", "Cuerpo recto, abdomen apretado.", "Baja hasta casi tocar con el pecho.", "Empuja sin arquear la espalda."], "cue": "Dejar caer la cadera. Si cuesta, apoya rodillas.", "muscles": ["pecho", "triceps", "hombro"], "equipment": ["ninguno"], "impact": "low", "canonical": "pushup"}, "remo-con-mancuerna": {"name": "Remo con mancuerna", "steps": ["Una mano y rodilla en una silla, espalda plana.", "Mancuerna colgando, brazo estirado.", "Tira del codo atras hacia la cadera.", "Baja controlado. Cambia."], "cue": "Girar el tronco en vez de tirar con la espalda.", "muscles": ["espalda", "biceps"], "equipment": ["mancuernas", "silla"], "impact": "low", "canonical": "row.dumbbell"}, "remo-renegado": {"name": "Remo renegado", "steps": ["Plancha alta agarrando dos mancuernas.", "Rema una mancuerna a la cadera.", "Cadera estable, sin girar.", "Alterna brazos."], "cue": "Girar el tronco al remar.", "muscles": ["espalda", "core", "biceps"], "equipment": ["mancuernas"], "impact": "low"}, "remo-con-banda": {"name": "Remo con banda", "steps": ["Banda anclada al frente o bajo los pies.", "Tira llevando los codos atras.", "Junta los omoplatos.", "Vuelve controlado."], "cue": "Encoger los hombros hacia las orejas.", "muscles": ["espalda", "biceps"], "equipment": ["banda"], "impact": "low"}, "pajaro-apertura-inversa": {"name": "Pajaro (apertura inversa)", "steps": ["Tronco inclinado al frente, espalda recta.", "Mancuernas colgando, brazos algo flexionados.", "Abre los brazos a los lados juntando omoplatos.", "Baja controlado."], "cue": "Subir con impulso; hazlo lento.", "muscles": ["espalda", "hombro"], "equipment": ["mancuernas"], "impact": "low"}, "press-de-hombros": {"name": "Press de hombros", "steps": ["Mancuernas a la altura de los hombros.", "Empuja arriba casi estirando.", "No arquees la espalda.", "Baja controlado."], "cue": "Arquear la lumbar para empujar mas.", "muscles": ["hombro", "triceps"], "equipment": ["mancuernas"], "impact": "low", "canonical": "press.shoulder.dumbbell"}, "press-arnold": {"name": "Press Arnold", "steps": ["Mancuernas frente al pecho, palmas hacia ti.", "Sube girando las palmas al frente.", "Estira arriba sin arquear.", "Baja girando de vuelta."], "cue": "Arquear la lumbar al empujar.", "muscles": ["hombro", "triceps"], "equipment": ["mancuernas"], "impact": "low"}, "curl-de-biceps": {"name": "Curl de biceps", "steps": ["Mancuernas a los lados, palmas al frente.", "Sube doblando solo el codo.", "Codos pegados, sin balanceo.", "Baja despacio."], "cue": "Balancear el cuerpo para subir.", "muscles": ["biceps"], "equipment": ["mancuernas"], "impact": "low", "canonical": "curl.biceps.dumbbell"}, "fondos-de-triceps": {"name": "Fondos de triceps", "steps": ["Manos en el borde de una silla.", "Baja doblando los codos atras.", "Codos cerca del cuerpo.", "Empuja para subir."], "cue": "Abrir los codos hacia los lados.", "muscles": ["triceps"], "equipment": ["silla"], "impact": "low"}, "superman": {"name": "Superman", "steps": ["Boca abajo, brazos extendidos al frente.", "Levanta a la vez brazos, pecho y piernas.", "Aprieta espalda baja y gluteo.", "Baja controlado."], "cue": "Tirar del cuello. Mira al suelo.", "muscles": ["espalda", "gluteo"], "equipment": ["ninguno"], "impact": "low"}, "thrusters": {"name": "Thrusters", "steps": ["Mancuernas en los hombros, haz una sentadilla.", "Al subir, empujalas arriba con el impulso.", "Movimiento fluido sentadilla+press.", "Baja a los hombros y repite."], "cue": "Separar la sentadilla del press.", "muscles": ["cuadriceps", "gluteo", "hombro"], "equipment": ["mancuernas"], "impact": "low", "canonical": "thruster.dumbbell"}, "burpees": {"name": "Burpees", "steps": ["De pie, baja las manos al suelo.", "Pies atras a plancha.", "Pies adelante.", "Salta arriba con los brazos estirados."], "cue": "Dejar caer la cadera en plancha.", "muscles": ["fullbody"], "equipment": ["ninguno"], "impact": "high", "canonical": "burpee", "low": "burpees-sin-salto"}, "burpees-sin-salto": {"name": "Burpees sin salto", "steps": ["De pie, manos al suelo.", "Pies atras a plancha (o paso a paso).", "Pies adelante.", "Te incorporas SIN saltar."], "cue": "Ir con prisa y perder la linea del cuerpo.", "muscles": ["fullbody"], "equipment": ["ninguno"], "impact": "low"}, "swing-con-mancuerna": {"name": "Swing con mancuerna", "steps": ["Pies anchos, una mancuerna con las dos manos.", "Lleva la cadera atras, balancea entre las piernas.", "Empuja la cadera al frente para subir la pesa al pecho.", "El impulso viene de la cadera."], "cue": "Hacer sentadilla y subir con los brazos. El motor es la cadera.", "muscles": ["gluteo", "femoral", "espalda"], "equipment": ["mancuernas"], "impact": "low", "canonical": "swing.dumbbell"}, "mountain-climbers": {"name": "Mountain climbers", "steps": ["Plancha alta, manos bajo los hombros.", "Lleva una rodilla al pecho.", "Cambia de pierna con ritmo.", "Cadera baja y estable."], "cue": "Subir el culo. Bajo impacto: mas lento, sin saltar.", "muscles": ["core", "fullbody"], "equipment": ["ninguno"], "impact": "high", "low": "marcha-en-el-sitio"}, "escaladores-cruzados": {"name": "Escaladores cruzados", "steps": ["Plancha alta.", "Lleva una rodilla hacia el codo contrario.", "Alterna con ritmo.", "Cadera baja y estable."], "cue": "Subir el culo.", "muscles": ["core"], "equipment": ["ninguno"], "impact": "high", "low": "marcha-en-el-sitio"}, "rodillas-arriba": {"name": "Rodillas arriba", "steps": ["Corre en el sitio subiendo mucho las rodillas.", "Acompana con los brazos.", "Ritmo vivo.", "Aterriza con la puntera."], "cue": "No subir las rodillas. Bajo impacto: marcha.", "muscles": ["fullbody"], "equipment": ["ninguno"], "impact": "high", "low": "marcha-en-el-sitio"}, "saltos-de-patinador": {"name": "Saltos de patinador", "steps": ["Salta lateral de un pie al otro.", "Lleva el pie libre cruzado por detras.", "Aterriza suave y estable.", "Manten el ritmo."], "cue": "Aterrizar sin control. Bajo impacto: paso lateral.", "muscles": ["cuadriceps", "gluteo"], "equipment": ["ninguno"], "impact": "high", "low": "zancada-lateral"}, "marcha-en-el-sitio": {"name": "Marcha en el sitio", "steps": ["De pie, rodillas arriba alternando.", "Acompana con los brazos.", "Ritmo vivo pero controlado.", "Respira con regularidad."], "cue": "Ir tan suave que no sube el pulso.", "muscles": ["fullbody"], "equipment": ["ninguno"], "impact": "low"}, "movilidad-de-hombros": {"name": "Movilidad de hombros", "steps": ["De pie, brazos estirados.", "Circulos grandes hacia atras.", "A mitad, cambia hacia delante.", "Suelta el cuello."], "cue": "Hacerlos pequenos y rapidos.", "muscles": [], "equipment": ["ninguno"], "impact": "low"}, "movilidad-de-cadera": {"name": "Movilidad de cadera", "steps": ["Manos en la cadera.", "Circulos grandes con la cadera.", "Cambia de sentido.", "Luego balancea una pierna y cambia."], "cue": "Mover solo la cintura.", "muscles": [], "equipment": ["ninguno"], "impact": "low"}, "jumping-jacks-suaves": {"name": "Jumping jacks suaves", "steps": ["Abre y cierra piernas y brazos a la vez.", "Ritmo comodo para entrar en calor.", "Respira con el movimiento.", "Si molesta saltar, step lateral."], "cue": "Empezar a tope.", "muscles": [], "equipment": ["ninguno"], "impact": "low"}, "sentadillas-sin-peso": {"name": "Sentadillas sin peso", "steps": ["Pies al ancho de cadera.", "Baja sin prisa.", "Profundidad comoda.", "Sube con control."], "cue": "Buscar maxima profundidad en frio.", "muscles": [], "equipment": ["ninguno"], "impact": "low"}, "rotaciones-de-tronco": {"name": "Rotaciones de tronco", "steps": ["Pies fijos, brazos relajados.", "Gira el tronco a un lado dejando seguir los brazos.", "Vuelve y gira al otro.", "Ritmo suelto."], "cue": "Forzar el giro.", "muscles": [], "equipment": ["ninguno"], "impact": "low"}, "estiramiento-de-cuadriceps": {"name": "Estiramiento de cuadriceps", "steps": ["De pie, sujetate si hace falta.", "Lleva un talon al gluteo.", "Rodillas juntas, nota el muslo.", "Aguanta y cambia."], "cue": "Arquear la espalda.", "muscles": [], "equipment": ["ninguno"], "impact": "low"}, "estiramiento-de-femoral": {"name": "Estiramiento de femoral", "steps": ["Una pierna adelantada, talon en el suelo.", "Cadera atras, espalda recta.", "Inclinate desde la cadera.", "Nota detras del muslo. Cambia."], "cue": "Redondear la espalda para llegar.", "muscles": [], "equipment": ["ninguno"], "impact": "low"}, "estiramiento-de-pecho-y-hombros": {"name": "Estiramiento de pecho y hombros", "steps": ["Entrelaza las manos tras la espalda.", "Estira los brazos y abre el pecho.", "Sube un poco las manos.", "Respira y manten."], "cue": "Encoger los hombros.", "muscles": [], "equipment": ["ninguno"], "impact": "low"}, "estiramiento-de-espalda-gato": {"name": "Estiramiento de espalda (gato)", "steps": ["A cuatro patas, manos bajo hombros.", "Redondea la espalda mirando al ombligo.", "Luego hundela mirando al frente.", "Alterna lento con la respiracion."], "cue": "Ir rapido.", "muscles": [], "equipment": ["ninguno"], "impact": "low"}, "estiramiento-de-gluteo": {"name": "Estiramiento de gluteo", "steps": ["Boca arriba, cruza un tobillo sobre la rodilla contraria.", "Lleva la pierna al pecho.", "Nota el gluteo.", "Aguanta y cambia."], "cue": "Tirar con tirones.", "muscles": [], "equipment": ["ninguno"], "impact": "low"}, "respiracion-final": {"name": "Respiracion final", "steps": ["De pie o tumbado, ojos cerrados.", "Inhala por la nariz contando 4.", "Exhala por la boca contando 6.", "Repite y baja pulsaciones."], "cue": "Respirar solo con el pecho.", "muscles": [], "equipment": ["ninguno"], "impact": "low"}}, "workouts": [{"id": "inferior-clasico", "name": "Tren inferior — Clasico", "description": "Sentadillas, Zancadas, Peso muerto rumano, Puente de gluteo…", "category": "fuerza", "counts_as": "training", "equipment": ["mancuernas"], "est_min": 23, "sequence": [{"kind": "warmup", "ref": "movilidad-de-hombros", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "movilidad-de-cadera", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "jumping-jacks-suaves", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "sentadillas-sin-peso", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "rotaciones-de-tronco", "mode": "time", "sec": 30}, {"kind": "block", "rounds": 3, "rest": 15, "rest_rounds": 30, "items": [{"ref": "sentadillas", "mode": "time", "sec": 40}, {"ref": "zancadas", "mode": "time", "sec": 40}, {"ref": "peso-muerto-rumano", "mode": "time", "sec": 40}, {"ref": "puente-de-gluteo", "mode": "time", "sec": 40}, {"ref": "plancha", "mode": "time", "sec": 40}, {"ref": "crunch-russian-twist", "mode": "time", "sec": 40}]}, {"kind": "cooldown", "ref": "estiramiento-de-cuadriceps", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-femoral", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-pecho-y-hombros", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-espalda-gato", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-gluteo", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "respiracion-final", "mode": "time", "sec": 30}]}, {"id": "inferior-gluteo", "name": "Tren inferior — Gluteo", "description": "Hip thrust, Sentadilla bulgara, Peso muerto rumano, Patada de gluteo…", "category": "fuerza", "counts_as": "training", "equipment": ["mancuernas", "silla"], "est_min": 23, "sequence": [{"kind": "warmup", "ref": "movilidad-de-hombros", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "movilidad-de-cadera", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "jumping-jacks-suaves", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "sentadillas-sin-peso", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "rotaciones-de-tronco", "mode": "time", "sec": 30}, {"kind": "block", "rounds": 3, "rest": 15, "rest_rounds": 30, "items": [{"ref": "hip-thrust", "mode": "time", "sec": 40}, {"ref": "sentadilla-bulgara", "mode": "time", "sec": 40}, {"ref": "peso-muerto-rumano", "mode": "time", "sec": 40}, {"ref": "patada-de-gluteo", "mode": "time", "sec": 40}, {"ref": "puente-a-una-pierna", "mode": "time", "sec": 40}, {"ref": "plancha-lateral", "mode": "time", "sec": 40}]}, {"kind": "cooldown", "ref": "estiramiento-de-cuadriceps", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-femoral", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-pecho-y-hombros", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-espalda-gato", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-gluteo", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "respiracion-final", "mode": "time", "sec": 30}]}, {"id": "inferior-potencia", "name": "Tren inferior — Potencia", "description": "Sentadilla con salto, Zancadas con salto, Saltos de patinador, Sentadillas…", "category": "fuerza", "counts_as": "training", "equipment": ["ninguno"], "est_min": 23, "sequence": [{"kind": "warmup", "ref": "movilidad-de-hombros", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "movilidad-de-cadera", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "jumping-jacks-suaves", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "sentadillas-sin-peso", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "rotaciones-de-tronco", "mode": "time", "sec": 30}, {"kind": "block", "rounds": 3, "rest": 15, "rest_rounds": 30, "items": [{"ref": "sentadilla-con-salto", "mode": "time", "sec": 40}, {"ref": "zancadas-con-salto", "mode": "time", "sec": 40}, {"ref": "saltos-de-patinador", "mode": "time", "sec": 40}, {"ref": "sentadillas", "mode": "time", "sec": 40}, {"ref": "elevacion-de-gemelos", "mode": "time", "sec": 40}, {"ref": "hollow-hold", "mode": "time", "sec": 40}]}, {"kind": "cooldown", "ref": "estiramiento-de-cuadriceps", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-femoral", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-pecho-y-hombros", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-espalda-gato", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-gluteo", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "respiracion-final", "mode": "time", "sec": 30}]}, {"id": "inferior-resistencia", "name": "Tren inferior — Resistencia", "description": "Sentadillas, Zancada lateral, Buenos dias con mancuerna, Elevacion de gemelos…", "category": "fuerza", "counts_as": "training", "equipment": ["mancuernas"], "est_min": 23, "sequence": [{"kind": "warmup", "ref": "movilidad-de-hombros", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "movilidad-de-cadera", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "jumping-jacks-suaves", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "sentadillas-sin-peso", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "rotaciones-de-tronco", "mode": "time", "sec": 30}, {"kind": "block", "rounds": 3, "rest": 15, "rest_rounds": 30, "items": [{"ref": "sentadillas", "mode": "time", "sec": 40}, {"ref": "zancada-lateral", "mode": "time", "sec": 40}, {"ref": "buenos-dias-con-mancuerna", "mode": "time", "sec": 40}, {"ref": "elevacion-de-gemelos", "mode": "time", "sec": 40}, {"ref": "dead-bug", "mode": "time", "sec": 40}, {"ref": "plancha", "mode": "time", "sec": 40}]}, {"kind": "cooldown", "ref": "estiramiento-de-cuadriceps", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-femoral", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-pecho-y-hombros", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-espalda-gato", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-gluteo", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "respiracion-final", "mode": "time", "sec": 30}]}, {"id": "superior-clasico", "name": "Tren superior — Clasico", "description": "Flexiones, Remo con mancuerna, Press de hombros, Curl de biceps…", "category": "fuerza", "counts_as": "training", "equipment": ["mancuernas", "silla"], "est_min": 23, "sequence": [{"kind": "warmup", "ref": "movilidad-de-hombros", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "movilidad-de-cadera", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "jumping-jacks-suaves", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "sentadillas-sin-peso", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "rotaciones-de-tronco", "mode": "time", "sec": 30}, {"kind": "block", "rounds": 3, "rest": 15, "rest_rounds": 30, "items": [{"ref": "flexiones", "mode": "time", "sec": 40}, {"ref": "remo-con-mancuerna", "mode": "time", "sec": 40}, {"ref": "press-de-hombros", "mode": "time", "sec": 40}, {"ref": "curl-de-biceps", "mode": "time", "sec": 40}, {"ref": "fondos-de-triceps", "mode": "time", "sec": 40}, {"ref": "superman", "mode": "time", "sec": 40}]}, {"kind": "cooldown", "ref": "estiramiento-de-cuadriceps", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-femoral", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-pecho-y-hombros", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-espalda-gato", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-gluteo", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "respiracion-final", "mode": "time", "sec": 30}]}, {"id": "superior-empuje", "name": "Tren superior — Empuje", "description": "Flexiones, Press de hombros, Press Arnold, Fondos de triceps…", "category": "fuerza", "counts_as": "training", "equipment": ["mancuernas", "silla"], "est_min": 23, "sequence": [{"kind": "warmup", "ref": "movilidad-de-hombros", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "movilidad-de-cadera", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "jumping-jacks-suaves", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "sentadillas-sin-peso", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "rotaciones-de-tronco", "mode": "time", "sec": 30}, {"kind": "block", "rounds": 3, "rest": 15, "rest_rounds": 30, "items": [{"ref": "flexiones", "mode": "time", "sec": 40}, {"ref": "press-de-hombros", "mode": "time", "sec": 40}, {"ref": "press-arnold", "mode": "time", "sec": 40}, {"ref": "fondos-de-triceps", "mode": "time", "sec": 40}, {"ref": "plancha-con-toque-de-hombro", "mode": "time", "sec": 40}, {"ref": "superman", "mode": "time", "sec": 40}]}, {"kind": "cooldown", "ref": "estiramiento-de-cuadriceps", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-femoral", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-pecho-y-hombros", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-espalda-gato", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-gluteo", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "respiracion-final", "mode": "time", "sec": 30}]}, {"id": "superior-tiron", "name": "Tren superior — Tiron", "description": "Dominadas, Remo con mancuerna, Remo renegado, Pajaro (apertura inversa)…", "category": "fuerza", "counts_as": "training", "equipment": ["barra", "mancuernas", "silla"], "est_min": 23, "sequence": [{"kind": "warmup", "ref": "movilidad-de-hombros", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "movilidad-de-cadera", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "jumping-jacks-suaves", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "sentadillas-sin-peso", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "rotaciones-de-tronco", "mode": "time", "sec": 30}, {"kind": "block", "rounds": 3, "rest": 15, "rest_rounds": 30, "items": [{"ref": "dominadas", "mode": "time", "sec": 40}, {"ref": "remo-con-mancuerna", "mode": "time", "sec": 40}, {"ref": "remo-renegado", "mode": "time", "sec": 40}, {"ref": "pajaro-apertura-inversa", "mode": "time", "sec": 40}, {"ref": "curl-de-biceps", "mode": "time", "sec": 40}, {"ref": "superman", "mode": "time", "sec": 40}]}, {"kind": "cooldown", "ref": "estiramiento-de-cuadriceps", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-femoral", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-pecho-y-hombros", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-espalda-gato", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-gluteo", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "respiracion-final", "mode": "time", "sec": 30}]}, {"id": "superior-hombro-y-brazo", "name": "Tren superior — Hombro y brazo", "description": "Press de hombros, Pajaro (apertura inversa), Curl de biceps, Fondos de triceps…", "category": "fuerza", "counts_as": "training", "equipment": ["mancuernas", "silla"], "est_min": 23, "sequence": [{"kind": "warmup", "ref": "movilidad-de-hombros", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "movilidad-de-cadera", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "jumping-jacks-suaves", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "sentadillas-sin-peso", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "rotaciones-de-tronco", "mode": "time", "sec": 30}, {"kind": "block", "rounds": 3, "rest": 15, "rest_rounds": 30, "items": [{"ref": "press-de-hombros", "mode": "time", "sec": 40}, {"ref": "pajaro-apertura-inversa", "mode": "time", "sec": 40}, {"ref": "curl-de-biceps", "mode": "time", "sec": 40}, {"ref": "fondos-de-triceps", "mode": "time", "sec": 40}, {"ref": "press-arnold", "mode": "time", "sec": 40}, {"ref": "plancha", "mode": "time", "sec": 40}]}, {"kind": "cooldown", "ref": "estiramiento-de-cuadriceps", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-femoral", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-pecho-y-hombros", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-espalda-gato", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-gluteo", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "respiracion-final", "mode": "time", "sec": 30}]}, {"id": "fullbody-clasico", "name": "Full body — Clasico", "description": "Thrusters, Burpees, Swing con mancuerna, Mountain climbers…", "category": "fullbody", "counts_as": "training", "equipment": ["mancuernas"], "est_min": 23, "sequence": [{"kind": "warmup", "ref": "movilidad-de-hombros", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "movilidad-de-cadera", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "jumping-jacks-suaves", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "sentadillas-sin-peso", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "rotaciones-de-tronco", "mode": "time", "sec": 30}, {"kind": "block", "rounds": 3, "rest": 15, "rest_rounds": 30, "items": [{"ref": "thrusters", "mode": "time", "sec": 40}, {"ref": "burpees", "mode": "time", "sec": 40}, {"ref": "swing-con-mancuerna", "mode": "time", "sec": 40}, {"ref": "mountain-climbers", "mode": "time", "sec": 40}, {"ref": "zancadas-con-salto", "mode": "time", "sec": 40}, {"ref": "plancha-lateral", "mode": "time", "sec": 40}]}, {"kind": "cooldown", "ref": "estiramiento-de-cuadriceps", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-femoral", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-pecho-y-hombros", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-espalda-gato", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-gluteo", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "respiracion-final", "mode": "time", "sec": 30}]}, {"id": "fullbody-quema", "name": "Full body — Quema", "description": "Burpees, Swing con mancuerna, Saltos de patinador, Rodillas arriba…", "category": "fullbody", "counts_as": "training", "equipment": ["mancuernas"], "est_min": 23, "sequence": [{"kind": "warmup", "ref": "movilidad-de-hombros", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "movilidad-de-cadera", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "jumping-jacks-suaves", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "sentadillas-sin-peso", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "rotaciones-de-tronco", "mode": "time", "sec": 30}, {"kind": "block", "rounds": 3, "rest": 15, "rest_rounds": 30, "items": [{"ref": "burpees", "mode": "time", "sec": 40}, {"ref": "swing-con-mancuerna", "mode": "time", "sec": 40}, {"ref": "saltos-de-patinador", "mode": "time", "sec": 40}, {"ref": "rodillas-arriba", "mode": "time", "sec": 40}, {"ref": "escaladores-cruzados", "mode": "time", "sec": 40}, {"ref": "hollow-hold", "mode": "time", "sec": 40}]}, {"kind": "cooldown", "ref": "estiramiento-de-cuadriceps", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-femoral", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-pecho-y-hombros", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-espalda-gato", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-gluteo", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "respiracion-final", "mode": "time", "sec": 30}]}, {"id": "fullbody-fuerza-y-cardio", "name": "Full body — Fuerza y cardio", "description": "Thrusters, Remo renegado, Swing con mancuerna, Sentadilla con salto…", "category": "fullbody", "counts_as": "training", "equipment": ["mancuernas"], "est_min": 23, "sequence": [{"kind": "warmup", "ref": "movilidad-de-hombros", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "movilidad-de-cadera", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "jumping-jacks-suaves", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "sentadillas-sin-peso", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "rotaciones-de-tronco", "mode": "time", "sec": 30}, {"kind": "block", "rounds": 3, "rest": 15, "rest_rounds": 30, "items": [{"ref": "thrusters", "mode": "time", "sec": 40}, {"ref": "remo-renegado", "mode": "time", "sec": 40}, {"ref": "swing-con-mancuerna", "mode": "time", "sec": 40}, {"ref": "sentadilla-con-salto", "mode": "time", "sec": 40}, {"ref": "flexiones", "mode": "time", "sec": 40}, {"ref": "plancha", "mode": "time", "sec": 40}]}, {"kind": "cooldown", "ref": "estiramiento-de-cuadriceps", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-femoral", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-pecho-y-hombros", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-espalda-gato", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-gluteo", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "respiracion-final", "mode": "time", "sec": 30}]}, {"id": "fullbody-sin-saltos", "name": "Full body — Sin saltos", "description": "Thrusters, Swing con mancuerna, Remo con mancuerna, Buenos dias con mancuerna…", "category": "fullbody", "counts_as": "training", "equipment": ["mancuernas", "silla"], "est_min": 23, "sequence": [{"kind": "warmup", "ref": "movilidad-de-hombros", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "movilidad-de-cadera", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "jumping-jacks-suaves", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "sentadillas-sin-peso", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "rotaciones-de-tronco", "mode": "time", "sec": 30}, {"kind": "block", "rounds": 3, "rest": 15, "rest_rounds": 30, "items": [{"ref": "thrusters", "mode": "time", "sec": 40}, {"ref": "swing-con-mancuerna", "mode": "time", "sec": 40}, {"ref": "remo-con-mancuerna", "mode": "time", "sec": 40}, {"ref": "buenos-dias-con-mancuerna", "mode": "time", "sec": 40}, {"ref": "marcha-en-el-sitio", "mode": "time", "sec": 40}, {"ref": "dead-bug", "mode": "time", "sec": 40}]}, {"kind": "cooldown", "ref": "estiramiento-de-cuadriceps", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-femoral", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-pecho-y-hombros", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-espalda-gato", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-gluteo", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "respiracion-final", "mode": "time", "sec": 30}]}, {"id": "core-completo", "name": "Core — Completo", "description": "Plancha, Crunch / russian twist, Dead bug, Hollow hold…", "category": "core", "counts_as": "training", "equipment": ["ninguno"], "est_min": 23, "sequence": [{"kind": "warmup", "ref": "movilidad-de-hombros", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "movilidad-de-cadera", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "jumping-jacks-suaves", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "sentadillas-sin-peso", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "rotaciones-de-tronco", "mode": "time", "sec": 30}, {"kind": "block", "rounds": 3, "rest": 15, "rest_rounds": 30, "items": [{"ref": "plancha", "mode": "time", "sec": 40}, {"ref": "crunch-russian-twist", "mode": "time", "sec": 40}, {"ref": "dead-bug", "mode": "time", "sec": 40}, {"ref": "hollow-hold", "mode": "time", "sec": 40}, {"ref": "plancha-lateral", "mode": "time", "sec": 40}, {"ref": "bird-dog", "mode": "time", "sec": 40}]}, {"kind": "cooldown", "ref": "estiramiento-de-cuadriceps", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-femoral", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-pecho-y-hombros", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-espalda-gato", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-gluteo", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "respiracion-final", "mode": "time", "sec": 30}]}, {"id": "core-dinamico", "name": "Core — Dinamico", "description": "Mountain climbers, Bicicleta abdominal, Elevacion de piernas, Escaladores cruzados…", "category": "core", "counts_as": "training", "equipment": ["ninguno"], "est_min": 23, "sequence": [{"kind": "warmup", "ref": "movilidad-de-hombros", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "movilidad-de-cadera", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "jumping-jacks-suaves", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "sentadillas-sin-peso", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "rotaciones-de-tronco", "mode": "time", "sec": 30}, {"kind": "block", "rounds": 3, "rest": 15, "rest_rounds": 30, "items": [{"ref": "mountain-climbers", "mode": "time", "sec": 40}, {"ref": "bicicleta-abdominal", "mode": "time", "sec": 40}, {"ref": "elevacion-de-piernas", "mode": "time", "sec": 40}, {"ref": "escaladores-cruzados", "mode": "time", "sec": 40}, {"ref": "plancha-con-toque-de-hombro", "mode": "time", "sec": 40}, {"ref": "hollow-hold", "mode": "time", "sec": 40}]}, {"kind": "cooldown", "ref": "estiramiento-de-cuadriceps", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-femoral", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-pecho-y-hombros", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-espalda-gato", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-gluteo", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "respiracion-final", "mode": "time", "sec": 30}]}, {"id": "core-estatico", "name": "Core — Estatico", "description": "Plancha, Plancha lateral, Hollow hold, Bird-dog…", "category": "core", "counts_as": "training", "equipment": ["ninguno"], "est_min": 23, "sequence": [{"kind": "warmup", "ref": "movilidad-de-hombros", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "movilidad-de-cadera", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "jumping-jacks-suaves", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "sentadillas-sin-peso", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "rotaciones-de-tronco", "mode": "time", "sec": 30}, {"kind": "block", "rounds": 3, "rest": 15, "rest_rounds": 30, "items": [{"ref": "plancha", "mode": "time", "sec": 40}, {"ref": "plancha-lateral", "mode": "time", "sec": 40}, {"ref": "hollow-hold", "mode": "time", "sec": 40}, {"ref": "bird-dog", "mode": "time", "sec": 40}, {"ref": "superman", "mode": "time", "sec": 40}, {"ref": "dead-bug", "mode": "time", "sec": 40}]}, {"kind": "cooldown", "ref": "estiramiento-de-cuadriceps", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-femoral", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-pecho-y-hombros", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-espalda-gato", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-gluteo", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "respiracion-final", "mode": "time", "sec": 30}]}, {"id": "cardio-hiit", "name": "Cardio — HIIT", "description": "Burpees, Rodillas arriba, Saltos de patinador, Mountain climbers…", "category": "cardio", "counts_as": "training", "equipment": ["ninguno"], "est_min": 23, "sequence": [{"kind": "warmup", "ref": "movilidad-de-hombros", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "movilidad-de-cadera", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "jumping-jacks-suaves", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "sentadillas-sin-peso", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "rotaciones-de-tronco", "mode": "time", "sec": 30}, {"kind": "block", "rounds": 3, "rest": 15, "rest_rounds": 30, "items": [{"ref": "burpees", "mode": "time", "sec": 40}, {"ref": "rodillas-arriba", "mode": "time", "sec": 40}, {"ref": "saltos-de-patinador", "mode": "time", "sec": 40}, {"ref": "mountain-climbers", "mode": "time", "sec": 40}, {"ref": "sentadilla-con-salto", "mode": "time", "sec": 40}, {"ref": "zancadas-con-salto", "mode": "time", "sec": 40}]}, {"kind": "cooldown", "ref": "estiramiento-de-cuadriceps", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-femoral", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-pecho-y-hombros", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-espalda-gato", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-gluteo", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "respiracion-final", "mode": "time", "sec": 30}]}, {"id": "cardio-sin-saltos", "name": "Cardio — Sin saltos", "description": "Marcha en el sitio, Escaladores cruzados, Buenos dias con mancuerna, Swing con mancuerna…", "category": "cardio", "counts_as": "training", "equipment": ["mancuernas"], "est_min": 23, "sequence": [{"kind": "warmup", "ref": "movilidad-de-hombros", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "movilidad-de-cadera", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "jumping-jacks-suaves", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "sentadillas-sin-peso", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "rotaciones-de-tronco", "mode": "time", "sec": 30}, {"kind": "block", "rounds": 3, "rest": 15, "rest_rounds": 30, "items": [{"ref": "marcha-en-el-sitio", "mode": "time", "sec": 40}, {"ref": "escaladores-cruzados", "mode": "time", "sec": 40}, {"ref": "buenos-dias-con-mancuerna", "mode": "time", "sec": 40}, {"ref": "swing-con-mancuerna", "mode": "time", "sec": 40}, {"ref": "sentadillas", "mode": "time", "sec": 40}, {"ref": "zancada-lateral", "mode": "time", "sec": 40}]}, {"kind": "cooldown", "ref": "estiramiento-de-cuadriceps", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-femoral", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-pecho-y-hombros", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-espalda-gato", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-gluteo", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "respiracion-final", "mode": "time", "sec": 30}]}, {"id": "cardio-mixto", "name": "Cardio — Mixto", "description": "Swing con mancuerna, Burpees, Thrusters, Mountain climbers…", "category": "cardio", "counts_as": "training", "equipment": ["mancuernas"], "est_min": 23, "sequence": [{"kind": "warmup", "ref": "movilidad-de-hombros", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "movilidad-de-cadera", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "jumping-jacks-suaves", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "sentadillas-sin-peso", "mode": "time", "sec": 30}, {"kind": "warmup", "ref": "rotaciones-de-tronco", "mode": "time", "sec": 30}, {"kind": "block", "rounds": 3, "rest": 15, "rest_rounds": 30, "items": [{"ref": "swing-con-mancuerna", "mode": "time", "sec": 40}, {"ref": "burpees", "mode": "time", "sec": 40}, {"ref": "thrusters", "mode": "time", "sec": 40}, {"ref": "mountain-climbers", "mode": "time", "sec": 40}, {"ref": "saltos-de-patinador", "mode": "time", "sec": 40}, {"ref": "marcha-en-el-sitio", "mode": "time", "sec": 40}]}, {"kind": "cooldown", "ref": "estiramiento-de-cuadriceps", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-femoral", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-pecho-y-hombros", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-espalda-gato", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "estiramiento-de-gluteo", "mode": "time", "sec": 30}, {"kind": "cooldown", "ref": "respiracion-final", "mode": "time", "sec": 30}]}, {"id": "dominadas-fuerza", "name": "Dominadas — Fuerza", "description": "4 series a tu ritmo, descanso de verdad.", "category": "fuerza", "counts_as": "training", "equipment": ["barra"], "est_min": 10, "sequence": [{"kind": "warmup", "ref": "movilidad-de-hombros", "mode": "time", "sec": 40}, {"kind": "block", "rounds": 4, "rest": 90, "items": [{"ref": "dominadas", "mode": "reps", "target": "máx (deja 1 en reserva)"}]}, {"kind": "cooldown", "ref": "estiramiento-de-pecho-y-hombros", "mode": "time", "sec": 30}]}, {"id": "movilidad-recuperacion", "name": "Movilidad — Recuperación", "description": "Día suave: movilidad y respiración.", "category": "movilidad", "counts_as": "recovery", "equipment": ["ninguno"], "est_min": 8, "sequence": [{"kind": "warmup", "ref": "movilidad-de-hombros", "mode": "time", "sec": 40}, {"kind": "warmup", "ref": "movilidad-de-cadera", "mode": "time", "sec": 40}, {"kind": "work", "ref": "estiramiento-de-espalda-gato", "mode": "time", "sec": 45}, {"kind": "cooldown", "ref": "estiramiento-de-femoral", "mode": "time", "sec": 40}, {"kind": "cooldown", "ref": "estiramiento-de-gluteo", "mode": "time", "sec": 40}, {"kind": "cooldown", "ref": "respiracion-final", "mode": "time", "sec": 45}]}]};
 
-/* ---- config state + persistence ---- */
-let day=1, dayMode="auto", level="medio", lowImpact=false, doPullups=true, doWarmup=true, doStretch=true, sound=true, vibON=true;
-const CFGKEY='beat-config', LSKEY='beat-log';
-function saveCfg(){try{localStorage.setItem(CFGKEY,JSON.stringify({day,dayMode,level,lowImpact,doPullups,doWarmup,doStretch,sound,vibON}))}catch(e){}}
-function loadCfg(){try{const c=JSON.parse(localStorage.getItem(CFGKEY));if(c){day=c.day??day;dayMode=c.dayMode??'auto';level=c.level??level;lowImpact=!!c.lowImpact;doPullups=c.doPullups??true;doWarmup=c.doWarmup??true;doStretch=c.doStretch??true;sound=c.sound??true;vibON=c.vibON??true}}catch(e){}}
-function loadLog(){try{return JSON.parse(localStorage.getItem(LSKEY))||[]}catch(e){return []}}
-function saveLog(arr){try{localStorage.setItem(LSKEY,JSON.stringify(arr))}catch(e){}}
-function logSession(e){const a=loadLog();a.push(e);saveLog(a)}
+/* ============ IndexedDB ============ */
+let db=null;
+function openDB(){return new Promise((res,rej)=>{const r=indexedDB.open('beat',1);
+ r.onupgradeneeded=e=>{const d=e.target.result;
+  if(!d.objectStoreNames.contains('packs'))d.createObjectStore('packs',{keyPath:'pack.id'});
+  if(!d.objectStoreNames.contains('log'))d.createObjectStore('log',{autoIncrement:true});
+  if(!d.objectStoreNames.contains('kv'))d.createObjectStore('kv');};
+ r.onsuccess=()=>{db=r.result;res(db)};r.onerror=()=>rej(r.error)})}
+function req(r){return new Promise((res,rej)=>{r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)})}
+function kvGet(k){return req(db.transaction('kv').objectStore('kv').get(k))}
+function kvSet(k,v){return req(db.transaction('kv','readwrite').objectStore('kv').put(v,k))}
+function packPut(p){return req(db.transaction('packs','readwrite').objectStore('packs').put(p))}
+function packGet(id){return req(db.transaction('packs').objectStore('packs').get(id))}
+function packAll(){return req(db.transaction('packs').objectStore('packs').getAll())}
+function packDel(id){return req(db.transaction('packs','readwrite').objectStore('packs').delete(id))}
+function logAdd(e){return req(db.transaction('log','readwrite').objectStore('log').add(e))}
+function logAll(){return req(db.transaction('log').objectStore('log').getAll())}
+function logClear(){return req(db.transaction('log','readwrite').objectStore('log').clear())}
+async function logReplace(arr){await logClear();for(const e of arr){await logAdd(e)}}
 
-/* ---- sound engine (reusable AudioContext) ---- */
-let actx=null;
-function initAudio(){if(!actx){try{actx=new(window.AudioContext||window.webkitAudioContext)()}catch(e){}}if(actx&&actx.state==='suspended')actx.resume()}
-function blip(freq,dur,when,type,vol){
-  if(!actx)return;
-  const t=actx.currentTime+(when||0);
-  const o=actx.createOscillator(),g=actx.createGain();
-  o.type=type||'sine';o.frequency.value=freq;o.connect(g);g.connect(actx.destination);
-  g.gain.setValueAtTime(.0001,t);
-  g.gain.exponentialRampToValueAtTime(vol||.3,t+.012);
-  g.gain.exponentialRampToValueAtTime(.0001,t+dur);
-  o.start(t);o.stop(t+dur+.03);
-}
-function sCount(){if(sound)blip(700,.09,0,'square',.16)}                                  // últimos 3 s
-function sGo(){if(sound){blip(523,.12,0,'sine',.32);blip(784,.20,.12,'sine',.34)}}        // a trabajar (sube)
-function sRest(){if(sound){blip(523,.14,0,'sine',.26);blip(392,.22,.14,'sine',.24)}}      // a descansar (baja)
-function sMob(){if(sound)blip(587,.18,0,'triangle',.24)}                                  // movilidad (suave)
-function sPrep(){if(sound)blip(440,.12,0,'triangle',.20)}                                 // prepárate
-function sFinish(){if(sound){[523,659,784,1047].forEach((f,i)=>blip(f,i===3?.34:.14,i*.14,'sine',.32))}}
-
-/* ---- day rotation ---- */
-function nextDayInRotation(){const log=loadLog();if(!log.length)return 1;const last=log[log.length-1].day;return (last%3)+1}
-function resolveAutoDay(){if(dayMode==='auto')day=nextDayInRotation()}
-
-/* ---- config UI ---- */
-const daysEl=document.getElementById('days');
-Object.entries(baseCircuits).forEach(([d,c])=>{
-  const div=document.createElement('div');div.className='card';div.dataset.d=d;
-  div.innerHTML=`<h3>Día ${d} · ${c.name}</h3><p>${c.ex.join(' · ')}</p>`;
-  div.onclick=()=>{day=+d;applyCfgUI();saveCfg();updMeta();updSummary()};
-  daysEl.appendChild(div);
-});
-const dmEl=document.getElementById('daymode');
-[...dmEl.children].forEach(b=>{b.onclick=()=>{dayMode=b.dataset.m;if(dayMode==='auto')resolveAutoDay();applyCfgUI();saveCfg();updMeta();updSummary()}});
-const intEl=document.getElementById('intens');
-Object.entries(levels).forEach(([k,l])=>{
-  const div=document.createElement('div');div.className='card';div.dataset.k=k;
-  div.innerHTML=`<span class="big">${l.w}s</span><span class="lbl">${l.lbl}</span>`;
-  div.onclick=()=>{level=k;applyCfgUI();saveCfg();updMeta();updSummary()};
-  intEl.appendChild(div);
-});
-function tog(id,get,set){const el=document.getElementById(id);el.onclick=()=>{set(!get());applyCfgUI();saveCfg();updMeta();updSummary()}}
-tog('warmup',()=>doWarmup,v=>doWarmup=v);
-tog('lowimp',()=>lowImpact,v=>lowImpact=v);
-tog('pullups',()=>doPullups,v=>doPullups=v);
-tog('stretch',()=>doStretch,v=>doStretch=v);
-tog('sound',()=>sound,v=>{sound=v;if(v){initAudio();sGo()}});
-tog('vibtg',()=>vibON,v=>{vibON=v;if(v)vib(80)});
-function applyCfgUI(){
-  [...daysEl.children].forEach(x=>x.classList.toggle('sel',+x.dataset.d===day));
-  [...dmEl.children].forEach(b=>b.classList.toggle('on',b.dataset.m===dayMode));
-  const hint=document.getElementById('dayhint');
-  if(dayMode==='auto') hint.innerHTML=`Te toca el <b>Día ${day}</b>, según la rotación de tu último entreno. Puedes tocar otro solo para hoy.`;
-  else hint.textContent='Eliges tú el día cada vez.';
-  [...intEl.children].forEach(x=>x.classList.toggle('sel',x.dataset.k===level));
-  document.getElementById('warmup').classList.toggle('on',doWarmup);
-  document.getElementById('lowimp').classList.toggle('on',lowImpact);
-  document.getElementById('pullups').classList.toggle('on',doPullups);
-  document.getElementById('stretch').classList.toggle('on',doStretch);
-  document.getElementById('sound').classList.toggle('on',sound);
-  document.getElementById('vibtg').classList.toggle('on',vibON);
-}
-function circuitFor(d){const c=baseCircuits[d];const ex=lowImpact?c.ex.map(e=>lowImpactMap[e]||e):c.ex.slice();return {name:c.name,ex}}
-function estTotal(){const l=levels[level],c=circuitFor(day);let t=(l.w+l.r)*c.ex.length*l.rounds;if(doWarmup)t+=warmupEx.length*30+5;if(doStretch)t+=stretchEx.length*30+5;if(doPullups)t+=4*35+3*60+30;return t}
-function updMeta(){const l=levels[level],ex=[];if(doWarmup)ex.push('calentamiento');if(doPullups)ex.push('dominadas');if(doStretch)ex.push('estiramientos');if(lowImpact)ex.push('bajo impacto');document.getElementById('meta').innerHTML=`${l.d}<br>≈ ${Math.round(estTotal()/60)} min${ex.length?' · '+ex.join(' · '):''}`}
-function updSummary(){
-  const tags=[`<span class="pill">Día ${day}</span>`,`<span class="pill">${levels[level].lbl}</span>`];
-  if(doPullups)tags.push('<span class="pill">dominadas</span>');
-  if(lowImpact)tags.push('<span class="pill">bajo impacto</span>');
-  document.getElementById('summary').innerHTML=`<b>${baseCircuits[day].name}</b><br>${tags.join(' ')}<br><span style="font-size:12px">≈ ${Math.round(estTotal()/60)} min</span>`;
+/* migration from v1 localStorage */
+async function migrate(){
+  if(await kvGet('migrated'))return;
+  try{const old=JSON.parse(localStorage.getItem('beat-log')||'null');
+    if(Array.isArray(old)&&old.length){for(const e of old){await logAdd({ts:e.ts,date:e.date,dow:e.dow,time:e.time,durSec:e.durSec||0,workSec:null,intervals:null,packId:'legacy',packName:'Beat v1',workoutId:e.circuit||('dia-'+(e.day||'')),workoutName:(e.typeLabel?e.typeLabel+' - ':'')+(e.circuit||('Dia '+(e.day||''))),category:e.type||'fuerza',counts_as:'training',exercises:[],muscles:[]})}}}catch(err){}
+  await kvSet('migrated',1);
 }
 
-/* ---- workout engine ---- */
-let seq=[], idx=0, left=0, iv=null, paused=false, running=false, startTs=0, phaseEnd=0, remMsAtPause=0, pausedTotalMs=0, pauseStart=0;
+/* ============ pack validation ============ */
+function validatePack(p){
+  if(!p||p.schema!==2||!p.pack||!p.pack.id||!Array.isArray(p.workouts)||!p.exercises)return 'Formato no valido (schema 2 requerido).';
+  const ids=new Set(Object.keys(p.exercises));
+  for(const w of p.workouts){
+    if(!w.id||!w.name||!Array.isArray(w.sequence))return 'Workout invalido: '+(w.id||w.name||'?');
+    const items=[];
+    for(const st of w.sequence){if(st.kind==='block'){if(!Array.isArray(st.items))return 'Bloque sin items en '+w.id;items.push(...st.items)}else items.push(st)}
+    for(const it of items){
+      if(it.kind==='note'){if(!it.text)return 'note sin text en '+w.id;continue}
+      if(it.kind==='rest')continue;
+      if(!it.ref||!ids.has(it.ref))return 'ref desconocida "'+(it.ref||'?')+'" en '+w.id;
+      const m=it.mode||'time';
+      if((m==='time'||m==='hold')&&typeof it.sec!=='number')return 'falta sec en '+it.ref+' ('+w.id+')';
+      if(m==='reps'&&!it.target)return 'falta target en '+it.ref+' ('+w.id+')';
+    }
+  }
+  for(const e of Object.values(p.exercises)){if(e.low&&!ids.has(e.low))return 'alternativa low desconocida: '+e.low}
+  const wids=new Set(p.workouts.map(w=>w.id));
+  for(const r of ((p.plan&&p.plan.rotation)||[])){if(!wids.has(r))return 'rotation apunta a workout inexistente: '+r}
+  return null;
+}
 
-/* ---- wake lock (mantener pantalla encendida) ---- */
+/* ============ state ============ */
+let PACK=null, cfg={wkMode:'auto',wkId:null,warm:true,cool:true,lowImpact:false,sound:true,vib:true};
+let LOG=[]; // cached
+function ex(id){return PACK.exercises[id]}
+function exDisplay(id){const e=ex(id);return e?e.name:id}
+
+async function saveCfg(){await kvSet('config',cfg)}
+async function loadAll(){
+  const c=await kvGet('config');if(c)cfg=Object.assign(cfg,c);
+  LOG=await logAll();
+  let activeId=await kvGet('active');
+  let packs=await packAll();
+  const emb=DEFAULT_PACK;
+  const existing=packs.find(p=>p.pack.id===emb.pack.id);
+  if(!existing||((existing.pack.version||0)<(emb.pack.version||0))){await packPut(emb);packs=await packAll()}
+  if(!activeId||!packs.find(p=>p.pack.id===activeId)){activeId=emb.pack.id;await kvSet('active',activeId)}
+  PACK=await packGet(activeId);
+}
+
+/* ============ workout resolution ============ */
+function packLog(){return LOG.filter(e=>e.packId===PACK.pack.id)}
+function autoWorkoutId(){
+  const plan=PACK.plan||{};
+  const sch=plan.schedule||{};
+  const today=String(new Date().getDay());
+  if(sch[today]&&PACK.workouts.find(w=>w.id===sch[today]))return sch[today]; // schedule manda
+  const rot=(plan.rotation&&plan.rotation.length)?plan.rotation:PACK.workouts.filter(w=>w.counts_as!=='recovery').map(w=>w.id);
+  const pl=packLog();
+  for(let j=pl.length-1;j>=0;j--){const k=rot.indexOf(pl[j].workoutId);if(k>=0)return rot[(k+1)%rot.length]}
+  return rot[0];
+}
+function currentWorkout(){
+  let id=(cfg.wkMode==='manual'&&cfg.wkId)?cfg.wkId:autoWorkoutId();
+  let w=PACK.workouts.find(x=>x.id===id)||PACK.workouts[0];
+  return w;
+}
+
+/* ============ sequence compiler ============ */
+function lowSwap(ref){if(!cfg.lowImpact)return ref;const e=ex(ref);return (e&&e.low&&ex(e.low))?e.low:ref}
+function compile(w){
+  const out=[];
+  function pushEx(it,kindDefault,roundLbl){
+    const kind=it.kind||kindDefault||'work';
+    if(kind==='note'){out.push({type:'note',name:it.text,sec:it.sec||null});return}
+    if(kind==='rest'){out.push({type:'rest',name:'Descanso',sec:it.sec||15});return}
+    const ref=lowSwap(it.ref);
+    const mode=it.mode||'time';
+    const t=(kind==='warmup')?'warm':(kind==='cooldown')?'stretch':'work';
+    out.push({type:t,mode:mode,ref:ref,name:exDisplay(ref),sec:(mode==='reps')?null:(it.sec||30),target:it.target||null,round:roundLbl||null});
+  }
+  for(const st of w.sequence){
+    if(st.kind==='block'){
+      const rounds=st.rounds||1,rest=(st.rest!=null)?st.rest:0;
+      const restR=(st.rest_rounds!=null)?st.rest_rounds:rest;
+      for(let r=0;r<rounds;r++){
+        st.items.forEach((it,i)=>{
+          pushEx(it,'work','Ronda '+(r+1)+(rounds>1?' / '+rounds:''));
+          const lastItem=(i===st.items.length-1),lastRound=(r===rounds-1);
+          let after=(it.rest_after!=null)?it.rest_after:(lastItem?(lastRound?0:restR):rest);
+          if(after>0&&!(lastItem&&lastRound))out.push({type:'rest',name:'Descanso',sec:after});
+        });
+      }
+    } else pushEx(st,st.kind||'work',null);
+  }
+  let seq=out;
+  if(!cfg.warm)seq=seq.filter(s=>s.type!=='warm');
+  if(!cfg.cool)seq=seq.filter(s=>s.type!=='stretch');
+  // strip leading/trailing rests after filtering
+  while(seq.length&&seq[0].type==='rest')seq.shift();
+  while(seq.length&&seq[seq.length-1].type==='rest')seq.pop();
+  seq.unshift({type:'prep',name:'Preparate',sec:6});
+  return seq;
+}
+function estSec(w){
+  const seq=compile(w);let t=0;
+  for(const s of seq){t+=(s.sec!=null)?s.sec:45} // reps items ~45s estimate
+  return t;
+}
+
+/* ============ wake lock / vib / audio ============ */
 let wakeLock=null;
 async function reqWake(){try{if('wakeLock' in navigator)wakeLock=await navigator.wakeLock.request('screen')}catch(e){}}
 function relWake(){try{if(wakeLock){wakeLock.release();wakeLock=null}}catch(e){}}
 document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&running){reqWake();initAudio()}});
-
-/* ---- vibración ---- */
-function vib(p){if(vibON){try{navigator.vibrate&&navigator.vibrate(p)}catch(e){}}}
+function vib(p){if(cfg.vib){try{navigator.vibrate&&navigator.vibrate(p)}catch(e){}}}
 function vibPhase(s){if(s.type==='work')vib(140);else if(s.type==='rest')vib(70);else if(s.type==='warm'||s.type==='stretch')vib(50);else vib(40)}
-function build(){
-  const l=levels[level], c=circuitFor(day);seq=[];
-  if(doWarmup){seq.push({type:'prep',name:'Calentamiento',sec:5});warmupEx.forEach(e=>seq.push({type:'warm',name:e,sec:30,round:'Calentamiento',info:e}))}
-  if(doPullups){seq.push({type:'prep',name:'Prepárate',sec:8});for(let s=0;s<4;s++){seq.push({type:'work',name:'Dominadas',sec:35,round:'Fuerza',info:'Dominadas'});if(s<3)seq.push({type:'rest',name:'Descanso',sec:60})}seq.push({type:'rest',name:'Transición al circuito',sec:30})}
-  seq.push({type:'prep',name:'Prepárate',sec:8});
-  for(let r=0;r<l.rounds;r++){c.ex.forEach((e,i)=>{seq.push({type:'work',name:e,sec:l.w,round:'Ronda '+(r+1),info:e});const last=(r===l.rounds-1&&i===c.ex.length-1);if(!last)seq.push({type:'rest',name:'Descanso',sec:l.r})})}
-  if(doStretch){seq.push({type:'prep',name:'Vuelta a la calma',sec:5});stretchEx.forEach(e=>seq.push({type:'stretch',name:e,sec:30,round:'Estiramientos',info:e}))}
-}
-function phaseSound(s){if(s.type==='work')sGo();else if(s.type==='rest')sRest();else if(s.type==='warm'||s.type==='stretch')sMob();else sPrep()}
-const C=283;let curInfo=null;
-function show(playSnd){
-  const s=seq[idx];left=s.sec;
-  const isMob=(s.type==='warm'||s.type==='stretch'),isActive=(s.type==='work');
-  const isRestPrep=(s.type==='rest'||s.type==='prep');
-  let col=isActive?'#c5ff3d':(isMob?'#4dd0e1':'#ff5c2b');
-  document.getElementById('phase').textContent=(isActive||isMob)?s.round:(s.type==='rest'?'Descanso':s.name);
+let actx=null;
+function initAudio(){if(!actx){try{actx=new(window.AudioContext||window.webkitAudioContext)()}catch(e){}}if(actx&&actx.state==='suspended')actx.resume()}
+function blip(f,d,w,t,v){if(!actx||!cfg.sound)return;const tt=actx.currentTime+(w||0);const o=actx.createOscillator(),g=actx.createGain();o.type=t||'sine';o.frequency.value=f;o.connect(g);g.connect(actx.destination);g.gain.setValueAtTime(.0001,tt);g.gain.exponentialRampToValueAtTime(v||.3,tt+.012);g.gain.exponentialRampToValueAtTime(.0001,tt+d);o.start(tt);o.stop(tt+d+.03)}
+function sCount(){blip(700,.09,0,'square',.16)}
+function sGo(){blip(523,.12,0,'sine',.32);blip(784,.2,.12,'sine',.34)}
+function sRest(){blip(523,.14,0,'sine',.26);blip(392,.22,.14,'sine',.24)}
+function sMob(){blip(587,.18,0,'triangle',.24)}
+function sPrep(){blip(440,.12,0,'triangle',.2)}
+function sFinish(){[523,659,784,1047].forEach((f,i)=>blip(f,i===3?.34:.14,i*.14,'sine',.32))}
+
+/* ============ run engine ============ */
+let seq=[],idx=0,left=0,iv=null,paused=false,running=false,startTs=0,phaseEnd=0,remMs=0,pausedTotal=0,pauseStart=0,curInfo=null;
+let phaseStart=0,phasePaused=0,workSecAcc=0,workDone=0,W=null;
+const RC=283;
+function isReps(s){return s&&s.mode==='reps'}
+function show(snd){
+  const s=seq[idx];
+  const isMob=(s.type==='warm'||s.type==='stretch'),isW=(s.type==='work'),isRP=(s.type==='rest'||s.type==='prep'||s.type==='note');
+  const col=isW?'#c5ff3d':(isMob?'#4dd0e1':'#ff5c2b');
+  document.getElementById('phase').textContent=isW||isMob?(s.round||(s.type==='warm'?'Calentamiento':s.type==='stretch'?'Estiramientos':'Trabajo')):(s.type==='rest'?'Descanso':s.type==='note'?'Nota':s.name);
   document.getElementById('phase').style.color=col;
   document.getElementById('arc').style.stroke=col;
-  const nx=seq[idx+1];
-  const exEl=document.getElementById('exname');
-  if(isRestPrep&&nx){
-    exEl.textContent=nx.name;exEl.style.color='#f2efe3';
-    curInfo=nx.info||null;
-    document.getElementById('next').innerHTML='';
-    document.getElementById('prog').textContent='A continuación';
-  }else{
-    exEl.textContent=s.name;exEl.style.color=(isActive||isMob)?'#f2efe3':'#8a8a72';
-    curInfo=s.info||null;
-    document.getElementById('next').innerHTML=nx?`Siguiente: <b>${nx.name}</b>`:'¡A estirar y listo!';
+  const nx=seq[idx+1];const exEl=document.getElementById('exname');
+  if(isRP&&nx&&s.type!=='note'){exEl.textContent=nx.name;exEl.style.color='#f2efe3';curInfo=nx.ref||null;document.getElementById('next').innerHTML='';document.getElementById('prog').textContent='A continuacion'}
+  else{exEl.textContent=s.name;exEl.style.color=(isW||isMob)?'#f2efe3':'#8a8a72';curInfo=s.ref||null;
+    document.getElementById('next').innerHTML=nx?('Siguiente: <b>'+nx.name+'</b>'):'Ultimo!';
     const works=seq.filter(x=>x.type==='work').length;
-    const wdone=seq.slice(0,idx+1).filter(x=>x.type==='work').length;
-    if(isActive)document.getElementById('prog').textContent=`Ejercicio ${wdone} de ${works}`;
-    else if(s.type==='warm')document.getElementById('prog').textContent='Calentando';
-    else if(s.type==='stretch')document.getElementById('prog').textContent='Estirando';
-    else document.getElementById('prog').textContent='';
-  }
-  document.getElementById('infobtn').style.visibility=(curInfo&&info[curInfo])?'visible':'hidden';
-  if(playSnd)phaseSound(s);
-  draw();
+    const wd=seq.slice(0,idx+1).filter(x=>x.type==='work').length;
+    document.getElementById('prog').textContent=isW?('Ejercicio '+wd+' de '+works):(s.type==='warm'?'Calentando':s.type==='stretch'?'Estirando':'');}
+  const inf=curInfo&&ex(curInfo);
+  document.getElementById('infobtn').style.visibility=inf?'visible':'hidden';
+  const cEl=document.getElementById('count');
+  const pBtn=document.getElementById('pause');
+  if(isReps(s)){cEl.classList.add('reps');cEl.textContent=s.target||'a tu ritmo';document.getElementById('arc').style.strokeDashoffset=0;pBtn.textContent='\u2713 HECHO'}
+  else{cEl.classList.remove('reps');pBtn.textContent=paused?'\u25B6 SEGUIR':'\u23F8 PAUSA';draw()}
+  if(snd){if(s.type==='work')sGo();else if(s.type==='rest')sRest();else if(s.type==='warm'||s.type==='stretch')sMob();else sPrep()}
 }
-function draw(){document.getElementById('count').textContent=left;const s=seq[idx];document.getElementById('arc').style.strokeDashoffset=C*(1-left/s.sec)}
+function draw(){const s=seq[idx];if(isReps(s))return;document.getElementById('count').textContent=left;document.getElementById('arc').style.strokeDashoffset=RC*(1-left/s.sec)}
 function startPhase(){
-  paused=false;
-  document.getElementById('pause').innerHTML='<svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>PAUSA';
-  document.getElementById('count').style.opacity='1';
-  const s=seq[idx];left=s.sec;phaseEnd=Date.now()+left*1000;
+  paused=false;document.getElementById('count').style.opacity='1';
+  const s=seq[idx];phaseStart=Date.now();phasePaused=0;
+  if(!isReps(s)&&s.sec!=null){left=s.sec;phaseEnd=Date.now()+left*1000}
   show(true);vibPhase(s);
 }
 function loop(){
-  if(paused)return;
-  const ms=phaseEnd-Date.now();
-  const rem=Math.max(0,Math.ceil(ms/1000));
+  if(paused)return;const s=seq[idx];
+  if(isReps(s)||s.sec==null)return;
+  const ms=phaseEnd-Date.now();const rem=Math.max(0,Math.ceil(ms/1000));
   if(rem!==left){if(rem<left&&rem<=3&&rem>0){sCount();vib(25)}left=rem;draw()}
   if(ms<=0)advance();
 }
-function advance(){idx++;if(idx>=seq.length){finish();return}startPhase()}
-function startWorkout(){initAudio();build();idx=0;paused=false;running=true;startTs=Date.now();pausedTotalMs=0;reqWake();swap('run');startPhase();clearInterval(iv);iv=setInterval(loop,200)}
-function activeElapsed(){let p=pausedTotalMs;if(paused)p+=Date.now()-pauseStart;return Date.now()-startTs-p}
-
-const DOW=['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
-function finish(){
+function closePhase(){const s=seq[idx];if(s&&s.type==='work'){workSecAcc+=Math.max(0,Date.now()-phaseStart-phasePaused);workDone++}}
+function advance(){closePhase();idx++;if(idx>=seq.length){finish();return}startPhase()}
+function startWorkout(){
+  initAudio();W=currentWorkout();seq=compile(W);
+  if(!seq.some(s=>s.type==='work'||s.type==='warm'||s.type==='stretch')){alert('Este entrenamiento quedo vacio con las opciones actuales.');return}
+  idx=0;paused=false;running=true;startTs=Date.now();pausedTotal=0;workSecAcc=0;workDone=0;
+  reqWake();swap('run');startPhase();clearInterval(iv);iv=setInterval(loop,200);
+}
+function activeElapsed(){let p=pausedTotal;if(paused)p+=Date.now()-pauseStart;return Date.now()-startTs-p}
+const DOW=['Domingo','Lunes','Martes','Miercoles','Jueves','Viernes','Sabado'];
+async function finish(){
   clearInterval(iv);running=false;relWake();sFinish();vib([100,50,100,50,260]);
   const durSec=Math.max(0,Math.round(activeElapsed()/1000)),now=new Date();
-  logSession({ts:now.getTime(),date:now.toISOString().slice(0,10),dow:now.getDay(),time:now.toTimeString().slice(0,5),durSec,day,circuit:baseCircuits[day].name,level:levels[level].lbl,opts:{warmup:doWarmup,pullups:doPullups,lowImpact,stretch:doStretch}});
+  const names=[...new Set(seq.filter(s=>s.type==='work'&&s.ref).map(s=>exDisplay(s.ref)))];
+  const mus=[...new Set(seq.filter(s=>s.type==='work'&&s.ref).flatMap(s=>(ex(s.ref)&&ex(s.ref).muscles)||[]))];
+  const entry={ts:now.getTime(),date:now.toISOString().slice(0,10),dow:now.getDay(),time:now.toTimeString().slice(0,5),
+    durSec,workSec:Math.round(workSecAcc/1000),intervals:workDone,
+    packId:PACK.pack.id,packName:PACK.pack.name,workoutId:W.id,workoutName:W.name,
+    category:W.category||'fuerza',counts_as:W.counts_as||'training',exercises:names,muscles:mus};
+  await logAdd(entry);LOG.push(entry);
   const mm=Math.floor(durSec/60),ss=durSec%60;
-  document.getElementById('donestats').innerHTML=`<b>${DOW[now.getDay()]}</b> · ${now.toTimeString().slice(0,5)}<br>Día ${day} · ${baseCircuits[day].name} · ${levels[level].lbl}<br>Duración: <b>${mm}:${String(ss).padStart(2,'0')}</b>`;
-  document.getElementById('donetxt').textContent='Registrado en tus stats. A por el café.';
+  document.getElementById('donestats').innerHTML='<b>'+DOW[now.getDay()]+'</b> - '+entry.time+'<br>'+W.name+'<br>Duracion: <b>'+mm+':'+String(ss).padStart(2,'0')+'</b> - trabajo real: '+Math.round(entry.workSec/60)+' min';
+  document.getElementById('donetxt').textContent=(W.counts_as==='recovery')?'Dia de recuperacion registrado.':'Registrado en tus stats. A por el cafe.';
   swap('done');
 }
-
-/* ---- stats ---- */
-function fmtTime(sec){const m=Math.round(sec/60);if(m<60)return m+'m';return Math.floor(m/60)+'h '+(m%60)+'m'}
-function computeStreak(dates){const set=new Set(dates);let st=0;let cur=new Date(new Date().toISOString().slice(0,10));const today=cur.toISOString().slice(0,10);const y=new Date(cur);y.setDate(y.getDate()-1);if(!set.has(today)&&!set.has(y.toISOString().slice(0,10)))return 0;if(!set.has(today))cur=y;while(set.has(cur.toISOString().slice(0,10))){st++;cur.setDate(cur.getDate()-1)}return st}
-function renderStats(){
-  const log=loadLog();
-  document.getElementById('s-total').textContent=log.length;
-  document.getElementById('s-streak').textContent=computeStreak(log.map(e=>e.date));
-  const now=new Date(),weekAgo=now.getTime()-7*864e5;
-  document.getElementById('s-week').textContent=log.filter(e=>e.ts>=weekAgo).length;
-  document.getElementById('s-time').textContent=fmtTime(log.reduce((a,e)=>a+e.durSec,0));
-  const bars=document.getElementById('bars');bars.innerHTML='';const arr=[];let mx=1;
-  for(let i=6;i>=0;i--){const d=new Date(now);d.setDate(d.getDate()-i);const ds=d.toISOString().slice(0,10);const mins=Math.round(log.filter(e=>e.date===ds).reduce((a,e)=>a+e.durSec,0)/60);arr.push({d,mins});if(mins>mx)mx=mins}
-  const dl=['D','L','M','X','J','V','S'];
-  arr.forEach(o=>{const col=document.createElement('div');col.className='barcol';const h=o.mins>0?Math.max(6,Math.round(o.mins/mx*88)):3;col.innerHTML=`<div class="barv">${o.mins||''}</div><div class="bar ${o.mins?'':'empty'}" style="height:${h}px"></div><div class="bard">${dl[o.d.getDay()]}</div>`;bars.appendChild(col)});
-  const hist=document.getElementById('hist');hist.innerHTML='';
-  if(!log.length)hist.innerHTML='<div class="empty-msg">Aún no hay entrenamientos.<br>Completa uno y aparecerá aquí.</div>';
-  else[...log].reverse().slice(0,30).forEach(e=>{const mm=Math.floor(e.durSec/60),ss=e.durSec%60;const tags=[];if(e.opts){if(e.opts.pullups)tags.push('dominadas');if(e.opts.lowImpact)tags.push('bajo impacto')}const row=document.createElement('div');row.className='hrow';row.innerHTML=`<div class="hl"><div class="hd">${DOW[e.dow]} · Día ${e.day}</div><div class="hsub">${e.date.slice(5)} · ${e.time} · ${e.circuit} · ${e.level}${tags.length?' · '+tags.join(', '):''}</div></div><div class="hdur">${mm}:${String(ss).padStart(2,'0')}</div>`;hist.appendChild(row)});
-}
-
-/* ---- screen switching ---- */
-const SCREENS=['main','config','run','done','stats'];
-function swap(id){SCREENS.forEach(s=>{document.getElementById(s).style.display=(s===id)?'flex':'none'})}
-
-const modal=document.getElementById('modal');
-const fsBtn=document.getElementById('togglefs');
-const fsIcons={
-  enter:'<svg viewBox="0 0 24 24" fill="none" stroke="#ff3d7f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M16 3h3a2 2 0 0 1 2 2v3"/><path d="M8 21H5a2 2 0 0 1-2-2v-3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>',
-  exit:'<svg viewBox="0 0 24 24" fill="none" stroke="#ff3d7f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8H5V5"/><path d="M16 8h3V5"/><path d="M8 16H5v3"/><path d="M16 16h3v3"/></svg>'
-};
-function hasFS(){return !!(document.documentElement.requestFullscreen||document.documentElement.webkitRequestFullscreen)}
-function isFS(){return !!(document.fullscreenElement||document.webkitFullscreenElement)}
-function syncFSBtn(){
-  if(!fsBtn)return;
-  if(!hasFS()){fsBtn.style.display='none';return}
-  const on=isFS(),label=on?'Salir de pantalla completa':'Pantalla completa';
-  fsBtn.innerHTML=on?fsIcons.exit:fsIcons.enter;
-  fsBtn.setAttribute('aria-label',label);
-  fsBtn.setAttribute('title',label);
-}
-async function toggleFS(){
-  try{
-    if(isFS()){
-      if(document.exitFullscreen)await document.exitFullscreen();
-      else if(document.webkitExitFullscreen)document.webkitExitFullscreen();
-    }else{
-      const el=document.documentElement;
-      if(el.requestFullscreen)await el.requestFullscreen();
-      else if(el.webkitRequestFullscreen)el.webkitRequestFullscreen();
-    }
-  }catch(e){}
-  syncFSBtn();
-}
-syncFSBtn();
-if(fsBtn){
-  fsBtn.onclick=toggleFS;
-  document.addEventListener('fullscreenchange',syncFSBtn);
-  document.addEventListener('webkitfullscreenchange',syncFSBtn);
-}
-document.getElementById('infobtn').onclick=()=>{if(!curInfo||!info[curInfo])return;const d=info[curInfo];document.getElementById('mtitle').textContent=curInfo;const ol=document.getElementById('msteps');ol.innerHTML='';d.steps.forEach(st=>{const li=document.createElement('li');li.textContent=st;ol.appendChild(li)});document.getElementById('merror').textContent=d.err;paused=true;document.getElementById('pause').innerHTML='<svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><polygon points="5 3 19 12 5 21"/></svg>SEGUIR';modal.classList.add('show')};
-document.getElementById('mclose').onclick=()=>modal.classList.remove('show');
-modal.onclick=(e)=>{if(e.target===modal)modal.classList.remove('show')};
-
-function toMain(){resolveAutoDay();applyCfgUI();updSummary();swap('main')}
-document.getElementById('opencfg').onclick=()=>{applyCfgUI();updMeta();swap('config')};
-document.getElementById('cfgdone').onclick=()=>{updSummary();swap('main')};
-document.getElementById('openstats').onclick=()=>{renderStats();swap('stats')};
-document.getElementById('backbtn').onclick=()=>toMain();
-document.getElementById('clearbtn').onclick=()=>{if(confirm('¿Borrar todo el historial de entrenamientos?')){saveLog([]);renderStats()}};
-document.getElementById('go').onclick=startWorkout;
-document.getElementById('again').onclick=()=>toMain();
 function togglePause(){
-  if(!running)return;
-  paused=!paused;
-  const pl=document.getElementById('phase');
-  if(paused){
-    remMsAtPause=phaseEnd-Date.now();pauseStart=Date.now();
-    pl.dataset.prev=pl.textContent;pl.textContent='EN PAUSA';
-  }else{
-    pausedTotalMs+=Date.now()-pauseStart;phaseEnd=Date.now()+remMsAtPause;
-    if(pl.dataset.prev!==undefined)pl.textContent=pl.dataset.prev;
-  }
-  document.getElementById('pause').innerHTML=paused?'<svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><polygon points="5 3 19 12 5 21"/></svg>SEGUIR':'<svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>PAUSA';
+  if(!running)return;const s=seq[idx];
+  if(isReps(s)){advance();return}
+  paused=!paused;const pl=document.getElementById('phase');
+  if(paused){remMs=phaseEnd-Date.now();pauseStart=Date.now();pl.dataset.prev=pl.textContent;pl.textContent='EN PAUSA'}
+  else{const pd=Date.now()-pauseStart;pausedTotal+=pd;phasePaused+=pd;phaseEnd=Date.now()+remMs;if(pl.dataset.prev!==undefined)pl.textContent=pl.dataset.prev}
+  document.getElementById('pause').textContent=paused?'\u25B6 SEGUIR':'\u23F8 PAUSA';
   document.getElementById('count').style.opacity=paused?'.35':'1';
 }
+
+/* ============ UI: main / config / packs ============ */
+const SCREENS=['main','config','packs','run','done','stats'];
+function swap(id){SCREENS.forEach(s=>{document.getElementById(s).style.display=(s===id)?'flex':'none'})}
+function fmtMin(sec){return Math.round(sec/60)+' min'}
+function updSummary(){
+  const w=currentWorkout();
+  const tags=['<span class="pill">'+(w.category||'')+'</span>'];
+  if(cfg.lowImpact)tags.push('<span class="pill">bajo impacto</span>');
+  if(w.counts_as==='recovery')tags.push('<span class="pill">recuperacion</span>');
+  document.getElementById('summary').innerHTML='<b>'+w.name+'</b><br>'+tags.join(' ')+'<br><span style="font-size:12px">'+PACK.pack.name+' - ~ '+fmtMin(estSec(w))+'</span>';
+  // rest suggestion
+  const rad=(PACK.plan&&PACK.plan.rest_after_days)||0;const rn=document.getElementById('restnote');
+  if(rad>0){
+    const dates=new Set(LOG.map(e=>e.date));let run=0;const d=new Date();d.setDate(d.getDate()-1);
+    while(dates.has(d.toISOString().slice(0,10))){run++;d.setDate(d.getDate()-1)}
+    if(run>=rad){rn.style.display='block';rn.textContent='Llevas '+run+' dias seguidos. Hoy te pega descanso o movilidad suave.'}
+    else rn.style.display='none';
+  } else rn.style.display='none';
+}
+function renderConfig(){
+  const wm=document.getElementById('wkmode');
+  [...wm.children].forEach(b=>b.classList.toggle('on',b.dataset.m===cfg.wkMode));
+  const hint=document.getElementById('wkhint');
+  if(cfg.wkMode==='auto'){const w=currentWorkout();hint.innerHTML='Te toca <b>'+w.name+'</b> segun el plan del pack.'}
+  else hint.textContent='Elige el entrenamiento de la lista.';
+  const list=document.getElementById('wklist');list.innerHTML='';
+  if(cfg.wkMode==='manual'){
+    PACK.workouts.forEach(w=>{
+      const d=document.createElement('div');d.className='citem'+(cfg.wkId===w.id?' on':'');
+      d.innerHTML='<h5>'+w.name+'</h5><p>'+(w.description||'')+'</p><div class="tagrow"><span class="mini">'+(w.category||'')+'</span><span class="mini">~'+(w.est_min||Math.round(estSec(w)/60))+' min</span>'+((w.counts_as==='recovery')?'<span class="mini">recuperacion</span>':'')+'</div>';
+      d.onclick=()=>{cfg.wkId=w.id;saveCfg();renderConfig();updMeta()};
+      list.appendChild(d);
+    });
+  }
+  ['warmup','stretch','lowimp','sound','vibtg'].forEach(id=>{
+    const map={warmup:'warm',stretch:'cool',lowimp:'lowImpact',sound:'sound',vibtg:'vib'};
+    document.getElementById(id).classList.toggle('on',!!cfg[map[id]]);
+  });
+  updMeta();
+}
+function updMeta(){const w=currentWorkout();const exs=[];if(cfg.warm)exs.push('calentamiento');if(cfg.cool)exs.push('estiramientos');if(cfg.lowImpact)exs.push('bajo impacto');
+  document.getElementById('meta').innerHTML=w.name+'<br>~ '+fmtMin(estSec(w))+(exs.length?' - '+exs.join(' - '):'')}
+function bindToggle(id,key,extra){document.getElementById(id).onclick=()=>{cfg[key]=!cfg[key];saveCfg();renderConfig();updSummary();if(extra)extra()}}
+bindToggle('warmup','warm');bindToggle('stretch','cool');bindToggle('lowimp','lowImpact');
+bindToggle('sound','sound',()=>{if(cfg.sound){initAudio();sGo()}});
+bindToggle('vibtg','vib',()=>{if(cfg.vib)vib(80)});
+document.querySelectorAll('#wkmode .segb').forEach(b=>{b.onclick=()=>{cfg.wkMode=b.dataset.m;saveCfg();renderConfig();updSummary()}});
+
+async function renderPacks(){
+  const packs=await packAll();const active=await kvGet('active');
+  const list=document.getElementById('packlist');list.innerHTML='';
+  packs.forEach(p=>{
+    const row=document.createElement('div');row.className='prow'+(p.pack.id===active?' active':'');
+    const n=p.workouts.length, ne=Object.keys(p.exercises).length;
+    row.innerHTML='<div class="pinfo"><h4>'+p.pack.name+(p.pack.id===active?' (activo)':'')+'</h4><p>'+(p.pack.description||'')+'<br>'+n+' entrenamientos - '+ne+' ejercicios - v'+(p.pack.version||1)+'</p></div><div class="pbtns"></div>';
+    const btns=row.querySelector('.pbtns');
+    if(p.pack.id!==active){
+      const use=document.createElement('button');use.className='pb use';use.textContent='Usar';
+      use.onclick=async()=>{await kvSet('active',p.pack.id);PACK=await packGet(p.pack.id);cfg.wkId=null;await saveCfg();renderPacks();updSummary()};
+      btns.appendChild(use);
+      const del=document.createElement('button');del.className='pb';del.textContent='Borrar';
+      del.onclick=async()=>{if(confirm('Borrar el pack "'+p.pack.name+'"? (tu historial no se toca)')){await packDel(p.pack.id);renderPacks()}};
+      btns.appendChild(del);
+    }
+    list.appendChild(row);
+  });
+}
+document.getElementById('importpack').onclick=()=>document.getElementById('packfile').click();
+document.getElementById('packfile').onchange=(ev)=>{const f=ev.target.files[0];if(!f)return;const rd=new FileReader();
+ rd.onload=async()=>{try{const p=JSON.parse(rd.result);const err=validatePack(p);if(err){alert('Pack rechazado: '+err);return}
+  await packPut(p);alert('Pack "'+p.pack.name+'" instalado ('+p.workouts.length+' entrenamientos). Disponible sin conexion.');renderPacks()}catch(e){alert('JSON no valido.')}};
+ rd.readAsText(f);ev.target.value=''};
+
+/* ============ stats ============ */
+function fmtTime(sec){const m=Math.round(sec/60);if(m<60)return m+'m';return Math.floor(m/60)+'h '+(m%60)+'m'}
+function computeStreak(){
+  const set=new Set(LOG.map(e=>e.date));let streak=0,miss=0;
+  let cur=new Date(new Date().toISOString().slice(0,10));
+  if(!set.has(cur.toISOString().slice(0,10)))cur.setDate(cur.getDate()-1); // hoy sin entrenar no cuenta como fallo
+  for(let i=0;i<3650;i++){
+    const ds=cur.toISOString().slice(0,10);
+    if(set.has(ds)){streak++;miss=0}else{miss++;if(miss>=2)break} // 1 dia de gracia
+    cur.setDate(cur.getDate()-1);
+  }
+  return streak;
+}
+function renderStats(){
+  document.getElementById('s-total').textContent=LOG.length;
+  document.getElementById('s-streak').textContent=computeStreak();
+  const now=new Date(),weekAgo=now.getTime()-7*864e5;
+  document.getElementById('s-week').textContent=LOG.filter(e=>e.ts>=weekAgo).length;
+  document.getElementById('s-time').textContent=fmtTime(LOG.reduce((a,e)=>a+(e.durSec||0),0));
+  const bars=document.getElementById('bars');bars.innerHTML='';const arr=[];let mx=1;
+  for(let i=6;i>=0;i--){const d=new Date(now);d.setDate(d.getDate()-i);const ds=d.toISOString().slice(0,10);const mins=Math.round(LOG.filter(e=>e.date===ds).reduce((a,e)=>a+(e.durSec||0),0)/60);arr.push({d,mins});if(mins>mx)mx=mins}
+  const dl=['D','L','M','X','J','V','S'];
+  arr.forEach(o=>{const col=document.createElement('div');col.className='barcol';const h=o.mins>0?Math.max(6,Math.round(o.mins/mx*88)):3;col.innerHTML='<div class="barv">'+(o.mins||'')+'</div><div class="bar '+(o.mins?'':'empty')+'" style="height:'+h+'px"></div><div class="bard">'+dl[o.d.getDay()]+'</div>';bars.appendChild(col)});
+  const hist=document.getElementById('hist');hist.innerHTML='';
+  if(!LOG.length){hist.innerHTML='<div class="empty-msg">Aun no hay entrenamientos.<br>Completa uno y aparecera aqui.</div>';return}
+  [...LOG].sort((a,b)=>b.ts-a.ts).slice(0,40).forEach(e=>{
+    const mm=Math.floor((e.durSec||0)/60),ss=(e.durSec||0)%60;
+    const extra=(e.counts_as==='recovery')?' - recuperacion':'';
+    const row=document.createElement('div');row.className='hrow';
+    row.innerHTML='<div class="hl"><div class="hd">'+DOW[e.dow]+' - '+(e.workoutName||'')+'</div><div class="hsub">'+e.date.slice(5)+' - '+e.time+' - '+(e.packName||'')+extra+'</div></div><div class="hdur">'+mm+':'+String(ss).padStart(2,'0')+'</div>';
+    hist.appendChild(row);
+  });
+}
+function download(name,text){const b=new Blob([text],{type:'application/json'});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1000)}
+document.getElementById('exportbtn').onclick=async()=>{const packs=await packAll();download('beat-backup-'+new Date().toISOString().slice(0,10)+'.json',JSON.stringify({app:'beat',version:2,exported:new Date().toISOString(),config:cfg,log:LOG,packs:packs},null,1))};
+document.getElementById('importbtn').onclick=()=>document.getElementById('importfile').click();
+document.getElementById('importfile').onchange=(ev)=>{const f=ev.target.files[0];if(!f)return;const rd=new FileReader();
+ rd.onload=async()=>{try{const d=JSON.parse(rd.result);
+   if(Array.isArray(d.log)){await logReplace(d.log);LOG=d.log.slice()}
+   if(d.config){cfg=Object.assign(cfg,d.config);await saveCfg()}
+   if(Array.isArray(d.packs)){for(const p of d.packs){if(!validatePack(p))await packPut(p)}}
+   renderStats();updSummary();alert('Restaurado: '+LOG.length+' entrenamientos.')}catch(e){alert('Archivo no valido.')}};
+ rd.readAsText(f);ev.target.value=''};
+document.getElementById('clearbtn').onclick=async()=>{if(confirm('Borrar todo el historial?')){await logClear();LOG=[];renderStats()}};
+
+/* ============ modal / nav ============ */
+const modal=document.getElementById('modal');
+document.getElementById('infobtn').onclick=()=>{const e=curInfo&&ex(curInfo);if(!e)return;
+  document.getElementById('mtitle').textContent=e.name;
+  const ol=document.getElementById('msteps');ol.innerHTML='';(e.steps||[]).forEach(st=>{const li=document.createElement('li');li.textContent=st;ol.appendChild(li)});
+  document.getElementById('merror').textContent=e.cue||'';
+  const s=seq[idx];if(s&&!isReps(s)&&!paused)togglePause();
+  modal.classList.add('show')};
+document.getElementById('mclose').onclick=()=>modal.classList.remove('show');
+modal.onclick=(e)=>{if(e.target===modal)modal.classList.remove('show')};
+function toMain(){updSummary();swap('main')}
+document.getElementById('opencfg').onclick=()=>{renderConfig();swap('config')};
+document.getElementById('cfgdone').onclick=()=>toMain();
+document.getElementById('openpacks').onclick=()=>{renderPacks();swap('packs')};
+document.getElementById('packsdone').onclick=()=>toMain();
+document.getElementById('openstats').onclick=()=>{renderStats();swap('stats')};
+document.getElementById('backbtn').onclick=()=>toMain();
+document.getElementById('go').onclick=startWorkout;
+document.getElementById('again').onclick=()=>toMain();
 document.getElementById('pause').onclick=togglePause;
 document.getElementById('ring-tap').onclick=togglePause;
-document.getElementById('skip').onclick=()=>{if(!running)return;idx++;if(idx>=seq.length){finish();return}startPhase()};
+document.getElementById('skip').onclick=()=>{if(!running)return;closePhase();idx++;if(idx>=seq.length){finish();return}startPhase()};
 document.getElementById('prev').onclick=()=>{if(!running)return;idx=Math.max(0,idx-1);startPhase()};
 document.getElementById('quit').onclick=()=>{clearInterval(iv);running=false;relWake();toMain()};
 
-/* ---- init ---- */
-loadCfg();resolveAutoDay();applyCfgUI();updMeta();updSummary();swap('main');
+/* ============ boot ============ */
+(async()=>{
+  try{await openDB();await migrate();await loadAll();}
+  catch(e){ // IDB unavailable (raro): fallback minimo en memoria
+    PACK=DEFAULT_PACK;LOG=[];
+  }
+  updSummary();swap('main');
+})();
 </script>
 <script>
 if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('sw.js').catch(()=>{})})}

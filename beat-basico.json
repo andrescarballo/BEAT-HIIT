@@ -1,0 +1,3156 @@
+{
+ "schema": 2,
+ "pack": {
+  "id": "beat-basico",
+  "name": "Beat básico",
+  "description": "Rutina de casa: peso corporal, mancuernas, banda y barra. 20 entrenamientos.",
+  "author": "Andrés",
+  "version": 2,
+  "lang": "es"
+ },
+ "plan": {
+  "rotation": [
+   "inferior-clasico",
+   "superior-clasico",
+   "fullbody-clasico"
+  ],
+  "rest_after_days": 6
+ },
+ "exercises": {
+  "dominadas": {
+   "name": "Dominadas",
+   "steps": [
+    "Agarre algo mas ancho que los hombros, palmas al frente.",
+    "Parte de brazos estirados, hombros activos.",
+    "Tira llevando los codos hacia abajo, pecho a la barra.",
+    "Baja controlado hasta estirar del todo."
+   ],
+   "cue": "Dar tirones con las piernas. Si no salen, usa negativas o banda.",
+   "muscles": [
+    "espalda",
+    "biceps"
+   ],
+   "equipment": [
+    "barra"
+   ],
+   "impact": "low",
+   "canonical": "pullup"
+  },
+  "sentadillas": {
+   "name": "Sentadillas",
+   "steps": [
+    "Pies al ancho de cadera, puntas algo hacia fuera.",
+    "Baja como sentandote en una silla.",
+    "Hasta muslos paralelos, sin redondear la espalda.",
+    "Empuja con los talones para subir."
+   ],
+   "cue": "Que las rodillas se hundan hacia dentro.",
+   "muscles": [
+    "cuadriceps",
+    "gluteo"
+   ],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "low",
+   "canonical": "squat.bodyweight"
+  },
+  "sentadilla-con-salto": {
+   "name": "Sentadilla con salto",
+   "steps": [
+    "Baja a sentadilla.",
+    "Sube explotando en un salto.",
+    "Aterriza suave amortiguando.",
+    "Encadena con control."
+   ],
+   "cue": "Aterrizar rigido. Bajo impacto: sentadilla normal.",
+   "muscles": [
+    "cuadriceps",
+    "gluteo"
+   ],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "high",
+   "low": "sentadillas"
+  },
+  "sentadilla-bulgara": {
+   "name": "Sentadilla bulgara",
+   "steps": [
+    "Un pie atras apoyado en una silla o banco.",
+    "Baja la rodilla de atras hacia el suelo.",
+    "Peso en la pierna delantera.",
+    "Sube y repite; cambia."
+   ],
+   "cue": "Cargar el peso en la pierna de atras.",
+   "muscles": [
+    "cuadriceps",
+    "gluteo"
+   ],
+   "equipment": [
+    "silla"
+   ],
+   "impact": "low"
+  },
+  "zancadas": {
+   "name": "Zancadas",
+   "steps": [
+    "Da un paso largo al frente.",
+    "Baja la rodilla de atras, tronco recto.",
+    "La rodilla delantera no pasa mucho la punta del pie.",
+    "Vuelve y cambia de pierna."
+   ],
+   "cue": "Tronco inclinado y pasos demasiado cortos.",
+   "muscles": [
+    "cuadriceps",
+    "gluteo"
+   ],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "low",
+   "canonical": "lunge"
+  },
+  "zancadas-con-salto": {
+   "name": "Zancadas con salto",
+   "steps": [
+    "Posicion de zancada.",
+    "Salta cambiando de pierna en el aire.",
+    "Aterriza suave amortiguando.",
+    "Encadena con control."
+   ],
+   "cue": "Aterrizar rigido. Si molestan rodillas, usa zancada normal.",
+   "muscles": [
+    "cuadriceps",
+    "gluteo"
+   ],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "high",
+   "low": "zancadas"
+  },
+  "zancada-lateral": {
+   "name": "Zancada lateral",
+   "steps": [
+    "Da un paso amplio a un lado.",
+    "Flexiona esa pierna, la otra estirada.",
+    "Empuja para volver al centro.",
+    "Alterna lados."
+   ],
+   "cue": "Rodilla hacia dentro; mantenla sobre el pie.",
+   "muscles": [
+    "cuadriceps",
+    "gluteo",
+    "aductor"
+   ],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "low"
+  },
+  "peso-muerto-rumano": {
+   "name": "Peso muerto rumano",
+   "steps": [
+    "De pie con mancuernas frente a los muslos.",
+    "Lleva la cadera ATRAS bajando las pesas pegadas a las piernas.",
+    "Espalda recta, ligera flexion de rodilla.",
+    "Vuelve apretando gluteo."
+   ],
+   "cue": "Redondear la espalda.",
+   "muscles": [
+    "femoral",
+    "gluteo",
+    "espalda"
+   ],
+   "equipment": [
+    "mancuernas"
+   ],
+   "impact": "low",
+   "canonical": "deadlift.romanian.dumbbell"
+  },
+  "buenos-dias-con-mancuerna": {
+   "name": "Buenos dias con mancuerna",
+   "steps": [
+    "Mancuerna sobre los hombros o el pecho.",
+    "Lleva la cadera atras inclinando el tronco.",
+    "Espalda recta, rodillas algo flexionadas.",
+    "Vuelve apretando gluteo."
+   ],
+   "cue": "Redondear la espalda.",
+   "muscles": [
+    "femoral",
+    "gluteo",
+    "espalda"
+   ],
+   "equipment": [
+    "mancuernas"
+   ],
+   "impact": "low"
+  },
+  "puente-de-gluteo": {
+   "name": "Puente de gluteo",
+   "steps": [
+    "Boca arriba, rodillas dobladas, pies en el suelo.",
+    "Empuja con los talones subiendo la cadera.",
+    "Aprieta fuerte el gluteo arriba.",
+    "Baja controlado."
+   ],
+   "cue": "Arquear la lumbar en vez de apretar el gluteo.",
+   "muscles": [
+    "gluteo",
+    "femoral"
+   ],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "low"
+  },
+  "puente-a-una-pierna": {
+   "name": "Puente a una pierna",
+   "steps": [
+    "Boca arriba, una pierna estirada.",
+    "Empuja con el talon apoyado subiendo la cadera.",
+    "Aprieta el gluteo arriba.",
+    "Baja controlado; cambia."
+   ],
+   "cue": "Dejar caer la cadera del lado libre.",
+   "muscles": [
+    "gluteo",
+    "femoral"
+   ],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "low"
+  },
+  "hip-thrust": {
+   "name": "Hip thrust",
+   "steps": [
+    "Espalda alta apoyada en un sofa o banco, pies en el suelo.",
+    "Mancuerna sobre la cadera.",
+    "Empuja la cadera arriba apretando gluteo.",
+    "Baja controlado."
+   ],
+   "cue": "Arquear la lumbar en vez de apretar gluteo.",
+   "muscles": [
+    "gluteo",
+    "femoral"
+   ],
+   "equipment": [
+    "mancuernas",
+    "silla"
+   ],
+   "impact": "low",
+   "canonical": "hipthrust"
+  },
+  "patada-de-gluteo": {
+   "name": "Patada de gluteo",
+   "steps": [
+    "A cuatro patas.",
+    "Lleva un talon hacia el techo con la rodilla doblada.",
+    "Aprieta el gluteo arriba.",
+    "Baja sin tocar y repite; cambia."
+   ],
+   "cue": "Arquear la lumbar; sube solo donde el gluteo trabaje.",
+   "muscles": [
+    "gluteo"
+   ],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "low"
+  },
+  "elevacion-de-gemelos": {
+   "name": "Elevacion de gemelos",
+   "steps": [
+    "De pie, puntas de los pies en el suelo.",
+    "Sube sobre las puntas lo mas alto posible.",
+    "Aprieta el gemelo arriba.",
+    "Baja despacio."
+   ],
+   "cue": "Rebotar rapido sin controlar.",
+   "muscles": [
+    "gemelo"
+   ],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "low"
+  },
+  "plancha": {
+   "name": "Plancha",
+   "steps": [
+    "Antebrazos y puntas de los pies en el suelo.",
+    "Cuerpo en linea recta de cabeza a talones.",
+    "Aprieta abdomen y gluteo.",
+    "Respira, no aguantes el aire."
+   ],
+   "cue": "Subir el culo o dejar caer la cadera.",
+   "muscles": [
+    "core"
+   ],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "low",
+   "canonical": "plank"
+  },
+  "plancha-lateral": {
+   "name": "Plancha lateral",
+   "steps": [
+    "De lado, apoyado en un antebrazo.",
+    "Sube la cadera, cuerpo en linea.",
+    "Aprieta el abdomen lateral.",
+    "Aguanta y cambia."
+   ],
+   "cue": "Dejar caer la cadera.",
+   "muscles": [
+    "core"
+   ],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "low"
+  },
+  "plancha-con-toque-de-hombro": {
+   "name": "Plancha con toque de hombro",
+   "steps": [
+    "Plancha alta, manos bajo los hombros.",
+    "Toca un hombro con la mano contraria.",
+    "Cadera quieta, sin balanceo.",
+    "Alterna."
+   ],
+   "cue": "Mover la cadera de lado a lado.",
+   "muscles": [
+    "core",
+    "hombro"
+   ],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "low"
+  },
+  "crunch-russian-twist": {
+   "name": "Crunch / russian twist",
+   "steps": [
+    "Sentado, rodillas dobladas, algo inclinado atras.",
+    "Junta las manos y gira el tronco a un lado.",
+    "Vuelve al centro y gira al otro.",
+    "Controla, sin tirones."
+   ],
+   "cue": "Mover solo los brazos en vez de rotar el tronco.",
+   "muscles": [
+    "core"
+   ],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "low"
+  },
+  "bicicleta-abdominal": {
+   "name": "Bicicleta abdominal",
+   "steps": [
+    "Boca arriba, manos en la nuca.",
+    "Lleva codo a rodilla contraria pedaleando.",
+    "Alterna lado a lado.",
+    "No tires del cuello."
+   ],
+   "cue": "Tirar de la cabeza con las manos.",
+   "muscles": [
+    "core"
+   ],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "low"
+  },
+  "elevacion-de-piernas": {
+   "name": "Elevacion de piernas",
+   "steps": [
+    "Boca arriba, piernas estiradas.",
+    "Subelas hasta la vertical.",
+    "Baja despacio sin tocar el suelo.",
+    "Lumbar pegada al suelo."
+   ],
+   "cue": "Despegar la lumbar; flexiona rodillas si hace falta.",
+   "muscles": [
+    "core"
+   ],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "low"
+  },
+  "hollow-hold": {
+   "name": "Hollow hold",
+   "steps": [
+    "Boca arriba, brazos estirados tras la cabeza.",
+    "Levanta hombros y piernas del suelo.",
+    "Lumbar pegada al suelo, cuerpo en banana.",
+    "Aguanta respirando."
+   ],
+   "cue": "Despegar la lumbar del suelo.",
+   "muscles": [
+    "core"
+   ],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "low"
+  },
+  "dead-bug": {
+   "name": "Dead bug",
+   "steps": [
+    "Boca arriba, brazos al techo, rodillas a 90.",
+    "Baja brazo y pierna contrarios a la vez.",
+    "Lumbar pegada al suelo.",
+    "Vuelve y alterna."
+   ],
+   "cue": "Despegar la lumbar; ve mas corto si pasa.",
+   "muscles": [
+    "core"
+   ],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "low"
+  },
+  "bird-dog": {
+   "name": "Bird-dog",
+   "steps": [
+    "A cuatro patas.",
+    "Estira brazo y pierna contrarios a la vez.",
+    "Cuerpo estable, sin rotar la cadera.",
+    "Vuelve y alterna."
+   ],
+   "cue": "Arquear la espalda o rotar la cadera.",
+   "muscles": [
+    "core",
+    "espalda"
+   ],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "low"
+  },
+  "flexiones": {
+   "name": "Flexiones",
+   "steps": [
+    "Manos algo mas anchas que los hombros.",
+    "Cuerpo recto, abdomen apretado.",
+    "Baja hasta casi tocar con el pecho.",
+    "Empuja sin arquear la espalda."
+   ],
+   "cue": "Dejar caer la cadera. Si cuesta, apoya rodillas.",
+   "muscles": [
+    "pecho",
+    "triceps",
+    "hombro"
+   ],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "low",
+   "canonical": "pushup"
+  },
+  "remo-con-mancuerna": {
+   "name": "Remo con mancuerna",
+   "steps": [
+    "Una mano y rodilla en una silla, espalda plana.",
+    "Mancuerna colgando, brazo estirado.",
+    "Tira del codo atras hacia la cadera.",
+    "Baja controlado. Cambia."
+   ],
+   "cue": "Girar el tronco en vez de tirar con la espalda.",
+   "muscles": [
+    "espalda",
+    "biceps"
+   ],
+   "equipment": [
+    "mancuernas",
+    "silla"
+   ],
+   "impact": "low",
+   "canonical": "row.dumbbell"
+  },
+  "remo-renegado": {
+   "name": "Remo renegado",
+   "steps": [
+    "Plancha alta agarrando dos mancuernas.",
+    "Rema una mancuerna a la cadera.",
+    "Cadera estable, sin girar.",
+    "Alterna brazos."
+   ],
+   "cue": "Girar el tronco al remar.",
+   "muscles": [
+    "espalda",
+    "core",
+    "biceps"
+   ],
+   "equipment": [
+    "mancuernas"
+   ],
+   "impact": "low"
+  },
+  "remo-con-banda": {
+   "name": "Remo con banda",
+   "steps": [
+    "Banda anclada al frente o bajo los pies.",
+    "Tira llevando los codos atras.",
+    "Junta los omoplatos.",
+    "Vuelve controlado."
+   ],
+   "cue": "Encoger los hombros hacia las orejas.",
+   "muscles": [
+    "espalda",
+    "biceps"
+   ],
+   "equipment": [
+    "banda"
+   ],
+   "impact": "low"
+  },
+  "pajaro-apertura-inversa": {
+   "name": "Pajaro (apertura inversa)",
+   "steps": [
+    "Tronco inclinado al frente, espalda recta.",
+    "Mancuernas colgando, brazos algo flexionados.",
+    "Abre los brazos a los lados juntando omoplatos.",
+    "Baja controlado."
+   ],
+   "cue": "Subir con impulso; hazlo lento.",
+   "muscles": [
+    "espalda",
+    "hombro"
+   ],
+   "equipment": [
+    "mancuernas"
+   ],
+   "impact": "low"
+  },
+  "press-de-hombros": {
+   "name": "Press de hombros",
+   "steps": [
+    "Mancuernas a la altura de los hombros.",
+    "Empuja arriba casi estirando.",
+    "No arquees la espalda.",
+    "Baja controlado."
+   ],
+   "cue": "Arquear la lumbar para empujar mas.",
+   "muscles": [
+    "hombro",
+    "triceps"
+   ],
+   "equipment": [
+    "mancuernas"
+   ],
+   "impact": "low",
+   "canonical": "press.shoulder.dumbbell"
+  },
+  "press-arnold": {
+   "name": "Press Arnold",
+   "steps": [
+    "Mancuernas frente al pecho, palmas hacia ti.",
+    "Sube girando las palmas al frente.",
+    "Estira arriba sin arquear.",
+    "Baja girando de vuelta."
+   ],
+   "cue": "Arquear la lumbar al empujar.",
+   "muscles": [
+    "hombro",
+    "triceps"
+   ],
+   "equipment": [
+    "mancuernas"
+   ],
+   "impact": "low"
+  },
+  "curl-de-biceps": {
+   "name": "Curl de biceps",
+   "steps": [
+    "Mancuernas a los lados, palmas al frente.",
+    "Sube doblando solo el codo.",
+    "Codos pegados, sin balanceo.",
+    "Baja despacio."
+   ],
+   "cue": "Balancear el cuerpo para subir.",
+   "muscles": [
+    "biceps"
+   ],
+   "equipment": [
+    "mancuernas"
+   ],
+   "impact": "low",
+   "canonical": "curl.biceps.dumbbell"
+  },
+  "fondos-de-triceps": {
+   "name": "Fondos de triceps",
+   "steps": [
+    "Manos en el borde de una silla.",
+    "Baja doblando los codos atras.",
+    "Codos cerca del cuerpo.",
+    "Empuja para subir."
+   ],
+   "cue": "Abrir los codos hacia los lados.",
+   "muscles": [
+    "triceps"
+   ],
+   "equipment": [
+    "silla"
+   ],
+   "impact": "low"
+  },
+  "superman": {
+   "name": "Superman",
+   "steps": [
+    "Boca abajo, brazos extendidos al frente.",
+    "Levanta a la vez brazos, pecho y piernas.",
+    "Aprieta espalda baja y gluteo.",
+    "Baja controlado."
+   ],
+   "cue": "Tirar del cuello. Mira al suelo.",
+   "muscles": [
+    "espalda",
+    "gluteo"
+   ],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "low"
+  },
+  "thrusters": {
+   "name": "Thrusters",
+   "steps": [
+    "Mancuernas en los hombros, haz una sentadilla.",
+    "Al subir, empujalas arriba con el impulso.",
+    "Movimiento fluido sentadilla+press.",
+    "Baja a los hombros y repite."
+   ],
+   "cue": "Separar la sentadilla del press.",
+   "muscles": [
+    "cuadriceps",
+    "gluteo",
+    "hombro"
+   ],
+   "equipment": [
+    "mancuernas"
+   ],
+   "impact": "low",
+   "canonical": "thruster.dumbbell"
+  },
+  "burpees": {
+   "name": "Burpees",
+   "steps": [
+    "De pie, baja las manos al suelo.",
+    "Pies atras a plancha.",
+    "Pies adelante.",
+    "Salta arriba con los brazos estirados."
+   ],
+   "cue": "Dejar caer la cadera en plancha.",
+   "muscles": [
+    "fullbody"
+   ],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "high",
+   "canonical": "burpee",
+   "low": "burpees-sin-salto"
+  },
+  "burpees-sin-salto": {
+   "name": "Burpees sin salto",
+   "steps": [
+    "De pie, manos al suelo.",
+    "Pies atras a plancha (o paso a paso).",
+    "Pies adelante.",
+    "Te incorporas SIN saltar."
+   ],
+   "cue": "Ir con prisa y perder la linea del cuerpo.",
+   "muscles": [
+    "fullbody"
+   ],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "low"
+  },
+  "swing-con-mancuerna": {
+   "name": "Swing con mancuerna",
+   "steps": [
+    "Pies anchos, una mancuerna con las dos manos.",
+    "Lleva la cadera atras, balancea entre las piernas.",
+    "Empuja la cadera al frente para subir la pesa al pecho.",
+    "El impulso viene de la cadera."
+   ],
+   "cue": "Hacer sentadilla y subir con los brazos. El motor es la cadera.",
+   "muscles": [
+    "gluteo",
+    "femoral",
+    "espalda"
+   ],
+   "equipment": [
+    "mancuernas"
+   ],
+   "impact": "low",
+   "canonical": "swing.dumbbell"
+  },
+  "mountain-climbers": {
+   "name": "Mountain climbers",
+   "steps": [
+    "Plancha alta, manos bajo los hombros.",
+    "Lleva una rodilla al pecho.",
+    "Cambia de pierna con ritmo.",
+    "Cadera baja y estable."
+   ],
+   "cue": "Subir el culo. Bajo impacto: mas lento, sin saltar.",
+   "muscles": [
+    "core",
+    "fullbody"
+   ],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "high",
+   "low": "marcha-en-el-sitio"
+  },
+  "escaladores-cruzados": {
+   "name": "Escaladores cruzados",
+   "steps": [
+    "Plancha alta.",
+    "Lleva una rodilla hacia el codo contrario.",
+    "Alterna con ritmo.",
+    "Cadera baja y estable."
+   ],
+   "cue": "Subir el culo.",
+   "muscles": [
+    "core"
+   ],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "high",
+   "low": "marcha-en-el-sitio"
+  },
+  "rodillas-arriba": {
+   "name": "Rodillas arriba",
+   "steps": [
+    "Corre en el sitio subiendo mucho las rodillas.",
+    "Acompana con los brazos.",
+    "Ritmo vivo.",
+    "Aterriza con la puntera."
+   ],
+   "cue": "No subir las rodillas. Bajo impacto: marcha.",
+   "muscles": [
+    "fullbody"
+   ],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "high",
+   "low": "marcha-en-el-sitio"
+  },
+  "saltos-de-patinador": {
+   "name": "Saltos de patinador",
+   "steps": [
+    "Salta lateral de un pie al otro.",
+    "Lleva el pie libre cruzado por detras.",
+    "Aterriza suave y estable.",
+    "Manten el ritmo."
+   ],
+   "cue": "Aterrizar sin control. Bajo impacto: paso lateral.",
+   "muscles": [
+    "cuadriceps",
+    "gluteo"
+   ],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "high",
+   "low": "zancada-lateral"
+  },
+  "marcha-en-el-sitio": {
+   "name": "Marcha en el sitio",
+   "steps": [
+    "De pie, rodillas arriba alternando.",
+    "Acompana con los brazos.",
+    "Ritmo vivo pero controlado.",
+    "Respira con regularidad."
+   ],
+   "cue": "Ir tan suave que no sube el pulso.",
+   "muscles": [
+    "fullbody"
+   ],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "low"
+  },
+  "movilidad-de-hombros": {
+   "name": "Movilidad de hombros",
+   "steps": [
+    "De pie, brazos estirados.",
+    "Circulos grandes hacia atras.",
+    "A mitad, cambia hacia delante.",
+    "Suelta el cuello."
+   ],
+   "cue": "Hacerlos pequenos y rapidos.",
+   "muscles": [],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "low"
+  },
+  "movilidad-de-cadera": {
+   "name": "Movilidad de cadera",
+   "steps": [
+    "Manos en la cadera.",
+    "Circulos grandes con la cadera.",
+    "Cambia de sentido.",
+    "Luego balancea una pierna y cambia."
+   ],
+   "cue": "Mover solo la cintura.",
+   "muscles": [],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "low"
+  },
+  "jumping-jacks-suaves": {
+   "name": "Jumping jacks suaves",
+   "steps": [
+    "Abre y cierra piernas y brazos a la vez.",
+    "Ritmo comodo para entrar en calor.",
+    "Respira con el movimiento.",
+    "Si molesta saltar, step lateral."
+   ],
+   "cue": "Empezar a tope.",
+   "muscles": [],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "low"
+  },
+  "sentadillas-sin-peso": {
+   "name": "Sentadillas sin peso",
+   "steps": [
+    "Pies al ancho de cadera.",
+    "Baja sin prisa.",
+    "Profundidad comoda.",
+    "Sube con control."
+   ],
+   "cue": "Buscar maxima profundidad en frio.",
+   "muscles": [],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "low"
+  },
+  "rotaciones-de-tronco": {
+   "name": "Rotaciones de tronco",
+   "steps": [
+    "Pies fijos, brazos relajados.",
+    "Gira el tronco a un lado dejando seguir los brazos.",
+    "Vuelve y gira al otro.",
+    "Ritmo suelto."
+   ],
+   "cue": "Forzar el giro.",
+   "muscles": [],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "low"
+  },
+  "estiramiento-de-cuadriceps": {
+   "name": "Estiramiento de cuadriceps",
+   "steps": [
+    "De pie, sujetate si hace falta.",
+    "Lleva un talon al gluteo.",
+    "Rodillas juntas, nota el muslo.",
+    "Aguanta y cambia."
+   ],
+   "cue": "Arquear la espalda.",
+   "muscles": [],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "low"
+  },
+  "estiramiento-de-femoral": {
+   "name": "Estiramiento de femoral",
+   "steps": [
+    "Una pierna adelantada, talon en el suelo.",
+    "Cadera atras, espalda recta.",
+    "Inclinate desde la cadera.",
+    "Nota detras del muslo. Cambia."
+   ],
+   "cue": "Redondear la espalda para llegar.",
+   "muscles": [],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "low"
+  },
+  "estiramiento-de-pecho-y-hombros": {
+   "name": "Estiramiento de pecho y hombros",
+   "steps": [
+    "Entrelaza las manos tras la espalda.",
+    "Estira los brazos y abre el pecho.",
+    "Sube un poco las manos.",
+    "Respira y manten."
+   ],
+   "cue": "Encoger los hombros.",
+   "muscles": [],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "low"
+  },
+  "estiramiento-de-espalda-gato": {
+   "name": "Estiramiento de espalda (gato)",
+   "steps": [
+    "A cuatro patas, manos bajo hombros.",
+    "Redondea la espalda mirando al ombligo.",
+    "Luego hundela mirando al frente.",
+    "Alterna lento con la respiracion."
+   ],
+   "cue": "Ir rapido.",
+   "muscles": [],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "low"
+  },
+  "estiramiento-de-gluteo": {
+   "name": "Estiramiento de gluteo",
+   "steps": [
+    "Boca arriba, cruza un tobillo sobre la rodilla contraria.",
+    "Lleva la pierna al pecho.",
+    "Nota el gluteo.",
+    "Aguanta y cambia."
+   ],
+   "cue": "Tirar con tirones.",
+   "muscles": [],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "low"
+  },
+  "respiracion-final": {
+   "name": "Respiracion final",
+   "steps": [
+    "De pie o tumbado, ojos cerrados.",
+    "Inhala por la nariz contando 4.",
+    "Exhala por la boca contando 6.",
+    "Repite y baja pulsaciones."
+   ],
+   "cue": "Respirar solo con el pecho.",
+   "muscles": [],
+   "equipment": [
+    "ninguno"
+   ],
+   "impact": "low"
+  }
+ },
+ "workouts": [
+  {
+   "id": "inferior-clasico",
+   "name": "Tren inferior — Clasico",
+   "description": "Sentadillas, Zancadas, Peso muerto rumano, Puente de gluteo…",
+   "category": "fuerza",
+   "counts_as": "training",
+   "equipment": [
+    "mancuernas"
+   ],
+   "est_min": 23,
+   "sequence": [
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-cadera",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "jumping-jacks-suaves",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "sentadillas-sin-peso",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "rotaciones-de-tronco",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "block",
+     "rounds": 3,
+     "rest": 15,
+     "rest_rounds": 30,
+     "items": [
+      {
+       "ref": "sentadillas",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "zancadas",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "peso-muerto-rumano",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "puente-de-gluteo",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "plancha",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "crunch-russian-twist",
+       "mode": "time",
+       "sec": 40
+      }
+     ]
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-cuadriceps",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-femoral",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-pecho-y-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-espalda-gato",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-gluteo",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "respiracion-final",
+     "mode": "time",
+     "sec": 30
+    }
+   ]
+  },
+  {
+   "id": "inferior-gluteo",
+   "name": "Tren inferior — Gluteo",
+   "description": "Hip thrust, Sentadilla bulgara, Peso muerto rumano, Patada de gluteo…",
+   "category": "fuerza",
+   "counts_as": "training",
+   "equipment": [
+    "mancuernas",
+    "silla"
+   ],
+   "est_min": 23,
+   "sequence": [
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-cadera",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "jumping-jacks-suaves",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "sentadillas-sin-peso",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "rotaciones-de-tronco",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "block",
+     "rounds": 3,
+     "rest": 15,
+     "rest_rounds": 30,
+     "items": [
+      {
+       "ref": "hip-thrust",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "sentadilla-bulgara",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "peso-muerto-rumano",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "patada-de-gluteo",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "puente-a-una-pierna",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "plancha-lateral",
+       "mode": "time",
+       "sec": 40
+      }
+     ]
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-cuadriceps",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-femoral",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-pecho-y-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-espalda-gato",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-gluteo",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "respiracion-final",
+     "mode": "time",
+     "sec": 30
+    }
+   ]
+  },
+  {
+   "id": "inferior-potencia",
+   "name": "Tren inferior — Potencia",
+   "description": "Sentadilla con salto, Zancadas con salto, Saltos de patinador, Sentadillas…",
+   "category": "fuerza",
+   "counts_as": "training",
+   "equipment": [
+    "ninguno"
+   ],
+   "est_min": 23,
+   "sequence": [
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-cadera",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "jumping-jacks-suaves",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "sentadillas-sin-peso",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "rotaciones-de-tronco",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "block",
+     "rounds": 3,
+     "rest": 15,
+     "rest_rounds": 30,
+     "items": [
+      {
+       "ref": "sentadilla-con-salto",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "zancadas-con-salto",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "saltos-de-patinador",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "sentadillas",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "elevacion-de-gemelos",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "hollow-hold",
+       "mode": "time",
+       "sec": 40
+      }
+     ]
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-cuadriceps",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-femoral",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-pecho-y-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-espalda-gato",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-gluteo",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "respiracion-final",
+     "mode": "time",
+     "sec": 30
+    }
+   ]
+  },
+  {
+   "id": "inferior-resistencia",
+   "name": "Tren inferior — Resistencia",
+   "description": "Sentadillas, Zancada lateral, Buenos dias con mancuerna, Elevacion de gemelos…",
+   "category": "fuerza",
+   "counts_as": "training",
+   "equipment": [
+    "mancuernas"
+   ],
+   "est_min": 23,
+   "sequence": [
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-cadera",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "jumping-jacks-suaves",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "sentadillas-sin-peso",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "rotaciones-de-tronco",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "block",
+     "rounds": 3,
+     "rest": 15,
+     "rest_rounds": 30,
+     "items": [
+      {
+       "ref": "sentadillas",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "zancada-lateral",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "buenos-dias-con-mancuerna",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "elevacion-de-gemelos",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "dead-bug",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "plancha",
+       "mode": "time",
+       "sec": 40
+      }
+     ]
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-cuadriceps",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-femoral",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-pecho-y-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-espalda-gato",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-gluteo",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "respiracion-final",
+     "mode": "time",
+     "sec": 30
+    }
+   ]
+  },
+  {
+   "id": "superior-clasico",
+   "name": "Tren superior — Clasico",
+   "description": "Flexiones, Remo con mancuerna, Press de hombros, Curl de biceps…",
+   "category": "fuerza",
+   "counts_as": "training",
+   "equipment": [
+    "mancuernas",
+    "silla"
+   ],
+   "est_min": 23,
+   "sequence": [
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-cadera",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "jumping-jacks-suaves",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "sentadillas-sin-peso",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "rotaciones-de-tronco",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "block",
+     "rounds": 3,
+     "rest": 15,
+     "rest_rounds": 30,
+     "items": [
+      {
+       "ref": "flexiones",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "remo-con-mancuerna",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "press-de-hombros",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "curl-de-biceps",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "fondos-de-triceps",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "superman",
+       "mode": "time",
+       "sec": 40
+      }
+     ]
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-cuadriceps",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-femoral",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-pecho-y-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-espalda-gato",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-gluteo",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "respiracion-final",
+     "mode": "time",
+     "sec": 30
+    }
+   ]
+  },
+  {
+   "id": "superior-empuje",
+   "name": "Tren superior — Empuje",
+   "description": "Flexiones, Press de hombros, Press Arnold, Fondos de triceps…",
+   "category": "fuerza",
+   "counts_as": "training",
+   "equipment": [
+    "mancuernas",
+    "silla"
+   ],
+   "est_min": 23,
+   "sequence": [
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-cadera",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "jumping-jacks-suaves",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "sentadillas-sin-peso",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "rotaciones-de-tronco",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "block",
+     "rounds": 3,
+     "rest": 15,
+     "rest_rounds": 30,
+     "items": [
+      {
+       "ref": "flexiones",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "press-de-hombros",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "press-arnold",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "fondos-de-triceps",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "plancha-con-toque-de-hombro",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "superman",
+       "mode": "time",
+       "sec": 40
+      }
+     ]
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-cuadriceps",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-femoral",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-pecho-y-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-espalda-gato",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-gluteo",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "respiracion-final",
+     "mode": "time",
+     "sec": 30
+    }
+   ]
+  },
+  {
+   "id": "superior-tiron",
+   "name": "Tren superior — Tiron",
+   "description": "Dominadas, Remo con mancuerna, Remo renegado, Pajaro (apertura inversa)…",
+   "category": "fuerza",
+   "counts_as": "training",
+   "equipment": [
+    "barra",
+    "mancuernas",
+    "silla"
+   ],
+   "est_min": 23,
+   "sequence": [
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-cadera",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "jumping-jacks-suaves",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "sentadillas-sin-peso",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "rotaciones-de-tronco",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "block",
+     "rounds": 3,
+     "rest": 15,
+     "rest_rounds": 30,
+     "items": [
+      {
+       "ref": "dominadas",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "remo-con-mancuerna",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "remo-renegado",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "pajaro-apertura-inversa",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "curl-de-biceps",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "superman",
+       "mode": "time",
+       "sec": 40
+      }
+     ]
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-cuadriceps",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-femoral",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-pecho-y-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-espalda-gato",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-gluteo",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "respiracion-final",
+     "mode": "time",
+     "sec": 30
+    }
+   ]
+  },
+  {
+   "id": "superior-hombro-y-brazo",
+   "name": "Tren superior — Hombro y brazo",
+   "description": "Press de hombros, Pajaro (apertura inversa), Curl de biceps, Fondos de triceps…",
+   "category": "fuerza",
+   "counts_as": "training",
+   "equipment": [
+    "mancuernas",
+    "silla"
+   ],
+   "est_min": 23,
+   "sequence": [
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-cadera",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "jumping-jacks-suaves",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "sentadillas-sin-peso",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "rotaciones-de-tronco",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "block",
+     "rounds": 3,
+     "rest": 15,
+     "rest_rounds": 30,
+     "items": [
+      {
+       "ref": "press-de-hombros",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "pajaro-apertura-inversa",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "curl-de-biceps",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "fondos-de-triceps",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "press-arnold",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "plancha",
+       "mode": "time",
+       "sec": 40
+      }
+     ]
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-cuadriceps",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-femoral",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-pecho-y-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-espalda-gato",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-gluteo",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "respiracion-final",
+     "mode": "time",
+     "sec": 30
+    }
+   ]
+  },
+  {
+   "id": "fullbody-clasico",
+   "name": "Full body — Clasico",
+   "description": "Thrusters, Burpees, Swing con mancuerna, Mountain climbers…",
+   "category": "fullbody",
+   "counts_as": "training",
+   "equipment": [
+    "mancuernas"
+   ],
+   "est_min": 23,
+   "sequence": [
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-cadera",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "jumping-jacks-suaves",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "sentadillas-sin-peso",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "rotaciones-de-tronco",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "block",
+     "rounds": 3,
+     "rest": 15,
+     "rest_rounds": 30,
+     "items": [
+      {
+       "ref": "thrusters",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "burpees",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "swing-con-mancuerna",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "mountain-climbers",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "zancadas-con-salto",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "plancha-lateral",
+       "mode": "time",
+       "sec": 40
+      }
+     ]
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-cuadriceps",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-femoral",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-pecho-y-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-espalda-gato",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-gluteo",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "respiracion-final",
+     "mode": "time",
+     "sec": 30
+    }
+   ]
+  },
+  {
+   "id": "fullbody-quema",
+   "name": "Full body — Quema",
+   "description": "Burpees, Swing con mancuerna, Saltos de patinador, Rodillas arriba…",
+   "category": "fullbody",
+   "counts_as": "training",
+   "equipment": [
+    "mancuernas"
+   ],
+   "est_min": 23,
+   "sequence": [
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-cadera",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "jumping-jacks-suaves",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "sentadillas-sin-peso",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "rotaciones-de-tronco",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "block",
+     "rounds": 3,
+     "rest": 15,
+     "rest_rounds": 30,
+     "items": [
+      {
+       "ref": "burpees",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "swing-con-mancuerna",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "saltos-de-patinador",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "rodillas-arriba",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "escaladores-cruzados",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "hollow-hold",
+       "mode": "time",
+       "sec": 40
+      }
+     ]
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-cuadriceps",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-femoral",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-pecho-y-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-espalda-gato",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-gluteo",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "respiracion-final",
+     "mode": "time",
+     "sec": 30
+    }
+   ]
+  },
+  {
+   "id": "fullbody-fuerza-y-cardio",
+   "name": "Full body — Fuerza y cardio",
+   "description": "Thrusters, Remo renegado, Swing con mancuerna, Sentadilla con salto…",
+   "category": "fullbody",
+   "counts_as": "training",
+   "equipment": [
+    "mancuernas"
+   ],
+   "est_min": 23,
+   "sequence": [
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-cadera",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "jumping-jacks-suaves",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "sentadillas-sin-peso",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "rotaciones-de-tronco",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "block",
+     "rounds": 3,
+     "rest": 15,
+     "rest_rounds": 30,
+     "items": [
+      {
+       "ref": "thrusters",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "remo-renegado",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "swing-con-mancuerna",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "sentadilla-con-salto",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "flexiones",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "plancha",
+       "mode": "time",
+       "sec": 40
+      }
+     ]
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-cuadriceps",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-femoral",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-pecho-y-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-espalda-gato",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-gluteo",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "respiracion-final",
+     "mode": "time",
+     "sec": 30
+    }
+   ]
+  },
+  {
+   "id": "fullbody-sin-saltos",
+   "name": "Full body — Sin saltos",
+   "description": "Thrusters, Swing con mancuerna, Remo con mancuerna, Buenos dias con mancuerna…",
+   "category": "fullbody",
+   "counts_as": "training",
+   "equipment": [
+    "mancuernas",
+    "silla"
+   ],
+   "est_min": 23,
+   "sequence": [
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-cadera",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "jumping-jacks-suaves",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "sentadillas-sin-peso",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "rotaciones-de-tronco",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "block",
+     "rounds": 3,
+     "rest": 15,
+     "rest_rounds": 30,
+     "items": [
+      {
+       "ref": "thrusters",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "swing-con-mancuerna",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "remo-con-mancuerna",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "buenos-dias-con-mancuerna",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "marcha-en-el-sitio",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "dead-bug",
+       "mode": "time",
+       "sec": 40
+      }
+     ]
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-cuadriceps",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-femoral",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-pecho-y-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-espalda-gato",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-gluteo",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "respiracion-final",
+     "mode": "time",
+     "sec": 30
+    }
+   ]
+  },
+  {
+   "id": "core-completo",
+   "name": "Core — Completo",
+   "description": "Plancha, Crunch / russian twist, Dead bug, Hollow hold…",
+   "category": "core",
+   "counts_as": "training",
+   "equipment": [
+    "ninguno"
+   ],
+   "est_min": 23,
+   "sequence": [
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-cadera",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "jumping-jacks-suaves",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "sentadillas-sin-peso",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "rotaciones-de-tronco",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "block",
+     "rounds": 3,
+     "rest": 15,
+     "rest_rounds": 30,
+     "items": [
+      {
+       "ref": "plancha",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "crunch-russian-twist",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "dead-bug",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "hollow-hold",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "plancha-lateral",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "bird-dog",
+       "mode": "time",
+       "sec": 40
+      }
+     ]
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-cuadriceps",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-femoral",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-pecho-y-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-espalda-gato",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-gluteo",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "respiracion-final",
+     "mode": "time",
+     "sec": 30
+    }
+   ]
+  },
+  {
+   "id": "core-dinamico",
+   "name": "Core — Dinamico",
+   "description": "Mountain climbers, Bicicleta abdominal, Elevacion de piernas, Escaladores cruzados…",
+   "category": "core",
+   "counts_as": "training",
+   "equipment": [
+    "ninguno"
+   ],
+   "est_min": 23,
+   "sequence": [
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-cadera",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "jumping-jacks-suaves",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "sentadillas-sin-peso",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "rotaciones-de-tronco",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "block",
+     "rounds": 3,
+     "rest": 15,
+     "rest_rounds": 30,
+     "items": [
+      {
+       "ref": "mountain-climbers",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "bicicleta-abdominal",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "elevacion-de-piernas",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "escaladores-cruzados",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "plancha-con-toque-de-hombro",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "hollow-hold",
+       "mode": "time",
+       "sec": 40
+      }
+     ]
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-cuadriceps",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-femoral",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-pecho-y-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-espalda-gato",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-gluteo",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "respiracion-final",
+     "mode": "time",
+     "sec": 30
+    }
+   ]
+  },
+  {
+   "id": "core-estatico",
+   "name": "Core — Estatico",
+   "description": "Plancha, Plancha lateral, Hollow hold, Bird-dog…",
+   "category": "core",
+   "counts_as": "training",
+   "equipment": [
+    "ninguno"
+   ],
+   "est_min": 23,
+   "sequence": [
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-cadera",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "jumping-jacks-suaves",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "sentadillas-sin-peso",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "rotaciones-de-tronco",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "block",
+     "rounds": 3,
+     "rest": 15,
+     "rest_rounds": 30,
+     "items": [
+      {
+       "ref": "plancha",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "plancha-lateral",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "hollow-hold",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "bird-dog",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "superman",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "dead-bug",
+       "mode": "time",
+       "sec": 40
+      }
+     ]
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-cuadriceps",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-femoral",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-pecho-y-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-espalda-gato",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-gluteo",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "respiracion-final",
+     "mode": "time",
+     "sec": 30
+    }
+   ]
+  },
+  {
+   "id": "cardio-hiit",
+   "name": "Cardio — HIIT",
+   "description": "Burpees, Rodillas arriba, Saltos de patinador, Mountain climbers…",
+   "category": "cardio",
+   "counts_as": "training",
+   "equipment": [
+    "ninguno"
+   ],
+   "est_min": 23,
+   "sequence": [
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-cadera",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "jumping-jacks-suaves",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "sentadillas-sin-peso",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "rotaciones-de-tronco",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "block",
+     "rounds": 3,
+     "rest": 15,
+     "rest_rounds": 30,
+     "items": [
+      {
+       "ref": "burpees",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "rodillas-arriba",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "saltos-de-patinador",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "mountain-climbers",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "sentadilla-con-salto",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "zancadas-con-salto",
+       "mode": "time",
+       "sec": 40
+      }
+     ]
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-cuadriceps",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-femoral",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-pecho-y-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-espalda-gato",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-gluteo",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "respiracion-final",
+     "mode": "time",
+     "sec": 30
+    }
+   ]
+  },
+  {
+   "id": "cardio-sin-saltos",
+   "name": "Cardio — Sin saltos",
+   "description": "Marcha en el sitio, Escaladores cruzados, Buenos dias con mancuerna, Swing con mancuerna…",
+   "category": "cardio",
+   "counts_as": "training",
+   "equipment": [
+    "mancuernas"
+   ],
+   "est_min": 23,
+   "sequence": [
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-cadera",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "jumping-jacks-suaves",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "sentadillas-sin-peso",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "rotaciones-de-tronco",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "block",
+     "rounds": 3,
+     "rest": 15,
+     "rest_rounds": 30,
+     "items": [
+      {
+       "ref": "marcha-en-el-sitio",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "escaladores-cruzados",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "buenos-dias-con-mancuerna",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "swing-con-mancuerna",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "sentadillas",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "zancada-lateral",
+       "mode": "time",
+       "sec": 40
+      }
+     ]
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-cuadriceps",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-femoral",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-pecho-y-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-espalda-gato",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-gluteo",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "respiracion-final",
+     "mode": "time",
+     "sec": 30
+    }
+   ]
+  },
+  {
+   "id": "cardio-mixto",
+   "name": "Cardio — Mixto",
+   "description": "Swing con mancuerna, Burpees, Thrusters, Mountain climbers…",
+   "category": "cardio",
+   "counts_as": "training",
+   "equipment": [
+    "mancuernas"
+   ],
+   "est_min": 23,
+   "sequence": [
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-cadera",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "jumping-jacks-suaves",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "sentadillas-sin-peso",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "warmup",
+     "ref": "rotaciones-de-tronco",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "block",
+     "rounds": 3,
+     "rest": 15,
+     "rest_rounds": 30,
+     "items": [
+      {
+       "ref": "swing-con-mancuerna",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "burpees",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "thrusters",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "mountain-climbers",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "saltos-de-patinador",
+       "mode": "time",
+       "sec": 40
+      },
+      {
+       "ref": "marcha-en-el-sitio",
+       "mode": "time",
+       "sec": 40
+      }
+     ]
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-cuadriceps",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-femoral",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-pecho-y-hombros",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-espalda-gato",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-gluteo",
+     "mode": "time",
+     "sec": 30
+    },
+    {
+     "kind": "cooldown",
+     "ref": "respiracion-final",
+     "mode": "time",
+     "sec": 30
+    }
+   ]
+  },
+  {
+   "id": "dominadas-fuerza",
+   "name": "Dominadas — Fuerza",
+   "description": "4 series a tu ritmo, descanso de verdad.",
+   "category": "fuerza",
+   "counts_as": "training",
+   "equipment": [
+    "barra"
+   ],
+   "est_min": 10,
+   "sequence": [
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-hombros",
+     "mode": "time",
+     "sec": 40
+    },
+    {
+     "kind": "block",
+     "rounds": 4,
+     "rest": 90,
+     "items": [
+      {
+       "ref": "dominadas",
+       "mode": "reps",
+       "target": "máx (deja 1 en reserva)"
+      }
+     ]
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-pecho-y-hombros",
+     "mode": "time",
+     "sec": 30
+    }
+   ]
+  },
+  {
+   "id": "movilidad-recuperacion",
+   "name": "Movilidad — Recuperación",
+   "description": "Día suave: movilidad y respiración.",
+   "category": "movilidad",
+   "counts_as": "recovery",
+   "equipment": [
+    "ninguno"
+   ],
+   "est_min": 8,
+   "sequence": [
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-hombros",
+     "mode": "time",
+     "sec": 40
+    },
+    {
+     "kind": "warmup",
+     "ref": "movilidad-de-cadera",
+     "mode": "time",
+     "sec": 40
+    },
+    {
+     "kind": "work",
+     "ref": "estiramiento-de-espalda-gato",
+     "mode": "time",
+     "sec": 45
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-femoral",
+     "mode": "time",
+     "sec": 40
+    },
+    {
+     "kind": "cooldown",
+     "ref": "estiramiento-de-gluteo",
+     "mode": "time",
+     "sec": 40
+    },
+    {
+     "kind": "cooldown",
+     "ref": "respiracion-final",
+     "mode": "time",
+     "sec": 45
+    }
+   ]
+  }
+ ]
+}

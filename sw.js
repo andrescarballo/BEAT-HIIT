@@ -1,5 +1,5 @@
 // Beat service worker — offline app shell
-const CACHE = 'beat-v2';
+const CACHE = 'beat-v4';
 const ASSETS = [
   './',
   './index.html',

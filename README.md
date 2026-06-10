@@ -49,13 +49,61 @@ Las rutas son relativas, así que también funciona en una subcarpeta.
 ## Estructura
 
 ```
-index.html              La app entera (HTML + CSS + JS, sin dependencias)
+index.html              El motor v2 (HTML + CSS + JS, sin dependencias)
+beat-basico.json        Pack de ejemplo (20 entrenamientos) — el mismo va embebido en el motor
+SCHEMA.md               Especificación del formato de pack (v2)
 manifest.webmanifest    Metadatos de la PWA
 sw.js                   Service worker (offline)
 icon-192.png            Icono
 icon-512.png            Icono
 icon-maskable.png       Icono maskable (Android)
 ```
+
+El motor y el contenido están separados. Un **pack** es un JSON autocontenido (ejercicios + entrenamientos + plan de rotación) según `SCHEMA.md`. Los packs se importan desde la pantalla Packs y quedan guardados en **IndexedDB**, disponibles sin conexión. El pack por defecto va embebido y se instala solo en el primer arranque. Las estadísticas son del usuario y persisten aunque cambies o borres packs; el historial de la versión anterior se migra automáticamente.
+
+## Editar tus entrenamientos (`library.json`)
+
+Esquema (todo es ampliable: añade tipos, circuitos o escenarios sin tocar el código):
+
+```jsonc
+{
+  "schema": 1,
+  "rotation": ["inferior", "superior", "fullbody"],  // orden del modo Automatico
+  "warmup":  ["Movilidad de hombros", ...],          // calentamiento guiado
+  "stretch": ["Estiramiento de cuadriceps", ...],    // vuelta a la calma
+  "levels": {                                         // intensidades
+    "medio": { "w": 40, "r": 15, "rounds": 3, "lbl": "Medio", "d": "..." }
+  },
+  "exercises": {                                      // banco de ejercicios
+    "Sentadillas": {
+      "steps": ["paso 1", "paso 2", ...],
+      "err": "el error tipico a evitar",
+      "impact": "high",                               // opcional
+      "low": "Sentadillas sin salto"                  // opcional: alternativa bajo impacto
+    }
+  },
+  "types": [                                          // tipos de entreno
+    {
+      "key": "inferior",
+      "label": "Tren inferior",
+      "freq": "2x/sem",                               // recomendacion (informativa)
+      "circuits": [
+        { "name": "Clasico", "ex": ["Sentadillas", "Zancadas", ...] }
+      ]
+    }
+  ],
+  "scenarios": [                                      // atajos de configuracion
+    {
+      "name": "Express",
+      "rotation": ["inferior", "superior", "fullbody"],
+      "level": "fuerte",
+      "options": { "warmup": false, "pullups": false, "stretch": false, "lowImpact": false }
+    }
+  ]
+}
+```
+
+Reglas: cada ejercicio usado en un circuito o en `warmup`/`stretch` debe existir en `exercises`. La alternativa de `low` también. Tras editar, sube `library.json` y bump la versión en `sw.js` para refrescar la caché.
 
 ## Tecnología
 
