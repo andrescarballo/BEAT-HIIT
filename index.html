@@ -358,6 +358,7 @@ function compile(w){
   seq.unshift({type:'prep',name:'Preparate',sec:6});
   return seq;
 }
+function wkEst(w){return w.est_min?w.est_min*60:estSec(w)}
 function estSec(w){
   const seq=compile(w);let t=0;
   for(const s of seq){t+=(s.sec!=null)?s.sec:45} // reps items ~45s estimate
@@ -384,8 +385,12 @@ function sFinish(){[523,659,784,1047].forEach((f,i)=>blip(f,i===3?.34:.14,i*.14,
 /* ============ run engine ============ */
 let seq=[],idx=0,left=0,iv=null,paused=false,running=false,startTs=0,phaseEnd=0,remMs=0,pausedTotal=0,pauseStart=0,curInfo=null;
 let phaseStart=0,phasePaused=0,workSecAcc=0,workDone=0,W=null;
+let repN=0,repSets=[],repsLog=[];
 const RC=283;
 function isReps(s){return s&&s.mode==='reps'}
+function numericTarget(t){const m=String(t||'').match(/\d+/);return m?parseInt(m[0]):0}
+function lastSetsFor(ref){for(let i=LOG.length-1;i>=0;i--){const e=LOG[i];if(e&&e.reps){const r=e.reps.find(x=>x.ref===ref);if(r&&r.sets&&r.sets.length)return r.sets}}return null}
+function repCenter(){const cEl=document.getElementById('count');cEl.classList.remove('reps');cEl.innerHTML=repN+'<div style="font-family:\'Spline Sans Mono\';font-weight:600;font-size:.24em;color:#8a8a72;letter-spacing:.1em;margin-top:2px">reps · serie '+(repSets.length+1)+'</div>'}
 function show(snd){
   const s=seq[idx];
   const isMob=(s.type==='warm'||s.type==='stretch'),isW=(s.type==='work'),isRP=(s.type==='rest'||s.type==='prep'||s.type==='note');
@@ -404,14 +409,26 @@ function show(snd){
   document.getElementById('infobtn').style.visibility=inf?'visible':'hidden';
   const cEl=document.getElementById('count');
   const pBtn=document.getElementById('pause');
-  if(isReps(s)){cEl.classList.add('reps');cEl.textContent=s.target||'a tu ritmo';document.getElementById('arc').style.strokeDashoffset=0;pBtn.textContent='\u2713 HECHO'}
-  else{cEl.classList.remove('reps');pBtn.textContent=paused?'\u25B6 SEGUIR':'\u23F8 PAUSA';draw()}
+  if(isReps(s)){
+    repCenter();document.getElementById('arc').style.strokeDashoffset=0;
+    const last=lastSetsFor(s.ref);
+    document.getElementById('next').innerHTML='Objetivo: <b>'+(s.target||'')+'</b>'+(last?(' &middot; \u00faltima: '+last.join(' &middot; ')):'');
+    document.getElementById('prog').textContent='Toca el centro para +1 rep';
+    pBtn.textContent='\u2713 serie';
+    document.getElementById('prev').textContent='\u2212';
+    document.getElementById('skip').textContent='Terminar';
+  }else{
+    cEl.classList.remove('reps');pBtn.textContent=paused?'\u25B6 SEGUIR':'\u23F8 PAUSA';
+    document.getElementById('prev').innerHTML='&#8634;';document.getElementById('skip').innerHTML='&#9197;';
+    draw();
+  }
   if(snd){if(s.type==='work')sGo();else if(s.type==='rest')sRest();else if(s.type==='warm'||s.type==='stretch')sMob();else sPrep()}
 }
 function draw(){const s=seq[idx];if(isReps(s))return;document.getElementById('count').textContent=left;document.getElementById('arc').style.strokeDashoffset=RC*(1-left/s.sec)}
 function startPhase(){
   paused=false;document.getElementById('count').style.opacity='1';
   const s=seq[idx];phaseStart=Date.now();phasePaused=0;
+  if(isReps(s)){repSets=[];repN=numericTarget(s.target)}
   if(!isReps(s)&&s.sec!=null){left=s.sec;phaseEnd=Date.now()+left*1000}
   show(true);vibPhase(s);
 }
@@ -427,7 +444,7 @@ function advance(){closePhase();idx++;if(idx>=seq.length){finish();return}startP
 function startWorkout(){
   initAudio();W=currentWorkout();seq=compile(W);
   if(!seq.some(s=>s.type==='work'||s.type==='warm'||s.type==='stretch')){alert('Este entrenamiento quedo vacio con las opciones actuales.');return}
-  idx=0;paused=false;running=true;startTs=Date.now();pausedTotal=0;workSecAcc=0;workDone=0;
+  idx=0;paused=false;running=true;startTs=Date.now();pausedTotal=0;workSecAcc=0;workDone=0;repsLog=[];
   reqWake();swap('run');startPhase();clearInterval(iv);iv=setInterval(loop,200);
 }
 function activeElapsed(){let p=pausedTotal;if(paused)p+=Date.now()-pauseStart;return Date.now()-startTs-p}
@@ -440,13 +457,20 @@ async function finish(){
   const entry={ts:now.getTime(),date:now.toISOString().slice(0,10),dow:now.getDay(),time:now.toTimeString().slice(0,5),
     durSec,workSec:Math.round(workSecAcc/1000),intervals:workDone,
     packId:PACK.pack.id,packName:PACK.pack.name,workoutId:W.id,workoutName:W.name,
-    category:W.category||'fuerza',counts_as:W.counts_as||'training',exercises:names,muscles:mus};
+    category:W.category||'fuerza',counts_as:W.counts_as||'training',exercises:names,muscles:mus,reps:repsLog.slice()};
   await logAdd(entry);LOG.push(entry);
   const mm=Math.floor(durSec/60),ss=durSec%60;
   document.getElementById('donestats').innerHTML='<b>'+DOW[now.getDay()]+'</b> - '+entry.time+'<br>'+W.name+'<br>Duracion: <b>'+mm+':'+String(ss).padStart(2,'0')+'</b> - trabajo real: '+Math.round(entry.workSec/60)+' min';
+  if(repsLog.length){const r=repsLog.filter(x=>x.sets&&x.sets.length).map(x=>x.name+': '+x.sets.join('·')).join('<br>');if(r)document.getElementById('donestats').innerHTML+='<br><span style="font-size:12px;color:#8a8a72">'+r+'</span>'}
   document.getElementById('donetxt').textContent=(W.counts_as==='recovery')?'Dia de recuperacion registrado.':'Registrado en tus stats. A por el cafe.';
   swap('done');
 }
+function onRing(){if(!running)return;const s=seq[idx];if(isReps(s)){repN++;repCenter();return}togglePause()}
+function recordSerie(){const s=seq[idx];if(!isReps(s))return;if(repN>0)repSets.push(repN);repN=numericTarget(s.target);show(false)}
+function finishReps(){const s=seq[idx];if(repN>0)repSets.push(repN);repsLog.push({ref:s.ref,name:s.name,target:s.target,sets:repSets.slice()});advance()}
+function onMain(){if(!running)return;const s=seq[idx];if(isReps(s)){recordSerie();return}togglePause()}
+function onPrev(){if(!running)return;const s=seq[idx];if(isReps(s)){repN=Math.max(0,repN-1);repCenter();return}idx=Math.max(0,idx-1);startPhase()}
+function onSkip(){if(!running)return;const s=seq[idx];if(isReps(s)){finishReps();return}closePhase();idx++;if(idx>=seq.length){finish();return}startPhase()}
 function togglePause(){
   if(!running)return;const s=seq[idx];
   if(isReps(s)){advance();return}
@@ -466,7 +490,7 @@ function updSummary(){
   const tags=['<span class="pill">'+(w.category||'')+'</span>'];
   if(cfg.lowImpact)tags.push('<span class="pill">bajo impacto</span>');
   if(w.counts_as==='recovery')tags.push('<span class="pill">recuperacion</span>');
-  document.getElementById('summary').innerHTML='<b>'+w.name+'</b><br>'+tags.join(' ')+'<br><span style="font-size:12px">'+PACK.pack.name+' - ~ '+fmtMin(estSec(w))+'</span>';
+  document.getElementById('summary').innerHTML='<b>'+w.name+'</b><br>'+tags.join(' ')+'<br><span style="font-size:12px">'+PACK.pack.name+' - ~ '+fmtMin(wkEst(w))+'</span>';
   // rest suggestion
   const rad=(PACK.plan&&PACK.plan.rest_after_days)||0;const rn=document.getElementById('restnote');
   if(rad>0){
@@ -498,7 +522,7 @@ function renderConfig(){
   updMeta();
 }
 function updMeta(){const w=currentWorkout();const exs=[];if(cfg.warm)exs.push('calentamiento');if(cfg.cool)exs.push('estiramientos');if(cfg.lowImpact)exs.push('bajo impacto');
-  document.getElementById('meta').innerHTML=w.name+'<br>~ '+fmtMin(estSec(w))+(exs.length?' - '+exs.join(' - '):'')}
+  document.getElementById('meta').innerHTML=w.name+'<br>~ '+fmtMin(wkEst(w))+(exs.length?' - '+exs.join(' - '):'')}
 function bindToggle(id,key,extra){document.getElementById(id).onclick=()=>{cfg[key]=!cfg[key];saveCfg();renderConfig();updSummary();if(extra)extra()}}
 bindToggle('warmup','warm');bindToggle('stretch','cool');bindToggle('lowimp','lowImpact');
 bindToggle('sound','sound',()=>{if(cfg.sound){initAudio();sGo()}});
@@ -594,10 +618,10 @@ document.getElementById('openstats').onclick=()=>{renderStats();swap('stats')};
 document.getElementById('backbtn').onclick=()=>toMain();
 document.getElementById('go').onclick=startWorkout;
 document.getElementById('again').onclick=()=>toMain();
-document.getElementById('pause').onclick=togglePause;
-document.getElementById('ring-tap').onclick=togglePause;
-document.getElementById('skip').onclick=()=>{if(!running)return;closePhase();idx++;if(idx>=seq.length){finish();return}startPhase()};
-document.getElementById('prev').onclick=()=>{if(!running)return;idx=Math.max(0,idx-1);startPhase()};
+document.getElementById('pause').onclick=onMain;
+document.getElementById('ring-tap').onclick=onRing;
+document.getElementById('skip').onclick=onSkip;
+document.getElementById('prev').onclick=onPrev;
 document.getElementById('quit').onclick=()=>{clearInterval(iv);running=false;relWake();toMain()};
 
 /* ============ boot ============ */
