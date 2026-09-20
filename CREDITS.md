@@ -15,10 +15,9 @@ para que la app funcione sin conexión y sin pedir nada a terceros.
 
 ## Imágenes de ejercicios
 
-Todavía no hay imágenes con atribución declarada en el pack.
-
-Cada ejercicio puede declararla en `media.credit` (`author`, `license`, `source`) y este
-fichero se regenera solo. Ver `SCHEMA.md`.
+| Ejercicio | Autoría | Licencia | Origen |
+| --- | --- | --- | --- |
+| Sentadillas | Andrés (placeholder) | CC BY-SA 4.0 | [enlace](https://github.com/andrescarballo/beat-hiit) |
 
 ## Código
 

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="De pie, posición inicial de la sentadilla">
+  <!-- PLACEHOLDER. Línea de suelo + figura de pie. Sustituir por la ilustración definitiva
+       manteniendo el viewBox 200x200 y el trazo de 5px. Ver media/README.md -->
+  <g fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="100" cy="36" r="14"/>
+    <path d="M100 50 V104"/>
+    <path d="M100 62 L74 84"/>
+    <path d="M100 62 L126 84"/>
+    <path d="M100 104 L86 146 L86 176"/>
+    <path d="M100 104 L114 146 L114 176"/>
+  </g>
+  <path d="M40 180 H160" fill="none" stroke="#2a2c1f" stroke-width="5" stroke-linecap="round"/>
+</svg>

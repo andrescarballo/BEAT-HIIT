@@ -42,7 +42,11 @@ Principios:
       "equipment": ["ninguno"],            // ninguno | mancuernas | banda | barra | silla | ...
       "impact": "low",                     // low | high
       "low": "marcha",                     // OPCIONAL: id de alternativa para modo bajo impacto
-      "media": { "video": "https://...", "img": "https://..." } // OPCIONAL, solo online
+      "media": {                           // OPCIONAL: ilustración del ejercicio
+        "frames": ["media/sentadilla-1.svg", "media/sentadilla-2.svg"], // 1 fija, 2 se alternan
+        "alt": "Figura bajando a sentadilla",
+        "credit": { "author": "...", "license": "CC BY-SA 4.0", "source": "https://..." }
+      }
     }
   },
 
@@ -108,6 +112,8 @@ Ejemplo:
 
 **Toggles del motor:** "saltar calentamiento" y "saltar estiramientos" filtran genéricamente por `kind` (`warmup`/`cooldown`). "Bajo impacto" sustituye cada `ref` por su `low` si existe.
 
+**Material:** el motor reúne el `equipment` de los ejercicios de la secuencia **ya compilada** (es decir, después de aplicar esos toggles) y lo compara con el material que el usuario declara tener en Ajustes. Los entrenos para los que falte algo se marcan en la lista y el modo automático los salta. `ninguno` no cuenta como material. El `equipment` declarado a nivel de workout es informativo; el que manda es el de los ejercicios.
+
 ---
 
 ## Estadísticas (lado del motor, no van en el pack)
@@ -139,12 +145,11 @@ Derivadas y reglas:
 
 ## Almacenamiento e instalación (motor)
 
-- `localStorage`:
-  - `beat-packs` → índice de packs instalados `[{id, name, version}]`
-  - `beat-pack:<id>` → el JSON completo del pack
-  - `beat-active` → id del pack activo
-  - `beat-config` → ajustes (intensidad, opciones, modo)
-  - `beat-log` → historial de sesiones
+- **IndexedDB** (base `beat`), con tres almacenes:
+  - `packs` → el JSON completo de cada pack, indexado por `pack.id`
+  - `log` → historial de sesiones (una entrada por entreno completado)
+  - `kv` → `config` (ajustes), `active` (id del pack activo), `migrated` (marca de migración)
+- El historial de la v1, que vivía en `localStorage` bajo `beat-log`, se migra solo en el primer arranque.
 - **Importar** un pack: leer JSON → validar `schema:2` → guardar por `id` (reemplaza si coincide) → añadir al índice. Queda offline para siempre.
 - El pack por defecto va embebido en el motor como copia de seguridad y se instala en el primer arranque.
 
@@ -156,20 +161,21 @@ Derivadas y reglas:
 - Todo `low` apunta a un `id` que existe en `exercises`.
 - Todo id en `plan.rotation` y `plan.schedule` existe en `workouts`.
 - `mode:"time"` y `mode:"hold"` requieren `sec`; `mode:"reps"` requiere `target`.
+- Si hay `media`, `media.frames` es una lista no vacía de rutas; se rechazan los esquemas `javascript:` y `vbscript:`.
 - `pack.id` único; `schema` presente.
 
 ---
 
 ## Límites honestos
 
-- **`media`** funciona online. Offline de verdad exigiría empaquetar vídeos (pesado, licencias). El texto (`steps` + `cue`) es la base que siempre funciona.
+- **`media.frames`** funciona sin conexión: son ficheros del propio repo (`media/`), que `build.mjs` mete en el precache del service worker. Dos SVG de línea pesan menos que un icono. **Vídeo no**: empaquetarlo sería pesado y su licencia casi nunca lo permite. El texto (`steps` + `cue`) sigue siendo la base que siempre funciona, y la ilustración es un extra.
 - **`plan.freq` / `schedule` / `rest_after_days`** son guía e avisos *dentro* de la app. Una PWA no da recordatorios push fiables (iOS casi nada). No son alarmas.
-- **`localStorage`** ronda los ~5 MB: de sobra para texto/packs; no para media.
+- **Cuota de almacenamiento:** IndexedDB da margen de sobra para packs y media ligera (SVG/WebP), pero el navegador puede vaciarla si el dispositivo se queda sin espacio y la app no está instalada.
 - **Calorías:** estimación, nunca dato autoral.
 
 ---
 
 ## Versionado
 
-- `schema`: el motor soporta v1 (formato antiguo) y v2. Si falta o no se reconoce, se rechaza con aviso.
+- `schema`: el motor solo acepta packs **v2**; uno con otro valor se rechaza con aviso. Lo que sí sobrevive de la v1 es el **historial**, que se migra automáticamente.
 - `pack.version`: al reimportar un pack con el mismo `id`, se sobrescribe el contenido; el historial es independiente y sobrevive.

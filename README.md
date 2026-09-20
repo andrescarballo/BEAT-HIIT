@@ -23,7 +23,10 @@ Sin dependencias, sin backend, sin recoger ningún dato: todo vive en tu disposi
 - **Modo bajo impacto**: cambia saltos por versiones sin impacto.
 - **Botón de info** en cada ejercicio: cómo hacerlo y el error típico a evitar.
 - **Sonidos diferenciados** (trabajo / descanso / cuenta atrás / final) y **vibración**.
-- **Estadísticas**: racha, total, tiempo acumulado, gráfica de 7 días e historial.
+- **Ilustración del ejercicio que viene** durante el descanso, cuando sí miras la pantalla.
+- **Material disponible**: dices lo que tienes a mano y los entrenos se ajustan solos.
+- **Estadísticas**: racha, total, tiempo acumulado, gráfica de 7 días, **balance muscular** e historial.
+- **Voz opcional**: te dice el ejercicio en cada cambio, para no mirar la pantalla.
 - **Pantalla siempre encendida** durante el entreno (Wake Lock).
 - **Funciona sin conexión** e **instalable** como app.
 
@@ -38,80 +41,61 @@ Colores con sentido durante el entreno: **lima = trabajo**, **rojo = descanso**,
 
 ## Desplegar en GitHub Pages
 
-1. Sube **todos los archivos** a la raíz del repo.
+1. Ejecuta `node build.mjs` (ver abajo) y sube **todos los archivos** a la raíz del repo.
 2. **Settings → Pages → Deploy from a branch**, rama `main`, carpeta `/ (root)`.
 3. Abre la URL en Chrome (móvil) y elige **Instalar aplicación**.
 
 Las rutas son relativas, así que también funciona en una subcarpeta.
 
-> Al actualizar archivos, sube la versión de caché en `sw.js` (`beat-v1` → `beat-v2`) para que el service worker sirva la versión nueva.
+## El build
+
+No hay dependencias ni `node_modules`: es un único script.
+
+```
+node build.mjs          # antes de cada commit que toque contenido o assets
+node build.mjs --check   # no escribe nada; falla si algo está desincronizado
+```
+
+Hace tres cosas:
+
+- Inyecta `beat-basico.json` dentro de `index.html`, para que el pack tenga **una sola
+  fuente de verdad** en vez de dos copias que haya que mantener a mano.
+- Regenera la lista de assets del service worker y calcula su versión de caché a partir
+  del **hash del contenido**. Ya no hay que acordarse de subir `beat-v1` → `beat-v2`: si
+  cambia un byte, la caché se invalida sola; si no cambia nada, la versión no se mueve.
+- Regenera `CREDITS.md` con las licencias de las fuentes y de la media declarada en el pack.
+
+Cuando publiques una versión nueva, quien tenga la app instalada ve una barra de
+**"Hay una versión nueva · Recargar"**. El service worker nuevo espera a que acepte, así
+que nunca se le cambian los archivos a mitad de entreno.
 
 ## Estructura
 
 ```
-index.html              El motor v2 (HTML + CSS + JS, sin dependencias)
-beat-basico.json        Pack de ejemplo (20 entrenamientos) — el mismo va embebido en el motor
+index.html              El motor v2 (HTML + CSS + JS, sin dependencias) — generado en parte
+beat-basico.json        El pack por defecto (20 entrenamientos). Fuente de verdad: se inyecta en el motor
+build.mjs               Inyecta el pack, genera los assets del SW y CREDITS.md
 SCHEMA.md               Especificación del formato de pack (v2)
+CREDITS.md              Generado. Licencias de fuentes e ilustraciones
+fonts/                  Las tres fuentes en woff2 (subconjunto latin, 66 KB)
+media/                  Ilustraciones de ejercicio + su convención de dibujo
 manifest.webmanifest    Metadatos de la PWA
-sw.js                   Service worker (offline)
-icon-192.png            Icono
-icon-512.png            Icono
-icon-maskable.png       Icono maskable (Android)
+sw.js                   Service worker (offline) — lista de assets generada
+icon-*.png              Iconos
 ```
 
-El motor y el contenido están separados. Un **pack** es un JSON autocontenido (ejercicios + entrenamientos + plan de rotación) según `SCHEMA.md`. Los packs se importan desde la pantalla Packs y quedan guardados en **IndexedDB**, disponibles sin conexión. El pack por defecto va embebido y se instala solo en el primer arranque. Las estadísticas son del usuario y persisten aunque cambies o borres packs; el historial de la versión anterior se migra automáticamente.
+> `index.html` contiene un bloque entre `PACK:START` / `PACK:END` y `sw.js` otro entre
+> `ASSETS:START` / `ASSETS:END`. Esos dos los escribe `build.mjs`: no los edites a mano.
 
-## Editar tus entrenamientos (`library.json`)
-
-Esquema (todo es ampliable: añade tipos, circuitos o escenarios sin tocar el código):
-
-```jsonc
-{
-  "schema": 1,
-  "rotation": ["inferior", "superior", "fullbody"],  // orden del modo Automatico
-  "warmup":  ["Movilidad de hombros", ...],          // calentamiento guiado
-  "stretch": ["Estiramiento de cuadriceps", ...],    // vuelta a la calma
-  "levels": {                                         // intensidades
-    "medio": { "w": 40, "r": 15, "rounds": 3, "lbl": "Medio", "d": "..." }
-  },
-  "exercises": {                                      // banco de ejercicios
-    "Sentadillas": {
-      "steps": ["paso 1", "paso 2", ...],
-      "err": "el error tipico a evitar",
-      "impact": "high",                               // opcional
-      "low": "Sentadillas sin salto"                  // opcional: alternativa bajo impacto
-    }
-  },
-  "types": [                                          // tipos de entreno
-    {
-      "key": "inferior",
-      "label": "Tren inferior",
-      "freq": "2x/sem",                               // recomendacion (informativa)
-      "circuits": [
-        { "name": "Clasico", "ex": ["Sentadillas", "Zancadas", ...] }
-      ]
-    }
-  ],
-  "scenarios": [                                      // atajos de configuracion
-    {
-      "name": "Express",
-      "rotation": ["inferior", "superior", "fullbody"],
-      "level": "fuerte",
-      "options": { "warmup": false, "pullups": false, "stretch": false, "lowImpact": false }
-    }
-  ]
-}
-```
-
-Reglas: cada ejercicio usado en un circuito o en `warmup`/`stretch` debe existir en `exercises`. La alternativa de `low` también. Tras editar, sube `library.json` y bump la versión en `sw.js` para refrescar la caché.
+El motor y el contenido están separados. **Para crear o editar un pack, ver [`SCHEMA.md`](SCHEMA.md).** Un **pack** es un JSON autocontenido (ejercicios + entrenamientos + plan de rotación) según `SCHEMA.md`. Los packs se importan desde la pantalla Packs y quedan guardados en **IndexedDB**, disponibles sin conexión. El pack por defecto va embebido y se instala solo en el primer arranque. Las estadísticas son del usuario y persisten aunque cambies o borres packs; el historial de la versión anterior se migra automáticamente.
 
 ## Tecnología
 
-HTML/CSS/JS sin frameworks. `localStorage` para config e historial, Web Audio API para los avisos, Wake Lock API para mantener la pantalla, Vibration API y un service worker para el modo offline. El temporizador se calcula por marcas de reloj, así que aguanta el bloqueo de pantalla sin desfasarse.
+HTML/CSS/JS sin frameworks ni dependencias. **IndexedDB** para packs, ajustes e historial; Web Audio API para los avisos; SpeechSynthesis para la voz; Wake Lock API para mantener la pantalla; Vibration API; y un service worker para el modo offline. Las fuentes van servidas desde el propio repo. El temporizador se calcula por marcas de reloj, así que aguanta el bloqueo de pantalla sin desfasarse.
 
 ## Privacidad
 
-Beat no tiene servidor ni analítica. Tu configuración y tu historial se guardan **solo en el navegador de tu dispositivo**. Si cambias de móvil o borras los datos del navegador, se pierden (no hay sincronización).
+Beat no tiene servidor ni analítica, y **no hace ni una sola petición a terceros**: las fuentes van dentro del repo en vez de pedirse a Google. Tu configuración y tu historial se guardan **solo en el navegador de tu dispositivo**. Si cambias de móvil o borras los datos del navegador, se pierden (no hay sincronización), así que en Stats tienes **Exportar copia**.
 
 ## Licencia
 

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Abajo, cadera por debajo de la rodilla en la sentadilla">
+  <!-- PLACEHOLDER. Segundo fotograma: posición baja. El motor alterna 1 y 2 con fundido.
+       Sustituir manteniendo viewBox 200x200 y trazo de 5px. Ver media/README.md -->
+  <g fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="104" cy="62" r="14"/>
+    <path d="M104 76 L98 124"/>
+    <path d="M102 86 L128 96"/>
+    <path d="M102 86 L128 76"/>
+    <path d="M98 124 L74 142 L88 176"/>
+    <path d="M98 124 L118 140 L122 176"/>
+  </g>
+  <path d="M40 180 H160" fill="none" stroke="#2a2c1f" stroke-width="5" stroke-linecap="round"/>
+</svg>

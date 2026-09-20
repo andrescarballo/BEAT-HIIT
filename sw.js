@@ -4,7 +4,7 @@
 // real que se sirve, asi que no hay que tocar nada a mano al publicar.
 
 /* === ASSETS:START — generado por build.mjs. No editar a mano. === */
-const CACHE = 'beat-73ecc32ead';
+const CACHE = 'beat-9234bd1040';
 const ASSETS = [
   './',
   './index.html',
@@ -14,7 +14,9 @@ const ASSETS = [
   './icon-maskable.png',
   './fonts/archivo-black-latin.woff2',
   './fonts/fraunces-latin.woff2',
-  './fonts/spline-sans-mono-latin.woff2'
+  './fonts/spline-sans-mono-latin.woff2',
+  './media/sentadillas-1.svg',
+  './media/sentadillas-2.svg'
 ];
 /* === ASSETS:END === */
 
