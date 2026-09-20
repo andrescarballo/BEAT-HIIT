@@ -56,6 +56,11 @@ h1 .dot{color:#ff3d7f}
 .citem p{font-size:11px;color:#8a8a72;line-height:1.4}
 .citem .tagrow{margin-top:5px}
 .citem .mini{display:inline-block;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:#ff3d7f;border:1px solid #2a2c1f;border-radius:99px;padding:2px 8px;margin-right:4px}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:8px}
+.chip{border:1.5px solid #2a2c1f;background:transparent;color:#8a8a72;font-family:'Spline Sans Mono';font-weight:600;font-size:12px;padding:9px 13px;border-radius:99px;cursor:pointer;transition:.15s;min-height:40px}
+.chip.on{background:#ff3d7f;color:#0d0e0c;border-color:#ff3d7f}
+.citem.off{opacity:.45}
+.citem .mini.warn{color:#ff7e33;border-color:#553318}
 .hint{font-size:11px;color:#8a8a72;margin-bottom:10px;line-height:1.45}
 .hint b{color:#ff3d7f}
 .toggle{display:flex;align-items:center;justify-content:space-between;background:#16180f;border:1.5px solid #2a2c1f;border-radius:14px;padding:14px 16px;margin-bottom:8px;cursor:pointer}
@@ -112,6 +117,15 @@ h1 .dot{color:#ff3d7f}
 .bar.empty{background:#2a2c1f}
 .barv{font-size:9px;color:#8a8a72;margin-bottom:4px;height:11px}
 .bard{font-size:9px;color:#8a8a72;margin-top:5px;text-transform:uppercase;letter-spacing:.05em}
+.mbal{display:flex;flex-direction:column;gap:7px}
+.mrow{display:grid;grid-template-columns:86px 1fr auto;align-items:center;gap:9px}
+.mlab{font-size:11px;color:#8a8a72;text-align:right;line-height:1.2;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mtrack{height:12px;background:#2a2c1f;border-radius:6px;overflow:hidden}
+.mfill{height:100%;background:linear-gradient(90deg,#ff2e7e,#ff7e33);border-radius:6px;min-width:6px;transition:width .3s}
+.mfill.zero{background:none;min-width:0}
+.mnum{font-size:11px;color:#f2efe3;font-weight:600;min-width:14px;text-align:right}
+.mnum.zero{color:#8a8a72;font-weight:400}
+.chartbox .sub{font-size:10px;color:#8a8a72;margin:-8px 0 12px;line-height:1.4}
 .histtitle{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#ff3d7f;margin:14px 2px 8px}
 .hist{display:flex;flex-direction:column;gap:7px}
 .hrow{background:#16180f;border:1.5px solid #2a2c1f;border-radius:12px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px}
@@ -169,6 +183,9 @@ h1 .dot{color:#ff3d7f}
     </div>
     <p class="hint" id="wkhint"></p>
     <div class="clist" id="wklist"></div>
+    <div class="label">Material disponible</div>
+    <p class="hint" id="gearhint"></p>
+    <div class="chips" id="gearchips"></div>
     <div class="label">Opciones</div>
     <div class="toggle" id="warmup"><div class="tinfo"><h4>Calentamiento</h4><p>Incluir la parte de calentamiento</p></div><div class="sw"></div></div>
     <div class="toggle" id="stretch"><div class="tinfo"><h4>Estiramientos</h4><p>Incluir la vuelta a la calma</p></div><div class="sw"></div></div>
@@ -223,6 +240,7 @@ h1 .dot{color:#ff3d7f}
       <div class="stat"><div class="num" id="s-time">0m</div><div class="cap">Tiempo total</div></div>
     </div>
     <div class="chartbox"><h4>Minutos - ultimos 7 dias</h4><div class="bars" id="bars"></div></div>
+    <div class="chartbox"><h4>Balance muscular - 30 dias</h4><p class="sub" id="mbalsub">Sesiones en las que trabajaste cada grupo.</p><div class="mbal" id="mbal"></div></div>
     <div class="histtitle">Historial</div>
     <div class="hist" id="hist"></div>
     <div class="dataline">
@@ -336,17 +354,46 @@ async function loadAll(){
   PACK=await packGet(activeId);
 }
 
+/* ============ material ============ */
+// El pack ya etiqueta el material de cada ejercicio; hasta ahora no se usaba para nada.
+// El material que pide un entreno se calcula sobre la secuencia YA compilada, asi que
+// respeta el modo bajo impacto y si tienes calentamiento o estiramientos desactivados.
+const GEAR_LBL={mancuernas:'Mancuernas',banda:'Banda',barra:'Barra',silla:'Silla',esterilla:'Esterilla',cuerda:'Cuerda',kettlebell:'Kettlebell'};
+function gearLabel(id){return GEAR_LBL[id]||(String(id).charAt(0).toUpperCase()+String(id).slice(1))}
+function packGear(){ // vocabulario de material del pack activo, sin 'ninguno'
+  const s=new Set();
+  for(const e of Object.values(PACK.exercises||{}))for(const g of (e.equipment||[]))if(g&&g!=='ninguno')s.add(g);
+  return [...s].sort((a,b)=>gearLabel(a).localeCompare(gearLabel(b)));
+}
+function haveGear(){return cfg.gear===null?packGear():cfg.gear} // null = lo tengo todo
+function wkGear(w){
+  const s=new Set();
+  for(const st of compile(w))if(st.ref){const e=ex(st.ref);for(const g of ((e&&e.equipment)||[]))if(g&&g!=='ninguno')s.add(g)}
+  return [...s];
+}
+function wkMissing(w){const have=new Set(haveGear());return wkGear(w).filter(g=>!have.has(g))}
+function gearOk(w){return wkMissing(w).length===0}
+
 /* ============ workout resolution ============ */
 function packLog(){return LOG.filter(e=>e.packId===PACK.pack.id)}
 function autoWorkoutId(){
   const plan=PACK.plan||{};
   const sch=plan.schedule||{};
   const today=String(new Date().getDay());
-  if(sch[today]&&PACK.workouts.find(w=>w.id===sch[today]))return sch[today]; // schedule manda
+  const byId=id=>PACK.workouts.find(w=>w.id===id);
+  const fits=id=>{const w=byId(id);return w&&gearOk(w)};
+  if(sch[today]&&byId(sch[today])&&fits(sch[today]))return sch[today]; // schedule manda
   const rot=(plan.rotation&&plan.rotation.length)?plan.rotation:PACK.workouts.filter(w=>w.counts_as!=='recovery').map(w=>w.id);
+  // Posicion siguiente segun el ultimo entreno registrado de este pack.
+  let start=0;
   const pl=packLog();
-  for(let j=pl.length-1;j>=0;j--){const k=rot.indexOf(pl[j].workoutId);if(k>=0)return rot[(k+1)%rot.length]}
-  return rot[0];
+  for(let j=pl.length-1;j>=0;j--){const k=rot.indexOf(pl[j].workoutId);if(k>=0){start=(k+1)%rot.length;break}}
+  // Desde ahi, el primero para el que tengas material.
+  for(let i=0;i<rot.length;i++){const id=rot[(start+i)%rot.length];if(fits(id))return id}
+  // Nada de la rotacion encaja: cualquier otro del pack que si, y si tampoco, la
+  // rotacion manda igualmente (mejor proponer algo que dejar la pantalla sin plan).
+  const any=PACK.workouts.find(w=>gearOk(w));
+  return any?any.id:rot[start];
 }
 function currentWorkout(){
   let id=(cfg.wkMode==='manual'&&cfg.wkId)?cfg.wkId:autoWorkoutId();
@@ -573,6 +620,29 @@ function updSummary(){
     else rn.style.display='none';
   } else rn.style.display='none';
 }
+function renderGear(){
+  const all=packGear(),have=new Set(haveGear());
+  const box=document.getElementById('gearchips'),hint=document.getElementById('gearhint');
+  box.innerHTML='';
+  if(!all.length){box.style.display='none';hint.textContent='Este pack no necesita material.';return}
+  box.style.display='flex';
+  const n=all.filter(g=>have.has(g)).length;
+  hint.innerHTML=(n===all.length)?'Lo tienes todo. Desmarca lo que no tengas a mano y los entrenos se ajustan.'
+    :('Con '+n+' de '+all.length+': <b>'+PACK.workouts.filter(gearOk).length+'</b> de '+PACK.workouts.length+' entrenamientos disponibles.');
+  for(const g of all){
+    const b=document.createElement('button');
+    b.className='chip'+(have.has(g)?' on':'');b.textContent=gearLabel(g);
+    b.setAttribute('aria-pressed',have.has(g)?'true':'false');
+    b.onclick=()=>{
+      const cur=new Set(haveGear()); // null (= todo) se materializa al primer toque
+      if(cur.has(g))cur.delete(g);else cur.add(g);
+      const next=all.filter(x=>cur.has(x));
+      cfg.gear=(next.length===all.length)?null:next;
+      saveCfg();renderConfig();updSummary();
+    };
+    box.appendChild(b);
+  }
+}
 function renderConfig(){
   const wm=document.getElementById('wkmode');
   [...wm.children].forEach(b=>b.classList.toggle('on',b.dataset.m===cfg.wkMode));
@@ -582,12 +652,14 @@ function renderConfig(){
   const list=document.getElementById('wklist');list.innerHTML='';
   if(cfg.wkMode==='manual'){
     PACK.workouts.forEach(w=>{
-      const d=document.createElement('div');d.className='citem'+(cfg.wkId===w.id?' on':'');
-      d.innerHTML='<h5>'+esc(w.name)+'</h5><p>'+esc(w.description||'')+'</p><div class="tagrow"><span class="mini">'+esc(w.category||'')+'</span><span class="mini">~'+Math.round(estSec(w)/60)+' min</span>'+((w.counts_as==='recovery')?'<span class="mini">recuperacion</span>':'')+'</div>';
+      const miss=wkMissing(w);
+      const d=document.createElement('div');d.className='citem'+(cfg.wkId===w.id?' on':'')+(miss.length?' off':'');
+      d.innerHTML='<h5>'+esc(w.name)+'</h5><p>'+esc(w.description||'')+'</p><div class="tagrow"><span class="mini">'+esc(w.category||'')+'</span><span class="mini">~'+Math.round(estSec(w)/60)+' min</span>'+((w.counts_as==='recovery')?'<span class="mini">recuperacion</span>':'')+(miss.length?'<span class="mini warn">falta '+esc(miss.map(gearLabel).join(' + ').toLowerCase())+'</span>':'')+'</div>';
       d.onclick=()=>{cfg.wkId=w.id;saveCfg();renderConfig();updMeta()};
       list.appendChild(d);
     });
   }
+  renderGear();
   ['warmup','stretch','lowimp','sound','voicetg','vibtg'].forEach(id=>{
     const map={warmup:'warm',stretch:'cool',lowimp:'lowImpact',sound:'sound',voicetg:'voice',vibtg:'vib'};
     document.getElementById(id).classList.toggle('on',!!cfg[map[id]]);
@@ -613,7 +685,8 @@ async function renderPacks(){
     const btns=row.querySelector('.pbtns');
     if(p.pack.id!==active){
       const use=document.createElement('button');use.className='pb use';use.textContent='Usar';
-      use.onclick=async()=>{await kvSet('active',p.pack.id);PACK=await packGet(p.pack.id);cfg.wkId=null;await saveCfg();renderPacks();updSummary()};
+      // El material se resetea porque su vocabulario es de cada pack.
+      use.onclick=async()=>{await kvSet('active',p.pack.id);PACK=await packGet(p.pack.id);cfg.wkId=null;cfg.gear=null;await saveCfg();renderPacks();updSummary()};
       btns.appendChild(use);
       const del=document.createElement('button');del.className='pb';del.textContent='Borrar';
       del.onclick=async()=>{if(confirm('Borrar el pack "'+p.pack.name+'"? (tu historial no se toca)')){await packDel(p.pack.id);renderPacks()}};
@@ -641,6 +714,43 @@ function computeStreak(){
   }
   return streak;
 }
+/* Balance muscular. El pack ya etiqueta cada ejercicio con sus musculos y finish()
+   los guarda en cada sesion; hasta ahora ese dato no se mostraba en ningun sitio.
+   Los ids van sin acentos porque son claves guardadas en el historial: no se tocan,
+   se traducen solo para pintar. */
+const MUS_LBL={gluteo:'Glúteo',core:'Core',espalda:'Espalda',cuadriceps:'Cuádriceps',femoral:'Femoral',
+  hombro:'Hombro',biceps:'Bíceps',triceps:'Tríceps',pecho:'Pecho',gemelo:'Gemelo',aductor:'Aductor',
+  abductor:'Abductor',antebrazo:'Antebrazo',lumbar:'Lumbar',oblicuos:'Oblicuos',trapecio:'Trapecio'};
+const MUS_SKIP=new Set(['fullbody']); // no es un grupo muscular, distorsionaria el reparto
+function musLabel(id){return MUS_LBL[id]||(String(id).charAt(0).toUpperCase()+String(id).slice(1))}
+function renderBalance(){
+  const box=document.getElementById('mbal');box.innerHTML='';
+  // Universo: los musculos que el pack activo sabe entrenar. Asi los grupos con cero
+  // salen en la lista, que es justo la informacion util (lo que NO estas tocando).
+  const known=new Set();
+  for(const e of Object.values(PACK.exercises||{}))for(const m of (e.muscles||[]))if(!MUS_SKIP.has(m))known.add(m);
+  const since=todayStart();since.setDate(since.getDate()-29);
+  const recent=LOG.filter(e=>e.date>=localDate(since));
+  const count={};for(const m of known)count[m]=0;
+  for(const e of recent)for(const m of new Set(e.muscles||[])){if(!MUS_SKIP.has(m)&&m in count)count[m]++}
+  const rows=Object.entries(count).sort((a,b)=>b[1]-a[1]||musLabel(a[0]).localeCompare(musLabel(b[0])));
+  const sub=document.getElementById('mbalsub');
+  if(!rows.length){box.innerHTML='<div class="empty-msg">El pack activo no etiqueta musculos.</div>';sub.style.display='none';return}
+  sub.style.display='block';
+  if(!recent.length){sub.textContent='Sin entrenos en los ultimos 30 dias.'}
+  else{const cero=rows.filter(r=>!r[1]).length;
+    sub.textContent=cero?('Sesiones por grupo. Llevas 30 dias sin tocar '+cero+' de '+rows.length+'.')
+                        :('Sesiones por grupo en '+recent.length+' entrenos. Sin huecos.')}
+  const mx=Math.max(1,...rows.map(r=>r[1]));
+  for(const [m,n] of rows){
+    const row=document.createElement('div');row.className='mrow';
+    row.title=musLabel(m)+': '+n+(n===1?' sesion':' sesiones');
+    row.innerHTML='<div class="mlab">'+esc(musLabel(m))+'</div>'+
+      '<div class="mtrack"><div class="mfill'+(n?'':' zero')+'" style="width:'+(n?Math.round(n/mx*100):0)+'%"></div></div>'+
+      '<div class="mnum'+(n?'':' zero')+'">'+n+'</div>';
+    box.appendChild(row);
+  }
+}
 function renderStats(){
   document.getElementById('s-total').textContent=LOG.length;
   document.getElementById('s-streak').textContent=computeStreak();
@@ -651,6 +761,7 @@ function renderStats(){
   for(let i=6;i>=0;i--){const d=todayStart();d.setDate(d.getDate()-i);const ds=localDate(d);const mins=Math.round(LOG.filter(e=>e.date===ds).reduce((a,e)=>a+(e.durSec||0),0)/60);arr.push({d,mins});if(mins>mx)mx=mins}
   const dl=['D','L','M','X','J','V','S'];
   arr.forEach(o=>{const col=document.createElement('div');col.className='barcol';const h=o.mins>0?Math.max(6,Math.round(o.mins/mx*88)):3;col.innerHTML='<div class="barv">'+(o.mins||'')+'</div><div class="bar '+(o.mins?'':'empty')+'" style="height:'+h+'px"></div><div class="bard">'+dl[o.d.getDay()]+'</div>';bars.appendChild(col)});
+  renderBalance();
   const hist=document.getElementById('hist');hist.innerHTML='';
   if(!LOG.length){hist.innerHTML='<div class="empty-msg">Aun no hay entrenamientos.<br>Completa uno y aparecera aqui.</div>';return}
   [...LOG].sort((a,b)=>b.ts-a.ts).slice(0,40).forEach(e=>{
