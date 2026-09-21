@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Pájaro: tronco inclinado y brazos que se abren hacia los lados (1 de 2)">
+  <g transform="translate(-27.6 -79.8) scale(1.5)">
+  <path d="M 25 182 L 151 182" fill="none" stroke="#2a2c1f" stroke-width="5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+  <path d="M 81 96 L 81 120 L 81 144" fill="none" stroke="#75765f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+  <path d="M 124 116 L 120 146 L 118 176 L 108 178" fill="none" stroke="#75765f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+  <circle cx="70" cy="82" r="12" fill="none" stroke="#f2efe3" stroke-width="5" vector-effect="non-scaling-stroke"/>
+  <path d="M 70 82 L 82 88" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+  <path d="M 82 88 L 124 114" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+  <path d="M 84 94 L 84 118 L 84 142" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+  <path d="M 124 114 L 126 146 L 124 176 L 135 178" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+  <path d="M 84 134.5 L 84 149.5" fill="none" stroke="#ff7e33" stroke-width="7" stroke-linecap="round" vector-effect="non-scaling-stroke"/><path d="M 81 136.5 L 81 151.5" fill="none" stroke="#ff7e33" stroke-width="7" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+  </g>
+</svg>

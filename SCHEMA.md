@@ -168,7 +168,7 @@ Derivadas y reglas:
 
 ## Límites honestos
 
-- **`media.frames`** funciona sin conexión: son ficheros del propio repo (`media/`), que `build.mjs` mete en el precache del service worker. Dos SVG de línea pesan menos que un icono. **Vídeo no**: empaquetarlo sería pesado y su licencia casi nunca lo permite. El texto (`steps` + `cue`) sigue siendo la base que siempre funciona, y la ilustración es un extra.
+- **`media.frames`** funciona sin conexión: son ficheros del propio repo (`media/`), que `build.mjs` mete en el precache del service worker. Las 98 ilustraciones del pack básico pesan 8 KB comprimidas, menos que cualquiera de los iconos. **Vídeo no**: empaquetarlo sería pesado y su licencia casi nunca lo permite. El texto (`steps` + `cue`) sigue siendo la base que siempre funciona, y la ilustración es un extra.
 - **`plan.freq` / `schedule` / `rest_after_days`** son guía e avisos *dentro* de la app. Una PWA no da recordatorios push fiables (iOS casi nada). No son alarmas.
 - **Cuota de almacenamiento:** IndexedDB da margen de sobra para packs y media ligera (SVG/WebP), pero el navegador puede vaciarla si el dispositivo se queda sin espacio y la app no está instalada.
 - **Calorías:** estimación, nunca dato autoral.

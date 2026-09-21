@@ -1,0 +1,3 @@
+# Hoja de contactos para revisar las ilustraciones: se genera con
+# `node tools/gen-media.mjs --sheet` cuando hace falta mirarlas.
+tools/sheet.html

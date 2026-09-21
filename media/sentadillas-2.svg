@@ -1,13 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Abajo, cadera por debajo de la rodilla en la sentadilla">
-  <!-- PLACEHOLDER. Segundo fotograma: posición baja. El motor alterna 1 y 2 con fundido.
-       Sustituir manteniendo viewBox 200x200 y trazo de 5px. Ver media/README.md -->
-  <g fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="104" cy="62" r="14"/>
-    <path d="M104 76 L98 124"/>
-    <path d="M102 86 L128 96"/>
-    <path d="M102 86 L128 76"/>
-    <path d="M98 124 L74 142 L88 176"/>
-    <path d="M98 124 L118 140 L122 176"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="De pie y bajando a sentadilla con la cadera atrás (2 de 2)">
+  <g transform="translate(-28 -10.8) scale(1.1)">
+  <path d="M 69 182 L 162 182" fill="none" stroke="#2a2c1f" stroke-width="5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+  <path d="M 106 86 L 124 96 L 141 99" fill="none" stroke="#75765f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+  <path d="M 86 124 L 106 150 L 96 176 L 86 178" fill="none" stroke="#75765f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+  <circle cx="112" cy="62" r="12" fill="none" stroke="#f2efe3" stroke-width="5" vector-effect="non-scaling-stroke"/>
+  <path d="M 112 62 L 110 76" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+  <path d="M 110 76 L 86 124" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+  <path d="M 108 84 L 128 92 L 146 94" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+  <path d="M 86 124 L 112 148 L 102 176 L 113 178" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
   </g>
-  <path d="M40 180 H160" fill="none" stroke="#2a2c1f" stroke-width="5" stroke-linecap="round"/>
 </svg>

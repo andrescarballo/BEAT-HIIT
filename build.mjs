@@ -108,9 +108,24 @@ const credits = [
   '',
 ];
 if (mediaCredits.length) {
-  credits.push('| Ejercicio | Autoría | Licencia | Origen |', '| --- | --- | --- | --- |');
+  // Se agrupan las atribuciones idénticas: 53 filas iguales no informan de nada.
+  const groups = new Map();
   for (const m of mediaCredits) {
-    credits.push(`| ${m.name} | ${m.author || '—'} | ${m.license || '—'} | ${m.source ? `[enlace](${m.source})` : '—'} |`);
+    const key = [m.author || '—', m.license || '—', m.source || '—'].join('\u0000');
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(m.name);
+  }
+  const link = (s) => (!s || s === '—' ? '—' : /^https?:/.test(s) ? `[enlace](${s})` : `\`${s}\``);
+  credits.push('| Ilustraciones | Autoría | Licencia | Origen |', '| --- | --- | --- | --- |');
+  for (const [key, names] of groups) {
+    const [author, license, source] = key.split('\u0000');
+    const what = names.length > 3 ? `${names.length} ejercicios` : names.join(', ');
+    credits.push(`| ${what} | ${author} | ${license} | ${link(source)} |`);
+  }
+  const grouped = [...groups.values()].find((v) => v.length > 3);
+  if (grouped) {
+    credits.push('', '<details><summary>Ver la lista completa</summary>', '',
+      grouped.map((n) => `- ${n}`).join('\n'), '', '</details>');
   }
 } else {
   credits.push('Todavía no hay imágenes con atribución declarada en el pack.', '',
@@ -118,6 +133,18 @@ if (mediaCredits.length) {
     'fichero se regenera solo. Ver `SCHEMA.md`.');
 }
 credits.push('', '## Código', '', 'Beat es [MIT](LICENSE).', '');
+
+/* ---------- comprobacion: toda media declarada tiene que existir ---------- */
+const brokenMedia = [];
+for (const [id, e] of Object.entries(pack.exercises || {})) {
+  for (const f of (e.media && e.media.frames) || []) {
+    if (!/^(https?:|data:)/.test(f) && !exists(f)) brokenMedia.push(`${id} -> ${f}`);
+  }
+}
+if (brokenMedia.length) {
+  console.error('El pack declara media que no existe:\n  ' + brokenMedia.join('\n  '));
+  process.exit(1);
+}
 
 write('index.html', html);
 write('sw.js', sw);

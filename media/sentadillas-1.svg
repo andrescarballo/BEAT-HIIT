@@ -1,13 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="De pie, posición inicial de la sentadilla">
-  <!-- PLACEHOLDER. Línea de suelo + figura de pie. Sustituir por la ilustración definitiva
-       manteniendo el viewBox 200x200 y el trazo de 5px. Ver media/README.md -->
-  <g fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="100" cy="36" r="14"/>
-    <path d="M100 50 V104"/>
-    <path d="M100 62 L74 84"/>
-    <path d="M100 62 L126 84"/>
-    <path d="M100 104 L86 146 L86 176"/>
-    <path d="M100 104 L114 146 L114 176"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="De pie y bajando a sentadilla con la cadera atrás (1 de 2)">
+  <g transform="translate(-28 -10.8) scale(1.1)">
+  <path d="M 69 182 L 162 182" fill="none" stroke="#2a2c1f" stroke-width="5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+  <path d="M 96 58 L 94 82 L 93 106" fill="none" stroke="#75765f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+  <path d="M 100 102 L 96 140 L 95 176 L 85 178" fill="none" stroke="#75765f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+  <circle cx="98" cy="34" r="12" fill="none" stroke="#f2efe3" stroke-width="5" vector-effect="non-scaling-stroke"/>
+  <path d="M 98 34 L 98 48" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+  <path d="M 98 48 L 100 102" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+  <path d="M 101 58 L 103 82 L 104 106" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+  <path d="M 100 102 L 102 140 L 101 176 L 112 178" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
   </g>
-  <path d="M40 180 H160" fill="none" stroke="#2a2c1f" stroke-width="5" stroke-linecap="round"/>
 </svg>

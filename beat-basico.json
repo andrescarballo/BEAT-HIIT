@@ -34,7 +34,19 @@
     "barra"
    ],
    "impact": "low",
-   "canonical": "pullup"
+   "canonical": "pullup",
+   "media": {
+    "frames": [
+     "media/dominadas-1.svg",
+     "media/dominadas-2.svg"
+    ],
+    "alt": "Dominada: colgado de la barra con los brazos estirados y subiendo hasta la barbilla",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "sentadillas": {
    "name": "Sentadillas",
@@ -59,11 +71,11 @@
      "media/sentadillas-1.svg",
      "media/sentadillas-2.svg"
     ],
-    "alt": "Figura bajando a sentadilla y volviendo a subir",
+    "alt": "De pie y bajando a sentadilla con la cadera atrás",
     "credit": {
-     "author": "Andrés (placeholder)",
+     "author": "Beat (ilustraciones propias)",
      "license": "CC BY-SA 4.0",
-     "source": "https://github.com/andrescarballo/beat-hiit"
+     "source": "tools/poses.mjs"
     }
    }
   },
@@ -84,7 +96,19 @@
     "ninguno"
    ],
    "impact": "high",
-   "low": "sentadillas"
+   "low": "sentadillas",
+   "media": {
+    "frames": [
+     "media/sentadilla-con-salto-1.svg",
+     "media/sentadilla-con-salto-2.svg"
+    ],
+    "alt": "Sentadilla con salto: abajo y despegando del suelo",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "sentadilla-bulgara": {
    "name": "Sentadilla búlgara",
@@ -102,7 +126,19 @@
    "equipment": [
     "silla"
    ],
-   "impact": "low"
+   "impact": "low",
+   "media": {
+    "frames": [
+     "media/sentadilla-bulgara-1.svg",
+     "media/sentadilla-bulgara-2.svg"
+    ],
+    "alt": "Sentadilla búlgara: pie de atrás apoyado en una silla, bajando la rodilla",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "zancadas": {
    "name": "Zancadas",
@@ -121,7 +157,19 @@
     "ninguno"
    ],
    "impact": "low",
-   "canonical": "lunge"
+   "canonical": "lunge",
+   "media": {
+    "frames": [
+     "media/zancadas-1.svg",
+     "media/zancadas-2.svg"
+    ],
+    "alt": "Zancada: de pie y bajando la rodilla de atrás hacia el suelo",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "zancadas-con-salto": {
    "name": "Zancadas con salto",
@@ -140,7 +188,19 @@
     "ninguno"
    ],
    "impact": "high",
-   "low": "zancadas"
+   "low": "zancadas",
+   "media": {
+    "frames": [
+     "media/zancadas-con-salto-1.svg",
+     "media/zancadas-con-salto-2.svg"
+    ],
+    "alt": "Zancada con salto: abajo y cambio de pierna en el aire",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "zancada-lateral": {
    "name": "Zancada lateral",
@@ -159,7 +219,19 @@
    "equipment": [
     "ninguno"
    ],
-   "impact": "low"
+   "impact": "low",
+   "media": {
+    "frames": [
+     "media/zancada-lateral-1.svg",
+     "media/zancada-lateral-2.svg"
+    ],
+    "alt": "Zancada lateral: de pie y cargando el peso en una pierna doblada",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "peso-muerto-rumano": {
    "name": "Peso muerto rumano",
@@ -179,7 +251,19 @@
     "mancuernas"
    ],
    "impact": "low",
-   "canonical": "deadlift.romanian.dumbbell"
+   "canonical": "deadlift.romanian.dumbbell",
+   "media": {
+    "frames": [
+     "media/peso-muerto-rumano-1.svg",
+     "media/peso-muerto-rumano-2.svg"
+    ],
+    "alt": "Peso muerto rumano: de pie y bisagra de cadera con la espalda recta",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "buenos-dias-con-mancuerna": {
    "name": "Buenos días con mancuerna",
@@ -198,7 +282,19 @@
    "equipment": [
     "mancuernas"
    ],
-   "impact": "low"
+   "impact": "low",
+   "media": {
+    "frames": [
+     "media/buenos-dias-con-mancuerna-1.svg",
+     "media/buenos-dias-con-mancuerna-2.svg"
+    ],
+    "alt": "Buenos días: bisagra de cadera con la mancuerna sujeta en el pecho",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "puente-de-gluteo": {
    "name": "Puente de glúteo",
@@ -216,7 +312,19 @@
    "equipment": [
     "ninguno"
    ],
-   "impact": "low"
+   "impact": "low",
+   "media": {
+    "frames": [
+     "media/puente-de-gluteo-1.svg",
+     "media/puente-de-gluteo-2.svg"
+    ],
+    "alt": "Puente de glúteo: tumbado con la cadera en el suelo y subiéndola hasta alinear el cuerpo",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "puente-a-una-pierna": {
    "name": "Puente a una pierna",
@@ -234,7 +342,19 @@
    "equipment": [
     "ninguno"
    ],
-   "impact": "low"
+   "impact": "low",
+   "media": {
+    "frames": [
+     "media/puente-a-una-pierna-1.svg",
+     "media/puente-a-una-pierna-2.svg"
+    ],
+    "alt": "Puente a una pierna: una pierna estirada mientras sube la cadera",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "hip-thrust": {
    "name": "Hip thrust",
@@ -254,7 +374,19 @@
     "silla"
    ],
    "impact": "low",
-   "canonical": "hipthrust"
+   "canonical": "hipthrust",
+   "media": {
+    "frames": [
+     "media/hip-thrust-1.svg",
+     "media/hip-thrust-2.svg"
+    ],
+    "alt": "Hip thrust: espalda apoyada en la silla, subiendo la cadera hasta alinear el cuerpo",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "patada-de-gluteo": {
    "name": "Patada de glúteo",
@@ -271,7 +403,19 @@
    "equipment": [
     "ninguno"
    ],
-   "impact": "low"
+   "impact": "low",
+   "media": {
+    "frames": [
+     "media/patada-de-gluteo-1.svg",
+     "media/patada-de-gluteo-2.svg"
+    ],
+    "alt": "Patada de glúteo: a cuatro patas, llevando una pierna atrás y arriba",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "elevacion-de-gemelos": {
    "name": "Elevación de gemelos",
@@ -288,7 +432,19 @@
    "equipment": [
     "ninguno"
    ],
-   "impact": "low"
+   "impact": "low",
+   "media": {
+    "frames": [
+     "media/elevacion-de-gemelos-1.svg",
+     "media/elevacion-de-gemelos-2.svg"
+    ],
+    "alt": "Elevación de gemelos: talones en el suelo y subiendo de puntillas",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "plancha": {
    "name": "Plancha",
@@ -306,7 +462,18 @@
     "ninguno"
    ],
    "impact": "low",
-   "canonical": "plank"
+   "canonical": "plank",
+   "media": {
+    "frames": [
+     "media/plancha-1.svg"
+    ],
+    "alt": "Plancha sobre antebrazos, cuerpo recto de la cabeza a los talones",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "plancha-lateral": {
    "name": "Plancha lateral",
@@ -323,7 +490,18 @@
    "equipment": [
     "ninguno"
    ],
-   "impact": "low"
+   "impact": "low",
+   "media": {
+    "frames": [
+     "media/plancha-lateral-1.svg"
+    ],
+    "alt": "Plancha lateral: apoyo en un antebrazo, cuerpo recto y cadera arriba",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "plancha-con-toque-de-hombro": {
    "name": "Plancha con toque de hombro",
@@ -341,7 +519,19 @@
    "equipment": [
     "ninguno"
    ],
-   "impact": "low"
+   "impact": "low",
+   "media": {
+    "frames": [
+     "media/plancha-con-toque-de-hombro-1.svg",
+     "media/plancha-con-toque-de-hombro-2.svg"
+    ],
+    "alt": "Plancha tocando el hombro contrario con la mano, sin mover la cadera",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "crunch-russian-twist": {
    "name": "Crunch / russian twist",
@@ -358,7 +548,19 @@
    "equipment": [
     "ninguno"
    ],
-   "impact": "low"
+   "impact": "low",
+   "media": {
+    "frames": [
+     "media/crunch-russian-twist-1.svg",
+     "media/crunch-russian-twist-2.svg"
+    ],
+    "alt": "Crunch: despegar los hombros del suelo sin tirar del cuello",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "bicicleta-abdominal": {
    "name": "Bicicleta abdominal",
@@ -375,7 +577,19 @@
    "equipment": [
     "ninguno"
    ],
-   "impact": "low"
+   "impact": "low",
+   "media": {
+    "frames": [
+     "media/bicicleta-abdominal-1.svg",
+     "media/bicicleta-abdominal-2.svg"
+    ],
+    "alt": "Bicicleta: codo hacia la rodilla contraria, alternando",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "elevacion-de-piernas": {
    "name": "Elevación de piernas",
@@ -392,7 +606,19 @@
    "equipment": [
     "ninguno"
    ],
-   "impact": "low"
+   "impact": "low",
+   "media": {
+    "frames": [
+     "media/elevacion-de-piernas-1.svg",
+     "media/elevacion-de-piernas-2.svg"
+    ],
+    "alt": "Elevación de piernas: de tumbado a piernas arriba, sin arquear la lumbar",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "hollow-hold": {
    "name": "Hollow hold",
@@ -409,7 +635,18 @@
    "equipment": [
     "ninguno"
    ],
-   "impact": "low"
+   "impact": "low",
+   "media": {
+    "frames": [
+     "media/hollow-hold-1.svg"
+    ],
+    "alt": "Hollow hold: lumbar pegada al suelo, hombros y piernas despegados",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "dead-bug": {
    "name": "Dead bug",
@@ -426,7 +663,19 @@
    "equipment": [
     "ninguno"
    ],
-   "impact": "low"
+   "impact": "low",
+   "media": {
+    "frames": [
+     "media/dead-bug-1.svg",
+     "media/dead-bug-2.svg"
+    ],
+    "alt": "Dead bug: brazo y pierna contrarios se estiran mientras la lumbar no se mueve",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "bird-dog": {
    "name": "Bird-dog",
@@ -444,7 +693,19 @@
    "equipment": [
     "ninguno"
    ],
-   "impact": "low"
+   "impact": "low",
+   "media": {
+    "frames": [
+     "media/bird-dog-1.svg",
+     "media/bird-dog-2.svg"
+    ],
+    "alt": "Bird-dog: a cuatro patas, brazo y pierna contrarios estirados",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "flexiones": {
    "name": "Flexiones",
@@ -464,7 +725,19 @@
     "ninguno"
    ],
    "impact": "low",
-   "canonical": "pushup"
+   "canonical": "pushup",
+   "media": {
+    "frames": [
+     "media/flexiones-1.svg",
+     "media/flexiones-2.svg"
+    ],
+    "alt": "Flexión de brazos: arriba con los brazos estirados y abajo con los codos doblados",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "remo-con-mancuerna": {
    "name": "Remo con mancuerna",
@@ -484,7 +757,19 @@
     "silla"
    ],
    "impact": "low",
-   "canonical": "row.dumbbell"
+   "canonical": "row.dumbbell",
+   "media": {
+    "frames": [
+     "media/remo-con-mancuerna-1.svg",
+     "media/remo-con-mancuerna-2.svg"
+    ],
+    "alt": "Remo a una mano: tronco inclinado y codo que sube pegado al cuerpo",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "remo-renegado": {
    "name": "Remo renegado",
@@ -503,7 +788,19 @@
    "equipment": [
     "mancuernas"
    ],
-   "impact": "low"
+   "impact": "low",
+   "media": {
+    "frames": [
+     "media/remo-renegado-1.svg",
+     "media/remo-renegado-2.svg"
+    ],
+    "alt": "Remo renegado: en plancha, sube una mancuerna sin girar la cadera",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "remo-con-banda": {
    "name": "Remo con banda",
@@ -521,7 +818,19 @@
    "equipment": [
     "banda"
    ],
-   "impact": "low"
+   "impact": "low",
+   "media": {
+    "frames": [
+     "media/remo-con-banda-1.svg",
+     "media/remo-con-banda-2.svg"
+    ],
+    "alt": "Remo con banda: brazos estirados y tirando de la banda hasta las costillas",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "pajaro-apertura-inversa": {
    "name": "Pájaro (apertura inversa)",
@@ -539,7 +848,19 @@
    "equipment": [
     "mancuernas"
    ],
-   "impact": "low"
+   "impact": "low",
+   "media": {
+    "frames": [
+     "media/pajaro-apertura-inversa-1.svg",
+     "media/pajaro-apertura-inversa-2.svg"
+    ],
+    "alt": "Pájaro: tronco inclinado y brazos que se abren hacia los lados",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "press-de-hombros": {
    "name": "Press de hombros",
@@ -558,7 +879,19 @@
     "mancuernas"
    ],
    "impact": "low",
-   "canonical": "press.shoulder.dumbbell"
+   "canonical": "press.shoulder.dumbbell",
+   "media": {
+    "frames": [
+     "media/press-de-hombros-1.svg",
+     "media/press-de-hombros-2.svg"
+    ],
+    "alt": "Press de hombros con mancuernas: de la altura de los hombros a los brazos estirados",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "press-arnold": {
    "name": "Press Arnold",
@@ -576,7 +909,19 @@
    "equipment": [
     "mancuernas"
    ],
-   "impact": "low"
+   "impact": "low",
+   "media": {
+    "frames": [
+     "media/press-arnold-1.svg",
+     "media/press-arnold-2.svg"
+    ],
+    "alt": "Press Arnold: palmas hacia la cara y giro hasta los brazos estirados",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "curl-de-biceps": {
    "name": "Curl de bíceps",
@@ -594,7 +939,19 @@
     "mancuernas"
    ],
    "impact": "low",
-   "canonical": "curl.biceps.dumbbell"
+   "canonical": "curl.biceps.dumbbell",
+   "media": {
+    "frames": [
+     "media/curl-de-biceps-1.svg",
+     "media/curl-de-biceps-2.svg"
+    ],
+    "alt": "Curl de bíceps: brazos estirados y flexión sin mover el codo",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "fondos-de-triceps": {
    "name": "Fondos de tríceps",
@@ -611,7 +968,19 @@
    "equipment": [
     "silla"
    ],
-   "impact": "low"
+   "impact": "low",
+   "media": {
+    "frames": [
+     "media/fondos-de-triceps-1.svg",
+     "media/fondos-de-triceps-2.svg"
+    ],
+    "alt": "Fondos de tríceps: manos en la silla, bajando y subiendo con los codos atrás",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "superman": {
    "name": "Superman",
@@ -629,7 +998,19 @@
    "equipment": [
     "ninguno"
    ],
-   "impact": "low"
+   "impact": "low",
+   "media": {
+    "frames": [
+     "media/superman-1.svg",
+     "media/superman-2.svg"
+    ],
+    "alt": "Superman: boca abajo, despegando brazos y piernas del suelo",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "thrusters": {
    "name": "Thrusters",
@@ -649,7 +1030,19 @@
     "mancuernas"
    ],
    "impact": "low",
-   "canonical": "thruster.dumbbell"
+   "canonical": "thruster.dumbbell",
+   "media": {
+    "frames": [
+     "media/thrusters-1.svg",
+     "media/thrusters-2.svg"
+    ],
+    "alt": "Thruster: sentadilla con las mancuernas en los hombros y press al subir",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "burpees": {
    "name": "Burpees",
@@ -668,7 +1061,19 @@
    ],
    "impact": "high",
    "canonical": "burpee",
-   "low": "burpees-sin-salto"
+   "low": "burpees-sin-salto",
+   "media": {
+    "frames": [
+     "media/burpees-1.svg",
+     "media/burpees-2.svg"
+    ],
+    "alt": "Burpee: salto con los brazos arriba y plancha abajo",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "burpees-sin-salto": {
    "name": "Burpees sin salto",
@@ -685,7 +1090,19 @@
    "equipment": [
     "ninguno"
    ],
-   "impact": "low"
+   "impact": "low",
+   "media": {
+    "frames": [
+     "media/burpees-sin-salto-1.svg",
+     "media/burpees-sin-salto-2.svg"
+    ],
+    "alt": "Burpee sin salto: de pie a plancha y vuelta, sin despegar del suelo",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "swing-con-mancuerna": {
    "name": "Swing con mancuerna",
@@ -705,7 +1122,19 @@
     "mancuernas"
    ],
    "impact": "low",
-   "canonical": "swing.dumbbell"
+   "canonical": "swing.dumbbell",
+   "media": {
+    "frames": [
+     "media/swing-con-mancuerna-1.svg",
+     "media/swing-con-mancuerna-2.svg"
+    ],
+    "alt": "Swing: bisagra de cadera con la mancuerna entre las piernas y empuje hasta el pecho",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "mountain-climbers": {
    "name": "Mountain climbers",
@@ -724,7 +1153,19 @@
     "ninguno"
    ],
    "impact": "high",
-   "low": "marcha-en-el-sitio"
+   "low": "marcha-en-el-sitio",
+   "media": {
+    "frames": [
+     "media/mountain-climbers-1.svg",
+     "media/mountain-climbers-2.svg"
+    ],
+    "alt": "Mountain climbers: en plancha, rodillas al pecho alternando",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "escaladores-cruzados": {
    "name": "Escaladores cruzados",
@@ -742,7 +1183,19 @@
     "ninguno"
    ],
    "impact": "high",
-   "low": "marcha-en-el-sitio"
+   "low": "marcha-en-el-sitio",
+   "media": {
+    "frames": [
+     "media/escaladores-cruzados-1.svg",
+     "media/escaladores-cruzados-2.svg"
+    ],
+    "alt": "Escaladores cruzados: la rodilla cruza hacia el codo contrario",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "rodillas-arriba": {
    "name": "Rodillas arriba",
@@ -760,7 +1213,19 @@
     "ninguno"
    ],
    "impact": "high",
-   "low": "marcha-en-el-sitio"
+   "low": "marcha-en-el-sitio",
+   "media": {
+    "frames": [
+     "media/rodillas-arriba-1.svg",
+     "media/rodillas-arriba-2.svg"
+    ],
+    "alt": "Rodillas arriba: carrera en el sitio llevando la rodilla a la altura de la cadera",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "saltos-de-patinador": {
    "name": "Saltos de patinador",
@@ -779,7 +1244,19 @@
     "ninguno"
    ],
    "impact": "high",
-   "low": "zancada-lateral"
+   "low": "zancada-lateral",
+   "media": {
+    "frames": [
+     "media/saltos-de-patinador-1.svg",
+     "media/saltos-de-patinador-2.svg"
+    ],
+    "alt": "Salto de patinador: caes en una pierna y la otra cruza por detrás",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "marcha-en-el-sitio": {
    "name": "Marcha en el sitio",
@@ -796,7 +1273,19 @@
    "equipment": [
     "ninguno"
    ],
-   "impact": "low"
+   "impact": "low",
+   "media": {
+    "frames": [
+     "media/marcha-en-el-sitio-1.svg",
+     "media/marcha-en-el-sitio-2.svg"
+    ],
+    "alt": "Marcha en el sitio: rodillas a media altura, ritmo cómodo",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "movilidad-de-hombros": {
    "name": "Movilidad de hombros",
@@ -811,7 +1300,19 @@
    "equipment": [
     "ninguno"
    ],
-   "impact": "low"
+   "impact": "low",
+   "media": {
+    "frames": [
+     "media/movilidad-de-hombros-1.svg",
+     "media/movilidad-de-hombros-2.svg"
+    ],
+    "alt": "Movilidad de hombros: círculos amplios con los brazos",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "movilidad-de-cadera": {
    "name": "Movilidad de cadera",
@@ -826,7 +1327,19 @@
    "equipment": [
     "ninguno"
    ],
-   "impact": "low"
+   "impact": "low",
+   "media": {
+    "frames": [
+     "media/movilidad-de-cadera-1.svg",
+     "media/movilidad-de-cadera-2.svg"
+    ],
+    "alt": "Movilidad de cadera: rodilla arriba y círculo hacia fuera",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "jumping-jacks-suaves": {
    "name": "Jumping jacks suaves",
@@ -841,7 +1354,19 @@
    "equipment": [
     "ninguno"
    ],
-   "impact": "low"
+   "impact": "low",
+   "media": {
+    "frames": [
+     "media/jumping-jacks-suaves-1.svg",
+     "media/jumping-jacks-suaves-2.svg"
+    ],
+    "alt": "Jumping jacks suaves: pies juntos con brazos abajo y pies abiertos con brazos arriba",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "sentadillas-sin-peso": {
    "name": "Sentadillas sin peso",
@@ -856,7 +1381,19 @@
    "equipment": [
     "ninguno"
    ],
-   "impact": "low"
+   "impact": "low",
+   "media": {
+    "frames": [
+     "media/sentadillas-sin-peso-1.svg",
+     "media/sentadillas-sin-peso-2.svg"
+    ],
+    "alt": "Sentadilla sin peso: de pie y abajo, a ritmo suave",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "rotaciones-de-tronco": {
    "name": "Rotaciones de tronco",
@@ -871,7 +1408,19 @@
    "equipment": [
     "ninguno"
    ],
-   "impact": "low"
+   "impact": "low",
+   "media": {
+    "frames": [
+     "media/rotaciones-de-tronco-1.svg",
+     "media/rotaciones-de-tronco-2.svg"
+    ],
+    "alt": "Rotaciones de tronco: giro de cintura de lado a lado con los brazos sueltos",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "estiramiento-de-cuadriceps": {
    "name": "Estiramiento de cuádriceps",
@@ -886,7 +1435,18 @@
    "equipment": [
     "ninguno"
    ],
-   "impact": "low"
+   "impact": "low",
+   "media": {
+    "frames": [
+     "media/estiramiento-de-cuadriceps-1.svg"
+    ],
+    "alt": "Estiramiento de cuádriceps: talón al glúteo sujetando el pie",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "estiramiento-de-femoral": {
    "name": "Estiramiento de femoral",
@@ -901,7 +1461,18 @@
    "equipment": [
     "ninguno"
    ],
-   "impact": "low"
+   "impact": "low",
+   "media": {
+    "frames": [
+     "media/estiramiento-de-femoral-1.svg"
+    ],
+    "alt": "Estiramiento de femoral: bisagra de cadera con las piernas estiradas",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "estiramiento-de-pecho-y-hombros": {
    "name": "Estiramiento de pecho y hombros",
@@ -916,7 +1487,18 @@
    "equipment": [
     "ninguno"
    ],
-   "impact": "low"
+   "impact": "low",
+   "media": {
+    "frames": [
+     "media/estiramiento-de-pecho-y-hombros-1.svg"
+    ],
+    "alt": "Estiramiento de pecho: brazos atrás abriendo el pecho",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "estiramiento-de-espalda-gato": {
    "name": "Estiramiento de espalda (gato)",
@@ -931,7 +1513,19 @@
    "equipment": [
     "ninguno"
    ],
-   "impact": "low"
+   "impact": "low",
+   "media": {
+    "frames": [
+     "media/estiramiento-de-espalda-gato-1.svg",
+     "media/estiramiento-de-espalda-gato-2.svg"
+    ],
+    "alt": "Gato: a cuatro patas, redondeando y arqueando la espalda",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "estiramiento-de-gluteo": {
    "name": "Estiramiento de glúteo",
@@ -946,7 +1540,18 @@
    "equipment": [
     "ninguno"
    ],
-   "impact": "low"
+   "impact": "low",
+   "media": {
+    "frames": [
+     "media/estiramiento-de-gluteo-1.svg"
+    ],
+    "alt": "Estiramiento de glúteo: tumbado, rodilla cruzada hacia el pecho",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   },
   "respiracion-final": {
    "name": "Respiración final",
@@ -961,7 +1566,18 @@
    "equipment": [
     "ninguno"
    ],
-   "impact": "low"
+   "impact": "low",
+   "media": {
+    "frames": [
+     "media/respiracion-final-1.svg"
+    ],
+    "alt": "Respiración final: sentado, tranquilo, manos en las rodillas",
+    "credit": {
+     "author": "Beat (ilustraciones propias)",
+     "license": "CC BY-SA 4.0",
+     "source": "tools/poses.mjs"
+    }
+   }
   }
  },
  "workouts": [

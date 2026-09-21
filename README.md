@@ -23,7 +23,7 @@ Sin dependencias, sin backend, sin recoger ningún dato: todo vive en tu disposi
 - **Modo bajo impacto**: cambia saltos por versiones sin impacto.
 - **Botón de info** en cada ejercicio: cómo hacerlo y el error típico a evitar.
 - **Sonidos diferenciados** (trabajo / descanso / cuenta atrás / final) y **vibración**.
-- **Ilustración del ejercicio que viene** durante el descanso, cuando sí miras la pantalla.
+- **Ilustración de los 53 ejercicios**, generada desde datos de pose, que aparece durante el descanso mostrando el que viene.
 - **Material disponible**: dices lo que tienes a mano y los entrenos se ajustan solos.
 - **Estadísticas**: racha, total, tiempo acumulado, gráfica de 7 días, **balance muscular** e historial.
 - **Voz opcional**: te dice el ejercicio en cada cambio, para no mirar la pantalla.
@@ -64,6 +64,17 @@ Hace tres cosas:
   del **hash del contenido**. Ya no hay que acordarse de subir `beat-v1` → `beat-v2`: si
   cambia un byte, la caché se invalida sola; si no cambia nada, la versión no se mueve.
 - Regenera `CREDITS.md` con las licencias de las fuentes y de la media declarada en el pack.
+- Falla si el pack declara una ilustración que no existe en disco.
+
+Las ilustraciones se generan aparte, cuando toques las poses:
+
+```
+node tools/gen-media.mjs --sheet --pack
+```
+
+Cada figura está descrita por las coordenadas de sus articulaciones en `tools/poses.mjs`,
+así que retocar una postura es mover un punto. Las 98 ilustraciones pesan 8 KB
+comprimidas en total. Ver [`media/README.md`](media/README.md).
 
 Cuando publiques una versión nueva, quien tenga la app instalada ve una barra de
 **"Hay una versión nueva · Recargar"**. El service worker nuevo espera a que acepte, así
@@ -75,10 +86,11 @@ que nunca se le cambian los archivos a mitad de entreno.
 index.html              El motor v2 (HTML + CSS + JS, sin dependencias) — generado en parte
 beat-basico.json        El pack por defecto (20 entrenamientos). Fuente de verdad: se inyecta en el motor
 build.mjs               Inyecta el pack, genera los assets del SW y CREDITS.md
+tools/                  Rig de figura y poses: de aquí salen las ilustraciones
 SCHEMA.md               Especificación del formato de pack (v2)
 CREDITS.md              Generado. Licencias de fuentes e ilustraciones
 fonts/                  Las tres fuentes en woff2 (subconjunto latin, 66 KB)
-media/                  Ilustraciones de ejercicio + su convención de dibujo
+media/                  Las 98 ilustraciones (generadas, no se editan a mano)
 manifest.webmanifest    Metadatos de la PWA
 sw.js                   Service worker (offline) — lista de assets generada
 icon-*.png              Iconos
@@ -86,6 +98,7 @@ icon-*.png              Iconos
 
 > `index.html` contiene un bloque entre `PACK:START` / `PACK:END` y `sw.js` otro entre
 > `ASSETS:START` / `ASSETS:END`. Esos dos los escribe `build.mjs`: no los edites a mano.
+> Los SVG de `media/` los escribe `tools/gen-media.mjs`: se editan en `tools/poses.mjs`.
 
 El motor y el contenido están separados. **Para crear o editar un pack, ver [`SCHEMA.md`](SCHEMA.md).** Un **pack** es un JSON autocontenido (ejercicios + entrenamientos + plan de rotación) según `SCHEMA.md`. Los packs se importan desde la pantalla Packs y quedan guardados en **IndexedDB**, disponibles sin conexión. El pack por defecto va embebido y se instala solo en el primer arranque. Las estadísticas son del usuario y persisten aunque cambies o borres packs; el historial de la versión anterior se migra automáticamente.
 

@@ -1,48 +1,63 @@
 # Ilustraciones de ejercicios
 
-Aquí van los dibujos que la app enseña durante el descanso (el ejercicio que **viene**)
-y en la ficha de "cómo se hace".
+Los 53 ejercicios del pack tienen ilustración. La app las enseña **durante el descanso**
+(el ejercicio que *viene*, que es cuando de verdad miras la pantalla) y en la ficha de
+"cómo se hace".
 
-Ahora mismo solo hay un **placeholder** (`sentadillas-1.svg` / `sentadillas-2.svg`) para
-que el mecanismo se vea funcionando. Sustitúyelo y ve añadiendo el resto.
+**Estos SVG son generados: no se editan a mano.** Los escribe `tools/gen-media.mjs` a
+partir de las poses de `tools/poses.mjs`.
 
-## Convención
-
-- **SVG**, `viewBox="0 0 200 200"`, trazo de 5 px, `stroke-linecap="round"`.
-- Color de figura `#f2efe3`, suelo o apoyos en `#2a2c1f`. Nada de relleno.
-- Dos fotogramas por ejercicio: `-1` posición inicial, `-2` posición final. La app los
-  alterna con un fundido de 0,9 s, que es lo que da la sensación de movimiento sin GIF.
-- Un solo fotograma también vale: se queda fija, sin fundido.
-- Nombre de fichero = id del ejercicio en el pack + `-1` / `-2`.
-
-`build.mjs` mete automáticamente todo lo que haya aquí en el precache del service
-worker, así que las ilustraciones funcionan sin conexión sin tocar nada más.
-
-## Declararlas en el pack
-
-En `beat-basico.json`, dentro del ejercicio:
-
-```jsonc
-"sentadillas": {
-  "name": "Sentadillas",
-  "media": {
-    "frames": ["media/sentadillas-1.svg", "media/sentadillas-2.svg"],
-    "alt": "Figura bajando a sentadilla y volviendo a subir",
-    "credit": {
-      "author": "Quien la dibujó",
-      "license": "CC BY-SA 4.0",
-      "source": "https://..."
-    }
-  }
-}
+```
+node tools/gen-media.mjs           # regenera los SVG
+node tools/gen-media.mjs --sheet   # + hoja de contactos para revisarlas de un vistazo
+node tools/gen-media.mjs --pack    # + declara la media en beat-basico.json
+node build.mjs                     # mete media/ en el precache y regenera CREDITS.md
 ```
 
-`credit` no es decorativo: `build.mjs` genera `CREDITS.md` a partir de esos campos, así
-que la atribución se mantiene sola.
+## Cómo se describe una pose
+
+Una figura son las coordenadas de sus articulaciones sobre un lienzo de 200×200.
+Retocar una postura es mover un punto, no redibujar un SVG:
+
+```js
+sentadillas: {
+  alt: 'De pie y bajando a sentadilla con la cadera atrás',
+  frames: [
+    { head: [98, 34], spine: [[98, 48], [100, 102]],
+      arm: [[101, 58], [103, 82], [104, 106]],      // hombro, codo, mano
+      leg: [[100, 102], [102, 140], [101, 176]],    // cadera, rodilla, tobillo
+      armFar: [...], legFar: [...] },               // miembros del lado lejano
+    { /* segundo fotograma */ },
+  ],
+},
+```
+
+Reglas que impone el rig (`tools/rig.mjs`), para que no haya que pensarlas:
+
+- **Dos fotogramas** se alternan con un fundido de 0,9 s: da sensación de movimiento sin
+  GIF y sin sus líos de licencia. **Uno solo** para isométricos (plancha, hollow hold,
+  estiramientos): la app lo deja fijo.
+- El **encuadre es automático y común a los dos fotogramas**. Si cada uno se escalara por
+  su cuenta, la figura pegaría un salto de tamaño a mitad del fundido.
+- El **suelo se coloca solo** bajo el punto más bajo de la pose. `ground: false` para lo
+  que no toca el suelo (dominadas).
+- Los miembros del lado lejano se pintan en un tono apagado: da profundidad sin trucos.
+- El grosor de trazo no escala con el encuadre (`vector-effect`), así que todas las
+  figuras tienen exactamente el mismo peso de línea.
+
+Helpers para los ejercicios que alternan lado: `mirror()` (vista frontal, como rodillas
+arriba) y `swapSides()` (vista de perfil, donde el espejo giraría todo el cuerpo).
+
+## Revisar
+
+Lo único que valida una ilustración es mirarla. `--sheet` genera `tools/sheet.html` con
+los 53 ejercicios en rejilla, que es como se detectaron las posturas que no se leían.
 
 ## Sobre el origen de los dibujos
 
-Si vas a tirar de un dataset externo, comprueba la licencia **del material**, no la que
-declare quien lo republica. Varios de los datasets de ejercicios más populares son
+Son propios, generados por el código de este repo, bajo CC BY-SA 4.0.
+
+Si alguna vez te tienta un dataset externo, comprueba la licencia **del material**, no la
+que declare quien lo republica: varios de los datasets de ejercicios más populares son
 scrapes de material con copyright con una licencia permisiva puesta encima por un
-intermediario, y eso no sanea nada. Lo que hay aquí son ilustraciones propias.
+intermediario, y eso no sanea nada.
