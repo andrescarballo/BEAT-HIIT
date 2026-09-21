@@ -4,7 +4,7 @@
 // real que se sirve, asi que no hay que tocar nada a mano al publicar.
 
 /* === ASSETS:START — generado por build.mjs. No editar a mano. === */
-const CACHE = 'beat-fda39a8100';
+const CACHE = 'beat-610f706bde';
 const ASSETS = [
   './',
   './index.html',
