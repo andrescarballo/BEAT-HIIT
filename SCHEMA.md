@@ -137,6 +137,7 @@ Cada sesión completada se guarda en el dispositivo con:
 Derivadas y reglas:
 - **Días activos:** días distintos con al menos un entreno en los últimos 30 (training y recovery cuentan). Sustituye a la antigua racha con día de gracia, que no se rompía nunca entrenando en días alternos y acababa mostrando números sin significado. Este contador no se puede inflar y no penaliza descansar, que es justo lo que la app recomienda con `rest_after_days`. `recovery` se marca aparte para no inflar la sensación de "fuerza".
 - **Balance** por `category` y por `muscles` → detectar lo que descuidas (p. ej. tirón/espalda).
+- **Progresión:** los ejercicios en `mode:"reps"` guardan las series de cada sesión en `reps` (`[{ref, name, target, sets:[8,7,6,5]}]`). La app dibuja la evolución del total por sesión, para que se vea si subes. Un pack que no use `reps` simplemente no enseña esa tarjeta.
 - **Cross-pack:** todos los agregados son globales. Se puede filtrar por `packId`. La rotación de cada pack se calcula desde el log filtrado por ese pack → al volver a un pack, retoma su rotación.
 - **Calorías:** NO se guardan como dato del pack (sería precisión falsa). Si acaso, estimación calculada (MET × peso × duración) y SIEMPRE etiquetada como estimación. Desactivada por defecto.
 - **IDs con espacio de nombres:** en el log se guarda `packId` + `workoutId` juntos; dos packs pueden compartir un `id` de workout sin colisionar.

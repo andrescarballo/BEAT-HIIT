@@ -20,6 +20,7 @@
 @font-face{font-family:'Spline Sans Mono';src:url('fonts/spline-sans-mono-latin.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap}
 @font-face{font-family:'Fraunces';src:url('fonts/fraunces-latin.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}
 *{box-sizing:border-box;margin:0;padding:0}
+.sr{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 html,body{background:#0d0e0c;height:100%}
 body{font-family:'Spline Sans Mono',monospace;color:#f2efe3;display:flex;flex-direction:column;min-height:100vh;min-height:100dvh;overflow-x:hidden}
 .wrap{max-width:640px;margin:0 auto;width:100%;flex:1;display:flex;flex-direction:column;
@@ -52,7 +53,7 @@ h1 .dot{color:#ff3d7f}
 .clist{display:flex;flex-direction:column;gap:8px;margin-bottom:8px}
 .citem{background:#16180f;border:1.5px solid #2a2c1f;border-radius:12px;padding:12px 14px;cursor:pointer;transition:.15s}
 .citem.on{border-color:#ff3d7f;background:#231019}
-.citem h5{font-size:14px;font-weight:600;margin-bottom:2px}
+.citem h3{font-size:14px;font-weight:600;margin-bottom:2px}
 .citem p{font-size:11px;color:#8a8a72;line-height:1.4}
 .citem .tagrow{margin-top:5px}
 .citem .mini{display:inline-block;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:#ff3d7f;border:1px solid #2a2c1f;border-radius:99px;padding:2px 8px;margin-right:4px}
@@ -65,7 +66,7 @@ h1 .dot{color:#ff3d7f}
 .hint b{color:#ff3d7f}
 .toggle{display:flex;align-items:center;justify-content:space-between;background:#16180f;border:1.5px solid #2a2c1f;border-radius:14px;padding:14px 16px;margin-bottom:8px;cursor:pointer}
 .toggle.on{border-color:#ff3d7f}
-.toggle .tinfo h4{font-size:14px;font-weight:600;margin-bottom:2px}
+.toggle .tinfo h3{font-size:14px;font-weight:600;margin-bottom:2px}
 .toggle .tinfo p{font-size:11px;color:#8a8a72}
 .sw{width:46px;height:26px;border-radius:99px;background:#2a2c1f;position:relative;flex-shrink:0;transition:.2s}
 .toggle.on .sw{background:#ff3d7f}
@@ -76,7 +77,7 @@ h1 .dot{color:#ff3d7f}
 .back.ghost{background:transparent;border:1.5px solid #2a2c1f;color:#f2efe3;font-weight:600;font-size:14px;padding:15px}
 .prow{display:flex;justify-content:space-between;align-items:center;background:#16180f;border:1.5px solid #2a2c1f;border-radius:14px;padding:14px 16px;margin-bottom:8px;gap:10px}
 .prow.active{border-color:#ff3d7f}
-.prow .pinfo h4{font-size:14px;font-weight:600}
+.prow .pinfo h2{font-size:14px;font-weight:600}
 .prow .pinfo p{font-size:11px;color:#8a8a72;margin-top:2px}
 .prow .pbtns{display:flex;gap:6px;flex-shrink:0}
 .pb{border:1.5px solid #2a2c1f;background:transparent;color:#f2efe3;font-family:'Spline Sans Mono';font-weight:600;font-size:11px;padding:8px 10px;border-radius:9px;cursor:pointer}
@@ -102,7 +103,7 @@ h1 .dot{color:#ff3d7f}
 .next b{color:#f2efe3}
 .prog{color:#8a8a72;font-size:11px;letter-spacing:.1em;margin-bottom:10px}
 .controls{display:flex;gap:10px;margin-top:auto;padding-top:14px}
-.ctl{flex:1;border:1.5px solid #2a2c1f;background:transparent;color:#f2efe3;font-family:'Spline Sans Mono';font-weight:600;font-size:14px;padding:15px;border-radius:14px;cursor:pointer;min-height:50px}
+.ctl{flex:1;min-width:44px;border:1.5px solid #2a2c1f;background:transparent;color:#f2efe3;font-family:'Spline Sans Mono';font-weight:600;font-size:14px;padding:15px;border-radius:14px;cursor:pointer;min-height:50px}
 .ctl:active{transform:scale(.97)}
 .ctl.main{background:#ff3d7f;color:#0d0e0c;border-color:#ff3d7f;flex:2}
 .ctl.quit{flex:.7}
@@ -119,13 +120,22 @@ h1 .dot{color:#ff3d7f}
 .stat .num.pink{color:#ff3d7f}.stat .num.orange{color:#ff7e33}
 .stat .cap{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#8a8a72;margin-top:5px}
 .chartbox{background:#16180f;border:1.5px solid #2a2c1f;border-radius:16px;padding:16px;margin-bottom:8px}
-.chartbox h4{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#ff3d7f;margin-bottom:14px}
+.chartbox h2{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#ff3d7f;margin-bottom:14px}
 .bars{display:flex;align-items:flex-end;justify-content:space-between;gap:6px;height:110px}
 .barcol{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
 .bar{width:100%;background:linear-gradient(180deg,#ff2e7e,#ff7e33);border-radius:6px 6px 0 0;min-height:3px;transition:.3s}
 .bar.empty{background:#2a2c1f}
 .barv{font-size:9px;color:#8a8a72;margin-bottom:4px;height:11px}
 .bard{font-size:9px;color:#8a8a72;margin-top:5px;text-transform:uppercase;letter-spacing:.05em}
+.prog2{display:flex;flex-direction:column;gap:14px}
+.pgrow .pgtop{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:6px}
+.pgrow .pgname{font-size:13px;font-weight:600}
+.pgrow .pgval{font-size:13px;color:#f2efe3;font-weight:600;white-space:nowrap}
+.pgrow .pgval span{color:#8a8a72;font-weight:400;font-size:11px;margin-left:5px}
+.pgbars{display:flex;align-items:flex-end;gap:3px;height:38px}
+.pgbars .b{flex:1;min-width:4px;background:linear-gradient(180deg,#ff2e7e,#ff7e33);border-radius:3px 3px 0 0;min-height:3px}
+.pgbars .b.last{outline:1.5px solid #f2efe3;outline-offset:1px}
+.pgsets{font-size:10px;color:#8a8a72;margin-top:5px;letter-spacing:.04em}
 .mbal{display:flex;flex-direction:column;gap:7px}
 .mrow{display:grid;grid-template-columns:86px 1fr auto;align-items:center;gap:9px}
 .mlab{font-size:11px;color:#8a8a72;text-align:right;line-height:1.2;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -135,7 +145,7 @@ h1 .dot{color:#ff3d7f}
 .mnum{font-size:11px;color:#f2efe3;font-weight:600;min-width:14px;text-align:right}
 .mnum.zero{color:#8a8a72;font-weight:400}
 .chartbox .sub{font-size:10px;color:#8a8a72;margin:-8px 0 12px;line-height:1.4}
-.histtitle{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#ff3d7f;margin:14px 2px 8px}
+.histtitle{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#ff3d7f;margin:14px 2px 8px;font-weight:600}
 .hist{display:flex;flex-direction:column;gap:7px}
 .hrow{background:#16180f;border:1.5px solid #2a2c1f;border-radius:12px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px}
 .hrow .hd{font-size:14px;font-weight:600}
@@ -148,7 +158,7 @@ h1 .dot{color:#ff3d7f}
 .modal{position:fixed;inset:0;background:rgba(0,0,0,.78);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:20px;z-index:60}
 .modal.show{display:flex}
 .sheet{background:#16180f;border:1.5px solid #2a2c1f;border-radius:20px;padding:22px;max-width:440px;width:100%;max-height:84vh;overflow-y:auto}
-.sheet h3{font-family:'Fraunces',serif;font-size:24px;font-weight:600;margin-bottom:14px;color:#ff3d7f}
+.sheet h2{font-family:'Fraunces',serif;font-size:24px;font-weight:600;margin-bottom:14px;color:#ff3d7f}
 .mmedia{display:none;position:relative;width:100%;max-width:190px;aspect-ratio:1;margin:0 auto 16px}
 .mmedia.on{display:block}
 .mmedia img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity .4s}
@@ -169,7 +179,7 @@ h1 .dot{color:#ff3d7f}
 </style>
 </head>
 <body>
-<div class="wrap">
+<main class="wrap">
 
   <div id="main">
     <div class="topbar">
@@ -189,23 +199,23 @@ h1 .dot{color:#ff3d7f}
 
   <div id="config">
     <div class="topbar"><div><span class="kicker">Ajustes</span><h1 style="font-size:clamp(32px,9vw,52px)">Config</h1></div></div>
-    <div class="label">Entrenamiento</div>
+    <h2 class="label">Entrenamiento</h2>
     <div class="seg" id="wkmode">
       <button class="segb" data-m="auto">Automático</button>
       <button class="segb" data-m="manual">Elegir</button>
     </div>
     <p class="hint" id="wkhint"></p>
     <div class="clist" id="wklist"></div>
-    <div class="label">Material disponible</div>
+    <h2 class="label">Material disponible</h2>
     <p class="hint" id="gearhint"></p>
     <div class="chips" id="gearchips"></div>
-    <div class="label">Opciones</div>
-    <div class="toggle" id="warmup"><div class="tinfo"><h4>Calentamiento</h4><p>Incluir la parte de calentamiento</p></div><div class="sw"></div></div>
-    <div class="toggle" id="stretch"><div class="tinfo"><h4>Estiramientos</h4><p>Incluir la vuelta a la calma</p></div><div class="sw"></div></div>
-    <div class="toggle" id="lowimp"><div class="tinfo"><h4>Bajo impacto</h4><p>Sin saltos: cuida rodillas y tobillos</p></div><div class="sw"></div></div>
-    <div class="toggle" id="sound"><div class="tinfo"><h4>Sonidos</h4><p>Avisos de cambio y cuenta atrás</p></div><div class="sw"></div></div>
-    <div class="toggle" id="voicetg"><div class="tinfo"><h4>Voz</h4><p>Dice el nombre del ejercicio en cada cambio</p></div><div class="sw"></div></div>
-    <div class="toggle" id="vibtg"><div class="tinfo"><h4>Vibracion</h4><p>Aviso al vibrar en cada cambio</p></div><div class="sw"></div></div>
+    <h2 class="label">Opciones</h2>
+    <div class="toggle" id="warmup"><div class="tinfo"><h3>Calentamiento</h3><p>Incluir la parte de calentamiento</p></div><div class="sw"></div></div>
+    <div class="toggle" id="stretch"><div class="tinfo"><h3>Estiramientos</h3><p>Incluir la vuelta a la calma</p></div><div class="sw"></div></div>
+    <div class="toggle" id="lowimp"><div class="tinfo"><h3>Bajo impacto</h3><p>Sin saltos: cuida rodillas y tobillos</p></div><div class="sw"></div></div>
+    <div class="toggle" id="sound"><div class="tinfo"><h3>Sonidos</h3><p>Avisos de cambio y cuenta atrás</p></div><div class="sw"></div></div>
+    <div class="toggle" id="voicetg"><div class="tinfo"><h3>Voz</h3><p>Dice el nombre del ejercicio en cada cambio</p></div><div class="sw"></div></div>
+    <div class="toggle" id="vibtg"><div class="tinfo"><h3>Vibración</h3><p>Aviso al vibrar en cada cambio</p></div><div class="sw"></div></div>
     <div class="meta" id="meta"></div>
     <button class="back" id="cfgdone">Hecho</button>
   </div>
@@ -220,6 +230,7 @@ h1 .dot{color:#ff3d7f}
   </div>
 
   <div id="run">
+    <h1 class="sr">Entreno en curso</h1>
     <div class="phase" id="phase"></div>
     <div class="exrow"><div class="exname" id="exname" aria-live="polite"></div><button class="infobtn" id="infobtn" aria-label="Cómo se hace este ejercicio">i</button></div>
     <div class="exmedia" id="exmedia"><img id="exmedia-a" alt=""><img id="exmedia-b" alt=""></div>
@@ -239,7 +250,7 @@ h1 .dot{color:#ff3d7f}
   </div>
 
   <div id="done">
-    <div class="big">HECHO!</div>
+    <h1 class="big">¡HECHO!</h1>
     <div class="donestats" id="donestats"></div>
     <p id="donetxt"></p>
     <div class="dataline">
@@ -257,9 +268,10 @@ h1 .dot{color:#ff3d7f}
       <div class="stat"><div class="num" id="s-week">0</div><div class="cap">Esta semana</div></div>
       <div class="stat"><div class="num" id="s-time">0m</div><div class="cap">Tiempo total</div></div>
     </div>
-    <div class="chartbox"><h4>Minutos · últimos 7 días</h4><div class="bars" id="bars"></div></div>
-    <div class="chartbox"><h4>Balance muscular · 30 días</h4><p class="sub" id="mbalsub">Sesiones en las que trabajaste cada grupo.</p><div class="mbal" id="mbal"></div></div>
-    <div class="histtitle">Historial</div>
+    <div class="chartbox"><h2>Minutos · últimos 7 días</h2><div class="bars" id="bars"></div></div>
+    <div class="chartbox"><h2>Balance muscular · 30 días</h2><p class="sub" id="mbalsub">Sesiones en las que trabajaste cada grupo.</p><div class="mbal" id="mbal"></div></div>
+    <div class="chartbox" id="progbox" style="display:none"><h2>Progresión · repeticiones</h2><p class="sub" id="progsub"></p><div class="prog2" id="progreso"></div></div>
+    <h2 class="histtitle">Historial</h2>
     <div class="hist" id="hist"></div>
     <div class="dataline">
       <button class="back ghost" id="exportbtn">Exportar copia</button>
@@ -270,11 +282,11 @@ h1 .dot{color:#ff3d7f}
     <button class="clearbtn" id="clearbtn">Borrar todo el historial</button>
   </div>
 
-</div>
+</main>
 
 <div class="modal" id="modal">
-  <div class="sheet">
-    <h3 id="mtitle"></h3>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="mtitle">
+    <h2 id="mtitle"></h2>
     <div class="mmedia" id="mmedia"><img id="mmedia-a" alt=""><img id="mmedia-b" alt=""></div>
     <div class="blk"><div class="h">Cómo se hace</div><ol id="msteps"></ol></div>
     <div class="blk"><div class="h">Error típico</div><p id="merror"></p></div>
@@ -325,31 +337,31 @@ async function migrate(){
 
 /* ============ pack validation ============ */
 function validatePack(p){
-  if(!p||p.schema!==2||!p.pack||!p.pack.id||!Array.isArray(p.workouts)||!p.exercises)return 'Formato no valido (schema 2 requerido).';
+  if(!p||p.schema!==2||!p.pack||!p.pack.id||!Array.isArray(p.workouts)||!p.exercises)return 'Formato no válido (hace falta schema 2).';
   const ids=new Set(Object.keys(p.exercises));
   for(const w of p.workouts){
-    if(!w.id||!w.name||!Array.isArray(w.sequence))return 'Workout invalido: '+(w.id||w.name||'?');
+    if(!w.id||!w.name||!Array.isArray(w.sequence))return 'Entrenamiento inválido: '+(w.id||w.name||'?');
     const items=[];
     for(const st of w.sequence){if(st.kind==='block'){if(!Array.isArray(st.items))return 'Bloque sin items en '+w.id;items.push(...st.items)}else items.push(st)}
     for(const it of items){
       if(it.kind==='note'){if(!it.text)return 'note sin text en '+w.id;continue}
       if(it.kind==='rest')continue;
-      if(!it.ref||!ids.has(it.ref))return 'ref desconocida "'+(it.ref||'?')+'" en '+w.id;
+      if(!it.ref||!ids.has(it.ref))return 'Ejercicio desconocido: "'+(it.ref||'?')+'" en '+w.id;
       const m=it.mode||'time';
-      if((m==='time'||m==='hold')&&typeof it.sec!=='number')return 'falta sec en '+it.ref+' ('+w.id+')';
-      if(m==='reps'&&!it.target)return 'falta target en '+it.ref+' ('+w.id+')';
+      if((m==='time'||m==='hold')&&typeof it.sec!=='number')return 'Falta la duración (sec) en '+it.ref+' ('+w.id+')';
+      if(m==='reps'&&!it.target)return 'Falta el objetivo (target) en '+it.ref+' ('+w.id+')';
     }
   }
   for(const e of Object.values(p.exercises)){
-    if(e.low&&!ids.has(e.low))return 'alternativa low desconocida: '+e.low;
+    if(e.low&&!ids.has(e.low))return 'La alternativa de bajo impacto no existe: '+e.low;
     if(e.media){
       const f=e.media.frames;
-      if(!Array.isArray(f)||!f.length||f.some(x=>typeof x!=='string'||!x))return 'media.frames invalido en '+(e.name||'?');
-      if(f.some(x=>/^\s*(javascript|vbscript):/i.test(x)))return 'media.frames con esquema no permitido en '+(e.name||'?');
+      if(!Array.isArray(f)||!f.length||f.some(x=>typeof x!=='string'||!x))return 'media.frames inválido en '+(e.name||'?');
+      if(f.some(x=>/^\s*(javascript|vbscript):/i.test(x)))return 'media.frames con un esquema no permitido en '+(e.name||'?');
     }
   }
   const wids=new Set(p.workouts.map(w=>w.id));
-  for(const r of ((p.plan&&p.plan.rotation)||[])){if(!wids.has(r))return 'rotation apunta a workout inexistente: '+r}
+  for(const r of ((p.plan&&p.plan.rotation)||[])){if(!wids.has(r))return 'La rotación apunta a un entrenamiento que no existe: '+r}
   return null;
 }
 
@@ -702,7 +714,7 @@ function updSummary(){
   const w=currentWorkout();
   const tags=['<span class="pill">'+(w.category||'')+'</span>'];
   if(cfg.lowImpact)tags.push('<span class="pill">bajo impacto</span>');
-  if(w.counts_as==='recovery')tags.push('<span class="pill">recuperacion</span>');
+  if(w.counts_as==='recovery')tags.push('<span class="pill">recuperación</span>');
   document.getElementById('summary').innerHTML='<b>'+esc(w.name)+'</b><br>'+tags.join(' ')+'<br><span style="font-size:12px">'+esc(PACK.pack.name)+' - ~ '+fmtMin(wkEst(w))+'</span>';
   // rest suggestion
   const rad=(PACK.plan&&PACK.plan.rest_after_days)||0;const rn=document.getElementById('restnote');
@@ -747,7 +759,7 @@ function renderConfig(){
     PACK.workouts.forEach(w=>{
       const miss=wkMissing(w);
       const d=document.createElement('div');d.className='citem'+(cfg.wkId===w.id?' on':'')+(miss.length?' off':'');
-      d.innerHTML='<h5>'+esc(w.name)+'</h5><p>'+esc(w.description||'')+'</p><div class="tagrow"><span class="mini">'+esc(w.category||'')+'</span><span class="mini">~'+Math.round(estSec(w)/60)+' min</span>'+((w.counts_as==='recovery')?'<span class="mini">recuperacion</span>':'')+(miss.length?'<span class="mini warn">falta '+esc(miss.map(gearLabel).join(' + ').toLowerCase())+'</span>':'')+'</div>';
+      d.innerHTML='<h3>'+esc(w.name)+'</h3><p>'+esc(w.description||'')+'</p><div class="tagrow"><span class="mini">'+esc(w.category||'')+'</span><span class="mini">~'+Math.round(estSec(w)/60)+' min</span>'+((w.counts_as==='recovery')?'<span class="mini">recuperación</span>':'')+(miss.length?'<span class="mini warn">falta '+esc(miss.map(gearLabel).join(' + ').toLowerCase())+'</span>':'')+'</div>';
       d.onclick=()=>{cfg.wkId=w.id;saveCfg();renderConfig();updMeta()};
       list.appendChild(d);
     });
@@ -774,7 +786,7 @@ async function renderPacks(){
   packs.forEach(p=>{
     const row=document.createElement('div');row.className='prow'+(p.pack.id===active?' active':'');
     const n=p.workouts.length, ne=Object.keys(p.exercises).length;
-    row.innerHTML='<div class="pinfo"><h4>'+esc(p.pack.name)+(p.pack.id===active?' (activo)':'')+'</h4><p>'+esc(p.pack.description||'')+'<br>'+n+' entrenamientos - '+ne+' ejercicios - v'+(p.pack.version||1)+'</p></div><div class="pbtns"></div>';
+    row.innerHTML='<div class="pinfo"><h2>'+esc(p.pack.name)+(p.pack.id===active?' (activo)':'')+'</h2><p>'+esc(p.pack.description||'')+'<br>'+n+' entrenamientos - '+ne+' ejercicios - v'+(p.pack.version||1)+'</p></div><div class="pbtns"></div>';
     const btns=row.querySelector('.pbtns');
     if(p.pack.id!==active){
       const use=document.createElement('button');use.className='pb use';use.textContent='Usar';
@@ -843,6 +855,52 @@ function renderBalance(){
     box.appendChild(row);
   }
 }
+/* Progresion. Cada sesion guarda las series que hiciste en los ejercicios por
+   repeticiones (entry.reps), pero ese dato solo se veia un instante en la pantalla
+   final. Ver subir las dominadas mes a mes es justo lo que sostiene el habito. */
+function repsPorEjercicio(){
+  const m=new Map();
+  for(const e of LOG){
+    for(const r of (e.reps||[])){
+      if(!r.sets||!r.sets.length)continue;
+      if(!m.has(r.ref))m.set(r.ref,{nombre:r.name||r.ref,sesiones:[]});
+      m.get(r.ref).sesiones.push({ts:e.ts,fecha:e.date,sets:r.sets,
+        total:r.sets.reduce((a,b)=>a+b,0),mejor:Math.max(...r.sets)});
+    }
+  }
+  for(const v of m.values())v.sesiones.sort((a,b)=>a.ts-b.ts);
+  return m;
+}
+function renderProgreso(){
+  const caja=document.getElementById('progbox'),lista=document.getElementById('progreso');
+  const datos=repsPorEjercicio();
+  if(!datos.size){caja.style.display='none';return}
+  caja.style.display='block';lista.innerHTML='';
+  const VENTANA=12; // ultimas sesiones que caben sin que las barras se hagan hilos
+  let conMejora=0;
+  for(const [,d] of datos){
+    const ses=d.sesiones.slice(-VENTANA);
+    const ultima=ses[ses.length-1],primera=ses[0];
+    const delta=ses.length>1?ultima.total-primera.total:null;
+    if(delta>0)conMejora++;
+    const mx=Math.max(...ses.map(x=>x.total),1);
+    const fila=document.createElement('div');fila.className='pgrow';
+    fila.innerHTML=
+      '<div class="pgtop"><div class="pgname">'+esc(d.nombre)+'</div>'+
+      '<div class="pgval">'+ultima.total+' reps'+
+        (delta===null?'<span>primera vez</span>':'<span>'+(delta>0?'+':'')+delta+' en '+ses.length+' sesiones</span>')+
+      '</div></div>'+
+      '<div class="pgbars">'+ses.map((x,i)=>
+        '<div class="b'+(i===ses.length-1?' last':'')+'" style="height:'+Math.max(3,Math.round(x.total/mx*38))+'px" title="'+
+        x.fecha+': '+x.sets.join(' · ')+' = '+x.total+'"></div>').join('')+'</div>'+
+      '<div class="pgsets">Última serie: '+esc(ultima.sets.join(' · '))+' · mejor '+ultima.mejor+'</div>';
+    lista.appendChild(fila);
+  }
+  const sub=document.getElementById('progsub');
+  const n=datos.size;
+  sub.textContent=(n===1?'1 ejercicio':n+' ejercicios')+' por repeticiones.'+
+    (conMejora?' Subiendo en '+conMejora+'.':' Cada barra es una sesión.');
+}
 function renderStats(){
   document.getElementById('s-total').textContent=LOG.length;
   document.getElementById('s-streak').textContent=activeDays(30);
@@ -854,6 +912,7 @@ function renderStats(){
   const dl=['D','L','M','X','J','V','S'];
   arr.forEach(o=>{const col=document.createElement('div');col.className='barcol';const h=o.mins>0?Math.max(6,Math.round(o.mins/mx*88)):3;col.innerHTML='<div class="barv">'+(o.mins||'')+'</div><div class="bar '+(o.mins?'':'empty')+'" style="height:'+h+'px"></div><div class="bard">'+dl[o.d.getDay()]+'</div>';bars.appendChild(col)});
   renderBalance();
+  renderProgreso();
   const hist=document.getElementById('hist');hist.innerHTML='';
   if(!LOG.length){hist.innerHTML='<div class="empty-msg">Aún no hay entrenamientos.<br>Completa uno y aparecerá aquí.</div>';return}
   const orden=[...LOG].sort((a,b)=>b.ts-a.ts);

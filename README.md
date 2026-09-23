@@ -25,7 +25,7 @@ Sin dependencias, sin backend, sin recoger ningún dato: todo vive en tu disposi
 - **Sonidos diferenciados** (trabajo / descanso / cuenta atrás / final) y **vibración**.
 - **Ilustración de los 53 ejercicios**, generada desde datos de pose, que aparece durante el descanso mostrando el que viene.
 - **Material disponible**: dices lo que tienes a mano y los entrenos se ajustan solos.
-- **Estadísticas**: días activos, total, tiempo acumulado, gráfica de 7 días, **balance muscular** e historial completo.
+- **Estadísticas**: días activos, total, tiempo acumulado, gráfica de 7 días, **balance muscular**, **progresión de repeticiones** e historial completo.
 - **Voz opcional**: te dice el ejercicio en cada cambio, para no mirar la pantalla.
 - **Pantalla siempre encendida** durante el entreno (Wake Lock).
 - **Funciona sin conexión** e **instalable** como app.
@@ -72,6 +72,12 @@ hay que comprobarlo a mano en cada una.
 No son decorativas: han cazado que el service worker recargaba la página sola en la
 primera visita, que ocho ilustraciones apuntaban a ficheros inexistentes, y que una
 actualización no llegaba a quien ya tenía la app instalada.
+
+Una de ellas pasa **axe** (WCAG 2.1 A y AA, más las buenas prácticas de landmarks y
+orden de encabezados) por las nueve pantallas y exige **cero infracciones**. Medido
+también: arranque en frío sin conexión sin una sola petición fallida, 154 KB en la
+primera visita, ~100 ms hasta poder usarla, y ningún objetivo táctil por debajo de
+44 px a 320 px de ancho.
 
 El CI (`.github/workflows/ci.yml`) corre en cada push lo mismo, más una comprobación de
 que `media/` no se ha editado a mano y sigue coincidiendo con `tools/poses.mjs`.
