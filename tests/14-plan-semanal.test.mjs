@@ -42,4 +42,35 @@ export async function run({ page, abrir }) {
   assert.ok(!sinHoy.err);
   assert.ok(['inferior-clasico', 'superior-clasico', 'fullbody-clasico'].includes(sinHoy.propone),
     'si hoy no está en el plan, manda la rotación');
+
+  // ---- Día de descanso (null) ----
+  // No es lo mismo que no estar en el plan: un plan de 4 días deja 3 sin entrada, y
+  // esos días la app proponía entrenar igual (y siempre lo mismo, porque la rotación
+  // no avanza hasta que registras algo). Declararlo con null tiene que notarse.
+  const portada = () => page.evaluate(() => {
+    updSummary();
+    const rn = document.getElementById('restnote');
+    return {
+      descanso: restDayToday(),
+      aviso: rn.style.display === 'none' ? null : rn.textContent,
+      fueraDePlan: /fuera del plan/.test(document.getElementById('summary').innerHTML),
+      play: !!document.getElementById('go'),
+    };
+  });
+
+  const nulo = await conPlan({ [hoy]: null });
+  assert.ok(!nulo.err, 'null es un valor válido en el schedule: significa descanso');
+  const hoyDescanso = await portada();
+  assert.equal(hoyDescanso.descanso, true, 'hoy es día de descanso según el plan');
+  assert.ok(/descanso/i.test(hoyDescanso.aviso || ''), 'y la portada lo dice: ' + hoyDescanso.aviso);
+  assert.equal(hoyDescanso.fueraDePlan, true,
+    'el entreno que se ve igualmente queda marcado como fuera del plan, para no confundirlo con el de hoy');
+  assert.equal(hoyDescanso.play, true, 'el botón de empezar sigue ahí: descansar es una sugerencia, no un cierre');
+
+  // Y un día de descanso de OTRO día no convierte hoy en descanso
+  await conPlan({ [(Number(hoy) + 2) % 7]: null, [hoy]: 'core-completo' });
+  const hoyEntreno = await portada();
+  assert.equal(hoyEntreno.descanso, false, 'el descanso es del día que lo declara, no de toda la semana');
+  assert.equal(hoyEntreno.fueraDePlan, false);
+  assert.equal(hoyEntreno.aviso, null, 'y sin aviso de descanso');
 }

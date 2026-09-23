@@ -27,8 +27,10 @@ Principios:
 
   "plan": {
     "rotation": ["inferior-clasico", "superior-tiron", "fullbody-clasico"], // orden del modo Automático
-    "schedule": { "1": "inferior-clasico", "3": "superior-tiron" },         // opcional: por día de semana (0=Dom … 6=Sáb)
+    "schedule": { "1": "inferior-clasico", "3": "superior-tiron", "5": null }, // opcional: por día de semana (0=Dom … 6=Sáb)
                                                                             // PRECEDENCIA: si hay entrada para hoy, schedule manda; si no, rotation
+                                                                            // null = DESCANSO declarado. No es lo mismo que no poner el día:
+                                                                            // un día sin entrada cae a rotation y la app propone entrenar
     "rest_after_days": 6        // aviso DENTRO de la app si encadenas tantos días (no es notificación push)
   },
 
@@ -160,7 +162,7 @@ Derivadas y reglas:
 
 - Todo `ref` usado en cualquier `sequence` existe en `exercises`.
 - Todo `low` apunta a un `id` que existe en `exercises`.
-- Todo id en `plan.rotation` y `plan.schedule` existe en `workouts`.
+- Todo id en `plan.rotation` y `plan.schedule` existe en `workouts`. En `schedule`, `null` es válido (descanso) y el día va de `0` a `6`.
 - `mode:"time"` y `mode:"hold"` requieren `sec`; `mode:"reps"` requiere `target`.
 - Si hay `media`, `media.frames` es una lista no vacía de rutas; se rechazan los esquemas `javascript:` y `vbscript:`.
 - `pack.id` único; `schema` presente.
@@ -171,6 +173,7 @@ Derivadas y reglas:
 
 - **Las ilustraciones se reutilizan por ruta.** Un pack nuevo no tiene por qué traer dibujos: puede apuntar `media.frames` a los que ya existen, aunque sus ejercicios se llamen distinto. La lista de lo disponible está en [`media/CATALOGO.md`](media/CATALOGO.md) y, para consumo automático, en `media/catalogo.json`. Un ejercicio sin `media` no enseña ilustración y ya está: no es un error.
 - **`media.frames`** funciona sin conexión: son ficheros del propio repo (`media/`), que `build.mjs` mete en el precache del service worker. Las 98 ilustraciones del pack básico pesan 8 KB comprimidas, menos que cualquiera de los iconos. **Vídeo no**: empaquetarlo sería pesado y su licencia casi nunca lo permite. El texto (`steps` + `cue`) sigue siendo la base que siempre funciona, y la ilustración es un extra.
+- **Un día de descanso hay que declararlo.** Si un plan de 4 días deja los otros 3 sin entrada, esos días la app cae a `rotation` y te propone entrenar igual — y siempre lo mismo, porque la rotación no avanza hasta que registras un entreno. Con `"5": null` la portada dice que hoy toca descansar y marca lo que enseña como *fuera del plan*; el botón de empezar sigue ahí, porque descansar es una sugerencia, no un cierre.
 - **`plan.freq` / `schedule` / `rest_after_days`** son guía e avisos *dentro* de la app. Una PWA no da recordatorios push fiables (iOS casi nada). No son alarmas.
 - **Cuota de almacenamiento:** IndexedDB da margen de sobra para packs y media ligera (SVG/WebP), pero el navegador puede vaciarla si el dispositivo se queda sin espacio y la app no está instalada.
 - **Calorías:** estimación, nunca dato autoral.

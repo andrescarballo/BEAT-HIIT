@@ -421,6 +421,15 @@ function gearOk(w){return wkMissing(w).length===0}
 
 /* ============ workout resolution ============ */
 function packLog(){return LOG.filter(e=>e.packId===PACK.pack.id)}
+// Un dia con entrada null en el schedule es descanso DECLARADO por el plan. Sin esto
+// caia a la rotacion y la app proponia entrenar igual: un plan de 4 dias te ponia algo
+// delante los otros 3, y siempre el mismo, porque la rotacion no avanza hasta que
+// registras un entreno. El play sigue disponible; lo que cambia es lo que dice la app.
+function restDayToday(){
+  const sch=(PACK.plan&&PACK.plan.schedule)||{};
+  const hoy=String(new Date().getDay());
+  return Object.prototype.hasOwnProperty.call(sch,hoy)&&sch[hoy]===null;
+}
 function autoWorkoutId(){
   const plan=PACK.plan||{};
   const sch=plan.schedule||{};
@@ -723,13 +732,18 @@ function swap(id){SCREENS.forEach(s=>{document.getElementById(s).style.display=(
 function fmtMin(sec){return Math.round(sec/60)+' min'}
 function updSummary(){
   const w=currentWorkout();
+  const descanso=restDayToday();
   const tags=['<span class="pill">'+(w.category||'')+'</span>'];
   if(cfg.lowImpact)tags.push('<span class="pill">bajo impacto</span>');
   if(w.counts_as==='recovery')tags.push('<span class="pill">recuperación</span>');
+  if(descanso)tags.push('<span class="pill">fuera del plan</span>');
   document.getElementById('summary').innerHTML='<b>'+esc(w.name)+'</b><br>'+tags.join(' ')+'<br><span style="font-size:12px">'+esc(PACK.pack.name)+' - ~ '+fmtMin(wkEst(w))+'</span>';
   // rest suggestion
   const rad=(PACK.plan&&PACK.plan.rest_after_days)||0;const rn=document.getElementById('restnote');
-  if(rad>0){
+  // El descanso que declara el plan manda sobre el aviso por días encadenados: es más
+  // concreto, y los dos a la vez se pisan.
+  if(descanso){rn.style.display='block';rn.textContent='Hoy el plan dice descanso. Si te apetece entrenar igual, dale.'}
+  else if(rad>0){
     const dates=new Set(LOG.map(e=>e.date));let run=0;const d=todayStart();d.setDate(d.getDate()-1);
     while(dates.has(localDate(d))){run++;d.setDate(d.getDate()-1)}
     if(run>=rad){rn.style.display='block';rn.textContent='Llevas '+run+' días seguidos. Hoy te pega descanso o movilidad suave.'}
