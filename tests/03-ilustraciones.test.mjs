@@ -46,4 +46,58 @@ export async function run({ page, abrir }) {
   }
   const enTrabajo = traza.filter((x) => !x.descanso && x.visor);
   assert.deepEqual(enTrabajo, [], 'durante el trabajo el visor se esconde: ahí no se mira la pantalla');
+
+  // Un pack de fuera (los genera un agente, no se editan aquí) puede REUTILIZAR una
+  // ilustración existente apuntando a su ruta, aunque su ejercicio se llame distinto.
+  // Es lo que promete media/CATALOGO.md, así que se comprueba.
+  const reuso = await page.evaluate(async () => {
+    const p = {
+      schema: 2,
+      pack: { id: 'generado', name: 'Pack generado', version: 1 },
+      plan: { rotation: ['w1'] },
+      exercises: {
+        'sentadilla-profunda': {
+          name: 'Sentadilla profunda',
+          media: { frames: ['media/sentadillas-1.svg', 'media/sentadillas-2.svg'], alt: 'Sentadilla' },
+        },
+        'algo-sin-dibujo': { name: 'Ejercicio nuevo sin ilustración' },
+      },
+      workouts: [{ id: 'w1', name: 'Generado', sequence: [
+        { kind: 'work', ref: 'sentadilla-profunda', mode: 'time', sec: 30 },
+        { kind: 'rest', sec: 15 },
+        { kind: 'work', ref: 'algo-sin-dibujo', mode: 'time', sec: 30 },
+      ] }],
+    };
+    const err = validatePack(p);
+    if (err) return { err };
+    await packPut(p); await kvSet('active', 'generado');
+    PACK = await packGet('generado'); cfg.wkId = null; cfg.gear = null;
+    W = currentWorkout(); seq = compile(W); running = true;
+
+    // fase de preparación: detrás viene el ejercicio que reutiliza el dibujo
+    idx = 0; startPhase(); await new Promise((r) => setTimeout(r, 30));
+    const conDibujo = { visor: document.getElementById('run').classList.contains('hasmedia'),
+      src: document.getElementById('exmedia-a').getAttribute('src') };
+
+    // el descanso previo al ejercicio SIN dibujo no debe enseñar nada
+    idx = seq.findIndex((s, i) => s.type === 'rest' && seq[i + 1] && seq[i + 1].ref === 'algo-sin-dibujo');
+    startPhase(); await new Promise((r) => setTimeout(r, 30));
+    const sinDibujo = { visor: document.getElementById('run').classList.contains('hasmedia') };
+    return { conDibujo, sinDibujo };
+  });
+  assert.ok(!reuso.err, 'el pack generado debería ser válido: ' + reuso.err);
+  assert.ok(reuso.conDibujo.visor, 'un ejercicio con otro id reutiliza la ilustración por su ruta');
+  assert.ok(reuso.conDibujo.src.includes('sentadillas-1.svg'), 'y es la ilustración que pidió');
+  assert.equal(reuso.sinDibujo.visor, false, 'un ejercicio sin ilustración simplemente no enseña nada');
+
+  // El catálogo que se publica tiene que describir lo que hay de verdad en media/
+  const cat = await (await fetch(page.url().replace(/\/index\.html.*/, '') + '/media/catalogo.json')).json();
+  assert.equal(cat.total, cat.ilustraciones.length);
+  const rutas = cat.ilustraciones.flatMap((i) => i.frames);
+  const rotas = [];
+  for (const r of rutas) {
+    const res = await page.evaluate(async (u) => (await fetch(u, { method: 'HEAD' })).ok, r);
+    if (!res) rotas.push(r);
+  }
+  assert.deepEqual(rotas, [], 'el catálogo no puede prometer ilustraciones que no existen');
 }

@@ -1,0 +1,893 @@
+{
+ "formato": 1,
+ "generado_por": "tools/gen-media.mjs --catalogo",
+ "licencia": "CC BY-SA 4.0",
+ "como_reutilizar": "Copia el array \"frames\" en exercises.<tuId>.media.frames. El id de tu ejercicio puede ser otro: lo que se reutiliza es la ruta del fichero.",
+ "como_ampliar": "Añade una pose en tools/poses.mjs y ejecuta npm run media. Ver media/README.md.",
+ "total": 53,
+ "ilustraciones": [
+  {
+   "id": "bicicleta-abdominal",
+   "nombre": "Bicicleta abdominal",
+   "alt": "Bicicleta: codo hacia la rodilla contraria, alternando",
+   "fotogramas": 2,
+   "frames": [
+    "media/bicicleta-abdominal-1.svg",
+    "media/bicicleta-abdominal-2.svg"
+   ],
+   "canonical": null,
+   "musculos": [
+    "core"
+   ],
+   "material": [],
+   "impacto": "low"
+  },
+  {
+   "id": "bird-dog",
+   "nombre": "Bird-dog",
+   "alt": "Bird-dog: a cuatro patas, brazo y pierna contrarios estirados",
+   "fotogramas": 2,
+   "frames": [
+    "media/bird-dog-1.svg",
+    "media/bird-dog-2.svg"
+   ],
+   "canonical": null,
+   "musculos": [
+    "core",
+    "espalda"
+   ],
+   "material": [],
+   "impacto": "low"
+  },
+  {
+   "id": "buenos-dias-con-mancuerna",
+   "nombre": "Buenos días con mancuerna",
+   "alt": "Buenos días: bisagra de cadera con la mancuerna sujeta en el pecho",
+   "fotogramas": 2,
+   "frames": [
+    "media/buenos-dias-con-mancuerna-1.svg",
+    "media/buenos-dias-con-mancuerna-2.svg"
+   ],
+   "canonical": null,
+   "musculos": [
+    "femoral",
+    "gluteo",
+    "espalda"
+   ],
+   "material": [
+    "mancuernas"
+   ],
+   "impacto": "low"
+  },
+  {
+   "id": "burpees",
+   "nombre": "Burpees",
+   "alt": "Burpee: salto con los brazos arriba y plancha abajo",
+   "fotogramas": 2,
+   "frames": [
+    "media/burpees-1.svg",
+    "media/burpees-2.svg"
+   ],
+   "canonical": "burpee",
+   "musculos": [
+    "fullbody"
+   ],
+   "material": [],
+   "impacto": "high"
+  },
+  {
+   "id": "burpees-sin-salto",
+   "nombre": "Burpees sin salto",
+   "alt": "Burpee sin salto: de pie a plancha y vuelta, sin despegar del suelo",
+   "fotogramas": 2,
+   "frames": [
+    "media/burpees-sin-salto-1.svg",
+    "media/burpees-sin-salto-2.svg"
+   ],
+   "canonical": null,
+   "musculos": [
+    "fullbody"
+   ],
+   "material": [],
+   "impacto": "low"
+  },
+  {
+   "id": "crunch-russian-twist",
+   "nombre": "Crunch / russian twist",
+   "alt": "Crunch: despegar los hombros del suelo sin tirar del cuello",
+   "fotogramas": 2,
+   "frames": [
+    "media/crunch-russian-twist-1.svg",
+    "media/crunch-russian-twist-2.svg"
+   ],
+   "canonical": null,
+   "musculos": [
+    "core"
+   ],
+   "material": [],
+   "impacto": "low"
+  },
+  {
+   "id": "curl-de-biceps",
+   "nombre": "Curl de bíceps",
+   "alt": "Curl de bíceps: brazos estirados y flexión sin mover el codo",
+   "fotogramas": 2,
+   "frames": [
+    "media/curl-de-biceps-1.svg",
+    "media/curl-de-biceps-2.svg"
+   ],
+   "canonical": "curl.biceps.dumbbell",
+   "musculos": [
+    "biceps"
+   ],
+   "material": [
+    "mancuernas"
+   ],
+   "impacto": "low"
+  },
+  {
+   "id": "dead-bug",
+   "nombre": "Dead bug",
+   "alt": "Dead bug: brazo y pierna contrarios se estiran mientras la lumbar no se mueve",
+   "fotogramas": 2,
+   "frames": [
+    "media/dead-bug-1.svg",
+    "media/dead-bug-2.svg"
+   ],
+   "canonical": null,
+   "musculos": [
+    "core"
+   ],
+   "material": [],
+   "impacto": "low"
+  },
+  {
+   "id": "dominadas",
+   "nombre": "Dominadas",
+   "alt": "Dominada: colgado de la barra con los brazos estirados y subiendo hasta la barbilla",
+   "fotogramas": 2,
+   "frames": [
+    "media/dominadas-1.svg",
+    "media/dominadas-2.svg"
+   ],
+   "canonical": "pullup",
+   "musculos": [
+    "espalda",
+    "biceps"
+   ],
+   "material": [
+    "barra"
+   ],
+   "impacto": "low"
+  },
+  {
+   "id": "elevacion-de-gemelos",
+   "nombre": "Elevación de gemelos",
+   "alt": "Elevación de gemelos: talones en el suelo y subiendo de puntillas",
+   "fotogramas": 2,
+   "frames": [
+    "media/elevacion-de-gemelos-1.svg",
+    "media/elevacion-de-gemelos-2.svg"
+   ],
+   "canonical": null,
+   "musculos": [
+    "gemelo"
+   ],
+   "material": [],
+   "impacto": "low"
+  },
+  {
+   "id": "elevacion-de-piernas",
+   "nombre": "Elevación de piernas",
+   "alt": "Elevación de piernas: de tumbado a piernas arriba, sin arquear la lumbar",
+   "fotogramas": 2,
+   "frames": [
+    "media/elevacion-de-piernas-1.svg",
+    "media/elevacion-de-piernas-2.svg"
+   ],
+   "canonical": null,
+   "musculos": [
+    "core"
+   ],
+   "material": [],
+   "impacto": "low"
+  },
+  {
+   "id": "escaladores-cruzados",
+   "nombre": "Escaladores cruzados",
+   "alt": "Escaladores cruzados: la rodilla cruza hacia el codo contrario",
+   "fotogramas": 2,
+   "frames": [
+    "media/escaladores-cruzados-1.svg",
+    "media/escaladores-cruzados-2.svg"
+   ],
+   "canonical": null,
+   "musculos": [
+    "core"
+   ],
+   "material": [],
+   "impacto": "high"
+  },
+  {
+   "id": "estiramiento-de-cuadriceps",
+   "nombre": "Estiramiento de cuádriceps",
+   "alt": "Estiramiento de cuádriceps: talón al glúteo sujetando el pie",
+   "fotogramas": 1,
+   "frames": [
+    "media/estiramiento-de-cuadriceps-1.svg"
+   ],
+   "canonical": null,
+   "musculos": [],
+   "material": [],
+   "impacto": "low"
+  },
+  {
+   "id": "estiramiento-de-espalda-gato",
+   "nombre": "Estiramiento de espalda (gato)",
+   "alt": "Gato: a cuatro patas, redondeando y arqueando la espalda",
+   "fotogramas": 2,
+   "frames": [
+    "media/estiramiento-de-espalda-gato-1.svg",
+    "media/estiramiento-de-espalda-gato-2.svg"
+   ],
+   "canonical": null,
+   "musculos": [],
+   "material": [],
+   "impacto": "low"
+  },
+  {
+   "id": "estiramiento-de-femoral",
+   "nombre": "Estiramiento de femoral",
+   "alt": "Estiramiento de femoral: bisagra de cadera con las piernas estiradas",
+   "fotogramas": 1,
+   "frames": [
+    "media/estiramiento-de-femoral-1.svg"
+   ],
+   "canonical": null,
+   "musculos": [],
+   "material": [],
+   "impacto": "low"
+  },
+  {
+   "id": "estiramiento-de-gluteo",
+   "nombre": "Estiramiento de glúteo",
+   "alt": "Estiramiento de glúteo: tumbado, rodilla cruzada hacia el pecho",
+   "fotogramas": 1,
+   "frames": [
+    "media/estiramiento-de-gluteo-1.svg"
+   ],
+   "canonical": null,
+   "musculos": [],
+   "material": [],
+   "impacto": "low"
+  },
+  {
+   "id": "estiramiento-de-pecho-y-hombros",
+   "nombre": "Estiramiento de pecho y hombros",
+   "alt": "Estiramiento de pecho: brazos atrás abriendo el pecho",
+   "fotogramas": 1,
+   "frames": [
+    "media/estiramiento-de-pecho-y-hombros-1.svg"
+   ],
+   "canonical": null,
+   "musculos": [],
+   "material": [],
+   "impacto": "low"
+  },
+  {
+   "id": "flexiones",
+   "nombre": "Flexiones",
+   "alt": "Flexión de brazos: arriba con los brazos estirados y abajo con los codos doblados",
+   "fotogramas": 2,
+   "frames": [
+    "media/flexiones-1.svg",
+    "media/flexiones-2.svg"
+   ],
+   "canonical": "pushup",
+   "musculos": [
+    "pecho",
+    "triceps",
+    "hombro"
+   ],
+   "material": [],
+   "impacto": "low"
+  },
+  {
+   "id": "fondos-de-triceps",
+   "nombre": "Fondos de tríceps",
+   "alt": "Fondos de tríceps: manos en la silla, bajando y subiendo con los codos atrás",
+   "fotogramas": 2,
+   "frames": [
+    "media/fondos-de-triceps-1.svg",
+    "media/fondos-de-triceps-2.svg"
+   ],
+   "canonical": null,
+   "musculos": [
+    "triceps"
+   ],
+   "material": [
+    "silla"
+   ],
+   "impacto": "low"
+  },
+  {
+   "id": "hip-thrust",
+   "nombre": "Hip thrust",
+   "alt": "Hip thrust: espalda apoyada en la silla, subiendo la cadera hasta alinear el cuerpo",
+   "fotogramas": 2,
+   "frames": [
+    "media/hip-thrust-1.svg",
+    "media/hip-thrust-2.svg"
+   ],
+   "canonical": "hipthrust",
+   "musculos": [
+    "gluteo",
+    "femoral"
+   ],
+   "material": [
+    "mancuernas",
+    "silla"
+   ],
+   "impacto": "low"
+  },
+  {
+   "id": "hollow-hold",
+   "nombre": "Hollow hold",
+   "alt": "Hollow hold: lumbar pegada al suelo, hombros y piernas despegados",
+   "fotogramas": 1,
+   "frames": [
+    "media/hollow-hold-1.svg"
+   ],
+   "canonical": null,
+   "musculos": [
+    "core"
+   ],
+   "material": [],
+   "impacto": "low"
+  },
+  {
+   "id": "jumping-jacks-suaves",
+   "nombre": "Jumping jacks suaves",
+   "alt": "Jumping jacks suaves: pies juntos con brazos abajo y pies abiertos con brazos arriba",
+   "fotogramas": 2,
+   "frames": [
+    "media/jumping-jacks-suaves-1.svg",
+    "media/jumping-jacks-suaves-2.svg"
+   ],
+   "canonical": null,
+   "musculos": [],
+   "material": [],
+   "impacto": "low"
+  },
+  {
+   "id": "marcha-en-el-sitio",
+   "nombre": "Marcha en el sitio",
+   "alt": "Marcha en el sitio: rodillas a media altura, ritmo cómodo",
+   "fotogramas": 2,
+   "frames": [
+    "media/marcha-en-el-sitio-1.svg",
+    "media/marcha-en-el-sitio-2.svg"
+   ],
+   "canonical": null,
+   "musculos": [
+    "fullbody"
+   ],
+   "material": [],
+   "impacto": "low"
+  },
+  {
+   "id": "mountain-climbers",
+   "nombre": "Mountain climbers",
+   "alt": "Mountain climbers: en plancha, rodillas al pecho alternando",
+   "fotogramas": 2,
+   "frames": [
+    "media/mountain-climbers-1.svg",
+    "media/mountain-climbers-2.svg"
+   ],
+   "canonical": null,
+   "musculos": [
+    "core",
+    "fullbody"
+   ],
+   "material": [],
+   "impacto": "high"
+  },
+  {
+   "id": "movilidad-de-cadera",
+   "nombre": "Movilidad de cadera",
+   "alt": "Movilidad de cadera: rodilla arriba y círculo hacia fuera",
+   "fotogramas": 2,
+   "frames": [
+    "media/movilidad-de-cadera-1.svg",
+    "media/movilidad-de-cadera-2.svg"
+   ],
+   "canonical": null,
+   "musculos": [],
+   "material": [],
+   "impacto": "low"
+  },
+  {
+   "id": "movilidad-de-hombros",
+   "nombre": "Movilidad de hombros",
+   "alt": "Movilidad de hombros: círculos amplios con los brazos",
+   "fotogramas": 2,
+   "frames": [
+    "media/movilidad-de-hombros-1.svg",
+    "media/movilidad-de-hombros-2.svg"
+   ],
+   "canonical": null,
+   "musculos": [],
+   "material": [],
+   "impacto": "low"
+  },
+  {
+   "id": "pajaro-apertura-inversa",
+   "nombre": "Pájaro (apertura inversa)",
+   "alt": "Pájaro: tronco inclinado y brazos que se abren hacia los lados",
+   "fotogramas": 2,
+   "frames": [
+    "media/pajaro-apertura-inversa-1.svg",
+    "media/pajaro-apertura-inversa-2.svg"
+   ],
+   "canonical": null,
+   "musculos": [
+    "espalda",
+    "hombro"
+   ],
+   "material": [
+    "mancuernas"
+   ],
+   "impacto": "low"
+  },
+  {
+   "id": "patada-de-gluteo",
+   "nombre": "Patada de glúteo",
+   "alt": "Patada de glúteo: a cuatro patas, llevando una pierna atrás y arriba",
+   "fotogramas": 2,
+   "frames": [
+    "media/patada-de-gluteo-1.svg",
+    "media/patada-de-gluteo-2.svg"
+   ],
+   "canonical": null,
+   "musculos": [
+    "gluteo"
+   ],
+   "material": [],
+   "impacto": "low"
+  },
+  {
+   "id": "peso-muerto-rumano",
+   "nombre": "Peso muerto rumano",
+   "alt": "Peso muerto rumano: de pie y bisagra de cadera con la espalda recta",
+   "fotogramas": 2,
+   "frames": [
+    "media/peso-muerto-rumano-1.svg",
+    "media/peso-muerto-rumano-2.svg"
+   ],
+   "canonical": "deadlift.romanian.dumbbell",
+   "musculos": [
+    "femoral",
+    "gluteo",
+    "espalda"
+   ],
+   "material": [
+    "mancuernas"
+   ],
+   "impacto": "low"
+  },
+  {
+   "id": "plancha",
+   "nombre": "Plancha",
+   "alt": "Plancha sobre antebrazos, cuerpo recto de la cabeza a los talones",
+   "fotogramas": 1,
+   "frames": [
+    "media/plancha-1.svg"
+   ],
+   "canonical": "plank",
+   "musculos": [
+    "core"
+   ],
+   "material": [],
+   "impacto": "low"
+  },
+  {
+   "id": "plancha-con-toque-de-hombro",
+   "nombre": "Plancha con toque de hombro",
+   "alt": "Plancha tocando el hombro contrario con la mano, sin mover la cadera",
+   "fotogramas": 2,
+   "frames": [
+    "media/plancha-con-toque-de-hombro-1.svg",
+    "media/plancha-con-toque-de-hombro-2.svg"
+   ],
+   "canonical": null,
+   "musculos": [
+    "core",
+    "hombro"
+   ],
+   "material": [],
+   "impacto": "low"
+  },
+  {
+   "id": "plancha-lateral",
+   "nombre": "Plancha lateral",
+   "alt": "Plancha lateral: apoyo en un antebrazo, cuerpo recto y cadera arriba",
+   "fotogramas": 1,
+   "frames": [
+    "media/plancha-lateral-1.svg"
+   ],
+   "canonical": null,
+   "musculos": [
+    "core"
+   ],
+   "material": [],
+   "impacto": "low"
+  },
+  {
+   "id": "press-arnold",
+   "nombre": "Press Arnold",
+   "alt": "Press Arnold: palmas hacia la cara y giro hasta los brazos estirados",
+   "fotogramas": 2,
+   "frames": [
+    "media/press-arnold-1.svg",
+    "media/press-arnold-2.svg"
+   ],
+   "canonical": null,
+   "musculos": [
+    "hombro",
+    "triceps"
+   ],
+   "material": [
+    "mancuernas"
+   ],
+   "impacto": "low"
+  },
+  {
+   "id": "press-de-hombros",
+   "nombre": "Press de hombros",
+   "alt": "Press de hombros con mancuernas: de la altura de los hombros a los brazos estirados",
+   "fotogramas": 2,
+   "frames": [
+    "media/press-de-hombros-1.svg",
+    "media/press-de-hombros-2.svg"
+   ],
+   "canonical": "press.shoulder.dumbbell",
+   "musculos": [
+    "hombro",
+    "triceps"
+   ],
+   "material": [
+    "mancuernas"
+   ],
+   "impacto": "low"
+  },
+  {
+   "id": "puente-a-una-pierna",
+   "nombre": "Puente a una pierna",
+   "alt": "Puente a una pierna: una pierna estirada mientras sube la cadera",
+   "fotogramas": 2,
+   "frames": [
+    "media/puente-a-una-pierna-1.svg",
+    "media/puente-a-una-pierna-2.svg"
+   ],
+   "canonical": null,
+   "musculos": [
+    "gluteo",
+    "femoral"
+   ],
+   "material": [],
+   "impacto": "low"
+  },
+  {
+   "id": "puente-de-gluteo",
+   "nombre": "Puente de glúteo",
+   "alt": "Puente de glúteo: tumbado con la cadera en el suelo y subiéndola hasta alinear el cuerpo",
+   "fotogramas": 2,
+   "frames": [
+    "media/puente-de-gluteo-1.svg",
+    "media/puente-de-gluteo-2.svg"
+   ],
+   "canonical": null,
+   "musculos": [
+    "gluteo",
+    "femoral"
+   ],
+   "material": [],
+   "impacto": "low"
+  },
+  {
+   "id": "remo-con-banda",
+   "nombre": "Remo con banda",
+   "alt": "Remo con banda: brazos estirados y tirando de la banda hasta las costillas",
+   "fotogramas": 2,
+   "frames": [
+    "media/remo-con-banda-1.svg",
+    "media/remo-con-banda-2.svg"
+   ],
+   "canonical": null,
+   "musculos": [
+    "espalda",
+    "biceps"
+   ],
+   "material": [
+    "banda"
+   ],
+   "impacto": "low"
+  },
+  {
+   "id": "remo-con-mancuerna",
+   "nombre": "Remo con mancuerna",
+   "alt": "Remo a una mano: tronco inclinado y codo que sube pegado al cuerpo",
+   "fotogramas": 2,
+   "frames": [
+    "media/remo-con-mancuerna-1.svg",
+    "media/remo-con-mancuerna-2.svg"
+   ],
+   "canonical": "row.dumbbell",
+   "musculos": [
+    "espalda",
+    "biceps"
+   ],
+   "material": [
+    "mancuernas",
+    "silla"
+   ],
+   "impacto": "low"
+  },
+  {
+   "id": "remo-renegado",
+   "nombre": "Remo renegado",
+   "alt": "Remo renegado: en plancha, sube una mancuerna sin girar la cadera",
+   "fotogramas": 2,
+   "frames": [
+    "media/remo-renegado-1.svg",
+    "media/remo-renegado-2.svg"
+   ],
+   "canonical": null,
+   "musculos": [
+    "espalda",
+    "core",
+    "biceps"
+   ],
+   "material": [
+    "mancuernas"
+   ],
+   "impacto": "low"
+  },
+  {
+   "id": "respiracion-final",
+   "nombre": "Respiración final",
+   "alt": "Respiración final: sentado, tranquilo, manos en las rodillas",
+   "fotogramas": 1,
+   "frames": [
+    "media/respiracion-final-1.svg"
+   ],
+   "canonical": null,
+   "musculos": [],
+   "material": [],
+   "impacto": "low"
+  },
+  {
+   "id": "rodillas-arriba",
+   "nombre": "Rodillas arriba",
+   "alt": "Rodillas arriba: carrera en el sitio llevando la rodilla a la altura de la cadera",
+   "fotogramas": 2,
+   "frames": [
+    "media/rodillas-arriba-1.svg",
+    "media/rodillas-arriba-2.svg"
+   ],
+   "canonical": null,
+   "musculos": [
+    "fullbody"
+   ],
+   "material": [],
+   "impacto": "high"
+  },
+  {
+   "id": "rotaciones-de-tronco",
+   "nombre": "Rotaciones de tronco",
+   "alt": "Rotaciones de tronco: giro de cintura de lado a lado con los brazos sueltos",
+   "fotogramas": 2,
+   "frames": [
+    "media/rotaciones-de-tronco-1.svg",
+    "media/rotaciones-de-tronco-2.svg"
+   ],
+   "canonical": null,
+   "musculos": [],
+   "material": [],
+   "impacto": "low"
+  },
+  {
+   "id": "saltos-de-patinador",
+   "nombre": "Saltos de patinador",
+   "alt": "Salto de patinador: caes en una pierna y la otra cruza por detrás",
+   "fotogramas": 2,
+   "frames": [
+    "media/saltos-de-patinador-1.svg",
+    "media/saltos-de-patinador-2.svg"
+   ],
+   "canonical": null,
+   "musculos": [
+    "cuadriceps",
+    "gluteo"
+   ],
+   "material": [],
+   "impacto": "high"
+  },
+  {
+   "id": "sentadilla-bulgara",
+   "nombre": "Sentadilla búlgara",
+   "alt": "Sentadilla búlgara: pie de atrás apoyado en una silla, bajando la rodilla",
+   "fotogramas": 2,
+   "frames": [
+    "media/sentadilla-bulgara-1.svg",
+    "media/sentadilla-bulgara-2.svg"
+   ],
+   "canonical": null,
+   "musculos": [
+    "cuadriceps",
+    "gluteo"
+   ],
+   "material": [
+    "silla"
+   ],
+   "impacto": "low"
+  },
+  {
+   "id": "sentadilla-con-salto",
+   "nombre": "Sentadilla con salto",
+   "alt": "Sentadilla con salto: abajo y despegando del suelo",
+   "fotogramas": 2,
+   "frames": [
+    "media/sentadilla-con-salto-1.svg",
+    "media/sentadilla-con-salto-2.svg"
+   ],
+   "canonical": null,
+   "musculos": [
+    "cuadriceps",
+    "gluteo"
+   ],
+   "material": [],
+   "impacto": "high"
+  },
+  {
+   "id": "sentadillas",
+   "nombre": "Sentadillas",
+   "alt": "De pie y bajando a sentadilla con la cadera atrás",
+   "fotogramas": 2,
+   "frames": [
+    "media/sentadillas-1.svg",
+    "media/sentadillas-2.svg"
+   ],
+   "canonical": "squat.bodyweight",
+   "musculos": [
+    "cuadriceps",
+    "gluteo"
+   ],
+   "material": [],
+   "impacto": "low"
+  },
+  {
+   "id": "sentadillas-sin-peso",
+   "nombre": "Sentadillas sin peso",
+   "alt": "Sentadilla sin peso: de pie y abajo, a ritmo suave",
+   "fotogramas": 2,
+   "frames": [
+    "media/sentadillas-sin-peso-1.svg",
+    "media/sentadillas-sin-peso-2.svg"
+   ],
+   "canonical": null,
+   "musculos": [],
+   "material": [],
+   "impacto": "low"
+  },
+  {
+   "id": "superman",
+   "nombre": "Superman",
+   "alt": "Superman: boca abajo, despegando brazos y piernas del suelo",
+   "fotogramas": 2,
+   "frames": [
+    "media/superman-1.svg",
+    "media/superman-2.svg"
+   ],
+   "canonical": null,
+   "musculos": [
+    "espalda",
+    "gluteo"
+   ],
+   "material": [],
+   "impacto": "low"
+  },
+  {
+   "id": "swing-con-mancuerna",
+   "nombre": "Swing con mancuerna",
+   "alt": "Swing: bisagra de cadera con la mancuerna entre las piernas y empuje hasta el pecho",
+   "fotogramas": 2,
+   "frames": [
+    "media/swing-con-mancuerna-1.svg",
+    "media/swing-con-mancuerna-2.svg"
+   ],
+   "canonical": "swing.dumbbell",
+   "musculos": [
+    "gluteo",
+    "femoral",
+    "espalda"
+   ],
+   "material": [
+    "mancuernas"
+   ],
+   "impacto": "low"
+  },
+  {
+   "id": "thrusters",
+   "nombre": "Thrusters",
+   "alt": "Thruster: sentadilla con las mancuernas en los hombros y press al subir",
+   "fotogramas": 2,
+   "frames": [
+    "media/thrusters-1.svg",
+    "media/thrusters-2.svg"
+   ],
+   "canonical": "thruster.dumbbell",
+   "musculos": [
+    "cuadriceps",
+    "gluteo",
+    "hombro"
+   ],
+   "material": [
+    "mancuernas"
+   ],
+   "impacto": "low"
+  },
+  {
+   "id": "zancada-lateral",
+   "nombre": "Zancada lateral",
+   "alt": "Zancada lateral: de pie y cargando el peso en una pierna doblada",
+   "fotogramas": 2,
+   "frames": [
+    "media/zancada-lateral-1.svg",
+    "media/zancada-lateral-2.svg"
+   ],
+   "canonical": null,
+   "musculos": [
+    "cuadriceps",
+    "gluteo",
+    "aductor"
+   ],
+   "material": [],
+   "impacto": "low"
+  },
+  {
+   "id": "zancadas",
+   "nombre": "Zancadas",
+   "alt": "Zancada: de pie y bajando la rodilla de atrás hacia el suelo",
+   "fotogramas": 2,
+   "frames": [
+    "media/zancadas-1.svg",
+    "media/zancadas-2.svg"
+   ],
+   "canonical": "lunge",
+   "musculos": [
+    "cuadriceps",
+    "gluteo"
+   ],
+   "material": [],
+   "impacto": "low"
+  },
+  {
+   "id": "zancadas-con-salto",
+   "nombre": "Zancadas con salto",
+   "alt": "Zancada con salto: abajo y cambio de pierna en el aire",
+   "fotogramas": 2,
+   "frames": [
+    "media/zancadas-con-salto-1.svg",
+    "media/zancadas-con-salto-2.svg"
+   ],
+   "canonical": null,
+   "musculos": [
+    "cuadriceps",
+    "gluteo"
+   ],
+   "material": [],
+   "impacto": "high"
+  }
+ ]
+}

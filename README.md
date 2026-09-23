@@ -120,7 +120,7 @@ tools/                  Rig de figura y poses: de aquí salen las ilustraciones
 SCHEMA.md               Especificación del formato de pack (v2)
 CREDITS.md              Generado. Licencias de fuentes e ilustraciones
 fonts/                  Las tres fuentes en woff2 (subconjunto latin, 66 KB)
-media/                  Las 98 ilustraciones (generadas, no se editan a mano)
+media/                  Las 98 ilustraciones (generadas) + su catálogo para reutilizarlas
 manifest.webmanifest    Metadatos de la PWA
 sw.js                   Service worker (offline) — lista de assets generada
 icon-*.png              Iconos

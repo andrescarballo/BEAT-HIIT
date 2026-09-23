@@ -11,6 +11,7 @@ partir de las poses de `tools/poses.mjs`.
 node tools/gen-media.mjs           # regenera los SVG
 node tools/gen-media.mjs --sheet   # + hoja de contactos para revisarlas de un vistazo
 node tools/gen-media.mjs --pack    # + declara la media en beat-basico.json
+node tools/gen-media.mjs --catalogo # + el catálogo de lo que hay disponible
 node tools/gen-media.mjs --trazo   # con línea de grosor constante en vez de silueta
 node tools/compare.mjs             # los dos estilos lado a lado -> tools/compare.html
 node build.mjs                     # mete media/ en el precache y regenera CREDITS.md
@@ -20,6 +21,29 @@ El estilo por defecto es **silueta**: cada miembro se dibuja como una forma rell
 estrecha hacia el extremo, con un punto de hombros para que la cabeza no se funda con el
 tronco. La alternativa (`--trazo`) usa línea de grosor constante; se descartó porque a
 tamaño de móvil salían monigotes.
+
+## Reutilizarlas desde otro pack
+
+Los entrenamientos no se editan en la app: los genera un agente. Para que pueda usar
+los dibujos que ya existen en vez de dejar ejercicios pelados, está el catálogo:
+
+- [`CATALOGO.md`](CATALOGO.md) para mirarlo, con la tabla de las 53 y sus rutas.
+- [`catalogo.json`](catalogo.json) para dárselo a un agente, con músculos y material
+  de cada uno por si tiene que elegir.
+
+Se reutiliza **por la ruta del fichero**, no por el id del ejercicio, así que tu
+ejercicio puede llamarse como quieras:
+
+```jsonc
+"sentadilla-profunda": {
+  "name": "Sentadilla profunda",
+  "media": { "frames": ["media/sentadillas-1.svg", "media/sentadillas-2.svg"],
+             "alt": "De pie y bajando a sentadilla con la cadera atrás" }
+}
+```
+
+**Un ejercicio sin `media` simplemente no enseña ilustración.** No es un error y no hay
+que inventarse nada: si falta un dibujo, se añade su pose y el catálogo crece.
 
 ## Cómo se describe una pose
 

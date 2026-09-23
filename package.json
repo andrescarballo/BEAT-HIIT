@@ -8,7 +8,7 @@
   "scripts": {
     "build": "node build.mjs",
     "check": "node build.mjs --check",
-    "media": "node tools/gen-media.mjs --sheet --pack && node build.mjs",
+    "media": "node tools/gen-media.mjs --sheet --pack --catalogo && node build.mjs",
     "screenshots": "node tools/gen-screenshots.mjs && node build.mjs",
     "test": "node tests/run.mjs"
   },

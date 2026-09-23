@@ -24,11 +24,11 @@ jobs:
       - name: El build está al día
         run: npm run check
 
-      - name: Las ilustraciones no se han tocado a mano
+      - name: Las ilustraciones y su catálogo están al día
         run: |
-          node tools/gen-media.mjs
+          node tools/gen-media.mjs --catalogo
           git diff --exit-code -- media/ \
-            || { echo "::error::media/ no coincide con tools/poses.mjs. Ejecuta: node tools/gen-media.mjs"; exit 1; }
+            || { echo "::error::media/ no coincide con tools/poses.mjs. Ejecuta: npm run media"; exit 1; }
 
       - name: Navegador para las pruebas
         run: npx playwright install --with-deps chromium

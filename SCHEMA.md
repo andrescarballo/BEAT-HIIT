@@ -169,6 +169,7 @@ Derivadas y reglas:
 
 ## Límites honestos
 
+- **Las ilustraciones se reutilizan por ruta.** Un pack nuevo no tiene por qué traer dibujos: puede apuntar `media.frames` a los que ya existen, aunque sus ejercicios se llamen distinto. La lista de lo disponible está en [`media/CATALOGO.md`](media/CATALOGO.md) y, para consumo automático, en `media/catalogo.json`. Un ejercicio sin `media` no enseña ilustración y ya está: no es un error.
 - **`media.frames`** funciona sin conexión: son ficheros del propio repo (`media/`), que `build.mjs` mete en el precache del service worker. Las 98 ilustraciones del pack básico pesan 8 KB comprimidas, menos que cualquiera de los iconos. **Vídeo no**: empaquetarlo sería pesado y su licencia casi nunca lo permite. El texto (`steps` + `cue`) sigue siendo la base que siempre funciona, y la ilustración es un extra.
 - **`plan.freq` / `schedule` / `rest_after_days`** son guía e avisos *dentro* de la app. Una PWA no da recordatorios push fiables (iOS casi nada). No son alarmas.
 - **Cuota de almacenamiento:** IndexedDB da margen de sobra para packs y media ligera (SVG/WebP), pero el navegador puede vaciarla si el dispositivo se queda sin espacio y la app no está instalada.
