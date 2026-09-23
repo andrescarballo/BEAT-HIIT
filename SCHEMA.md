@@ -135,7 +135,7 @@ Cada sesión completada se guarda en el dispositivo con:
 ```
 
 Derivadas y reglas:
-- **Racha:** una sola racha de "te moviste" (training y recovery cuentan). Con **1 día de gracia**: un día suelto sin entrenar no la rompe; dos seguidos sí. Razón: la propia app recomienda descansar (`rest_after_days`) y sería un incentivo perverso que seguir ese consejo te penalizara. `recovery` se marca aparte para no inflar la sensación de "fuerza".
+- **Días activos:** días distintos con al menos un entreno en los últimos 30 (training y recovery cuentan). Sustituye a la antigua racha con día de gracia, que no se rompía nunca entrenando en días alternos y acababa mostrando números sin significado. Este contador no se puede inflar y no penaliza descansar, que es justo lo que la app recomienda con `rest_after_days`. `recovery` se marca aparte para no inflar la sensación de "fuerza".
 - **Balance** por `category` y por `muscles` → detectar lo que descuidas (p. ej. tirón/espalda).
 - **Cross-pack:** todos los agregados son globales. Se puede filtrar por `packId`. La rotación de cada pack se calcula desde el log filtrado por ese pack → al volver a un pack, retoma su rotación.
 - **Calorías:** NO se guardan como dato del pack (sería precisión falsa). Si acaso, estimación calculada (MET × peso × duración) y SIEMPRE etiquetada como estimación. Desactivada por defecto.

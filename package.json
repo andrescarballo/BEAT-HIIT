@@ -1,0 +1,18 @@
+{
+  "name": "beat-hiit",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Entrenamiento por intervalos en casa. La app no tiene dependencias: lo de aquí es solo para desarrollar.",
+  "license": "MIT",
+  "scripts": {
+    "build": "node build.mjs",
+    "check": "node build.mjs --check",
+    "media": "node tools/gen-media.mjs --sheet --pack && node build.mjs",
+    "screenshots": "node tools/gen-screenshots.mjs && node build.mjs",
+    "test": "node tests/run.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.56.1"
+  }
+}

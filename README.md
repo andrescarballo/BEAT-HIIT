@@ -25,7 +25,7 @@ Sin dependencias, sin backend, sin recoger ningún dato: todo vive en tu disposi
 - **Sonidos diferenciados** (trabajo / descanso / cuenta atrás / final) y **vibración**.
 - **Ilustración de los 53 ejercicios**, generada desde datos de pose, que aparece durante el descanso mostrando el que viene.
 - **Material disponible**: dices lo que tienes a mano y los entrenos se ajustan solos.
-- **Estadísticas**: racha, total, tiempo acumulado, gráfica de 7 días, **balance muscular** e historial.
+- **Estadísticas**: días activos, total, tiempo acumulado, gráfica de 7 días, **balance muscular** e historial completo.
 - **Voz opcional**: te dice el ejercicio en cada cambio, para no mirar la pantalla.
 - **Pantalla siempre encendida** durante el entreno (Wake Lock).
 - **Funciona sin conexión** e **instalable** como app.
@@ -47,14 +47,36 @@ Colores con sentido durante el entreno: **lima = trabajo**, **rojo = descanso**,
 
 Las rutas son relativas, así que también funciona en una subcarpeta.
 
-## El build
+## Desarrollo
 
-No hay dependencias ni `node_modules`: es un único script.
+**La app no tiene dependencias**: es un HTML que abres y funciona. Lo de `package.json`
+es sólo para desarrollar (Playwright, para las pruebas y para generar imágenes).
 
 ```
-node build.mjs          # antes de cada commit que toque contenido o assets
-node build.mjs --check   # no escribe nada; falla si algo está desincronizado
+npm install
+npm run build        # antes de cada commit que toque contenido o assets
+npm run check        # no escribe nada; falla si algo está desincronizado
+npm test             # las pruebas (arranca su propio servidor)
+npm test -- material # sólo las que coincidan
+npm run media        # regenera ilustraciones + hoja de contactos
+npm run screenshots  # regenera las capturas del manifest
 ```
+
+### Las pruebas
+
+`tests/` son pruebas de navegador de verdad, sin framework: el runner levanta un
+servidor estático propio y conduce Chromium. Cada test recibe un contexto limpio, y
+**falla solo si la página lanza un error de JS o pide algo que devuelve 4xx** — eso no
+hay que comprobarlo a mano en cada una.
+
+No son decorativas: han cazado que el service worker recargaba la página sola en la
+primera visita, que ocho ilustraciones apuntaban a ficheros inexistentes, y que una
+actualización no llegaba a quien ya tenía la app instalada.
+
+El CI (`.github/workflows/ci.yml`) corre en cada push lo mismo, más una comprobación de
+que `media/` no se ha editado a mano y sigue coincidiendo con `tools/poses.mjs`.
+
+### El build
 
 Hace tres cosas:
 
@@ -84,6 +106,8 @@ que nunca se le cambian los archivos a mitad de entreno.
 
 ```
 index.html              El motor v2 (HTML + CSS + JS, sin dependencias) — generado en parte
+tests/                  Pruebas de navegador + su runner
+screenshots/            Capturas para la ficha de instalación (generadas)
 beat-basico.json        El pack por defecto (20 entrenamientos). Fuente de verdad: se inyecta en el motor
 build.mjs               Inyecta el pack, genera los assets del SW y CREDITS.md
 tools/                  Rig de figura y poses: de aquí salen las ilustraciones

@@ -106,6 +106,7 @@ h1 .dot{color:#ff3d7f}
 .ctl:active{transform:scale(.97)}
 .ctl.main{background:#ff3d7f;color:#0d0e0c;border-color:#ff3d7f;flex:2}
 .ctl.quit{flex:.7}
+.ctl#plus15{flex:.85;font-size:13px}
 #done{display:none;text-align:center;flex:1;flex-direction:column;justify-content:center}
 #done .big{font-family:'Archivo Black';font-size:48px;color:#ff3d7f}
 #done .donestats{color:#f2efe3;font-size:15px;margin:14px 0 4px;line-height:1.7}
@@ -231,6 +232,7 @@ h1 .dot{color:#ff3d7f}
     <div class="controls">
       <button class="ctl quit" id="quit" aria-label="Salir del entreno">X</button>
       <button class="ctl" id="prev" aria-label="Fase anterior">&#8634;</button>
+      <button class="ctl" id="plus15" aria-label="Quince segundos más de descanso">+15</button>
       <button class="ctl main" id="pause">&#9208; PAUSA</button>
       <button class="ctl" id="skip" aria-label="Saltar a la siguiente fase">&#9197;</button>
     </div>
@@ -240,7 +242,10 @@ h1 .dot{color:#ff3d7f}
     <div class="big">HECHO!</div>
     <div class="donestats" id="donestats"></div>
     <p id="donetxt"></p>
-    <button class="back" id="again">Volver al inicio</button>
+    <div class="dataline">
+      <button class="back ghost" id="share" style="display:none">Compartir</button>
+      <button class="back" id="again">Volver al inicio</button>
+    </div>
   </div>
 
   <div id="stats">
@@ -248,7 +253,7 @@ h1 .dot{color:#ff3d7f}
     <div style="height:10px"></div>
     <div class="statgrid">
       <div class="stat"><div class="num pink" id="s-total">0</div><div class="cap">Entrenamientos</div></div>
-      <div class="stat"><div class="num orange" id="s-streak">0</div><div class="cap">Racha (días)</div></div>
+      <div class="stat"><div class="num orange" id="s-streak">0</div><div class="cap">Días activos (30)</div></div>
       <div class="stat"><div class="num" id="s-week">0</div><div class="cap">Esta semana</div></div>
       <div class="stat"><div class="num" id="s-time">0m</div><div class="cap">Tiempo total</div></div>
     </div>
@@ -575,6 +580,7 @@ function modalMedia(ref){
 let seq=[],idx=0,left=0,iv=null,paused=false,running=false,startTs=0,phaseEnd=0,remMs=0,pausedTotal=0,pauseStart=0,curInfo=null;
 let phaseStart=0,phasePaused=0,workSecAcc=0,workDone=0,W=null;
 let repN=0,repSets=[],repsLog=[];
+let lastEntry=null; // ultima sesion terminada, para el boton de compartir
 const RC=283;
 function isReps(s){return s&&s.mode==='reps'}
 function numericTarget(t){const m=String(t||'').match(/\d+/);return m?parseInt(m[0]):0}
@@ -596,6 +602,7 @@ function show(snd){
     document.getElementById('prog').textContent=isW?('Ejercicio '+wd+' de '+works):(s.type==='warm'?'Calentando':s.type==='stretch'?'Estirando':'');}
   const inf=curInfo&&ex(curInfo);
   document.getElementById('infobtn').style.visibility=inf?'visible':'hidden';
+  document.getElementById('plus15').style.visibility=(isReps(s)||s.sec==null)?'hidden':'visible';
   // En descanso/preparacion, curInfo ya apunta al ejercicio que viene.
   if(isRP&&curInfo)showMedia(curInfo);else stopMedia();
   const cEl=document.getElementById('count');
@@ -649,17 +656,32 @@ async function finish(){
     durSec,workSec:Math.round(workSecAcc/1000),intervals:workDone,
     packId:PACK.pack.id,packName:PACK.pack.name,workoutId:W.id,workoutName:W.name,
     category:W.category||'fuerza',counts_as:W.counts_as||'training',exercises:names,muscles:mus,reps:repsLog.slice()};
+  lastEntry=entry;
   await logAdd(entry);LOG.push(entry);
   const mm=Math.floor(durSec/60),ss=durSec%60;
   document.getElementById('donestats').innerHTML='<b>'+DOW[now.getDay()]+'</b> - '+entry.time+'<br>'+esc(W.name)+'<br>Duración: <b>'+mm+':'+String(ss).padStart(2,'0')+'</b> · trabajo real: '+Math.round(entry.workSec/60)+' min';
   if(repsLog.length){const r=repsLog.filter(x=>x.sets&&x.sets.length).map(x=>esc(x.name)+': '+esc(x.sets.join('·'))).join('<br>');if(r)document.getElementById('donestats').innerHTML+='<br><span style="font-size:12px;color:#8a8a72">'+r+'</span>'}
   document.getElementById('donetxt').textContent=(W.counts_as==='recovery')?'Día de recuperación registrado.':'Registrado en tus stats. A por el café.';
+  const sb=document.getElementById('share');
+  sb.textContent='Compartir';
+  sb.style.display=(navigator.share||navigator.clipboard)?'block':'none';
   swap('done');
 }
 function onRing(){if(!running)return;const s=seq[idx];if(isReps(s)){repN++;repCenter();return}togglePause()}
 function recordSerie(){const s=seq[idx];if(!isReps(s))return;if(repN>0)repSets.push(repN);repN=numericTarget(s.target);show(false)}
 function finishReps(){const s=seq[idx];if(repN>0)repSets.push(repN);repsLog.push({ref:s.ref,name:s.name,target:s.target,sets:repSets.slice()});advance()}
 function onMain(){if(!running)return;const s=seq[idx];if(isReps(s)){recordSerie();return}togglePause()}
+// Alarga la fase en curso. Hay dias en los que 15 s de descanso no llegan, y la
+// alternativa era pausar y perder el ritmo. Tambien estira s.sec para que el anillo
+// no se salga de rango al recalcular el arco.
+function addRest(){
+  if(!running)return;const s=seq[idx];
+  if(!s||isReps(s)||s.sec==null)return;
+  s.sec+=15;
+  if(paused)remMs+=15000;else phaseEnd+=15000;
+  left=Math.max(0,Math.ceil((paused?remMs:phaseEnd-Date.now())/1000));
+  draw();vib(30);
+}
 function onPrev(){if(!running)return;const s=seq[idx];if(isReps(s)){repN=Math.max(0,repN-1);repCenter();return}idx=Math.max(0,idx-1);startPhase()}
 function onSkip(){if(!running)return;const s=seq[idx];if(isReps(s)){finishReps();return}closePhase();idx++;if(idx>=seq.length){finish();return}startPhase()}
 function togglePause(){
@@ -773,17 +795,16 @@ document.getElementById('packfile').onchange=(ev)=>{const f=ev.target.files[0];i
  rd.readAsText(f);ev.target.value=''};
 
 /* ============ stats ============ */
+let histTodo=false; // el historial arranca recortado a 40 filas
 function fmtTime(sec){const m=Math.round(sec/60);if(m<60)return m+'m';return Math.floor(m/60)+'h '+(m%60)+'m'}
-function computeStreak(){
-  const set=new Set(LOG.map(e=>e.date));let streak=0,miss=0;
-  let cur=todayStart();
-  if(!set.has(localDate(cur)))cur.setDate(cur.getDate()-1); // hoy sin entrenar no cuenta como fallo
-  for(let i=0;i<3650;i++){
-    const ds=localDate(cur);
-    if(set.has(ds)){streak++;miss=0}else{miss++;if(miss>=2)break} // 1 dia de gracia
-    cur.setDate(cur.getDate()-1);
-  }
-  return streak;
+// Dias DISTINTOS con entreno en los ultimos 30. Sustituye a la antigua racha, que
+// perdonaba un dia de hueco sin gastar la gracia: entrenando dia si dia no durante dos
+// anos marcaba 365, un numero que no significaba nada. Este no se puede inflar ni se
+// rompe por descansar, que es justo lo que la propia app recomienda hacer.
+function activeDays(win=30){
+  const desde=todayStart();desde.setDate(desde.getDate()-(win-1));
+  const min=localDate(desde);
+  return new Set(LOG.filter(e=>e.date>=min).map(e=>e.date)).size;
 }
 /* Balance muscular. El pack ya etiqueta cada ejercicio con sus musculos y finish()
    los guarda en cada sesion; hasta ahora ese dato no se mostraba en ningun sitio.
@@ -824,7 +845,7 @@ function renderBalance(){
 }
 function renderStats(){
   document.getElementById('s-total').textContent=LOG.length;
-  document.getElementById('s-streak').textContent=computeStreak();
+  document.getElementById('s-streak').textContent=activeDays(30);
   const now=new Date(),weekAgo=now.getTime()-7*864e5;
   document.getElementById('s-week').textContent=LOG.filter(e=>e.ts>=weekAgo).length;
   document.getElementById('s-time').textContent=fmtTime(LOG.reduce((a,e)=>a+(e.durSec||0),0));
@@ -835,13 +856,21 @@ function renderStats(){
   renderBalance();
   const hist=document.getElementById('hist');hist.innerHTML='';
   if(!LOG.length){hist.innerHTML='<div class="empty-msg">Aún no hay entrenamientos.<br>Completa uno y aparecerá aquí.</div>';return}
-  [...LOG].sort((a,b)=>b.ts-a.ts).slice(0,40).forEach(e=>{
+  const orden=[...LOG].sort((a,b)=>b.ts-a.ts);
+  const tope=histTodo?orden.length:40;
+  orden.slice(0,tope).forEach(e=>{
     const mm=Math.floor((e.durSec||0)/60),ss=(e.durSec||0)%60;
     const extra=(e.counts_as==='recovery')?' · recuperación':'';
     const row=document.createElement('div');row.className='hrow';
     row.innerHTML='<div class="hl"><div class="hd">'+DOW[e.dow]+' - '+esc(e.workoutName||'')+'</div><div class="hsub">'+e.date.slice(5)+' - '+e.time+' - '+esc(e.packName||'')+extra+'</div></div><div class="hdur">'+mm+':'+String(ss).padStart(2,'0')+'</div>';
     hist.appendChild(row);
   });
+  if(orden.length>tope){
+    const b=document.createElement('button');b.className='clearbtn';
+    b.textContent='Ver los '+orden.length+' entrenamientos';
+    b.onclick=()=>{histTodo=true;renderStats()};
+    hist.appendChild(b);
+  }
 }
 function download(name,text){const b=new Blob([text],{type:'application/json'});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1000)}
 document.getElementById('exportbtn').onclick=async()=>{const packs=await packAll();download('beat-backup-'+localDate()+'.json',JSON.stringify({app:'beat',version:2,exported:new Date().toISOString(),config:cfg,log:LOG,packs:packs},null,1))};
@@ -850,7 +879,14 @@ document.getElementById('importfile').onchange=(ev)=>{const f=ev.target.files[0]
  rd.onload=async()=>{try{const d=JSON.parse(rd.result);
    if(Array.isArray(d.log)){await logReplace(d.log);LOG=d.log.slice()}
    if(d.config){cfg=Object.assign(cfg,d.config);await saveCfg()}
-   if(Array.isArray(d.packs)){for(const p of d.packs){if(!validatePack(p))await packPut(p)}}
+   if(Array.isArray(d.packs)){
+     for(const p of d.packs){if(!validatePack(p))await packPut(p)}
+     // packPut escribe en IndexedDB, pero PACK sigue siendo el objeto viejo en memoria:
+     // sin releerlo, la copia restaurada no se ve hasta que recargues la app.
+     const act=await kvGet('active');
+     const np=act?await packGet(act):null;
+     if(np){PACK=np;if(cfg.wkId&&!PACK.workouts.some(w=>w.id===cfg.wkId))cfg.wkId=null;await saveCfg()}
+   }
    renderStats();updSummary();alert('Restaurado: '+LOG.length+' entrenamientos.')}catch(e){alert('Archivo no válido.')}};
  rd.readAsText(f);ev.target.value=''};
 document.getElementById('clearbtn').onclick=async()=>{if(confirm('¿Borrar todo el historial?')){await logClear();LOG=[];renderStats()}};
@@ -876,12 +912,29 @@ document.getElementById('openstats').onclick=()=>{renderStats();swap('stats')};
 document.getElementById('backbtn').onclick=()=>toMain();
 document.getElementById('go').onclick=startWorkout;
 document.getElementById('again').onclick=()=>toMain();
+/* Compartir el resumen. navigator.share solo existe en movil y en contexto seguro;
+   donde no esta, se cae al portapapeles, y donde tampoco, el boton ni aparece. */
+const shareBtn=document.getElementById('share');
+function shareText(){
+  const e=lastEntry;if(!e)return '';
+  const mm=Math.floor((e.durSec||0)/60),ss=(e.durSec||0)%60;
+  return 'Beat · '+e.workoutName+'\n'+DOW[e.dow]+' '+e.date.slice(5)+' · '+
+    mm+':'+String(ss).padStart(2,'0')+' · '+Math.round((e.workSec||0)/60)+' min de trabajo real';
+}
+shareBtn.onclick=async()=>{
+  const text=shareText();if(!text)return;
+  try{
+    if(navigator.share){await navigator.share({title:'Beat',text})}
+    else if(navigator.clipboard){await navigator.clipboard.writeText(text);shareBtn.textContent='Copiado'}
+  }catch(e){} // cancelar el diálogo de compartir lanza: no es un error
+};
 document.getElementById('pause').onclick=onMain;
 const ringEl=document.getElementById('ring-tap');
 ringEl.onclick=onRing;
 ringEl.onkeydown=(e)=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();onRing()}};
 document.getElementById('skip').onclick=onSkip;
 document.getElementById('prev').onclick=onPrev;
+document.getElementById('plus15').onclick=addRest;
 document.getElementById('quit').onclick=()=>{clearInterval(iv);running=false;relWake();shutUp();stopMedia();toMain()};
 
 /* ============ boot ============ */

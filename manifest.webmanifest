@@ -29,6 +29,11 @@
       "icons": [{ "src": "icon-192.png", "sizes": "192x192", "type": "image/png" }]
     }
   ],
+  "screenshots": [
+    { "src": "screenshots/1-portada.png", "sizes": "412x915", "type": "image/png", "form_factor": "narrow", "label": "Pulsa play y sigue" },
+    { "src": "screenshots/2-entreno.png", "sizes": "412x915", "type": "image/png", "form_factor": "narrow", "label": "Cuenta atrás y el ejercicio que viene" },
+    { "src": "screenshots/3-stats.png", "sizes": "412x915", "type": "image/png", "form_factor": "narrow", "label": "Racha, minutos y balance muscular" }
+  ],
   "icons": [
     { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
     { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" },

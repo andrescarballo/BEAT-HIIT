@@ -4,3 +4,6 @@ tools/sheet.html
 
 # Comparativa de estilos: se genera con `node tools/compare.mjs`.
 tools/compare.html
+
+# Dependencias de desarrollo (la app en sí no tiene ninguna).
+node_modules/

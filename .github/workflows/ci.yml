@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # Falla si index.html o sw.js no están regenerados a partir del pack y de los
+      # assets, o si el pack declara una ilustración que no existe en disco.
+      - name: El build está al día
+        run: npm run check
+
+      - name: Las ilustraciones no se han tocado a mano
+        run: |
+          node tools/gen-media.mjs
+          git diff --exit-code -- media/ \
+            || { echo "::error::media/ no coincide con tools/poses.mjs. Ejecuta: node tools/gen-media.mjs"; exit 1; }
+
+      - name: Navegador para las pruebas
+        run: npx playwright install --with-deps chromium
+
+      - run: npm test
