@@ -3,9 +3,12 @@ import assert from 'node:assert/strict';
 export const nombre = 'Ejercicios por repeticiones: se cuenta lo que haces, ni una más';
 
 // Este flujo alimenta la gráfica de progresión, así que un error aquí no se ve: se
-// convierte en datos falsos. Se probaba poco y tenía un fallo real: el contador se
-// precargaba con cualquier número del objetivo, y "máx (deja 1 en reserva)" arrancaba
-// en 1. Hacías 8 dominadas, tocabas 8 veces y se guardaban 9.
+// convierte en datos falsos. Ya ha fallado dos veces por lo mismo, precargar el
+// contador: primero cogiendo cualquier número del objetivo ("máx (deja 1 en reserva)"
+// arrancaba en 1, hacías 8 dominadas y se guardaban 9), y después, con el número
+// correcto, sumándole tus toques encima ("20 por serie" + 12 toques = 32) y guardando
+// series que no llegabas a tocar.
+// El contador cuenta desde cero lo que haces. El objetivo se ENSEÑA, no se cuenta.
 
 export async function run({ page, abrir }) {
   await abrir();
@@ -44,12 +47,40 @@ export async function run({ page, abrir }) {
   assert.deepEqual(registro[0].sets, [8, 6, 5], 'con todas sus series, la última incluida');
   assert.equal(registro[0].ref, 'dominadas');
 
-  // Un objetivo CON número prescrito sí precarga, que es lo cómodo
-  const precarga = await page.evaluate(() => {
+  // El número del objetivo se lee bien, para enseñarlo y para estimar la duración
+  const meta = await page.evaluate(() => {
     const casos = ['10 / pierna', '8-12', '12 por lado', 'máx', 'máx (deja 1 en reserva)', ''];
     return casos.map((t) => [t, numericTarget(t)]);
   });
-  assert.deepEqual(precarga, [['10 / pierna', 10], ['8-12', 8], ['12 por lado', 12], ['máx', 0], ['máx (deja 1 en reserva)', 0], ['', 0]]);
+  assert.deepEqual(meta, [['10 / pierna', 10], ['8-12', 8], ['12 por lado', 12], ['máx', 0], ['máx (deja 1 en reserva)', 0], ['', 0]]);
+
+  // ---- Un objetivo numérico NO precarga el contador ----
+  // Con "20 por serie" el contador arrancaba en 20 y tus 12 toques lo dejaban en 32.
+  const conMeta = await page.evaluate(() => {
+    const w = JSON.parse(JSON.stringify(PACK.workouts[0]));
+    w.sequence = [{ kind: 'work', ref: 'sentadillas', mode: 'reps', target: '20 por serie' }];
+    W = w; seq = compile(w); running = true; repsLog = [];
+    idx = seq.findIndex((s) => s && s.mode === 'reps'); startPhase();
+    const anillo = () => 1 - parseFloat(document.getElementById('arc').style.strokeDashoffset) / 283;
+    const arranque = { n: repN, centro: document.getElementById('count').textContent, anillo: anillo() };
+    for (let i = 0; i < 12; i++) onRing();
+    const doce = { n: repN, anillo: anillo() };
+    recordSerie();
+    const tras = { sets: repSets.slice(), n: repN };
+    finishReps(); // la 2ª serie no se toca
+    return { arranque, doce, tras, guardado: repsLog[0].sets };
+  });
+  assert.equal(conMeta.arranque.n, 0, 'el contador arranca en 0 aunque el objetivo diga 20');
+  assert.equal(conMeta.doce.n, 12, '12 toques son 12 repeticiones, no 32');
+  assert.deepEqual(conMeta.tras.sets, [12], 'y se registra lo que hiciste');
+  assert.equal(conMeta.tras.n, 0, 'la serie siguiente también empieza en 0');
+  assert.deepEqual(conMeta.guardado, [12],
+    'una serie que no llegas a tocar no se guarda: antes se registraban las 20 prescritas como hechas');
+
+  // El objetivo se ve: en el pie del contador y llenando el anillo
+  assert.ok(/de 20 reps/.test(conMeta.arranque.centro), 'el pie del contador enseña la meta: ' + conMeta.arranque.centro);
+  assert.equal(Math.round(conMeta.arranque.anillo * 100), 0, 'anillo vacío al empezar');
+  assert.equal(Math.round(conMeta.doce.anillo * 100), 60, '12 de 20 llenan el anillo al 60 %');
 
   // Pausar en una fase de repeticiones no puede perder lo contado
   await irAReps();

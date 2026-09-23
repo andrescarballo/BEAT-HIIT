@@ -611,13 +611,24 @@ let repN=0,repSets=[],repsLog=[];
 let lastEntry=null; // ultima sesion terminada, para el boton de compartir
 const RC=283;
 function isReps(s){return s&&s.mode==='reps'}
-// Repeticiones PRESCRITAS por el objetivo, para precargar el contador y ahorrar toques.
-// Solo cuenta si el numero abre el objetivo ("10 / pierna" -> 10). Coger cualquier
-// numero de la cadena hacia que "max (deja 1 en reserva)" precargara un 1: hacias 8
-// dominadas, tocabas 8 veces y se registraban 9, inflando la progresion en cada serie.
+// Repeticiones PRESCRITAS por el objetivo. Solo cuenta si el numero abre la cadena
+// ("10 / pierna" -> 10; "max (deja 1 en reserva)" -> 0, no 1).
+// Es una META que se ENSEÑA (anillo y pie del contador) y sirve para estimar la
+// duracion. NO precarga el contador: precargarlo fabricaba datos. Con "20 por serie"
+// el contador arrancaba en 20, tus 12 toques lo dejaban en 32, y una serie que no
+// llegabas a tocar se guardaba como 20 hechas. El anillo pide un toque por
+// repeticion, asi que lo unico coherente es contar desde cero lo que haces.
 function numericTarget(t){const m=String(t||'').match(/^\s*(\d+)/);return m?parseInt(m[1]):0}
 function lastSetsFor(ref){for(let i=LOG.length-1;i>=0;i--){const e=LOG[i];if(e&&e.reps){const r=e.reps.find(x=>x.ref===ref);if(r&&r.sets&&r.sets.length)return r.sets}}return null}
-function repCenter(){const cEl=document.getElementById('count');cEl.classList.remove('reps');cEl.innerHTML=repN+'<div style="font-family:\'Spline Sans Mono\';font-weight:600;font-size:.24em;color:#8a8a72;letter-spacing:.1em;margin-top:2px">reps · serie '+(repSets.length+1)+'</div>'}
+function repCenter(){
+  const cEl=document.getElementById('count');cEl.classList.remove('reps');
+  const tgt=numericTarget(seq[idx]&&seq[idx].target);
+  const pie=(tgt?('de '+tgt+' reps'):'reps')+' · serie '+(repSets.length+1);
+  cEl.innerHTML=repN+'<div style="font-family:\'Spline Sans Mono\';font-weight:600;font-size:.24em;color:#8a8a72;letter-spacing:.1em;margin-top:2px">'+pie+'</div>';
+  // El anillo se llena hacia el objetivo, que es lo que hacia la precarga de mentira:
+  // ver cuanto queda sin tener que leer. Sin objetivo numerico se queda lleno.
+  document.getElementById('arc').style.strokeDashoffset=tgt?RC*(1-Math.min(1,repN/tgt)):0;
+}
 function show(snd){
   const s=seq[idx];
   const isMob=(s.type==='warm'||s.type==='stretch'),isW=(s.type==='work'),isRP=(s.type==='rest'||s.type==='prep'||s.type==='note');
@@ -640,7 +651,7 @@ function show(snd){
   const cEl=document.getElementById('count');
   const pBtn=document.getElementById('pause');
   if(isReps(s)){
-    repCenter();document.getElementById('arc').style.strokeDashoffset=0;
+    repCenter();
     const last=lastSetsFor(s.ref);
     document.getElementById('next').innerHTML='Objetivo: <b>'+esc(s.target||'')+'</b>'+(last?(' &middot; \u00faltima: '+esc(last.join(' \u00b7 '))):'');
     document.getElementById('prog').textContent='Toca el centro para +1 rep';
@@ -658,7 +669,7 @@ function draw(){const s=seq[idx];if(isReps(s))return;document.getElementById('co
 function startPhase(){
   paused=false;document.getElementById('count').style.opacity='1';
   const s=seq[idx];phaseStart=Date.now();phasePaused=0;
-  if(isReps(s)){repSets=[];repN=numericTarget(s.target)}
+  if(isReps(s)){repSets=[];repN=0}
   if(!isReps(s)&&s.sec!=null){left=s.sec;phaseEnd=Date.now()+left*1000}
   show(true);vibPhase(s);
 }
@@ -700,7 +711,7 @@ async function finish(){
   swap('done');
 }
 function onRing(){if(!running)return;const s=seq[idx];if(isReps(s)){repN++;repCenter();return}togglePause()}
-function recordSerie(){const s=seq[idx];if(!isReps(s))return;if(repN>0)repSets.push(repN);repN=numericTarget(s.target);show(false)}
+function recordSerie(){const s=seq[idx];if(!isReps(s))return;if(repN>0)repSets.push(repN);repN=0;show(false)}
 function finishReps(){const s=seq[idx];if(repN>0)repSets.push(repN);repsLog.push({ref:s.ref,name:s.name,target:s.target,sets:repSets.slice()});advance()}
 function onMain(){if(!running)return;const s=seq[idx];if(isReps(s)){recordSerie();return}togglePause()}
 // Alarga la fase en curso. Hay dias en los que 15 s de descanso no llegan, y la
