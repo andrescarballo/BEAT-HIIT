@@ -362,6 +362,13 @@ function validatePack(p){
   }
   const wids=new Set(p.workouts.map(w=>w.id));
   for(const r of ((p.plan&&p.plan.rotation)||[])){if(!wids.has(r))return 'La rotación apunta a un entrenamiento que no existe: '+r}
+  // El schedule tambien: un id mal escrito aqui pasaba el filtro y luego caia a la
+  // rotacion en silencio, asi que el plan semanal no se cumplia y nadie se enteraba.
+  const sch=(p.plan&&p.plan.schedule)||{};
+  for(const [dia,id] of Object.entries(sch)){
+    if(!/^[0-6]$/.test(String(dia)))return 'El día del schedule debe ir de 0 (domingo) a 6 (sábado), y hay un "'+dia+'"';
+    if(id!==null&&!wids.has(id))return 'El schedule del día '+dia+' apunta a un entrenamiento que no existe: '+id;
+  }
   return null;
 }
 
