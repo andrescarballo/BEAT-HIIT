@@ -595,7 +595,11 @@ let repN=0,repSets=[],repsLog=[];
 let lastEntry=null; // ultima sesion terminada, para el boton de compartir
 const RC=283;
 function isReps(s){return s&&s.mode==='reps'}
-function numericTarget(t){const m=String(t||'').match(/\d+/);return m?parseInt(m[0]):0}
+// Repeticiones PRESCRITAS por el objetivo, para precargar el contador y ahorrar toques.
+// Solo cuenta si el numero abre el objetivo ("10 / pierna" -> 10). Coger cualquier
+// numero de la cadena hacia que "max (deja 1 en reserva)" precargara un 1: hacias 8
+// dominadas, tocabas 8 veces y se registraban 9, inflando la progresion en cada serie.
+function numericTarget(t){const m=String(t||'').match(/^\s*(\d+)/);return m?parseInt(m[1]):0}
 function lastSetsFor(ref){for(let i=LOG.length-1;i>=0;i--){const e=LOG[i];if(e&&e.reps){const r=e.reps.find(x=>x.ref===ref);if(r&&r.sets&&r.sets.length)return r.sets}}return null}
 function repCenter(){const cEl=document.getElementById('count');cEl.classList.remove('reps');cEl.innerHTML=repN+'<div style="font-family:\'Spline Sans Mono\';font-weight:600;font-size:.24em;color:#8a8a72;letter-spacing:.1em;margin-top:2px">reps · serie '+(repSets.length+1)+'</div>'}
 function show(snd){
@@ -698,7 +702,7 @@ function onPrev(){if(!running)return;const s=seq[idx];if(isReps(s)){repN=Math.ma
 function onSkip(){if(!running)return;const s=seq[idx];if(isReps(s)){finishReps();return}closePhase();idx++;if(idx>=seq.length){finish();return}startPhase()}
 function togglePause(){
   if(!running)return;const s=seq[idx];
-  if(isReps(s)){advance();return}
+  if(isReps(s)){finishReps();return} // avanzar sin registrar perderia las series
   paused=!paused;const pl=document.getElementById('phase');
   if(paused){shutUp();remMs=phaseEnd-Date.now();pauseStart=Date.now();pl.dataset.prev=pl.textContent;pl.textContent='EN PAUSA'}
   else{const pd=Date.now()-pauseStart;pausedTotal+=pd;phasePaused+=pd;phaseEnd=Date.now()+remMs;if(pl.dataset.prev!==undefined)pl.textContent=pl.dataset.prev}
