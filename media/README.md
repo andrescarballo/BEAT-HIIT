@@ -11,8 +11,15 @@ partir de las poses de `tools/poses.mjs`.
 node tools/gen-media.mjs           # regenera los SVG
 node tools/gen-media.mjs --sheet   # + hoja de contactos para revisarlas de un vistazo
 node tools/gen-media.mjs --pack    # + declara la media en beat-basico.json
+node tools/gen-media.mjs --trazo   # con línea de grosor constante en vez de silueta
+node tools/compare.mjs             # los dos estilos lado a lado -> tools/compare.html
 node build.mjs                     # mete media/ en el precache y regenera CREDITS.md
 ```
+
+El estilo por defecto es **silueta**: cada miembro se dibuja como una forma rellena que se
+estrecha hacia el extremo, con un punto de hombros para que la cabeza no se funda con el
+tronco. La alternativa (`--trazo`) usa línea de grosor constante; se descartó porque a
+tamaño de móvil salían monigotes.
 
 ## Cómo se describe una pose
 

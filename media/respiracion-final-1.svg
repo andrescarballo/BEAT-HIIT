@@ -1,12 +1,38 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Respiración final: sentado, tranquilo, manos en las rodillas">
   <g transform="translate(-10.8 -10.8) scale(1.1)">
-  <path d="M 64 182 L 136 182" fill="none" stroke="#2a2c1f" stroke-width="5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 88 58 L 82 82 L 96 94" fill="none" stroke="#75765f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 100 104 L 88 140 L 88 176 L 80 178" fill="none" stroke="#75765f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <circle cx="100" cy="34" r="12" fill="none" stroke="#f2efe3" stroke-width="5" vector-effect="non-scaling-stroke"/>
-  <path d="M 100 34 L 100 48" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 100 48 L 100 104" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 112 58 L 118 82 L 104 94" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 100 104 L 112 140 L 112 176 L 120 178" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+  <path d="M 56 182 L 144 182" fill="none" stroke="#2a2c1f" stroke-width="5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+  <path d="M 83.3 54.6 L 68.6 77.5 L 75.4 82.5 L 92.7 61.4 Z" fill="#75765f"/>
+  <path d="M 69.4 83.3 L 90 98.5 L 94 93.5 L 74.6 76.7 Z" fill="#75765f"/>
+  <circle cx="88" cy="58" r="5.8" fill="#75765f"/>
+  <circle cx="72" cy="80" r="4.2" fill="#75765f"/>
+  <circle cx="92" cy="96" r="3.2" fill="#75765f"/>
+  <path d="M 92.2 101.4 L 82.5 138.2 L 93.5 141.8 L 107.8 106.6 Z" fill="#75765f"/>
+  <path d="M 82.2 140 L 83.8 176 L 92.2 176 L 93.8 140 Z" fill="#75765f"/>
+  <path d="M 87 171.9 L 79.2 174.9 L 80.8 181.1 L 89 180.1 Z" fill="#75765f"/>
+  <circle cx="100" cy="104" r="8.2" fill="#75765f"/>
+  <circle cx="88" cy="140" r="5.8" fill="#75765f"/>
+  <circle cx="88" cy="176" r="4.2" fill="#75765f"/>
+  <circle cx="80" cy="178" r="3.2" fill="#75765f"/>
+  <path d="M 94.5 48 L 87.5 60.3 L 112.5 60.3 L 105.5 48 Z" fill="#f2efe3"/>
+  <path d="M 87.5 60.3 L 91 104 L 109 104 L 112.5 60.3 Z" fill="#f2efe3"/>
+  <circle cx="100" cy="48" r="5.5" fill="#f2efe3"/>
+  <circle cx="100" cy="60.3" r="12.5" fill="#f2efe3"/>
+  <circle cx="100" cy="104" r="9" fill="#f2efe3"/>
+  <path d="M 94 34 L 94.5 48 L 105.5 48 L 106 34 Z" fill="#f2efe3"/>
+  <circle cx="100" cy="34" r="6" fill="#f2efe3"/>
+  <circle cx="100" cy="48" r="5.5" fill="#f2efe3"/>
+  <circle cx="100" cy="34" r="12.5" fill="#f2efe3"/>
+  <path d="M 107.3 61.4 L 124.6 82.5 L 131.4 77.5 L 116.7 54.6 Z" fill="#f2efe3"/>
+  <path d="M 125.4 76.7 L 106 93.5 L 110 98.5 L 130.6 83.3 Z" fill="#f2efe3"/>
+  <circle cx="112" cy="58" r="5.8" fill="#f2efe3"/>
+  <circle cx="128" cy="80" r="4.2" fill="#f2efe3"/>
+  <circle cx="108" cy="96" r="3.2" fill="#f2efe3"/>
+  <path d="M 92.2 106.6 L 106.5 141.8 L 117.5 138.2 L 107.8 101.4 Z" fill="#f2efe3"/>
+  <path d="M 106.2 140 L 107.8 176 L 116.2 176 L 117.8 140 Z" fill="#f2efe3"/>
+  <path d="M 111 180.1 L 119.2 181.1 L 120.8 174.9 L 113 171.9 Z" fill="#f2efe3"/>
+  <circle cx="100" cy="104" r="8.2" fill="#f2efe3"/>
+  <circle cx="112" cy="140" r="5.8" fill="#f2efe3"/>
+  <circle cx="112" cy="176" r="4.2" fill="#f2efe3"/>
+  <circle cx="120" cy="178" r="3.2" fill="#f2efe3"/>
   </g>
 </svg>

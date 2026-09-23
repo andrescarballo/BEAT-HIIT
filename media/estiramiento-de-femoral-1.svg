@@ -1,12 +1,38 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Estiramiento de femoral: bisagra de cadera con las piernas estiradas">
   <g transform="translate(-60.9 -116) scale(1.5)">
   <path d="M 54 180 L 168 180" fill="none" stroke="#2a2c1f" stroke-width="5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 88 152 L 114 160 L 140 172" fill="none" stroke="#75765f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 70 170 L 110 174 L 150 176 L 152 166" fill="none" stroke="#75765f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <circle cx="98" cy="134" r="12" fill="none" stroke="#f2efe3" stroke-width="5" vector-effect="non-scaling-stroke"/>
-  <path d="M 98 134 L 92 146" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 92 146 L 70 168" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 90 150 L 116 158 L 142 170" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 70 168 L 110 172 L 150 174 L 152 164" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+  <path d="M 86.3 157.5 L 112.8 164 L 115.2 156 L 89.7 146.5 Z" fill="#75765f"/>
+  <path d="M 112.2 163.8 L 138.7 174.9 L 141.3 169.1 L 115.8 156.2 Z" fill="#75765f"/>
+  <circle cx="88" cy="152" r="5.8" fill="#75765f"/>
+  <circle cx="114" cy="160" r="4.2" fill="#75765f"/>
+  <circle cx="140" cy="172" r="3.2" fill="#75765f"/>
+  <path d="M 69.2 178.2 L 109.4 179.8 L 110.6 168.2 L 70.8 161.8 Z" fill="#75765f"/>
+  <path d="M 109.7 179.8 L 149.8 180.2 L 150.2 171.8 L 110.3 168.2 Z" fill="#75765f"/>
+  <path d="M 154.1 176.8 L 155.1 166.6 L 148.9 165.4 L 145.9 175.2 Z" fill="#75765f"/>
+  <circle cx="70" cy="170" r="8.2" fill="#75765f"/>
+  <circle cx="110" cy="174" r="5.8" fill="#75765f"/>
+  <circle cx="150" cy="176" r="4.2" fill="#75765f"/>
+  <circle cx="152" cy="166" r="3.2" fill="#75765f"/>
+  <path d="M 88.1 142.1 L 78.3 142 L 96 159.7 L 95.9 149.9 Z" fill="#f2efe3"/>
+  <path d="M 78.3 142 L 63.6 161.6 L 76.4 174.4 L 96 159.7 Z" fill="#f2efe3"/>
+  <circle cx="92" cy="146" r="5.5" fill="#f2efe3"/>
+  <circle cx="87.2" cy="150.8" r="12.5" fill="#f2efe3"/>
+  <circle cx="70" cy="168" r="9" fill="#f2efe3"/>
+  <path d="M 92.6 131.3 L 87.1 143.5 L 96.9 148.5 L 103.4 136.7 Z" fill="#f2efe3"/>
+  <circle cx="98" cy="134" r="6" fill="#f2efe3"/>
+  <circle cx="92" cy="146" r="5.5" fill="#f2efe3"/>
+  <circle cx="98" cy="134" r="12.5" fill="#f2efe3"/>
+  <path d="M 88.3 155.5 L 114.8 162 L 117.2 154 L 91.7 144.5 Z" fill="#f2efe3"/>
+  <path d="M 114.2 161.8 L 140.7 172.9 L 143.3 167.1 L 117.8 154.2 Z" fill="#f2efe3"/>
+  <circle cx="90" cy="150" r="5.8" fill="#f2efe3"/>
+  <circle cx="116" cy="158" r="4.2" fill="#f2efe3"/>
+  <circle cx="142" cy="170" r="3.2" fill="#f2efe3"/>
+  <path d="M 69.2 176.2 L 109.4 177.8 L 110.6 166.2 L 70.8 159.8 Z" fill="#f2efe3"/>
+  <path d="M 109.7 177.8 L 149.8 178.2 L 150.2 169.8 L 110.3 166.2 Z" fill="#f2efe3"/>
+  <path d="M 154.1 174.8 L 155.1 164.6 L 148.9 163.4 L 145.9 173.2 Z" fill="#f2efe3"/>
+  <circle cx="70" cy="168" r="8.2" fill="#f2efe3"/>
+  <circle cx="110" cy="172" r="5.8" fill="#f2efe3"/>
+  <circle cx="150" cy="174" r="4.2" fill="#f2efe3"/>
+  <circle cx="152" cy="164" r="3.2" fill="#f2efe3"/>
   </g>
 </svg>

@@ -1,12 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Hip thrust: espalda apoyada en la silla, subiendo la cadera hasta alinear el cuerpo (2 de 2)">
   <g transform="translate(-30.5 -114.6) scale(1.5)">
   <path d="M 16 182 L 164 182" fill="none" stroke="#2a2c1f" stroke-width="5" stroke-linecap="round" vector-effect="non-scaling-stroke"/><path d="M 30 140 L 70 140 M 34 140 L 34 176 M 66 140 L 66 176" fill="none" stroke="#2a2c1f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 114 142 L 141 147 L 145 178" fill="none" stroke="#75765f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <circle cx="44" cy="130" r="12" fill="none" stroke="#f2efe3" stroke-width="5" vector-effect="non-scaling-stroke"/>
-  <path d="M 44 130 L 58 136" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 58 136 L 114 140" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 60 140 L 78 132 L 96 128" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 114 140 L 144 142 L 148 176" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+  <path d="M 112.5 150.1 L 139.9 152.7 L 142.1 141.3 L 115.5 133.9 Z" fill="#75765f"/>
+  <path d="M 135.2 147.7 L 140.8 178.5 L 149.2 177.5 L 146.8 146.3 Z" fill="#75765f"/>
+  <circle cx="114" cy="142" r="8.2" fill="#75765f"/>
+  <circle cx="141" cy="147" r="5.8" fill="#75765f"/>
+  <circle cx="145" cy="178" r="4.2" fill="#75765f"/>
+  <path d="M 57.6 141.5 L 69.4 149.3 L 71.2 124.4 L 58.4 130.5 Z" fill="#f2efe3"/>
+  <path d="M 69.4 149.3 L 113.4 149 L 114.6 131 L 71.2 124.4 Z" fill="#f2efe3"/>
+  <circle cx="58" cy="136" r="5.5" fill="#f2efe3"/>
+  <circle cx="70.3" cy="136.9" r="12.5" fill="#f2efe3"/>
+  <circle cx="114" cy="140" r="9" fill="#f2efe3"/>
+  <path d="M 41.6 135.5 L 55.8 141.1 L 60.2 130.9 L 46.4 124.5 Z" fill="#f2efe3"/>
+  <circle cx="44" cy="130" r="6" fill="#f2efe3"/>
+  <circle cx="58" cy="136" r="5.5" fill="#f2efe3"/>
+  <circle cx="44" cy="130" r="12.5" fill="#f2efe3"/>
+  <path d="M 62.4 145.3 L 79.7 135.8 L 76.3 128.2 L 57.6 134.7 Z" fill="#f2efe3"/>
+  <path d="M 78.9 136.1 L 96.7 131.1 L 95.3 124.9 L 77.1 127.9 Z" fill="#f2efe3"/>
+  <circle cx="60" cy="140" r="5.8" fill="#f2efe3"/>
+  <circle cx="78" cy="132" r="4.2" fill="#f2efe3"/>
+  <circle cx="96" cy="128" r="3.2" fill="#f2efe3"/>
+  <path d="M 113.5 148.2 L 143.6 147.8 L 144.4 136.2 L 114.5 131.8 Z" fill="#f2efe3"/>
+  <path d="M 138.2 142.7 L 143.8 176.5 L 152.2 175.5 L 149.8 141.3 Z" fill="#f2efe3"/>
+  <circle cx="114" cy="140" r="8.2" fill="#f2efe3"/>
+  <circle cx="144" cy="142" r="5.8" fill="#f2efe3"/>
+  <circle cx="148" cy="176" r="4.2" fill="#f2efe3"/>
   <path d="M 101 134 L 127 134" fill="none" stroke="#ff7e33" stroke-width="7" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
   </g>
 </svg>

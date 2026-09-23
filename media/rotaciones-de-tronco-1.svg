@@ -1,12 +1,38 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Rotaciones de tronco: giro de cintura de lado a lado con los brazos sueltos (1 de 2)">
   <g transform="translate(-10.8 -10.8) scale(1.1)">
   <path d="M 26 182 L 174 182" fill="none" stroke="#2a2c1f" stroke-width="5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 88 58 L 72 70 L 56 76" fill="none" stroke="#75765f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 100 104 L 90 140 L 90 176 L 82 178" fill="none" stroke="#75765f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <circle cx="100" cy="34" r="12" fill="none" stroke="#f2efe3" stroke-width="5" vector-effect="non-scaling-stroke"/>
-  <path d="M 100 34 L 100 48" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 100 48 L 100 104" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 112 58 L 136 64 L 158 62" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 100 104 L 110 140 L 110 176 L 118 178" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+  <path d="M 84.5 53.4 L 69.5 66.6 L 74.5 73.4 L 91.5 62.6 Z" fill="#75765f"/>
+  <path d="M 70.5 66.1 L 54.9 73 L 57.1 79 L 73.5 73.9 Z" fill="#75765f"/>
+  <circle cx="88" cy="58" r="5.8" fill="#75765f"/>
+  <circle cx="72" cy="70" r="4.2" fill="#75765f"/>
+  <circle cx="56" cy="76" r="3.2" fill="#75765f"/>
+  <path d="M 92.1 101.8 L 84.4 138.4 L 95.6 141.6 L 107.9 106.2 Z" fill="#75765f"/>
+  <path d="M 84.2 140 L 85.8 176 L 94.2 176 L 95.8 140 Z" fill="#75765f"/>
+  <path d="M 89 171.9 L 81.2 174.9 L 82.8 181.1 L 91 180.1 Z" fill="#75765f"/>
+  <circle cx="100" cy="104" r="8.2" fill="#75765f"/>
+  <circle cx="90" cy="140" r="5.8" fill="#75765f"/>
+  <circle cx="90" cy="176" r="4.2" fill="#75765f"/>
+  <circle cx="82" cy="178" r="3.2" fill="#75765f"/>
+  <path d="M 94.5 48 L 87.5 60.3 L 112.5 60.3 L 105.5 48 Z" fill="#f2efe3"/>
+  <path d="M 87.5 60.3 L 91 104 L 109 104 L 112.5 60.3 Z" fill="#f2efe3"/>
+  <circle cx="100" cy="48" r="5.5" fill="#f2efe3"/>
+  <circle cx="100" cy="60.3" r="12.5" fill="#f2efe3"/>
+  <circle cx="100" cy="104" r="9" fill="#f2efe3"/>
+  <path d="M 94 34 L 94.5 48 L 105.5 48 L 106 34 Z" fill="#f2efe3"/>
+  <circle cx="100" cy="34" r="6" fill="#f2efe3"/>
+  <circle cx="100" cy="48" r="5.5" fill="#f2efe3"/>
+  <circle cx="100" cy="34" r="12.5" fill="#f2efe3"/>
+  <path d="M 110.6 63.6 L 135 68.1 L 137 59.9 L 113.4 52.4 Z" fill="#f2efe3"/>
+  <path d="M 136.4 68.2 L 158.3 65.2 L 157.7 58.8 L 135.6 59.8 Z" fill="#f2efe3"/>
+  <circle cx="112" cy="58" r="5.8" fill="#f2efe3"/>
+  <circle cx="136" cy="64" r="4.2" fill="#f2efe3"/>
+  <circle cx="158" cy="62" r="3.2" fill="#f2efe3"/>
+  <path d="M 92.1 106.2 L 104.4 141.6 L 115.6 138.4 L 107.9 101.8 Z" fill="#f2efe3"/>
+  <path d="M 104.2 140 L 105.8 176 L 114.2 176 L 115.8 140 Z" fill="#f2efe3"/>
+  <path d="M 109 180.1 L 117.2 181.1 L 118.8 174.9 L 111 171.9 Z" fill="#f2efe3"/>
+  <circle cx="100" cy="104" r="8.2" fill="#f2efe3"/>
+  <circle cx="110" cy="140" r="5.8" fill="#f2efe3"/>
+  <circle cx="110" cy="176" r="4.2" fill="#f2efe3"/>
+  <circle cx="118" cy="178" r="3.2" fill="#f2efe3"/>
   </g>
 </svg>

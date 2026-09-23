@@ -1,3 +1,6 @@
 # Hoja de contactos para revisar las ilustraciones: se genera con
 # `node tools/gen-media.mjs --sheet` cuando hace falta mirarlas.
 tools/sheet.html
+
+# Comparativa de estilos: se genera con `node tools/compare.mjs`.
+tools/compare.html

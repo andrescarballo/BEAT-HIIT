@@ -1,12 +1,34 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Hollow hold: lumbar pegada al suelo, hombros y piernas despegados">
   <g transform="translate(-23.8 -62.8) scale(1.2)">
   <path d="M 16 170 L 194 170" fill="none" stroke="#2a2c1f" stroke-width="5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 70 138 L 50 124 L 32 112" fill="none" stroke="#75765f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 116 166 L 148 150 L 178 134" fill="none" stroke="#75765f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <circle cx="56" cy="124" r="12" fill="none" stroke="#f2efe3" stroke-width="5" vector-effect="non-scaling-stroke"/>
-  <path d="M 56 124 L 68 136" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 68 136 L 116 164" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 70 136 L 50 122 L 32 110" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 116 164 L 148 148 L 178 132" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+  <path d="M 73.3 133.2 L 52.4 120.6 L 47.6 127.4 L 66.7 142.8 Z" fill="#75765f"/>
+  <path d="M 52.3 120.5 L 33.8 109.3 L 30.2 114.7 L 47.7 127.5 Z" fill="#75765f"/>
+  <circle cx="70" cy="138" r="5.8" fill="#75765f"/>
+  <circle cx="50" cy="124" r="4.2" fill="#75765f"/>
+  <circle cx="32" cy="112" r="3.2" fill="#75765f"/>
+  <path d="M 119.7 173.3 L 150.6 155.2 L 145.4 144.8 L 112.3 158.7 Z" fill="#75765f"/>
+  <path d="M 150.7 155.1 L 180 137.7 L 176 130.3 L 145.3 144.9 Z" fill="#75765f"/>
+  <circle cx="116" cy="166" r="8.2" fill="#75765f"/>
+  <circle cx="148" cy="150" r="5.8" fill="#75765f"/>
+  <circle cx="178" cy="134" r="4.2" fill="#75765f"/>
+  <path d="M 65.2 140.8 L 72.3 153 L 84.9 131.4 L 70.8 131.2 Z" fill="#f2efe3"/>
+  <path d="M 72.3 153 L 111.5 171.8 L 120.5 156.2 L 84.9 131.4 Z" fill="#f2efe3"/>
+  <circle cx="68" cy="136" r="5.5" fill="#f2efe3"/>
+  <circle cx="78.6" cy="142.2" r="12.5" fill="#f2efe3"/>
+  <circle cx="116" cy="164" r="9" fill="#f2efe3"/>
+  <path d="M 51.8 128.2 L 64.1 139.9 L 71.9 132.1 L 60.2 119.8 Z" fill="#f2efe3"/>
+  <circle cx="56" cy="124" r="6" fill="#f2efe3"/>
+  <circle cx="68" cy="136" r="5.5" fill="#f2efe3"/>
+  <circle cx="56" cy="124" r="12.5" fill="#f2efe3"/>
+  <path d="M 73.3 131.2 L 52.4 118.6 L 47.6 125.4 L 66.7 140.8 Z" fill="#f2efe3"/>
+  <path d="M 52.3 118.5 L 33.8 107.3 L 30.2 112.7 L 47.7 125.5 Z" fill="#f2efe3"/>
+  <circle cx="70" cy="136" r="5.8" fill="#f2efe3"/>
+  <circle cx="50" cy="122" r="4.2" fill="#f2efe3"/>
+  <circle cx="32" cy="110" r="3.2" fill="#f2efe3"/>
+  <path d="M 119.7 171.3 L 150.6 153.2 L 145.4 142.8 L 112.3 156.7 Z" fill="#f2efe3"/>
+  <path d="M 150.7 153.1 L 180 135.7 L 176 128.3 L 145.3 142.9 Z" fill="#f2efe3"/>
+  <circle cx="116" cy="164" r="8.2" fill="#f2efe3"/>
+  <circle cx="148" cy="148" r="5.8" fill="#f2efe3"/>
+  <circle cx="178" cy="132" r="4.2" fill="#f2efe3"/>
   </g>
 </svg>

@@ -1,12 +1,36 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Estiramiento de cuádriceps: talón al glúteo sujetando el pie">
   <g transform="translate(-24.1 -10.8) scale(1.1)">
   <path d="M 74 182 L 150 182" fill="none" stroke="#2a2c1f" stroke-width="5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 99 58 L 97 82 L 96 106" fill="none" stroke="#75765f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 100 104 L 102 140 L 103 176 L 113 178" fill="none" stroke="#75765f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <circle cx="102" cy="34" r="12" fill="none" stroke="#f2efe3" stroke-width="5" vector-effect="non-scaling-stroke"/>
-  <path d="M 102 34 L 102 48" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 102 48 L 100 102" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 104 58 L 106 82 L 107 106" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 100 102 L 108 146 L 134 116" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+  <path d="M 93.2 57.5 L 92.8 81.7 L 101.2 82.3 L 104.8 58.5 Z" fill="#75765f"/>
+  <path d="M 92.8 81.8 L 92.8 105.9 L 99.2 106.1 L 101.2 82.2 Z" fill="#75765f"/>
+  <circle cx="99" cy="58" r="5.8" fill="#75765f"/>
+  <circle cx="97" cy="82" r="4.2" fill="#75765f"/>
+  <circle cx="96" cy="106" r="3.2" fill="#75765f"/>
+  <path d="M 91.8 104.5 L 96.2 140.3 L 107.8 139.7 L 108.2 103.5 Z" fill="#75765f"/>
+  <path d="M 96.2 140.2 L 98.8 176.1 L 107.2 175.9 L 107.8 139.8 Z" fill="#75765f"/>
+  <path d="M 102.2 180.1 L 112.4 181.1 L 113.6 174.9 L 103.8 171.9 Z" fill="#75765f"/>
+  <circle cx="100" cy="104" r="8.2" fill="#75765f"/>
+  <circle cx="102" cy="140" r="5.8" fill="#75765f"/>
+  <circle cx="103" cy="176" r="4.2" fill="#75765f"/>
+  <circle cx="113" cy="178" r="3.2" fill="#75765f"/>
+  <path d="M 96.5 47.8 L 89.1 59.4 L 114.1 60.3 L 107.5 48.2 Z" fill="#f2efe3"/>
+  <path d="M 89.1 59.4 L 91 101.7 L 109 102.3 L 114.1 60.3 Z" fill="#f2efe3"/>
+  <circle cx="102" cy="48" r="5.5" fill="#f2efe3"/>
+  <circle cx="101.6" cy="59.9" r="12.5" fill="#f2efe3"/>
+  <circle cx="100" cy="102" r="9" fill="#f2efe3"/>
+  <path d="M 96 34 L 96.5 48 L 107.5 48 L 108 34 Z" fill="#f2efe3"/>
+  <circle cx="102" cy="34" r="6" fill="#f2efe3"/>
+  <circle cx="102" cy="48" r="5.5" fill="#f2efe3"/>
+  <circle cx="102" cy="34" r="12.5" fill="#f2efe3"/>
+  <path d="M 98.2 58.5 L 101.8 82.3 L 110.2 81.7 L 109.8 57.5 Z" fill="#f2efe3"/>
+  <path d="M 101.8 82.2 L 103.8 106.1 L 110.2 105.9 L 110.2 81.8 Z" fill="#f2efe3"/>
+  <circle cx="104" cy="58" r="5.8" fill="#f2efe3"/>
+  <circle cx="106" cy="82" r="4.2" fill="#f2efe3"/>
+  <circle cx="107" cy="106" r="3.2" fill="#f2efe3"/>
+  <path d="M 91.9 103.5 L 102.3 147 L 113.7 145 L 108.1 100.5 Z" fill="#f2efe3"/>
+  <path d="M 112.4 149.8 L 137.2 118.8 L 130.8 113.2 L 103.6 142.2 Z" fill="#f2efe3"/>
+  <circle cx="100" cy="102" r="8.2" fill="#f2efe3"/>
+  <circle cx="108" cy="146" r="5.8" fill="#f2efe3"/>
+  <circle cx="134" cy="116" r="4.2" fill="#f2efe3"/>
   </g>
 </svg>

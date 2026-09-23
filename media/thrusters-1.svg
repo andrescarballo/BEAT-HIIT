@@ -1,13 +1,39 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Thruster: sentadilla con las mancuernas en los hombros y press al subir (1 de 2)">
   <g transform="translate(-7 -3.8) scale(1.1)">
   <path d="M 54 182 L 146 182" fill="none" stroke="#2a2c1f" stroke-width="5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 90 80 L 76 92 L 84 70" fill="none" stroke="#75765f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 100 120 L 74 144 L 80 176 L 70 178" fill="none" stroke="#75765f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <circle cx="100" cy="58" r="12" fill="none" stroke="#f2efe3" stroke-width="5" vector-effect="non-scaling-stroke"/>
-  <path d="M 100 58 L 100 72" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 100 72 L 100 120" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 110 80 L 124 92 L 116 70" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 100 120 L 126 144 L 120 176 L 130 178" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+  <path d="M 86.2 75.6 L 73.3 88.8 L 78.7 95.2 L 93.8 84.4 Z" fill="#75765f"/>
+  <path d="M 79.9 93.4 L 87 71.1 L 81 68.9 L 72.1 90.6 Z" fill="#75765f"/>
+  <circle cx="90" cy="80" r="5.8" fill="#75765f"/>
+  <circle cx="76" cy="92" r="4.2" fill="#75765f"/>
+  <circle cx="84" cy="70" r="3.2" fill="#75765f"/>
+  <path d="M 94.4 114 L 70.1 139.7 L 77.9 148.3 L 105.6 126 Z" fill="#75765f"/>
+  <path d="M 68.3 145.1 L 75.9 176.8 L 84.1 175.2 L 79.7 142.9 Z" fill="#75765f"/>
+  <path d="M 79.2 171.9 L 69.4 174.9 L 70.6 181.1 L 80.8 180.1 Z" fill="#75765f"/>
+  <circle cx="100" cy="120" r="8.2" fill="#75765f"/>
+  <circle cx="74" cy="144" r="5.8" fill="#75765f"/>
+  <circle cx="80" cy="176" r="4.2" fill="#75765f"/>
+  <circle cx="70" cy="178" r="3.2" fill="#75765f"/>
+  <path d="M 94.5 72 L 87.5 82.6 L 112.5 82.6 L 105.5 72 Z" fill="#f2efe3"/>
+  <path d="M 87.5 82.6 L 91 120 L 109 120 L 112.5 82.6 Z" fill="#f2efe3"/>
+  <circle cx="100" cy="72" r="5.5" fill="#f2efe3"/>
+  <circle cx="100" cy="82.6" r="12.5" fill="#f2efe3"/>
+  <circle cx="100" cy="120" r="9" fill="#f2efe3"/>
+  <path d="M 94 58 L 94.5 72 L 105.5 72 L 106 58 Z" fill="#f2efe3"/>
+  <circle cx="100" cy="58" r="6" fill="#f2efe3"/>
+  <circle cx="100" cy="72" r="5.5" fill="#f2efe3"/>
+  <circle cx="100" cy="58" r="12.5" fill="#f2efe3"/>
+  <path d="M 106.2 84.4 L 121.3 95.2 L 126.7 88.8 L 113.8 75.6 Z" fill="#f2efe3"/>
+  <path d="M 127.9 90.6 L 119 68.9 L 113 71.1 L 120.1 93.4 Z" fill="#f2efe3"/>
+  <circle cx="110" cy="80" r="5.8" fill="#f2efe3"/>
+  <circle cx="124" cy="92" r="4.2" fill="#f2efe3"/>
+  <circle cx="116" cy="70" r="3.2" fill="#f2efe3"/>
+  <path d="M 94.4 126 L 122.1 148.3 L 129.9 139.7 L 105.6 114 Z" fill="#f2efe3"/>
+  <path d="M 120.3 142.9 L 115.9 175.2 L 124.1 176.8 L 131.7 145.1 Z" fill="#f2efe3"/>
+  <path d="M 119.2 180.1 L 129.4 181.1 L 130.6 174.9 L 120.8 171.9 Z" fill="#f2efe3"/>
+  <circle cx="100" cy="120" r="8.2" fill="#f2efe3"/>
+  <circle cx="126" cy="144" r="5.8" fill="#f2efe3"/>
+  <circle cx="120" cy="176" r="4.2" fill="#f2efe3"/>
+  <circle cx="130" cy="178" r="3.2" fill="#f2efe3"/>
   <path d="M 116 62.5 L 116 77.5" fill="none" stroke="#ff7e33" stroke-width="7" stroke-linecap="round" vector-effect="non-scaling-stroke"/><path d="M 84 62.5 L 84 77.5" fill="none" stroke="#ff7e33" stroke-width="7" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
   </g>
 </svg>

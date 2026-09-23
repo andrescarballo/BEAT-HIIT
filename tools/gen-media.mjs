@@ -6,7 +6,11 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
-import { figure, svg, fitPair, groundFor } from './rig.mjs';
+import { figure, figureSolid, svg, fitPair, groundFor } from './rig.mjs';
+
+// Estilo de dibujo. 'silueta' = formas rellenas de grosor variable (pictograma);
+// 'trazo' = línea de grosor constante. Se puede comparar con tools/compare.mjs.
+const ESTILO = process.argv.includes('--trazo') ? figure : figureSolid;
 import { POSES } from './poses.mjs';
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
@@ -22,7 +26,7 @@ for (const id of ids) {
   frames.forEach((pose, i) => {
     const p2 = g ? { ...pose, behind: g + (pose.behind || '') } : pose;
     const label = frames.length > 1 ? `${alt} (${i + 1} de ${frames.length})` : alt;
-    const body = svg(figure(p2, tf), label);
+    const body = svg(ESTILO(p2, tf), label);
     const file = path.join(OUT, `${id}-${i + 1}.svg`);
     const prev = fs.existsSync(file) ? fs.readFileSync(file, 'utf8') : null;
     if (prev !== body) { fs.writeFileSync(file, body); written++; }

@@ -1,13 +1,39 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Peso muerto rumano: de pie y bisagra de cadera con la espalda recta (2 de 2)">
   <g transform="translate(-8.1 -10.8) scale(1.1)">
   <path d="M 44 182 L 151 182" fill="none" stroke="#2a2c1f" stroke-width="5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 83 88 L 85 112 L 87 138" fill="none" stroke="#75765f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 124 110 L 120 142 L 118 176 L 108 178" fill="none" stroke="#75765f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <circle cx="72" cy="74" r="12" fill="none" stroke="#f2efe3" stroke-width="5" vector-effect="non-scaling-stroke"/>
-  <path d="M 72 74 L 84 80" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 84 80 L 124 108" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 86 86 L 88 110 L 90 136" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 124 108 L 126 142 L 124 176 L 135 178" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+  <path d="M 77.2 88.5 L 80.8 112.3 L 89.2 111.7 L 88.8 87.5 Z" fill="#75765f"/>
+  <path d="M 80.8 112.3 L 83.8 138.2 L 90.2 137.8 L 89.2 111.7 Z" fill="#75765f"/>
+  <circle cx="83" cy="88" r="5.8" fill="#75765f"/>
+  <circle cx="85" cy="112" r="4.2" fill="#75765f"/>
+  <circle cx="87" cy="138" r="3.2" fill="#75765f"/>
+  <path d="M 115.9 109 L 114.2 141.3 L 125.8 142.7 L 132.1 111 Z" fill="#75765f"/>
+  <path d="M 114.2 141.7 L 113.8 175.8 L 122.2 176.2 L 125.8 142.3 Z" fill="#75765f"/>
+  <path d="M 117.2 171.9 L 107.4 174.9 L 108.6 181.1 L 118.8 180.1 Z" fill="#75765f"/>
+  <circle cx="124" cy="110" r="8.2" fill="#75765f"/>
+  <circle cx="120" cy="142" r="5.8" fill="#75765f"/>
+  <circle cx="118" cy="176" r="4.2" fill="#75765f"/>
+  <circle cx="108" cy="178" r="3.2" fill="#75765f"/>
+  <path d="M 80.8 84.5 L 85.6 96.4 L 100 75.9 L 87.2 75.5 Z" fill="#f2efe3"/>
+  <path d="M 85.6 96.4 L 118.8 115.4 L 129.2 100.6 L 100 75.9 Z" fill="#f2efe3"/>
+  <circle cx="84" cy="80" r="5.5" fill="#f2efe3"/>
+  <circle cx="92.8" cy="86.2" r="12.5" fill="#f2efe3"/>
+  <circle cx="124" cy="108" r="9" fill="#f2efe3"/>
+  <path d="M 69.3 79.4 L 81.5 84.9 L 86.5 75.1 L 74.7 68.6 Z" fill="#f2efe3"/>
+  <circle cx="72" cy="74" r="6" fill="#f2efe3"/>
+  <circle cx="84" cy="80" r="5.5" fill="#f2efe3"/>
+  <circle cx="72" cy="74" r="12.5" fill="#f2efe3"/>
+  <path d="M 80.2 86.5 L 83.8 110.3 L 92.2 109.7 L 91.8 85.5 Z" fill="#f2efe3"/>
+  <path d="M 83.8 110.3 L 86.8 136.2 L 93.2 135.8 L 92.2 109.7 Z" fill="#f2efe3"/>
+  <circle cx="86" cy="86" r="5.8" fill="#f2efe3"/>
+  <circle cx="88" cy="110" r="4.2" fill="#f2efe3"/>
+  <circle cx="90" cy="136" r="3.2" fill="#f2efe3"/>
+  <path d="M 115.8 108.5 L 120.2 142.3 L 131.8 141.7 L 132.2 107.5 Z" fill="#f2efe3"/>
+  <path d="M 120.2 141.7 L 119.8 175.8 L 128.2 176.2 L 131.8 142.3 Z" fill="#f2efe3"/>
+  <path d="M 123.2 180.1 L 134.4 181.1 L 135.6 174.9 L 124.8 171.9 Z" fill="#f2efe3"/>
+  <circle cx="124" cy="108" r="8.2" fill="#f2efe3"/>
+  <circle cx="126" cy="142" r="5.8" fill="#f2efe3"/>
+  <circle cx="124" cy="176" r="4.2" fill="#f2efe3"/>
+  <circle cx="135" cy="178" r="3.2" fill="#f2efe3"/>
   <path d="M 90 128.5 L 90 143.5" fill="none" stroke="#ff7e33" stroke-width="7" stroke-linecap="round" vector-effect="non-scaling-stroke"/><path d="M 87 130.5 L 87 145.5" fill="none" stroke="#ff7e33" stroke-width="7" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
   </g>
 </svg>

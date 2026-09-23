@@ -113,6 +113,70 @@ export function fitPair(poses) {
   return `translate(${n(tx)} ${n(ty)}) scale(${n(s)})`;
 }
 
+/* =====================================================================
+   Renderizado en SILUETA.
+   Las mismas coordenadas de articulaciones, pero cada miembro se dibuja como
+   una forma rellena que se estrecha hacia el extremo, en vez de una línea de
+   grosor constante. Es la diferencia entre un monigote y un pictograma.
+   ===================================================================== */
+
+// Grosor (radio) en cada articulación. De aquí sale la silueta entera.
+const R = {
+  head: 12.5,
+  neck: [6, 5.5],                  // fino a propósito: si no, la cabeza se funde con el tronco
+  torso: [5.5, 12.5, 9],           // cuello -> hombros -> cadera
+  arm: [5.8, 4.2, 3.2],            // hombro, codo, mano
+  leg: [8.2, 5.8, 4.2, 3.2],       // cadera, rodilla, tobillo, punta
+};
+
+// El tronco necesita un punto de HOMBROS: sin él, el cuello es tan ancho como los
+// hombros y la figura de pie sale como un bolo, sin cabeza distinguible.
+function torsoChain(spine) {
+  if (!spine || spine.length < 2) return null;
+  if (spine.length === 2) {
+    const [a, b] = spine;
+    const hombro = [a[0] + (b[0] - a[0]) * 0.22, a[1] + (b[1] - a[1]) * 0.22];
+    return { pts: [a, hombro, b], radii: R.torso };
+  }
+  // espalda curvada (gato): rampa a lo largo de la cadena que ya viene dada
+  return { pts: spine, radii: spine.map((_, i) => (i === 0 ? R.torso[0] : i === spine.length - 1 ? R.torso[2] : R.torso[1])) };
+}
+
+// Cadena rellena: un trapecio por segmento más un círculo en cada articulación.
+// Los círculos redondean los codos y tapan los escalones entre segmentos.
+function solidChain(ptsArr, radii, fill) {
+  if (!ptsArr || ptsArr.length < 2) return '';
+  const out = [];
+  for (let i = 0; i < ptsArr.length - 1; i++) {
+    const [x1, y1] = ptsArr[i], [x2, y2] = ptsArr[i + 1];
+    const r1 = radii[Math.min(i, radii.length - 1)];
+    const r2 = radii[Math.min(i + 1, radii.length - 1)];
+    const dx = x2 - x1, dy = y2 - y1, L = Math.hypot(dx, dy) || 1;
+    const nx = -dy / L, ny = dx / L;
+    out.push(`<path d="M ${n(x1 + nx * r1)} ${n(y1 + ny * r1)} L ${n(x2 + nx * r2)} ${n(y2 + ny * r2)} L ${n(x2 - nx * r2)} ${n(y2 - ny * r2)} L ${n(x1 - nx * r1)} ${n(y1 - ny * r1)} Z" fill="${fill}"/>`);
+  }
+  for (let i = 0; i < ptsArr.length; i++) {
+    const r = radii[Math.min(i, radii.length - 1)];
+    out.push(`<circle cx="${n(ptsArr[i][0])}" cy="${n(ptsArr[i][1])}" r="${n(r)}" fill="${fill}"/>`);
+  }
+  return out.join('\n  ');
+}
+
+export function figureSolid({ head, spine, arm, armFar, leg, legFar, behind = '', front = '' }, transform) {
+  const neck = spine && spine[0];
+  const body = [
+    behind,
+    // lejanos primero y en tono apagado: profundidad sin contornos ni trucos
+    solidChain(armFar, R.arm, FAR), solidChain(legFar, R.leg, FAR),
+    (() => { const t = torsoChain(spine); return t ? solidChain(t.pts, t.radii, IN) : ''; })(),
+    head && neck ? solidChain([head, neck], R.neck, IN) : '',
+    head ? `<circle cx="${n(head[0])}" cy="${n(head[1])}" r="${R.head}" fill="${IN}"/>` : '',
+    solidChain(arm, R.arm, IN), solidChain(leg, R.leg, IN),
+    front,
+  ].filter(Boolean).join('\n  ');
+  return transform ? `<g transform="${transform}">\n  ${body}\n  </g>` : body;
+}
+
 // Espejo horizontal: para los ejercicios de vista frontal que alternan lado
 // (rodillas arriba, patinador, rotaciones…). El segundo fotograma es el primero del revés.
 export function mirror(pose, axis = 100) {

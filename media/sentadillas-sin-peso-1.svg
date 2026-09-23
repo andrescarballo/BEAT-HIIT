@@ -1,12 +1,38 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Sentadilla sin peso: de pie y abajo, a ritmo suave (1 de 2)">
   <g transform="translate(-28 -10.8) scale(1.1)">
   <path d="M 69 182 L 162 182" fill="none" stroke="#2a2c1f" stroke-width="5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 96 58 L 94 82 L 93 106" fill="none" stroke="#75765f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 100 102 L 96 140 L 95 176 L 85 178" fill="none" stroke="#75765f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <circle cx="98" cy="34" r="12" fill="none" stroke="#f2efe3" stroke-width="5" vector-effect="non-scaling-stroke"/>
-  <path d="M 98 34 L 98 48" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 98 48 L 100 102" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 101 58 L 103 82 L 104 106" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 100 102 L 102 140 L 101 176 L 112 178" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+  <path d="M 90.2 57.5 L 89.8 81.7 L 98.2 82.3 L 101.8 58.5 Z" fill="#75765f"/>
+  <path d="M 89.8 81.8 L 89.8 105.9 L 96.2 106.1 L 98.2 82.2 Z" fill="#75765f"/>
+  <circle cx="96" cy="58" r="5.8" fill="#75765f"/>
+  <circle cx="94" cy="82" r="4.2" fill="#75765f"/>
+  <circle cx="93" cy="106" r="3.2" fill="#75765f"/>
+  <path d="M 91.8 101.1 L 90.2 139.4 L 101.8 140.6 L 108.2 102.9 Z" fill="#75765f"/>
+  <path d="M 90.2 139.8 L 90.8 175.9 L 99.2 176.1 L 101.8 140.2 Z" fill="#75765f"/>
+  <path d="M 94.2 171.9 L 84.4 174.9 L 85.6 181.1 L 95.8 180.1 Z" fill="#75765f"/>
+  <circle cx="100" cy="102" r="8.2" fill="#75765f"/>
+  <circle cx="96" cy="140" r="5.8" fill="#75765f"/>
+  <circle cx="95" cy="176" r="4.2" fill="#75765f"/>
+  <circle cx="85" cy="178" r="3.2" fill="#75765f"/>
+  <path d="M 92.5 48.2 L 85.9 60.3 L 110.9 59.4 L 103.5 47.8 Z" fill="#f2efe3"/>
+  <path d="M 85.9 60.3 L 91 102.3 L 109 101.7 L 110.9 59.4 Z" fill="#f2efe3"/>
+  <circle cx="98" cy="48" r="5.5" fill="#f2efe3"/>
+  <circle cx="98.4" cy="59.9" r="12.5" fill="#f2efe3"/>
+  <circle cx="100" cy="102" r="9" fill="#f2efe3"/>
+  <path d="M 92 34 L 92.5 48 L 103.5 48 L 104 34 Z" fill="#f2efe3"/>
+  <circle cx="98" cy="34" r="6" fill="#f2efe3"/>
+  <circle cx="98" cy="48" r="5.5" fill="#f2efe3"/>
+  <circle cx="98" cy="34" r="12.5" fill="#f2efe3"/>
+  <path d="M 95.2 58.5 L 98.8 82.3 L 107.2 81.7 L 106.8 57.5 Z" fill="#f2efe3"/>
+  <path d="M 98.8 82.2 L 100.8 106.1 L 107.2 105.9 L 107.2 81.8 Z" fill="#f2efe3"/>
+  <circle cx="101" cy="58" r="5.8" fill="#f2efe3"/>
+  <circle cx="103" cy="82" r="4.2" fill="#f2efe3"/>
+  <circle cx="104" cy="106" r="3.2" fill="#f2efe3"/>
+  <path d="M 91.8 102.4 L 96.2 140.3 L 107.8 139.7 L 108.2 101.6 Z" fill="#f2efe3"/>
+  <path d="M 96.2 139.8 L 96.8 175.9 L 105.2 176.1 L 107.8 140.2 Z" fill="#f2efe3"/>
+  <path d="M 100.2 180.1 L 111.4 181.1 L 112.6 174.9 L 101.8 171.9 Z" fill="#f2efe3"/>
+  <circle cx="100" cy="102" r="8.2" fill="#f2efe3"/>
+  <circle cx="102" cy="140" r="5.8" fill="#f2efe3"/>
+  <circle cx="101" cy="176" r="4.2" fill="#f2efe3"/>
+  <circle cx="112" cy="178" r="3.2" fill="#f2efe3"/>
   </g>
 </svg>

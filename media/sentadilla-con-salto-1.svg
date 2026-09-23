@@ -1,12 +1,38 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Sentadilla con salto: abajo y despegando del suelo (1 de 2)">
   <g transform="translate(-4.5 0.7) scale(1)">
   <path d="M 46 182 L 154 182" fill="none" stroke="#2a2c1f" stroke-width="5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 104 88 L 90 106 L 76 120" fill="none" stroke="#75765f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 86 124 L 106 150 L 96 176 L 86 178" fill="none" stroke="#75765f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <circle cx="110" cy="64" r="12" fill="none" stroke="#f2efe3" stroke-width="5" vector-effect="non-scaling-stroke"/>
-  <path d="M 110 64 L 108 78" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 108 78 L 86 124" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 106 86 L 92 104 L 78 118" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 86 124 L 112 148 L 102 176 L 113 178" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+  <path d="M 99.4 84.4 L 86.7 103.4 L 93.3 108.6 L 108.6 91.6 Z" fill="#75765f"/>
+  <path d="M 87 103 L 73.7 117.7 L 78.3 122.3 L 93 109 Z" fill="#75765f"/>
+  <circle cx="104" cy="88" r="5.8" fill="#75765f"/>
+  <circle cx="90" cy="106" r="4.2" fill="#75765f"/>
+  <circle cx="76" cy="120" r="3.2" fill="#75765f"/>
+  <path d="M 79.5 129 L 101.4 153.5 L 110.6 146.5 L 92.5 119 Z" fill="#75765f"/>
+  <path d="M 100.6 147.9 L 92.1 174.5 L 99.9 177.5 L 111.4 152.1 Z" fill="#75765f"/>
+  <path d="M 95.2 171.9 L 85.4 174.9 L 86.6 181.1 L 96.8 180.1 Z" fill="#75765f"/>
+  <circle cx="86" cy="124" r="8.2" fill="#75765f"/>
+  <circle cx="106" cy="150" r="5.8" fill="#75765f"/>
+  <circle cx="96" cy="176" r="4.2" fill="#75765f"/>
+  <circle cx="86" cy="178" r="3.2" fill="#75765f"/>
+  <path d="M 103 75.6 L 91.9 82.7 L 114.4 93.5 L 113 80.4 Z" fill="#f2efe3"/>
+  <path d="M 91.9 82.7 L 77.9 120.1 L 94.1 127.9 L 114.4 93.5 Z" fill="#f2efe3"/>
+  <circle cx="108" cy="78" r="5.5" fill="#f2efe3"/>
+  <circle cx="103.2" cy="88.1" r="12.5" fill="#f2efe3"/>
+  <circle cx="86" cy="124" r="9" fill="#f2efe3"/>
+  <path d="M 104.1 63.2 L 102.6 77.2 L 113.4 78.8 L 115.9 64.8 Z" fill="#f2efe3"/>
+  <circle cx="110" cy="64" r="6" fill="#f2efe3"/>
+  <circle cx="108" cy="78" r="5.5" fill="#f2efe3"/>
+  <circle cx="110" cy="64" r="12.5" fill="#f2efe3"/>
+  <path d="M 101.4 82.4 L 88.7 101.4 L 95.3 106.6 L 110.6 89.6 Z" fill="#f2efe3"/>
+  <path d="M 89 101 L 75.7 115.7 L 80.3 120.3 L 95 107 Z" fill="#f2efe3"/>
+  <circle cx="106" cy="86" r="5.8" fill="#f2efe3"/>
+  <circle cx="92" cy="104" r="4.2" fill="#f2efe3"/>
+  <circle cx="78" cy="118" r="3.2" fill="#f2efe3"/>
+  <path d="M 80.4 130 L 108.1 152.3 L 115.9 143.7 L 91.6 118 Z" fill="#f2efe3"/>
+  <path d="M 106.5 146 L 98 174.6 L 106 177.4 L 117.5 150 Z" fill="#f2efe3"/>
+  <path d="M 101.2 180.1 L 112.4 181.1 L 113.6 174.9 L 102.8 171.9 Z" fill="#f2efe3"/>
+  <circle cx="86" cy="124" r="8.2" fill="#f2efe3"/>
+  <circle cx="112" cy="148" r="5.8" fill="#f2efe3"/>
+  <circle cx="102" cy="176" r="4.2" fill="#f2efe3"/>
+  <circle cx="113" cy="178" r="3.2" fill="#f2efe3"/>
   </g>
 </svg>

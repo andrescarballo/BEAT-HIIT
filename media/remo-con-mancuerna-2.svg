@@ -1,13 +1,39 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Remo a una mano: tronco inclinado y codo que sube pegado al cuerpo (2 de 2)">
   <g transform="translate(-39.9 -79.8) scale(1.5)">
   <path d="M 42 182 L 151 182" fill="none" stroke="#2a2c1f" stroke-width="5" stroke-linecap="round" vector-effect="non-scaling-stroke"/><path d="M 106 134 L 146 134 M 110 134 L 110 176 M 142 134 L 142 176" fill="none" stroke="#2a2c1f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 81 96 L 98 116 L 114 134" fill="none" stroke="#75765f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 124 116 L 120 146 L 118 176 L 108 178" fill="none" stroke="#75765f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <circle cx="70" cy="82" r="12" fill="none" stroke="#f2efe3" stroke-width="5" vector-effect="non-scaling-stroke"/>
-  <path d="M 70 82 L 82 88" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 82 88 L 124 114" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 84 94 L 80 118 L 90 108" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 124 114 L 126 146 L 124 176 L 135 178" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+  <path d="M 76.6 99.8 L 94.8 118.7 L 101.2 113.3 L 85.4 92.2 Z" fill="#75765f"/>
+  <path d="M 94.9 118.8 L 111.6 136.1 L 116.4 131.9 L 101.1 113.2 Z" fill="#75765f"/>
+  <circle cx="81" cy="96" r="5.8" fill="#75765f"/>
+  <circle cx="98" cy="116" r="4.2" fill="#75765f"/>
+  <circle cx="114" cy="134" r="3.2" fill="#75765f"/>
+  <path d="M 115.9 114.9 L 114.3 145.2 L 125.7 146.8 L 132.1 117.1 Z" fill="#75765f"/>
+  <path d="M 114.2 145.6 L 113.8 175.7 L 122.2 176.3 L 125.8 146.4 Z" fill="#75765f"/>
+  <path d="M 117.2 171.9 L 107.4 174.9 L 108.6 181.1 L 118.8 180.1 Z" fill="#75765f"/>
+  <circle cx="124" cy="116" r="8.2" fill="#75765f"/>
+  <circle cx="120" cy="146" r="5.8" fill="#75765f"/>
+  <circle cx="118" cy="176" r="4.2" fill="#75765f"/>
+  <circle cx="108" cy="178" r="3.2" fill="#75765f"/>
+  <path d="M 79.1 92.7 L 84.7 104.3 L 97.8 83.1 L 84.9 83.3 Z" fill="#f2efe3"/>
+  <path d="M 84.7 104.3 L 119.3 121.7 L 128.7 106.3 L 97.8 83.1 Z" fill="#f2efe3"/>
+  <circle cx="82" cy="88" r="5.5" fill="#f2efe3"/>
+  <circle cx="91.2" cy="93.7" r="12.5" fill="#f2efe3"/>
+  <circle cx="124" cy="114" r="9" fill="#f2efe3"/>
+  <path d="M 67.3 87.4 L 79.5 92.9 L 84.5 83.1 L 72.7 76.6 Z" fill="#f2efe3"/>
+  <circle cx="70" cy="82" r="6" fill="#f2efe3"/>
+  <circle cx="82" cy="88" r="5.5" fill="#f2efe3"/>
+  <circle cx="70" cy="82" r="12.5" fill="#f2efe3"/>
+  <path d="M 78.3 93 L 75.9 117.3 L 84.1 118.7 L 89.7 95 Z" fill="#f2efe3"/>
+  <path d="M 83 121 L 92.3 110.3 L 87.7 105.7 L 77 115 Z" fill="#f2efe3"/>
+  <circle cx="84" cy="94" r="5.8" fill="#f2efe3"/>
+  <circle cx="80" cy="118" r="4.2" fill="#f2efe3"/>
+  <circle cx="90" cy="108" r="3.2" fill="#f2efe3"/>
+  <path d="M 115.8 114.5 L 120.2 146.4 L 131.8 145.6 L 132.2 113.5 Z" fill="#f2efe3"/>
+  <path d="M 120.2 145.6 L 119.8 175.7 L 128.2 176.3 L 131.8 146.4 Z" fill="#f2efe3"/>
+  <path d="M 123.2 180.1 L 134.4 181.1 L 135.6 174.9 L 124.8 171.9 Z" fill="#f2efe3"/>
+  <circle cx="124" cy="114" r="8.2" fill="#f2efe3"/>
+  <circle cx="126" cy="146" r="5.8" fill="#f2efe3"/>
+  <circle cx="124" cy="176" r="4.2" fill="#f2efe3"/>
+  <circle cx="135" cy="178" r="3.2" fill="#f2efe3"/>
   <path d="M 90 100.5 L 90 115.5" fill="none" stroke="#ff7e33" stroke-width="7" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
   </g>
 </svg>

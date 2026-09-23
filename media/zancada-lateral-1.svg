@@ -1,12 +1,38 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Zancada lateral: de pie y cargando el peso en una pierna doblada (1 de 2)">
   <g transform="translate(-8.6 -10.8) scale(1.1)">
   <path d="M 28 182 L 168 182" fill="none" stroke="#2a2c1f" stroke-width="5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 88 58 L 82 80 L 80 104" fill="none" stroke="#75765f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 100 104 L 88 140 L 88 176 L 80 178" fill="none" stroke="#75765f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <circle cx="100" cy="34" r="12" fill="none" stroke="#f2efe3" stroke-width="5" vector-effect="non-scaling-stroke"/>
-  <path d="M 100 34 L 100 48" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 100 48 L 100 104" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 112 58 L 118 80 L 120 104" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 100 104 L 112 140 L 112 176 L 120 178" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+  <path d="M 82.4 56.5 L 77.9 78.9 L 86.1 81.1 L 93.6 59.5 Z" fill="#75765f"/>
+  <path d="M 77.8 79.7 L 76.8 103.7 L 83.2 104.3 L 86.2 80.3 Z" fill="#75765f"/>
+  <circle cx="88" cy="58" r="5.8" fill="#75765f"/>
+  <circle cx="82" cy="80" r="4.2" fill="#75765f"/>
+  <circle cx="80" cy="104" r="3.2" fill="#75765f"/>
+  <path d="M 92.2 101.4 L 82.5 138.2 L 93.5 141.8 L 107.8 106.6 Z" fill="#75765f"/>
+  <path d="M 82.2 140 L 83.8 176 L 92.2 176 L 93.8 140 Z" fill="#75765f"/>
+  <path d="M 87 171.9 L 79.2 174.9 L 80.8 181.1 L 89 180.1 Z" fill="#75765f"/>
+  <circle cx="100" cy="104" r="8.2" fill="#75765f"/>
+  <circle cx="88" cy="140" r="5.8" fill="#75765f"/>
+  <circle cx="88" cy="176" r="4.2" fill="#75765f"/>
+  <circle cx="80" cy="178" r="3.2" fill="#75765f"/>
+  <path d="M 94.5 48 L 87.5 60.3 L 112.5 60.3 L 105.5 48 Z" fill="#f2efe3"/>
+  <path d="M 87.5 60.3 L 91 104 L 109 104 L 112.5 60.3 Z" fill="#f2efe3"/>
+  <circle cx="100" cy="48" r="5.5" fill="#f2efe3"/>
+  <circle cx="100" cy="60.3" r="12.5" fill="#f2efe3"/>
+  <circle cx="100" cy="104" r="9" fill="#f2efe3"/>
+  <path d="M 94 34 L 94.5 48 L 105.5 48 L 106 34 Z" fill="#f2efe3"/>
+  <circle cx="100" cy="34" r="6" fill="#f2efe3"/>
+  <circle cx="100" cy="48" r="5.5" fill="#f2efe3"/>
+  <circle cx="100" cy="34" r="12.5" fill="#f2efe3"/>
+  <path d="M 106.4 59.5 L 113.9 81.1 L 122.1 78.9 L 117.6 56.5 Z" fill="#f2efe3"/>
+  <path d="M 113.8 80.3 L 116.8 104.3 L 123.2 103.7 L 122.2 79.7 Z" fill="#f2efe3"/>
+  <circle cx="112" cy="58" r="5.8" fill="#f2efe3"/>
+  <circle cx="118" cy="80" r="4.2" fill="#f2efe3"/>
+  <circle cx="120" cy="104" r="3.2" fill="#f2efe3"/>
+  <path d="M 92.2 106.6 L 106.5 141.8 L 117.5 138.2 L 107.8 101.4 Z" fill="#f2efe3"/>
+  <path d="M 106.2 140 L 107.8 176 L 116.2 176 L 117.8 140 Z" fill="#f2efe3"/>
+  <path d="M 111 180.1 L 119.2 181.1 L 120.8 174.9 L 113 171.9 Z" fill="#f2efe3"/>
+  <circle cx="100" cy="104" r="8.2" fill="#f2efe3"/>
+  <circle cx="112" cy="140" r="5.8" fill="#f2efe3"/>
+  <circle cx="112" cy="176" r="4.2" fill="#f2efe3"/>
+  <circle cx="120" cy="178" r="3.2" fill="#f2efe3"/>
   </g>
 </svg>

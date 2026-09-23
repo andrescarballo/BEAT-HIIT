@@ -1,12 +1,36 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Rodillas arriba: carrera en el sitio llevando la rodilla a la altura de la cadera (2 de 2)">
   <g transform="translate(-10.8 -10.8) scale(1.1)">
   <path d="M 56 182 L 144 182" fill="none" stroke="#2a2c1f" stroke-width="5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 112 58 L 124 76 L 106 66" fill="none" stroke="#75765f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 100 104 L 112 140 L 112 176 L 120 178" fill="none" stroke="#75765f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <circle cx="100" cy="34" r="12" fill="none" stroke="#f2efe3" stroke-width="5" vector-effect="non-scaling-stroke"/>
-  <path d="M 100 34 L 100 48" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 100 48 L 100 104" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 88 58 L 76 78 L 72 100" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-  <path d="M 100 104 L 78 122 L 86 148" fill="none" stroke="#f2efe3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+  <path d="M 107.2 61.2 L 120.5 78.3 L 127.5 73.7 L 116.8 54.8 Z" fill="#75765f"/>
+  <path d="M 126 72.3 L 107.6 63.2 L 104.4 68.8 L 122 79.7 Z" fill="#75765f"/>
+  <circle cx="112" cy="58" r="5.8" fill="#75765f"/>
+  <circle cx="124" cy="76" r="4.2" fill="#75765f"/>
+  <circle cx="106" cy="66" r="3.2" fill="#75765f"/>
+  <path d="M 92.2 106.6 L 106.5 141.8 L 117.5 138.2 L 107.8 101.4 Z" fill="#75765f"/>
+  <path d="M 106.2 140 L 107.8 176 L 116.2 176 L 117.8 140 Z" fill="#75765f"/>
+  <path d="M 111 180.1 L 119.2 181.1 L 120.8 174.9 L 113 171.9 Z" fill="#75765f"/>
+  <circle cx="100" cy="104" r="8.2" fill="#75765f"/>
+  <circle cx="112" cy="140" r="5.8" fill="#75765f"/>
+  <circle cx="112" cy="176" r="4.2" fill="#75765f"/>
+  <circle cx="120" cy="178" r="3.2" fill="#75765f"/>
+  <path d="M 94.5 48 L 87.5 60.3 L 112.5 60.3 L 105.5 48 Z" fill="#f2efe3"/>
+  <path d="M 87.5 60.3 L 91 104 L 109 104 L 112.5 60.3 Z" fill="#f2efe3"/>
+  <circle cx="100" cy="48" r="5.5" fill="#f2efe3"/>
+  <circle cx="100" cy="60.3" r="12.5" fill="#f2efe3"/>
+  <circle cx="100" cy="104" r="9" fill="#f2efe3"/>
+  <path d="M 94 34 L 94.5 48 L 105.5 48 L 106 34 Z" fill="#f2efe3"/>
+  <circle cx="100" cy="34" r="6" fill="#f2efe3"/>
+  <circle cx="100" cy="48" r="5.5" fill="#f2efe3"/>
+  <circle cx="100" cy="34" r="12.5" fill="#f2efe3"/>
+  <path d="M 83 55 L 72.4 75.8 L 79.6 80.2 L 93 61 Z" fill="#f2efe3"/>
+  <path d="M 71.9 77.2 L 68.9 99.4 L 75.1 100.6 L 80.1 78.8 Z" fill="#f2efe3"/>
+  <circle cx="88" cy="58" r="5.8" fill="#f2efe3"/>
+  <circle cx="76" cy="78" r="4.2" fill="#f2efe3"/>
+  <circle cx="72" cy="100" r="3.2" fill="#f2efe3"/>
+  <path d="M 94.8 97.7 L 74.3 117.5 L 81.7 126.5 L 105.2 110.3 Z" fill="#f2efe3"/>
+  <path d="M 72.5 123.7 L 82 149.2 L 90 146.8 L 83.5 120.3 Z" fill="#f2efe3"/>
+  <circle cx="100" cy="104" r="8.2" fill="#f2efe3"/>
+  <circle cx="78" cy="122" r="5.8" fill="#f2efe3"/>
+  <circle cx="86" cy="148" r="4.2" fill="#f2efe3"/>
   </g>
 </svg>
